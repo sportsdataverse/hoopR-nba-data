@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.vscode
+__pycache__
+*/__pycache__
+./__pycache__
+.DS_Store
+*/.DS_Store
+.pytest_cache
+*/.pytest_cache
+*.pyc
+*/*.pyc
+*.pyc
