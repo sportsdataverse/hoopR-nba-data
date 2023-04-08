@@ -192,9 +192,9 @@ sched_g <- sched_g %>%
 
 # data.table::fwrite(sched_g %>%
 #                      dplyr::arrange(dplyr::desc(.data$date)), "nba/nba_schedule_master.csv")
-# data.table::fwrite(sched_g %>%
-#                      dplyr::filter(.data$PBP == TRUE) %>%
-#                      dplyr::arrange(dplyr::desc(.data$date)), "nba/nba_games_in_data_repo.csv")
+data.table::fwrite(sched_g %>%
+                     dplyr::filter(.data$PBP == TRUE) %>%
+                     dplyr::arrange(dplyr::desc(.data$date)), "nba/nba_games_in_data_repo.csv")
 
 arrow::write_parquet(sched_g %>%
                        dplyr::arrange(dplyr::desc(.data$date)), glue::glue("nba/nba_schedule_master.parquet"))
