@@ -67,13 +67,7 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install -r requirements.txt
       - name: Check for Inputs
-        if: ${{ env.START_YEAR == ''}}
-        run: |
-          echo START_YEAR=$(Rscript -e "cat(hoopR::most_recent_nba_season())") >> $GITHUB_ENV
-          echo END_YEAR=$(Rscript -e "cat(hoopR::most_recent_nba_season())") >> $GITHUB_ENV
-          echo RESCRAPE=false >> $GITHUB_ENV
-      - name: Check for Inputs
-        if: ${{ github.event.client_payload.event_name == 'daily_nba_data' }}
+        if: ${{ env.START_YEAR == '' || github.event.client_payload.event_name == 'daily_nba_data'}}
         run: |
           echo START_YEAR=$(Rscript -e "cat(hoopR::most_recent_nba_season())") >> $GITHUB_ENV
           echo END_YEAR=$(Rscript -e "cat(hoopR::most_recent_nba_season())") >> $GITHUB_ENV
