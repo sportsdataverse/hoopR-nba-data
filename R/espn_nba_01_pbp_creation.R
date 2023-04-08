@@ -36,6 +36,12 @@ nba_pbp_games <- function(y) {
 
   espn_df <- data.frame()
   sched <- hoopR:::rds_from_url(paste0("https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_", y, ".rds"))
+  ifelse(!dir.exists(file.path("nba/schedules")), dir.create(file.path("nba/schedules")), FALSE)
+  ifelse(!dir.exists(file.path("nba/schedules/rds")), dir.create(file.path("nba/schedules/rds")), FALSE)
+  ifelse(!dir.exists(file.path("nba/schedules/parquet")), dir.create(file.path("nba/schedules/parquet")), FALSE)
+  saveRDS(sched, glue::glue("nba/schedules/rds/nba_schedule_{y}.rds"))
+  arrow::write_parquet(sched, glue::glue("nba/schedules/parquet/nba_schedule_{y}.parquet"))
+
 
   season_pbp_list <- sched %>%
     dplyr::filter(.data$game_json == TRUE) %>%
