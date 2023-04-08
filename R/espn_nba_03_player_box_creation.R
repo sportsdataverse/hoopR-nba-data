@@ -34,7 +34,7 @@ years_vec <- opt$s:opt$e
 
 nba_player_box_games <- function(y) {
   espn_df <- data.frame()
-  sched <- hoopR:::rds_from_url(paste0("https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_", y, ".rds"))
+  sched <-  readRDS(paste0("nba/schedules/rds/nba_schedule_", y, ".rds"))
 
   season_player_box_list <- sched %>%
     dplyr::filter(.data$game_json == TRUE) %>%
