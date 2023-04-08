@@ -161,9 +161,9 @@ all_games <- purrr::map(years_vec, function(y) {
 cli::cli_progress_step(msg = "Compiling ESPN NBA master schedule",
                        msg_done = "ESPN NBA master schedule compiled and written to disk")
 
-sched_list <- list.files(path = glue::glue("nba/schedules/csv/"))
+sched_list <- list.files(path = glue::glue("nba/schedules/rds/"))
 sched_g <-  purrr::map_dfr(sched_list, function(x) {
-  sched <- data.table::fread(paste0("nba/schedules/csv/", x)) %>%
+  sched <- readRDS(paste0("nba/schedules/rds/", x)) %>%
     dplyr::mutate(dplyr::across(dplyr::any_of(c(
       "id",
       "game_id",
