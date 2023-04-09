@@ -18,7 +18,7 @@ do
     Rscript R/espn_nba_03_player_box_creation.R -s $i -e $i
     git pull  >> /dev/null
     git add nba/* >> /dev/null
-    git pull --rebase  >> /dev/null
+    git pull >> /dev/null
     git commit -m "NBA Data Updated (Start: $i End: $i)" || echo "No changes to commit"
     git pull --rebase  >> /dev/null
     git push >> /dev/null
