@@ -19,7 +19,8 @@ do
     git pull  >> /dev/null
     git add nba/* >> /dev/null
     git pull >> /dev/null
+    git add . >> /dev/null
     git commit -m "NBA Data Updated (Start: $i End: $i)" || echo "No changes to commit"
-    git pull --rebase  >> /dev/null
+    git pull >> /dev/null
     git push >> /dev/null
 done
