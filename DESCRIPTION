@@ -66,7 +66,6 @@ Suggests:
     DBI,
     ggplot2,
     ggrepel,
-    qs (>= 0.25.1),
     rmarkdown,
     RSQLite,
     stats,
