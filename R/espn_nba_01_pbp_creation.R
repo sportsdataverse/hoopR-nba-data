@@ -81,8 +81,11 @@ nba_pbp_games <- function(y) {
         resp <- glue::glue(
           "https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/json/final/{x}.json"
         )
-        pbp <- hoopR:::helper_espn_nba_pbp(resp)
-        return(pbp)
+        tryCatch(
+          hoopR:::helper_espn_nba_pbp(resp),
+          error = function(e) NULL,
+          warning = function(w) NULL
+        )
       },
       .options = furrr::furrr_options(seed = TRUE)
     )

@@ -57,8 +57,11 @@ nba_player_box_games <- function(y) {
         resp <- glue::glue(
           "https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/json/final/{x}.json"
         )
-        player_box_score <- hoopR:::helper_espn_nba_player_box(resp)
-        return(player_box_score)
+        tryCatch(
+          hoopR:::helper_espn_nba_player_box(resp),
+          error = function(e) NULL,
+          warning = function(w) NULL
+        )
       },
       .options = furrr::furrr_options(seed = TRUE)
     )
