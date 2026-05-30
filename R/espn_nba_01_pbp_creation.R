@@ -163,6 +163,63 @@ nba_pbp_games <- function(y) {
       file_types = c("rds", "csv", "parquet"),
       .token = Sys.getenv("GITHUB_PAT")
     )
+
+    # --- Shots extraction (derived from in-memory PBP frame; no extra HTTP) ---
+    shots_df <- espn_df %>%
+      dplyr::filter(.data$shooting_play == TRUE) %>%
+      dplyr::select(
+        dplyr::any_of(c(
+          "game_id",
+          "season",
+          "period_number",
+          "clock_display_value",
+          "team_id",
+          "athlete_id_1",
+          "athlete_id_2",
+          "type_id",
+          "type_text",
+          "scoring_play",
+          "score_value",
+          "coordinate_x",
+          "coordinate_y",
+          "coordinate_x_raw",
+          "coordinate_y_raw"
+        ))
+      )
+
+    if (nrow(shots_df) > 0) {
+      shots_df <- shots_df %>%
+        hoopR:::make_hoopR_data(
+          "ESPN NBA Shots from hoopR data repository",
+          Sys.time()
+        )
+
+      ifelse(!dir.exists(file.path("nba/shots")), dir.create(file.path("nba/shots")), FALSE)
+      ifelse(!dir.exists(file.path("nba/shots/rds")), dir.create(file.path("nba/shots/rds")), FALSE)
+      ifelse(!dir.exists(file.path("nba/shots/parquet")), dir.create(file.path("nba/shots/parquet")), FALSE)
+      saveRDS(shots_df, glue::glue("nba/shots/rds/shots_{y}.rds"))
+      arrow::write_parquet(shots_df, glue::glue("nba/shots/parquet/shots_{y}.parquet"))
+
+      cli::cli_progress_step(
+        msg = "Updating {y} ESPN NBA Shots GitHub Release",
+        msg_done = "Updated {y} ESPN NBA Shots GitHub Release!"
+      )
+
+      shots_retry_rate <- purrr::rate_backoff(pause_base = 1, pause_min = 1, max_times = 5)
+      purrr::insistently(
+        sportsdataversedata::sportsdataverse_save,
+        rate = shots_retry_rate,
+        quiet = FALSE
+      )(
+        data_frame = shots_df,
+        file_name = glue::glue("shots_{y}"),
+        sportsdataverse_type = "shots data",
+        release_tag = "espn_nba_shots",
+        pkg_function = "hoopR::load_nba_pbp()",
+        file_types = c("rds", "csv", "parquet"),
+        .token = Sys.getenv("GITHUB_PAT")
+      )
+    }
   }
 
   sched <- sched %>%
