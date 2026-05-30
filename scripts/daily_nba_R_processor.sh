@@ -19,6 +19,7 @@ do
     Rscript R/espn_nba_07_standings_creation.R -s $i -e $i
     Rscript R/espn_nba_09_game_rosters_creation.R -s $i -e $i
     Rscript R/espn_nba_10_officials_creation.R -s $i -e $i
+    Rscript R/espn_nba_08_draft_creation.R -s $i -e $i
     git pull  >> /dev/null
     git add nba/* >> /dev/null
     git pull >> /dev/null
