@@ -16,6 +16,7 @@ do
     Rscript R/espn_nba_01_pbp_creation.R -s $i -e $i
     Rscript R/espn_nba_02_team_box_creation.R -s $i -e $i
     Rscript R/espn_nba_03_player_box_creation.R -s $i -e $i
+    Rscript R/espn_nba_04_rosters_creation.R -s $i -e $i
     Rscript R/espn_nba_05_player_season_stats_creation.R -s $i -e $i
     Rscript R/espn_nba_06_team_season_stats_creation.R -s $i -e $i
     Rscript R/espn_nba_07_standings_creation.R -s $i -e $i
