@@ -1,0 +1,23 @@
+season,row_count,generated_at_utc,source_endpoint
+2002,1334,2026-05-30 14:43:27 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2002/<team_id>.json
+2003,1334,2026-05-30 14:43:39 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2003/<team_id>.json
+2004,1334,2026-05-30 14:43:52 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2004/<team_id>.json
+2005,1380,2026-05-30 14:44:04 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2005/<team_id>.json
+2006,1380,2026-05-30 14:44:17 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2006/<team_id>.json
+2007,1380,2026-05-30 14:44:29 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2007/<team_id>.json
+2008,1380,2026-05-30 14:44:42 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2008/<team_id>.json
+2009,1380,2026-05-30 14:44:54 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2009/<team_id>.json
+2010,1380,2026-05-30 14:45:07 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2010/<team_id>.json
+2011,1380,2026-05-30 14:45:20 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2011/<team_id>.json
+2012,1380,2026-05-30 14:45:32 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2012/<team_id>.json
+2013,1380,2026-05-30 14:45:45 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2013/<team_id>.json
+2014,1380,2026-05-30 14:45:58 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2014/<team_id>.json
+2015,1380,2026-05-30 14:46:10 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2015/<team_id>.json
+2016,1380,2026-05-30 14:46:23 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2016/<team_id>.json
+2017,1380,2026-05-30 14:46:36 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2017/<team_id>.json
+2018,1380,2026-05-30 14:46:50 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2018/<team_id>.json
+2019,1380,2026-05-30 14:47:02 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2019/<team_id>.json
+2020,1380,2026-05-30 14:47:15 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2020/<team_id>.json
+2021,1380,2026-05-30 14:47:29 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2021/<team_id>.json
+2023,1380,2026-05-30 14:51:41 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2023/<team_id>.json
+2025,1380,2026-05-30 14:55:44 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/2025/<team_id>.json
