@@ -92,6 +92,23 @@ nba/                                   # Committed compiled output (one folder p
 | `play_by_play`   | `nba/pbp/`          | `espn_nba_pbp`                        | `hoopR::load_nba_pbp()`      |
 | `team_box`       | `nba/team_box/`     | `espn_nba_team_boxscores`             | `hoopR::load_nba_team_box()` |
 | `player_box`     | `nba/player_box/`   | `espn_nba_player_boxscores`           | `hoopR::load_nba_player_box()` |
+| `play_by_play` (shots subset) | `nba/shots/` | `espn_nba_shots`             | `hoopR::load_nba_pbp()` (filter) |
+| `rosters`        | `nba/rosters/`      | `espn_nba_rosters`                    | `hoopR::load_nba_rosters()` |
+| `player_season_stats` | `nba/player_season_stats/` | `espn_nba_player_season_stats` | `hoopR::load_nba_player_stats()` |
+| `team_season_stats` | `nba/team_season_stats/` | `espn_nba_team_season_stats`    | `hoopR::load_nba_team_stats()` |
+| `standings`      | `nba/standings/`    | `espn_nba_standings`                  | `hoopR::load_nba_standings()` |
+| `draft`          | `nba/draft/`        | `espn_nba_draft`                      | `hoopR::load_nba_draft()` |
+| `game_rosters`   | `nba/game_rosters/` | `espn_nba_game_rosters`               | `hoopR::load_nba_game_rosters()` |
+| `officials`      | `nba/officials/`    | `espn_nba_officials`                  | `hoopR::load_nba_officials()` |
+
+Scripts `espn_nba_04_rosters` … `espn_nba_10_officials` (plus the shots
+subset in `espn_nba_01`) cover the datasets below the boxscore rows. The
+per-season `player_season_stats` / `team_season_stats` are long-format
+(averages / totals / miscellaneous categories); season stats are sliced
+from ESPN's `categories[].statistics[]` for true single-season values.
+`game_rosters` / `officials` read the per-game summary JSON committed by
+`hoopR-nba-raw` (officials reuses the game_rosters summary's
+`gameInfo.officials`).
 
 Add a new compiled dataset by writing a new `R/espn_nba_0N_*.R` script,
 appending the matching `nba/<key>/` subdirectory, adding the script to
