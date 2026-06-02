@@ -1,0 +1,261 @@
+From https://github.com/sportsdataverse/hoopR-nba-data
+ * [new branch]        AE/remove-qs -> origin/AE/remove-qs
+ℹ Compiling 2025 ESPN NBA pbps (1324 games)
+✔ Compiled 2025 ESPN NBA pbps! [4m 40.4s]
+
+ℹ Updating 2025 ESPN NBA PBP GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2025 ESPN NBA PBP GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA PBP GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_pbp on 2026-06-02 22:55:33.786227
+ℹ Updating 2025 ESPN NBA PBP GitHub Release✔ Updated 2025 ESPN NBA PBP GitHub Release! [32.5s]
+
+ℹ Updating 2025 ESPN NBA Shots GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Shots GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_shots
+ℹ Updating 2025 ESPN NBA Shots GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Shots GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_shots on 2026-06-02 22:55:38.561619
+ℹ Updating 2025 ESPN NBA Shots GitHub Release✔ Updated 2025 ESPN NBA Shots GitHub Release! [3.5s]
+
+ℹ Compiling ESPN NBA master schedule
+✔ ESPN NBA master schedule compiled and written to disk [719ms]
+
+
+ℹ Compiling 2025 ESPN NBA Team Boxscores (1324 games)
+✔ Compiled 2025 ESPN NBA Team Boxscores! [1m 38.7s]
+
+ℹ Updating 2025 ESPN NBA Team Boxscores GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Team Boxscores GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_team_boxscores
+ℹ Updating 2025 ESPN NBA Team Boxscores GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Team Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_boxscores on 2026-06-02 22:57:21.720365
+ℹ Updating 2025 ESPN NBA Team Boxscores GitHub Release✔ Updated 2025 ESPN NBA Team Boxscores GitHub Release! [2.3s]
+
+ℹ Compiling ESPN NBA master schedule
+✔ ESPN NBA master schedule compiled and written to disk [885ms]
+
+
+ℹ Compiling 2025 ESPN NBA Player Boxscores (1324 games)
+✔ Compiled 2025 ESPN NBA Player Boxscores! [1m 58.6s]
+
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_boxscores
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_boxscores on 2026-06-02 22:59:25.736899
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Release→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_schedules
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-06-02 22:59:27.665278
+ℹ Updating 2025 ESPN NBA Player Boxscores GitHub Release✔ Updated 2025 ESPN NBA Player Boxscores GitHub Release! [5.2s]
+
+ℹ Compiling ESPN NBA master schedule
+→ Uploading 3 files!
+ℹ Compiling ESPN NBA master scheduleℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_schedules
+ℹ Compiling ESPN NBA master schedule✔ Upload successfully completed.
+ℹ Compiling ESPN NBA master schedule→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-06-02 22:59:31.927397
+ℹ Compiling ESPN NBA master schedule[1] "cli-213-51"
+→ Uploading 3 files!
+ℹ Compiling ESPN NBA master scheduleℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_schedules
+ℹ Compiling ESPN NBA master schedule✔ Upload successfully completed.
+ℹ Compiling ESPN NBA master schedule→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-06-02 22:59:35.332855
+ℹ Compiling ESPN NBA master schedule[1] "cli-213-62"
+✔ ESPN NBA master schedule compiled and written to disk [7.5s]
+
+
+ℹ Compiling 2025 ESPN NBA rosters (34 teams)
+✔ Compiled 2025 ESPN NBA rosters! [4.6s]
+
+ℹ Updating 2025 ESPN NBA Rosters GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Rosters GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_rosters
+ℹ Updating 2025 ESPN NBA Rosters GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-02 22:59:43.325051
+ℹ Updating 2025 ESPN NBA Rosters GitHub Release✔ Updated 2025 ESPN NBA Rosters GitHub Release! [2.1s]
+
+6.909 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_rosters
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-02 22:59:44.644736
+
+ℹ Compiling 2025 ESPN NBA player season stats (580 athletes)
+✔ Compiled 2025 ESPN NBA player season stats! [24.1s]
+
+ℹ Updating 2025 ESPN NBA Player Season Stats GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Player Season Stats GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
+ℹ Updating 2025 ESPN NBA Player Season Stats GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Player Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-02 23:00:12.806794
+ℹ Updating 2025 ESPN NBA Player Season Stats GitHub Release✔ Updated 2025 ESPN NBA Player Season Stats GitHub Release! [2.3s]
+
+27.128 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-02 23:00:14.428877
+
+ℹ Compiling 2025 ESPN NBA team season stats (30 teams)
+✔ Compiled 2025 ESPN NBA team season stats! [4.1s]
+
+ℹ Updating 2025 ESPN NBA Team Season Stats GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Team Season Stats GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_team_season_stats
+ℹ Updating 2025 ESPN NBA Team Season Stats GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Team Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-02 23:00:21.974806
+ℹ Updating 2025 ESPN NBA Team Season Stats GitHub Release✔ Updated 2025 ESPN NBA Team Season Stats GitHub Release! [2.2s]
+
+6.489 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_team_season_stats
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-02 23:00:23.545636
+
+ℹ Compiling 2025 ESPN NBA standings
+✔ Compiled 2025 ESPN NBA standings! [355ms]
+
+ℹ Updating 2025 ESPN NBA Standings GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Standings GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_standings
+ℹ Updating 2025 ESPN NBA Standings GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Standings GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-02 23:00:27.365707
+ℹ Updating 2025 ESPN NBA Standings GitHub Release✔ Updated 2025 ESPN NBA Standings GitHub Release! [2.2s]
+
+2.779 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_standings
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-02 23:00:28.982456
+
+ℹ Compiling 2025 ESPN NBA game rosters (1329 games)
+! 2026-06-02 23:03:42.624144: skip game_rosters 2025/401705090: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705090.json'
+ℹ Compiling 2025 ESPN NBA game rosters (1329 games)! 2026-06-02 23:03:45.073646: skip game_rosters 2025/401705098: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705098.json'
+ℹ Compiling 2025 ESPN NBA game rosters (1329 games)! 2026-06-02 23:03:46.581745: skip game_rosters 2025/401705103: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705103.json'
+ℹ Compiling 2025 ESPN NBA game rosters (1329 games)! 2026-06-02 23:03:46.700397: skip game_rosters 2025/401705104: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705104.json'
+ℹ Compiling 2025 ESPN NBA game rosters (1329 games)! 2026-06-02 23:04:14.043494: skip game_rosters 2025/401705183: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705183.json'
+ℹ Compiling 2025 ESPN NBA game rosters (1329 games)✔ Compiled 2025 ESPN NBA game rosters! [7m 54s]
+
+ℹ Updating 2025 ESPN NBA Game Rosters GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Game Rosters GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_game_rosters
+ℹ Updating 2025 ESPN NBA Game Rosters GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Game Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-02 23:08:26.863022
+ℹ Updating 2025 ESPN NBA Game Rosters GitHub Release✔ Updated 2025 ESPN NBA Game Rosters GitHub Release! [2.7s]
+
+Warning messages:
+1: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705090.json': HTTP status was '404 Not Found'
+2: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705098.json': HTTP status was '404 Not Found'
+3: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705103.json': HTTP status was '404 Not Found'
+4: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705104.json': HTTP status was '404 Not Found'
+5: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705183.json': HTTP status was '404 Not Found'
+476.841 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_game_rosters
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-02 23:08:28.470314
+
+ℹ Compiling 2025 ESPN NBA officials (1329 games)
+! 2026-06-02 23:09:30.625194: skip officials 2025/401705090: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705090.json'
+ℹ Compiling 2025 ESPN NBA officials (1329 games)! 2026-06-02 23:09:31.554826: skip officials 2025/401705098: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705098.json'
+ℹ Compiling 2025 ESPN NBA officials (1329 games)! 2026-06-02 23:09:32.065302: skip officials 2025/401705103: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705103.json'
+ℹ Compiling 2025 ESPN NBA officials (1329 games)! 2026-06-02 23:09:32.166132: skip officials 2025/401705104: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705104.json'
+ℹ Compiling 2025 ESPN NBA officials (1329 games)! 2026-06-02 23:09:41.112395: skip officials 2025/401705183: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705183.json'
+ℹ Compiling 2025 ESPN NBA officials (1329 games)✔ Compiled 2025 ESPN NBA officials! [1m 53.9s]
+
+ℹ Updating 2025 ESPN NBA Officials GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Officials GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_officials
+ℹ Updating 2025 ESPN NBA Officials GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Officials GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-02 23:10:25.889951
+ℹ Updating 2025 ESPN NBA Officials GitHub Release✔ Updated 2025 ESPN NBA Officials GitHub Release! [2.4s]
+
+Warning messages:
+1: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705090.json': HTTP status was '404 Not Found'
+2: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705098.json': HTTP status was '404 Not Found'
+3: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705103.json': HTTP status was '404 Not Found'
+4: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705104.json': HTTP status was '404 Not Found'
+5: In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401705183.json': HTTP status was '404 Not Found'
+116.439 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_officials
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-02 23:10:27.521875
+
+ℹ Compiling 2025 ESPN NBA draft
+✔ Compiled 2025 ESPN NBA draft! [537ms]
+
+ℹ Updating 2025 ESPN NBA Draft GitHub Release
+→ Uploading 3 files!
+ℹ Updating 2025 ESPN NBA Draft GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_draft
+ℹ Updating 2025 ESPN NBA Draft GitHub Release✔ Upload successfully completed.
+ℹ Updating 2025 ESPN NBA Draft GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-02 23:10:31.604541
+ℹ Updating 2025 ESPN NBA Draft GitHub Release✔ Updated 2025 ESPN NBA Draft GitHub Release! [2.3s]
+
+3.031 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_draft
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-02 23:10:33.224916
+
+[main 669cb34d] NBA Data Updated (Start: 2025 End: 2025)
+ 31 files changed, 7 insertions(+)
+ create mode 100644 nba/draft/parquet/draft_2025.parquet
+ create mode 100644 nba/draft/rds/draft_2025.rds
+ create mode 100644 nba/rosters/parquet/rosters_2025.parquet
+ create mode 100644 nba/rosters/rds/rosters_2025.rds
+ create mode 100644 nba/standings/parquet/standings_2025.parquet
+ create mode 100644 nba/standings/rds/standings_2025.rds
+To https://github.com/sportsdataverse/hoopR-nba-data
+   d815065d..669cb34d  main -> main
