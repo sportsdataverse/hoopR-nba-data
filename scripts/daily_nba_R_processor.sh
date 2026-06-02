@@ -87,6 +87,11 @@ do
     fi
 done
 
+# ---- Run summary: updated releases + remaining warnings/errors ----
+# Prints a cli summary to the Action log and (when set) writes markdown to
+# $GITHUB_STEP_SUMMARY so the run's Summary tab shows what landed and what didn't.
+Rscript R/run_summary.R -s "$START_YEAR" -e "$END_YEAR" || true
+
 if [ "${ANY_FAILED:-0}" != "0" ]; then
     echo "::error ::At least one season's creation script exited non-zero. See per-season logs."
     exit 1
