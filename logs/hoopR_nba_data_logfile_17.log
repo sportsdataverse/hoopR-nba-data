@@ -1,0 +1,184 @@
+Error in `purrr::map()`:
+ℹ In index: 1.
+Caused by error in `dplyr::filter()`:
+ℹ In argument: `.data$game_json == TRUE`.
+Caused by error in `.data$game_json`:
+! Column `game_json` not found in `.data`.
+Backtrace:
+     ▆
+  1. ├─purrr::map(...)
+  2. │ └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
+  3. │   ├─purrr:::with_indexed_errors(...)
+  4. │   │ └─base::withCallingHandlers(...)
+  5. │   ├─purrr:::call_with_cleanup(...)
+  6. │   └─global .f(.x[[i]], ...)
+  7. │     └─global nba_pbp_games(y)
+  8. │       └─sched %>% dplyr::filter(.data$game_json == TRUE) %>% ...
+  9. ├─dplyr::pull(., "game_id")
+ 10. ├─dplyr::filter(., .data$game_json == TRUE)
+ 11. ├─dplyr:::filter.data.frame(., .data$game_json == TRUE)
+ 12. │ └─dplyr:::filter_impl(...)
+ 13. │   └─dplyr:::filter_rows(...)
+ 14. │     └─dplyr:::filter_eval(...)
+ 15. │       ├─base::withCallingHandlers(...)
+ 16. │       └─mask$eval_all_filter(dots_expanded, invert, env_filter)
+ 17. │         └─dplyr (local) eval()
+ 18. ├─game_json
+ 19. ├─rlang:::`$.rlang_data_pronoun`(.data, game_json)
+ 20. │ └─rlang:::data_pronoun_get(...)
+ 21. └─rlang:::abort_data_pronoun(x, call = y)
+ 22.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
+Warning messages:
+1: In readRDS(con) :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_17.rds': HTTP status was '404 Not Found'
+2: Failed to readRDS from <https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_17.rds> 
+Execution halted
+::warning ::R/espn_nba_01_pbp_creation.R for season 17 exited with code 1
+Error in `purrr::map()`:
+ℹ In index: 1.
+Caused by error in `dplyr::filter()`:
+ℹ In argument: `.data$game_json == TRUE`.
+Caused by error in `.data$game_json`:
+! Column `game_json` not found in `.data`.
+Backtrace:
+     ▆
+  1. ├─purrr::map(...)
+  2. │ └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
+  3. │   ├─purrr:::with_indexed_errors(...)
+  4. │   │ └─base::withCallingHandlers(...)
+  5. │   ├─purrr:::call_with_cleanup(...)
+  6. │   └─global .f(.x[[i]], ...)
+  7. │     └─global nba_team_box_games(y)
+  8. │       └─sched %>% dplyr::filter(.data$game_json == TRUE) %>% ...
+  9. ├─dplyr::pull(., "game_id")
+ 10. ├─dplyr::filter(., .data$game_json == TRUE)
+ 11. ├─dplyr:::filter.data.frame(., .data$game_json == TRUE)
+ 12. │ └─dplyr:::filter_impl(...)
+ 13. │   └─dplyr:::filter_rows(...)
+ 14. │     └─dplyr:::filter_eval(...)
+ 15. │       ├─base::withCallingHandlers(...)
+ 16. │       └─mask$eval_all_filter(dots_expanded, invert, env_filter)
+ 17. │         └─dplyr (local) eval()
+ 18. ├─game_json
+ 19. ├─rlang:::`$.rlang_data_pronoun`(.data, game_json)
+ 20. │ └─rlang:::data_pronoun_get(...)
+ 21. └─rlang:::abort_data_pronoun(x, call = y)
+ 22.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
+Execution halted
+::warning ::R/espn_nba_02_team_box_creation.R for season 17 exited with code 1
+Error in `purrr::map()`:
+ℹ In index: 1.
+Caused by error in `dplyr::filter()`:
+ℹ In argument: `.data$game_json == TRUE`.
+Caused by error in `.data$game_json`:
+! Column `game_json` not found in `.data`.
+Backtrace:
+     ▆
+  1. ├─purrr::map(...)
+  2. │ └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
+  3. │   ├─purrr:::with_indexed_errors(...)
+  4. │   │ └─base::withCallingHandlers(...)
+  5. │   ├─purrr:::call_with_cleanup(...)
+  6. │   └─global .f(.x[[i]], ...)
+  7. │     └─global nba_player_box_games(y)
+  8. │       └─sched %>% dplyr::filter(.data$game_json == TRUE) %>% ...
+  9. ├─dplyr::pull(., "game_id")
+ 10. ├─dplyr::filter(., .data$game_json == TRUE)
+ 11. ├─dplyr:::filter.data.frame(., .data$game_json == TRUE)
+ 12. │ └─dplyr:::filter_impl(...)
+ 13. │   └─dplyr:::filter_rows(...)
+ 14. │     └─dplyr:::filter_eval(...)
+ 15. │       ├─base::withCallingHandlers(...)
+ 16. │       └─mask$eval_all_filter(dots_expanded, invert, env_filter)
+ 17. │         └─dplyr (local) eval()
+ 18. ├─game_json
+ 19. ├─rlang:::`$.rlang_data_pronoun`(.data, game_json)
+ 20. │ └─rlang:::data_pronoun_get(...)
+ 21. └─rlang:::abort_data_pronoun(x, call = y)
+ 22.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
+Execution halted
+::warning ::R/espn_nba_03_player_box_creation.R for season 17 exited with code 1
+2026-06-03 03:17:57.990838: no team rosters in raw repo for 17; skipping
+0.276 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_rosters
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-03 03:17:59.695684
+
+! 2026-06-03 03:18:00.910209: could not load player_box for 17: seasons >= 2002 is not TRUE
+! 2026-06-03 03:18:00.925125: no player_box athletes for 17; skipping player_season_stats
+0.069 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-03 03:18:02.710009
+
+! 2026-06-03 03:18:04.147175: no team_stats in raw repo for 17; skipping
+0.293 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_team_season_stats
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-03 03:18:05.879298
+
+! 2026-06-03 03:18:07.289703: skip standings 17: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/17.json'
+Warning message:
+In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/17.json': HTTP status was '404 Not Found'
+0.191 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_standings
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-03 03:18:08.889768
+
+! 2026-06-03 03:18:10.15537: no games listed for 17; skipping game_rosters
+Warning messages:
+1: In readRDS(con) :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_17.rds': HTTP status was '404 Not Found'
+2: Failed to readRDS from <https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_17.rds> 
+0.125 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_game_rosters
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-03 03:18:11.838022
+
+! 2026-06-03 03:18:13.097334: no games listed for 17; skipping officials
+Warning messages:
+1: In readRDS(con) :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_17.rds': HTTP status was '404 Not Found'
+2: Failed to readRDS from <https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_17.rds> 
+0.12 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_officials
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-03 03:18:14.812674
+
+! 2026-06-03 03:18:16.159568: skip draft 17: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/17.json'
+Warning message:
+In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/17.json': HTTP status was '404 Not Found'
+0.194 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_draft
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-03 03:18:17.854927
+
+[main e2559b48] NBA Data Updated (Start: 17 End: 17)
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 nba/schedules/parquet/nba_schedule_17.parquet
+ create mode 100644 nba/schedules/rds/nba_schedule_17.rds
+To https://github.com/sportsdataverse/hoopR-nba-data
+   0cc55711..e2559b48  main -> main
