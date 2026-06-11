@@ -1,7 +1,7 @@
 From https://github.com/sportsdataverse/hoopR-nba-data
  * [new branch]        AE/remove-qs -> origin/AE/remove-qs
 ℹ Compiling 2026 ESPN NBA pbps (1324 games)
-✔ Compiled 2026 ESPN NBA pbps! [6m 45.4s]
+✔ Compiled 2026 ESPN NBA pbps! [5m 26.4s]
 
 ℹ Updating 2026 ESPN NBA PBP GitHub Release
 → Uploading 3 files!
@@ -9,8 +9,8 @@ From https://github.com/sportsdataverse/hoopR-nba-data
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_pbp
 ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA PBP GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_pbp on 2026-06-10 11:57:54.444217
-ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Updated 2026 ESPN NBA PBP GitHub Release! [31.2s]
+ℹ Updating 2026 ESPN NBA PBP GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_pbp on 2026-06-11 11:35:38.91504
+ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Updated 2026 ESPN NBA PBP GitHub Release! [32.2s]
 
 ℹ Updating 2026 ESPN NBA Shots GitHub Release
 → Uploading 3 files!
@@ -18,8 +18,8 @@ espn_nba_pbp
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_shots
 ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Shots GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_shots on 2026-06-10 11:57:59.723425
-ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Updated 2026 ESPN NBA Shots GitHub Release! [4.2s]
+ℹ Updating 2026 ESPN NBA Shots GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_shots on 2026-06-11 11:35:43.987732
+ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Updated 2026 ESPN NBA Shots GitHub Release! [3.8s]
 
 ℹ Compiling ESPN NBA master schedule
 Error in `map()`:
@@ -54,7 +54,7 @@ Backtrace:
 Execution halted
 ::warning ::R/espn_nba_01_pbp_creation.R for season 2026 exited with code 1
 ℹ Compiling 2026 ESPN NBA Team Boxscores (1324 games)
-✔ Compiled 2026 ESPN NBA Team Boxscores! [2m 22s]
+✔ Compiled 2026 ESPN NBA Team Boxscores! [1m 51.5s]
 
 ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release
 → Uploading 3 files!
@@ -62,8 +62,8 @@ Execution halted
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_team_boxscores
 ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_boxscores on 2026-06-10 12:00:26.728796
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release✔ Updated 2026 ESPN NBA Team Boxscores GitHub Release! [3.3s]
+ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_boxscores on 2026-06-11 11:37:39.800533
+ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release✔ Updated 2026 ESPN NBA Team Boxscores GitHub Release! [2.5s]
 
 ℹ Compiling ESPN NBA master schedule
 Error in `map()`:
@@ -98,7 +98,7 @@ Backtrace:
 Execution halted
 ::warning ::R/espn_nba_02_team_box_creation.R for season 2026 exited with code 1
 ℹ Compiling 2026 ESPN NBA Player Boxscores (1324 games)
-✔ Compiled 2026 ESPN NBA Player Boxscores! [2m 34s]
+✔ Compiled 2026 ESPN NBA Player Boxscores! [2m 10.2s]
 
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release
 → Uploading 3 files!
@@ -106,14 +106,14 @@ Execution halted
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_player_boxscores
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_boxscores on 2026-06-10 12:03:06.362523
+ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_boxscores on 2026-06-11 11:39:55.301353
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploading 3 files!
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Releaseℹ Start upload of 7 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_schedules
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-06-10 12:03:09.398865
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Updated 2026 ESPN NBA Player Boxscores GitHub Release! [7.2s]
+ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-06-11 11:39:57.448885
+ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Updated 2026 ESPN NBA Player Boxscores GitHub Release! [5.8s]
 
 ℹ Compiling ESPN NBA master schedule
 Error in `map()`:
@@ -148,7 +148,7 @@ Backtrace:
 Execution halted
 ::warning ::R/espn_nba_03_player_box_creation.R for season 2026 exited with code 1
 ℹ Compiling 2026 ESPN NBA rosters (33 teams)
-✔ Compiled 2026 ESPN NBA rosters! [8.6s]
+✔ Compiled 2026 ESPN NBA rosters! [4.5s]
 
 ℹ Updating 2026 ESPN NBA Rosters GitHub Release
 → Uploading 3 files!
@@ -156,19 +156,19 @@ Execution halted
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_rosters
 ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-10 12:03:22.813695
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Updated 2026 ESPN NBA Rosters GitHub Release! [2.8s]
+ℹ Updating 2026 ESPN NBA Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-11 11:40:06.131055
+ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Updated 2026 ESPN NBA Rosters GitHub Release! [2.3s]
 
-11.842 sec elapsed
+7.067 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_rosters
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-10 12:03:24.746295
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-11 11:40:07.63151
 
 ℹ Compiling 2026 ESPN NBA player season stats (591 athletes)
-✔ Compiled 2026 ESPN NBA player season stats! [35.4s]
+✔ Compiled 2026 ESPN NBA player season stats! [23.6s]
 
 ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release
 → Uploading 3 files!
@@ -176,19 +176,19 @@ espn_nba_rosters
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_player_season_stats
 ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-10 12:04:05.419646
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Updated 2026 ESPN NBA Player Season Stats GitHub Release! [3.3s]
+ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-11 11:40:35.514121
+ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Updated 2026 ESPN NBA Player Season Stats GitHub Release! [2.4s]
 
-39.617 sec elapsed
+26.714 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_player_season_stats
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-10 12:04:07.502542
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-11 11:40:37.207561
 
 ℹ Compiling 2026 ESPN NBA team season stats (30 teams)
-✔ Compiled 2026 ESPN NBA team season stats! [6.7s]
+✔ Compiled 2026 ESPN NBA team season stats! [3.7s]
 
 ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release
 → Uploading 3 files!
@@ -196,19 +196,19 @@ espn_nba_player_season_stats
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_team_season_stats
 ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-10 12:04:18.485989
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release✔ Updated 2026 ESPN NBA Team Season Stats GitHub Release! [2.7s]
+ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-11 11:40:44.402693
+ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release✔ Updated 2026 ESPN NBA Team Season Stats GitHub Release! [2.1s]
 
-9.826 sec elapsed
+6.041 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_team_season_stats
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-10 12:04:20.329968
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-11 11:40:45.877145
 
 ℹ Compiling 2026 ESPN NBA standings
-✔ Compiled 2026 ESPN NBA standings! [362ms]
+✔ Compiled 2026 ESPN NBA standings! [389ms]
 
 ℹ Updating 2026 ESPN NBA Standings GitHub Release
 → Uploading 3 files!
@@ -216,19 +216,19 @@ espn_nba_team_season_stats
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_standings
 ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Standings GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-10 12:04:24.979805
-ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Updated 2026 ESPN NBA Standings GitHub Release! [2.8s]
+ℹ Updating 2026 ESPN NBA Standings GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-11 11:40:49.663929
+ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Updated 2026 ESPN NBA Standings GitHub Release! [2s]
 
-3.496 sec elapsed
+2.581 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_standings
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-10 12:04:26.937753
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-11 11:40:51.432082
 
-ℹ Compiling 2026 ESPN NBA game rosters (1324 games)
-✔ Compiled 2026 ESPN NBA game rosters! [11m 12.7s]
+ℹ Compiling 2026 ESPN NBA game rosters (1325 games)
+✔ Compiled 2026 ESPN NBA game rosters! [5m 49.2s]
 
 ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release
 → Uploading 3 files!
@@ -236,19 +236,19 @@ espn_nba_standings
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_game_rosters
 ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-10 12:15:44.447507
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Updated 2026 ESPN NBA Game Rosters GitHub Release! [3.2s]
+ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-11 11:46:44.692768
+ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Updated 2026 ESPN NBA Game Rosters GitHub Release! [2.7s]
 
-676.373 sec elapsed
+352.135 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_game_rosters
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-10 12:15:46.410258
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-11 11:46:46.3109
 
-ℹ Compiling 2026 ESPN NBA officials (1324 games)
-✔ Compiled 2026 ESPN NBA officials! [5m 13.5s]
+ℹ Compiling 2026 ESPN NBA officials (1325 games)
+✔ Compiled 2026 ESPN NBA officials! [1m 58.3s]
 
 ℹ Updating 2026 ESPN NBA Officials GitHub Release
 → Uploading 3 files!
@@ -256,19 +256,19 @@ espn_nba_game_rosters
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_officials
 ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Officials GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-10 12:21:04.356821
-ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Updated 2026 ESPN NBA Officials GitHub Release! [3.2s]
+ℹ Updating 2026 ESPN NBA Officials GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-11 11:48:48.420113
+ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Updated 2026 ESPN NBA Officials GitHub Release! [2.3s]
 
-316.97 sec elapsed
+120.801 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_officials
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-10 12:21:06.368467
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-11 11:48:49.920554
 
 ℹ Compiling 2026 ESPN NBA draft
-✔ Compiled 2026 ESPN NBA draft! [514ms]
+✔ Compiled 2026 ESPN NBA draft! [572ms]
 
 ℹ Updating 2026 ESPN NBA Draft GitHub Release
 → Uploading 3 files!
@@ -276,18 +276,18 @@ espn_nba_officials
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_draft
 ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Draft GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-10 12:21:10.936646
-ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Updated 2026 ESPN NBA Draft GitHub Release! [2.6s]
+ℹ Updating 2026 ESPN NBA Draft GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-11 11:48:54.356464
+ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Updated 2026 ESPN NBA Draft GitHub Release! [2.3s]
 
-3.456 sec elapsed
+3.106 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_draft
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-10 12:21:12.850233
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-11 11:48:55.812181
 
-[main 1eb1e95a] NBA Data Updated (Start: 2026 End: 2026)
+[main 5e90bdd2] NBA Data Updated (Start: 2026 End: 2026)
  31 files changed, 7 insertions(+)
 To https://github.com/sportsdataverse/hoopR-nba-data
-   1c695b10..1eb1e95a  main -> main
+   19054f63..5e90bdd2  main -> main
