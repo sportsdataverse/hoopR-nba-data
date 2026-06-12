@@ -29,6 +29,9 @@ SCRIPTS=(
     R/espn_nba_09_game_rosters_creation.R
     R/espn_nba_10_officials_creation.R
     R/espn_nba_08_draft_creation.R
+    R/nba_11_team_crosswalk_creation.R
+    R/nba_12_schedule_crosswalk_creation.R
+    R/nba_13_player_crosswalk_creation.R
 )
 
 mkdir -p logs
