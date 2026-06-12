@@ -42,3 +42,4 @@ season,row_count,generated_at_utc,source_endpoint
 2026,25006,2026-06-10 12:04:05 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/player_season_stats/json/<athlete_id>.json
 2026,25006,2026-06-11 11:40:35 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/player_season_stats/json/<athlete_id>.json
 2026,25006,2026-06-12 11:16:45 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/player_season_stats/json/<athlete_id>.json
+2026,25006,2026-06-12 12:02:50 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/player_season_stats/json/<athlete_id>.json
