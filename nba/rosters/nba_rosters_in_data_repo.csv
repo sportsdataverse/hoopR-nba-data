@@ -25,3 +25,4 @@ season,row_count,generated_at_utc,source_endpoint
 2026,537,2026-06-11 11:40:06 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_rosters/json/2026/<team_id>.json
 2026,537,2026-06-12 11:16:14 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_rosters/json/2026/<team_id>.json
 2026,537,2026-06-12 12:02:06 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_rosters/json/2026/<team_id>.json
+2026,537,2026-06-13 10:09:09 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_rosters/json/2026/<team_id>.json
