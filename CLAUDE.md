@@ -40,20 +40,26 @@ upload `.rds` + `.csv` + `.parquet` assets to the release tags below using
 
 ## Build & Development Commands
 
-The repo is driven by `scripts/daily_nba_R_processor.sh`, which calls the
-three numbered R scripts in `R/` for each season in a range:
+The repo is driven by `scripts/daily_nba_R_processor.sh`, which runs a
+fixed **array of 12 numbered R scripts** in `R/` (`espn_nba_01`…`10`,
+`espn_nba_08_draft`, and the three crosswalk scripts) for each season in a
+range, then runs `R/run_summary.R` for the whole range:
 
 ```sh
 # Daily flow for a single end-year season (the CI entry point)
-bash scripts/daily_nba_R_processor.sh -s 2026 -e 2026 -r false
+bash scripts/daily_nba_R_processor.sh -s 2026 -e 2026
 
 # Range of seasons
-bash scripts/daily_nba_R_processor.sh -s 2024 -e 2026 -r false
+bash scripts/daily_nba_R_processor.sh -s 2024 -e 2026
 
 # Call individual R scripts directly when iterating
 Rscript R/espn_nba_01_pbp_creation.R         -s 2026 -e 2026
 Rscript R/espn_nba_02_team_box_creation.R    -s 2026 -e 2026
 Rscript R/espn_nba_03_player_box_creation.R  -s 2026 -e 2026
+# … 04 rosters, 05 player_season_stats, 06 team_season_stats,
+#    07 standings, 08 draft, 09 game_rosters, 10 officials,
+#    nba_11/12/13 team/schedule/player crosswalk
+Rscript R/run_summary.R -s 2026 -e 2026       # per-run cli + $GITHUB_STEP_SUMMARY report
 ```
 
 **Season convention**: `-s` / `-e` are the *end year* of the season (2026
@@ -61,8 +67,12 @@ Rscript R/espn_nba_03_player_box_creation.R  -s 2026 -e 2026
 `play_by_play_{year}.{rds,csv,parquet}`,
 `nba_player_box_{year}.{rds,csv,parquet}`, etc.
 
-The shell flag `-r` is passed through but the underlying R scripts always
-rebuild the season from the raw cache (no per-game skip-if-exists).
+The processor only accepts `-s` and `-e`; the R scripts always rebuild the
+season from the raw cache (no per-game skip-if-exists). Each `Rscript` runs
+under `||` so one failing script doesn't abort the season; the worst exit
+code (`RSCRIPT_RC`) is re-surfaced as a workflow `::error::` after all
+seasons finish, while whatever datasets succeeded are committed regardless
+(per-dataset `tryCatch` keeps partial output usable).
 
 ## Repo Layout
 
@@ -71,16 +81,24 @@ R/
   espn_nba_01_pbp_creation.R          # Compile schedule + PBP -> nba/pbp/, espn_nba_pbp release
   espn_nba_02_team_box_creation.R     # Compile team boxscores -> nba/team_box/, espn_nba_team_boxscores
   espn_nba_03_player_box_creation.R   # Compile player boxscores -> nba/player_box/, espn_nba_player_boxscores
+  espn_nba_04…10_*.R                  # rosters, player/team season stats, standings, draft (08), game_rosters, officials
+  nba_11_team_crosswalk_creation.R    # Cross-source team crosswalk
+  nba_12_schedule_crosswalk_creation.R# Cross-source schedule crosswalk
+  nba_13_player_crosswalk_creation.R  # Cross-source player crosswalk
+  run_summary.R                       # Post-run cli summary -> Action log + $GITHUB_STEP_SUMMARY
+  manifest_upload_helper.R            # Shared release-upload helper sourced by creation scripts
   0000_create_hoopR_releases_init.R   # One-time bootstrap of release tags on sportsdataverse-data
   0001_push_existing_release_data.R   # One-time backfill of historical seasons into releases
 scripts/
-  daily_nba_R_processor.sh            # CI entry point; loops seasons, commits + pushes
+  daily_nba_R_processor.sh            # CI entry point; loops seasons over 12 scripts, commits + pushes
 nba/                                   # Committed compiled output (one folder per dataset)
   schedules/{rds,parquet}/             # Master schedule mirror (also re-released)
   pbp/{rds,parquet}/                   # Per-season play-by-play
   team_box/{rds,parquet}/              # Per-season team boxscores
   player_box/{rds,parquet}/            # Per-season player boxscores
+  {rosters,player_season_stats,team_season_stats,standings,draft,game_rosters,officials,shots,crosswalk}/
   betting_lines/                       # ESPN betting line snapshots
+logs/                                  # Per-season run logs (committed)
 .github/workflows/daily_nba.yml       # CI cron + repository_dispatch + workflow_dispatch
 ```
 
@@ -128,10 +146,10 @@ the `hoopR` package side (`load_nba_<key>()`) also needs a catalog entry.
 - **`repository_dispatch`** event type `daily_nba_data` — fired by
   `hoopR-nba-raw` after its daily push. The dispatch payload's
   `commit_message` is regex-grepped for two integers, which become
-  `START_YEAR` / `END_YEAR`. The raw-side commit format `"NBA Raw Update
-  (Start: 2026 End: 2026)"` is therefore load-bearing — do not change it
-  without updating the regex in the `Check hoopR_nba_data_trigger for
-  inputs` step.
+  `START_YEAR` / `END_YEAR` (`grep -o -E '[0-9]+' | head -1` / `tail -1`).
+  The raw-side commit format `"NBA Raw Updated (Start: 2026 End: 2026)"` is
+  therefore load-bearing — do not change it without updating the regex in
+  the `Check hoopR_nba_data_trigger for inputs` step.
 - **`workflow_dispatch`** inputs: `start_year`, `end_year` strings.
 - Empty inputs fall back to `hoopR::most_recent_nba_season()`.
 - Calls `bash scripts/daily_nba_R_processor.sh -s $START_YEAR -e $END_YEAR`.
