@@ -1,16 +1,58 @@
 From https://github.com/sportsdataverse/hoopR-nba-data
  * [new branch]        AE/remove-qs -> origin/AE/remove-qs
 ℹ Compiling 2026 ESPN NBA pbps (1326 games)
-✔ Compiled 2026 ESPN NBA pbps! [7m 15.6s]
+✔ Compiled 2026 ESPN NBA pbps! [5m 32.8s]
 
 ℹ Updating 2026 ESPN NBA PBP GitHub Release
 → Uploading 3 files!
 ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/97399235/assets?label=&name=play_by_play_2026.rds)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 422: Validation Failed (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/97399235/assets?label=&name=play_by_play_2026.parquet)
+ReleaseAsset.name already exists
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 404: Not Found (https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/assets/466299985)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 404: Not Found (https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/assets/466300035)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 422: Validation Failed (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/97399235/assets?label=&name=play_by_play_2026.rds)
+ReleaseAsset.name already exists
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/97399235/assets?label=&name=play_by_play_2026.rds)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/97399235/assets?label=&name=play_by_play_2026.csv)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
+ℹ Updating 2026 ESPN NBA PBP GitHub ReleaseHTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/97399235/assets?label=&name=play_by_play_2026.csv)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_pbp
 ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA PBP GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_pbp on 2026-07-04 09:49:35.962389
-ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Updated 2026 ESPN NBA PBP GitHub Release! [33.6s]
+ℹ Updating 2026 ESPN NBA PBP GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_pbp on 2026-07-04 12:02:05.836248
+ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Updated 2026 ESPN NBA PBP GitHub Release! [1m 28s]
 
 ℹ Updating 2026 ESPN NBA Shots GitHub Release
 → Uploading 3 files!
@@ -18,8 +60,8 @@ espn_nba_pbp
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_shots
 ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Shots GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_shots on 2026-07-04 09:49:41.342339
-ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Updated 2026 ESPN NBA Shots GitHub Release! [4.2s]
+ℹ Updating 2026 ESPN NBA Shots GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_shots on 2026-07-04 12:02:10.878591
+ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Updated 2026 ESPN NBA Shots GitHub Release! [3.9s]
 
 ℹ Compiling ESPN NBA master schedule
 Error in `map()`:
@@ -54,7 +96,7 @@ Backtrace:
 Execution halted
 ::warning ::R/espn_nba_01_pbp_creation.R for season 2026 exited with code 1
 ℹ Compiling 2026 ESPN NBA Team Boxscores (1326 games)
-✔ Compiled 2026 ESPN NBA Team Boxscores! [2m 32.6s]
+✔ Compiled 2026 ESPN NBA Team Boxscores! [1m 50.5s]
 
 ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release
 → Uploading 3 files!
@@ -62,7 +104,7 @@ Execution halted
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_team_boxscores
 ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_boxscores on 2026-07-04 09:52:18.538099
+ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_boxscores on 2026-07-04 12:04:05.70448
 ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release✔ Updated 2026 ESPN NBA Team Boxscores GitHub Release! [2.7s]
 
 ℹ Compiling ESPN NBA master schedule
@@ -98,7 +140,7 @@ Backtrace:
 Execution halted
 ::warning ::R/espn_nba_02_team_box_creation.R for season 2026 exited with code 1
 ℹ Compiling 2026 ESPN NBA Player Boxscores (1326 games)
-✔ Compiled 2026 ESPN NBA Player Boxscores! [2m 43.3s]
+✔ Compiled 2026 ESPN NBA Player Boxscores! [2m 12.1s]
 
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release
 → Uploading 3 files!
@@ -106,14 +148,14 @@ Execution halted
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_player_boxscores
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_boxscores on 2026-07-04 09:55:07.210213
+ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_boxscores on 2026-07-04 12:06:23.310946
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploading 3 files!
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Releaseℹ Start upload of 7 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_schedules
 ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-07-04 09:55:09.483499
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Updated 2026 ESPN NBA Player Boxscores GitHub Release! [6s]
+ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-07-04 12:06:25.644393
+ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Updated 2026 ESPN NBA Player Boxscores GitHub Release! [6.1s]
 
 ℹ Compiling ESPN NBA master schedule
 Error in `map()`:
@@ -148,7 +190,7 @@ Backtrace:
 Execution halted
 ::warning ::R/espn_nba_03_player_box_creation.R for season 2026 exited with code 1
 ℹ Compiling 2026 ESPN NBA rosters (33 teams)
-✔ Compiled 2026 ESPN NBA rosters! [11.1s]
+✔ Compiled 2026 ESPN NBA rosters! [3.4s]
 
 ℹ Updating 2026 ESPN NBA Rosters GitHub Release
 → Uploading 3 files!
@@ -156,39 +198,65 @@ Execution halted
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_rosters
 ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-07-04 09:55:24.807474
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Updated 2026 ESPN NBA Rosters GitHub Release! [2.1s]
+ℹ Updating 2026 ESPN NBA Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-07-04 12:06:33.268816
+ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Updated 2026 ESPN NBA Rosters GitHub Release! [2.2s]
 
-13.582 sec elapsed
+5.971 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_rosters
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-07-04 09:55:26.315258
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-07-04 12:06:34.845583
 
 ℹ Compiling 2026 ESPN NBA player season stats (591 athletes)
-✔ Compiled 2026 ESPN NBA player season stats! [42.4s]
+✔ Compiled 2026 ESPN NBA player season stats! [21.5s]
 
 ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release
 → Uploading 3 files!
 ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Releaseℹ Start upload of 7 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_player_season_stats
+ℹ Updating 2026 ESPN NBA Player Season Stats GitHub ReleaseHTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/331930501/assets?label=&name=player_season_stats_2026.parquet)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
 ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-07-04 09:56:13.36836
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Updated 2026 ESPN NBA Player Season Stats GitHub Release! [2.6s]
+ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-07-04 12:07:02.656616
+ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Updated 2026 ESPN NBA Player Season Stats GitHub Release! [4.4s]
 
-45.87 sec elapsed
+26.658 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
+HTTP 422: Validation Failed (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/331930501/assets?label=&name=timestamp.txt)
+ReleaseAsset.name already exists
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
+HTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/331930501/assets?label=&name=timestamp.txt)
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
+HTTP 404: Not Found (https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/assets/466303333)
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_player_season_stats
+HTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/331930501/assets?label=&name=timestamp.json)
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_player_season_stats
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-07-04 09:56:14.911943
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-07-04 12:07:11.932448
 
 ℹ Compiling 2026 ESPN NBA team season stats (30 teams)
-✔ Compiled 2026 ESPN NBA team season stats! [8s]
+✔ Compiled 2026 ESPN NBA team season stats! [5.5s]
 
 ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release
 → Uploading 3 files!
@@ -196,19 +264,19 @@ espn_nba_player_season_stats
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_team_season_stats
 ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-07-04 09:56:26.997776
+ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-07-04 12:07:21.384885
 ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release✔ Updated 2026 ESPN NBA Team Season Stats GitHub Release! [2.4s]
 
-10.85 sec elapsed
+8.283 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_team_season_stats
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-07-04 09:56:28.606131
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-07-04 12:07:22.896763
 
 ℹ Compiling 2026 ESPN NBA standings
-✔ Compiled 2026 ESPN NBA standings! [390ms]
+✔ Compiled 2026 ESPN NBA standings! [373ms]
 
 ℹ Updating 2026 ESPN NBA Standings GitHub Release
 → Uploading 3 files!
@@ -216,59 +284,73 @@ espn_nba_team_season_stats
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_standings
 ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Standings GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-07-04 09:56:32.576234
-ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Updated 2026 ESPN NBA Standings GitHub Release! [2.1s]
+ℹ Updating 2026 ESPN NBA Standings GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-07-04 12:07:26.815022
+ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Updated 2026 ESPN NBA Standings GitHub Release! [2.2s]
 
-2.761 sec elapsed
+2.765 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_standings
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-07-04 09:56:34.118037
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-07-04 12:07:28.379471
 
 ℹ Compiling 2026 ESPN NBA game rosters (1326 games)
-✔ Compiled 2026 ESPN NBA game rosters! [11m 11.7s]
+! 2026-07-04 12:14:35.402376: skip game_rosters 2026/401810974: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401810974.json'
+ℹ Compiling 2026 ESPN NBA game rosters (1326 games)✔ Compiled 2026 ESPN NBA game rosters! [8m 12.3s]
 
 ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release
 → Uploading 3 files!
 ℹ Updating 2026 ESPN NBA Game Rosters GitHub Releaseℹ Start upload of 7 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_game_rosters
+ℹ Updating 2026 ESPN NBA Game Rosters GitHub ReleaseHTTP 404: Not Found (https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/assets/466238727)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA Game Rosters GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_game_rosters
 ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-07-04 10:07:50.206116
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Updated 2026 ESPN NBA Game Rosters GitHub Release! [2.7s]
+ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-07-04 12:15:45.923331
+ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Updated 2026 ESPN NBA Game Rosters GitHub Release! [3.8s]
 
-674.885 sec elapsed
+Warning message:
+In open.connection(con, "rb") :
+  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/game_rosters/json/401810974.json': HTTP status was '503 Service Unavailable'
+496.411 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_game_rosters
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-07-04 10:07:51.88532
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-07-04 12:15:47.462639
 
 ℹ Compiling 2026 ESPN NBA officials (1326 games)
-✔ Compiled 2026 ESPN NBA officials! [7m 8.5s]
+✔ Compiled 2026 ESPN NBA officials! [3m 13.3s]
 
 ℹ Updating 2026 ESPN NBA Officials GitHub Release
 → Uploading 3 files!
 ℹ Updating 2026 ESPN NBA Officials GitHub Releaseℹ Start upload of 7 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_officials
+ℹ Updating 2026 ESPN NBA Officials GitHub ReleaseHTTP 404: Not Found (https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/assets/466242535)
+→ Uploading 3 files!
+ℹ Updating 2026 ESPN NBA Officials GitHub Releaseℹ Start upload of 7 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_officials
 ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Officials GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-07-04 10:15:04.252126
-ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Updated 2026 ESPN NBA Officials GitHub Release! [2.4s]
+ℹ Updating 2026 ESPN NBA Officials GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-07-04 12:19:06.390124
+ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Updated 2026 ESPN NBA Officials GitHub Release! [4s]
 
-431.179 sec elapsed
+197.729 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_officials
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-07-04 10:15:05.963114
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-07-04 12:19:07.845764
 
 ℹ Compiling 2026 ESPN NBA draft
-✔ Compiled 2026 ESPN NBA draft! [553ms]
+✔ Compiled 2026 ESPN NBA draft! [552ms]
 
 ℹ Updating 2026 ESPN NBA Draft GitHub Release
 → Uploading 3 files!
@@ -276,75 +358,80 @@ espn_nba_officials
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_draft
 ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Draft GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-07-04 10:15:10.906025
-ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Updated 2026 ESPN NBA Draft GitHub Release! [2.2s]
+ℹ Updating 2026 ESPN NBA Draft GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-07-04 12:19:11.963677
+ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Updated 2026 ESPN NBA Draft GitHub Release! [2.1s]
 
-3.751 sec elapsed
+2.954 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+espn_nba_draft
+HTTP 404: Not Found (https://uploads.github.com/repos/sportsdataverse/sportsdataverse-data/releases/331926891/assets?label=&name=timestamp.json)
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 espn_nba_draft
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-07-04 10:15:12.589468
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-07-04 12:19:15.625342
 
 ℹ Compiling 2026 NBA team crosswalk
-✖ 2026-07-04 10:16:14.427699: Invalid arguments or no league standings v3 data available for 2025-26!
+✖ 2026-07-04 12:20:17.336108: Invalid arguments or no league standings v3 data available for 2025-26!
 ℹ Compiling 2026 NBA team crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
 ℹ Compiling 2026 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 2026 NBA team crosswalk✖ 2026-07-04 10:17:14.468729: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 2026 NBA team crosswalk✖ 2026-07-04 12:21:17.377142: Invalid arguments or no league game log data for 2025-26 available!
 ℹ Compiling 2026 NBA team crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
 ℹ Compiling 2026 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 2026 NBA team crosswalk✖ 2026-07-04 10:17:14.485404: Invalid arguments or no team details data available!
+ℹ Compiling 2026 NBA team crosswalk✖ 2026-07-04 12:21:17.394425: Invalid arguments or no team details data available!
 ℹ Compiling 2026 NBA team crosswalk✖ Error: argument is of length zero
-ℹ Compiling 2026 NBA team crosswalk! 2026-07-04 10:17:14.498168: skip team crosswalk 2026: invalid argument type
-ℹ Compiling 2026 NBA team crosswalk! 2026-07-04 10:17:14.503057: no team crosswalk rows for 2026
-ℹ Compiling 2026 NBA team crosswalk✔ Compiled 2026 NBA team crosswalk! [2m 0.6s]
+ℹ Compiling 2026 NBA team crosswalk! 2026-07-04 12:21:17.408116: skip team crosswalk 2026: invalid argument type
+ℹ Compiling 2026 NBA team crosswalk! 2026-07-04 12:21:17.413063: no team crosswalk rows for 2026
+ℹ Compiling 2026 NBA team crosswalk✔ Compiled 2026 NBA team crosswalk! [2m 0.5s]
 
-120.59 sec elapsed
+120.53 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-04 10:17:16.154936
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-04 12:21:18.930194
 
 ℹ Compiling 2026 NBA schedule crosswalk
-✖ 2026-07-04 10:18:17.967731: Invalid arguments or no league standings v3 data available for 2025-26!
+✖ 2026-07-04 12:22:20.654858: Invalid arguments or no league standings v3 data available for 2025-26!
 ℹ Compiling 2026 NBA schedule crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
-ℹ Compiling 2026 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 2026 NBA schedule crosswalk✖ 2026-07-04 10:19:18.008662: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 2026 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 2026 NBA schedule crosswalk✖ 2026-07-04 12:23:20.693169: Invalid arguments or no league game log data for 2025-26 available!
 ℹ Compiling 2026 NBA schedule crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
-ℹ Compiling 2026 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 2026 NBA schedule crosswalk✖ 2026-07-04 10:19:18.030741: Invalid arguments or no team details data available!
+ℹ Compiling 2026 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 2026 NBA schedule crosswalk✖ 2026-07-04 12:23:20.715526: Invalid arguments or no team details data available!
 ℹ Compiling 2026 NBA schedule crosswalk✖ Error: argument is of length zero
-ℹ Compiling 2026 NBA schedule crosswalk! 2026-07-04 10:19:18.037206: skip schedule crosswalk 2026: invalid argument type
-ℹ Compiling 2026 NBA schedule crosswalk! 2026-07-04 10:19:18.042081: no schedule crosswalk rows for 2026
-ℹ Compiling 2026 NBA schedule crosswalk✔ Compiled 2026 NBA schedule crosswalk! [2m 0.6s]
+ℹ Compiling 2026 NBA schedule crosswalk! 2026-07-04 12:23:20.72212: skip schedule crosswalk 2026: invalid argument type
+ℹ Compiling 2026 NBA schedule crosswalk! 2026-07-04 12:23:20.7269: no schedule crosswalk rows for 2026
+ℹ Compiling 2026 NBA schedule crosswalk✔ Compiled 2026 NBA schedule crosswalk! [2m 0.4s]
 
-120.596 sec elapsed
+120.467 sec elapsed
 
 ℹ Compiling 2026 NBA player crosswalk
-✖ 2026-07-04 10:20:19.773569: Invalid arguments or no league standings v3 data available for 2025-26!
+✖ 2026-07-04 12:24:22.522974: Invalid arguments or no league standings v3 data available for 2025-26!
 ℹ Compiling 2026 NBA player crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
-ℹ Compiling 2026 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
-ℹ Compiling 2026 NBA player crosswalk✖ 2026-07-04 10:21:19.813575: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 2026 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 2026 NBA player crosswalk✖ 2026-07-04 12:25:22.561471: Invalid arguments or no league game log data for 2025-26 available!
 ℹ Compiling 2026 NBA player crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
 ℹ Compiling 2026 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-ℹ Compiling 2026 NBA player crosswalk✖ 2026-07-04 10:21:19.83549: Invalid arguments or no team details data available!
+ℹ Compiling 2026 NBA player crosswalk✖ 2026-07-04 12:25:22.584025: Invalid arguments or no team details data available!
 ℹ Compiling 2026 NBA player crosswalk✖ Error: argument is of length zero
-ℹ Compiling 2026 NBA player crosswalk! 2026-07-04 10:21:19.84201: skip player crosswalk 2026: invalid argument type
-ℹ Compiling 2026 NBA player crosswalk! 2026-07-04 10:21:19.846789: no player crosswalk rows for 2026
-ℹ Compiling 2026 NBA player crosswalk✔ Compiled 2026 NBA player crosswalk! [2m 0.5s]
+ℹ Compiling 2026 NBA player crosswalk! 2026-07-04 12:25:22.590536: skip player crosswalk 2026: invalid argument type
+ℹ Compiling 2026 NBA player crosswalk! 2026-07-04 12:25:22.595326: no player crosswalk rows for 2026
+ℹ Compiling 2026 NBA player crosswalk✔ Compiled 2026 NBA player crosswalk! [2m 0.6s]
 
-120.488 sec elapsed
+120.584 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-04 10:21:21.398672
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-04 12:25:24.016912
 
-[main 4e97dd7d] NBA Data Updated (Start: 2026 End: 2026)
+[main 8795cbc4] NBA Data Updated (Start: 2026 End: 2026)
  31 files changed, 7 insertions(+)
 To https://github.com/sportsdataverse/hoopR-nba-data
-   f044e810..4e97dd7d  main -> main
+   60e62a00..8795cbc4  main -> main
