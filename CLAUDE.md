@@ -74,6 +74,15 @@ code (`RSCRIPT_RC`) is re-surfaced as a workflow `::error::` after all
 seasons finish, while whatever datasets succeeded are committed regardless
 (per-dataset `tryCatch` keeps partial output usable).
 
+## Python build (`python/nba_data_build/`)
+
+A **parallel** polars implementation of the same compile (sdv-py #256 producers),
+added for a future cutover. It does NOT drive daily CI — the R scripts above still
+do. Full-frame parity-tested against the committed R oracle parquets. See
+`python/README.md` for the CLI (`uv run python -m nba_data_build --dataset <k> -s
+<yr> -e <yr> [--publish|--dry-run]`) and `uv run pytest`. Any ESPN parsing change
+belongs upstream in `sportsdataverse.nba`, not here.
+
 ## Repo Layout
 
 ```
