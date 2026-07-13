@@ -1,0 +1,6 @@
+.venv/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
+*.pyc
+.nba_raw_cache/

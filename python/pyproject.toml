@@ -1,0 +1,32 @@
+[project]
+name = "hoopr-nba-data-build"
+version = "0.1.0"
+description = "Python producer for the ESPN NBA release datasets (parity port of the R creation scripts)."
+requires-python = ">=3.11"
+dependencies = [
+    "sportsdataverse>=0.0.71",
+    "polars>=1.0,<2.0",
+    "pyarrow>=15.0",
+    "requests>=2.28",
+    "tqdm>=4.66",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+# The helper_nba_* producers + build_nba_player_identity_lookup landed on
+# sdv-py main via PR #256 (squash f4d6523b).
+[tool.uv.sources]
+sportsdataverse = { git = "https://github.com/sportsdataverse/sportsdataverse-py", branch = "main" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# Explicit polars bool masks (pl.col("c") == True/False) are the project
+# convention (see sdv-py CLAUDE.md "Polars version"); E712 fights that.
+ignore = ["E712"]
