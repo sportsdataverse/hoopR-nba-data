@@ -14,6 +14,7 @@ parity bar here is the parquet.
 
 from __future__ import annotations
 
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -57,11 +58,17 @@ def _append_manifest(spec: DatasetSpec, season: int, row_count: int, base: Path)
     )
     if f.exists():
         row = pl.concat([pl.read_csv(f), row], how="diagonal_relaxed")
-    row.write_csv(f)
+    # Atomic write: temp in the same dir + os.replace so a mid-write crash can't
+    # truncate the append log (read-modify-write is otherwise not crash-safe).
+    tmp = f.with_suffix(f.suffix + ".tmp")
+    row.write_csv(tmp)
+    os.replace(tmp, f)
     return f
 
 
-def write_dataset(df: pl.DataFrame, spec: DatasetSpec, season: int, *, base: str | Path = "nba") -> list[Path]:
+def write_dataset(
+    df: pl.DataFrame, spec: DatasetSpec, season: int, *, base: str | Path = "nba"
+) -> list[Path]:
     """Write parquet (+ csv when ``spec.write_tree_csv``) + manifest for one
     dataset/season; return the written paths."""
     base = Path(base)
@@ -91,7 +98,9 @@ def write_dataset(df: pl.DataFrame, spec: DatasetSpec, season: int, *, base: str
     return paths
 
 
-def write_schedule_extras(master: pl.DataFrame, games: pl.DataFrame, *, base: str | Path = "nba") -> list[Path]:
+def write_schedule_extras(
+    master: pl.DataFrame, games: pl.DataFrame, *, base: str | Path = "nba"
+) -> list[Path]:
     """Write the master-schedule extras under ``{base}/schedules/``.
 
     R never committed these (``sportsdataverse_save`` uploaded straight from
