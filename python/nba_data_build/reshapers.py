@@ -101,12 +101,20 @@ def _built_game_ids(base: Path, dataset: str, stem: str, season: int) -> list[in
             p,
         )
         return []
-    return pl.read_parquet(p, columns=["game_id"]).get_column("game_id").cast(pl.Int64).unique().to_list()
+    return (
+        pl.read_parquet(p, columns=["game_id"])
+        .get_column("game_id")
+        .cast(pl.Int64)
+        .unique()
+        .to_list()
+    )
 
 
 def schedules_builder(season: int, *, raw_root: Path, base: Path) -> pl.DataFrame:
     """Released schedule = raw schedule + casts/dates + PBP/team_box/player_box flags."""
-    raw = pl.read_parquet(raw_root / "nba" / "schedules" / "parquet" / f"nba_schedule_{season}.parquet")
+    raw = pl.read_parquet(
+        raw_root / "nba" / "schedules" / "parquet" / f"nba_schedule_{season}.parquet"
+    )
     return helper_nba_schedule(
         raw,
         pbp_game_ids=_built_game_ids(base, "pbp", "play_by_play", season),
@@ -162,7 +170,9 @@ def _officials_builder() -> object:
     return _sidecar_builder("game_rosters/json", helper_nba_officials)
 
 
-def _per_entity_frames(subdir: str, season: int, raw_root: Path, helper, id_kw: str) -> list[pl.DataFrame]:
+def _per_entity_frames(
+    subdir: str, season: int, raw_root: Path, helper, id_kw: str
+) -> list[pl.DataFrame]:
     """R scripts 04/06/07: loop the season's per-entity JSONs, tryCatch skips."""
     from nba_data_build import ingest
 
@@ -191,13 +201,17 @@ def _season_concat(frames: list[pl.DataFrame]) -> pl.DataFrame:
 def rosters_builder(season: int, *, raw_root: Path, base: Path) -> pl.DataFrame:
     from sportsdataverse.nba import helper_nba_rosters
 
-    return _season_concat(_per_entity_frames("team_rosters", season, raw_root, helper_nba_rosters, "team_id"))
+    return _season_concat(
+        _per_entity_frames("team_rosters", season, raw_root, helper_nba_rosters, "team_id")
+    )
 
 
 def team_season_stats_builder(season: int, *, raw_root: Path, base: Path) -> pl.DataFrame:
     from sportsdataverse.nba import helper_nba_team_season_stats
 
-    return _season_concat(_per_entity_frames("team_stats", season, raw_root, helper_nba_team_season_stats, "team_id"))
+    return _season_concat(
+        _per_entity_frames("team_stats", season, raw_root, helper_nba_team_season_stats, "team_id")
+    )
 
 
 def player_season_stats_builder(season: int, *, raw_root: Path, base: Path) -> pl.DataFrame:
@@ -224,13 +238,22 @@ def player_season_stats_builder(season: int, *, raw_root: Path, base: Path) -> p
         lookup = {}
 
     def _helper(payload: dict, *, season: int, athlete_id: int) -> pl.DataFrame:
-        return helper_nba_player_season_stats(payload, season=season, athlete_id=athlete_id, identity_lookup=lookup)
+        return helper_nba_player_season_stats(
+            payload, season=season, athlete_id=athlete_id, identity_lookup=lookup
+        )
 
-    # Flat raw payload (no {season}/ partition): every athlete who ever played
-    # is a candidate; the helper itself filters each category's statistics[]
-    # down to the requested season and returns an empty frame otherwise.
+    # R's build_season_player_stats() iterates ONLY the identity lookup's
+    # athlete ids (athletes who actually appear in the season's built
+    # player_box) -- NOT every athlete json in the flat player_season_stats/
+    # raw tree. Iterating the whole flat directory would emit extra rows (with
+    # blank identity) for athletes whose career-stats file carries a season==Y
+    # entry despite never appearing in that season's player_box (the MBB build
+    # hit exactly this: 2 athletes, 77 extra rows). The 2025 NBA sets happen to
+    # coincide, so parity is unaffected, but iterating the lookup is the
+    # faithful port and robust across seasons.
     frames: list[pl.DataFrame] = []
-    for aid in ingest.flat_dir_ids("player_season_stats", raw_root=raw_root):
+    athlete_ids = sorted({int(k) for k in lookup})
+    for aid in athlete_ids:
         payload = ingest.read_final(aid, raw_root=raw_root, subdir="player_season_stats/json")
         if payload is None:
             continue
@@ -349,7 +372,9 @@ def build_schedule_extras(*, base: Path) -> tuple[pl.DataFrame, pl.DataFrame]:
 
     pq_dir = base / "schedules" / "parquet"
     files = [
-        p for p in sorted(pq_dir.glob("nba_schedule_*.parquet")) if re.fullmatch(r"nba_schedule_\d{4}\.parquet", p.name)
+        p
+        for p in sorted(pq_dir.glob("nba_schedule_*.parquet"))
+        if re.fullmatch(r"nba_schedule_\d{4}\.parquet", p.name)
     ]
     if not files:
         return pl.DataFrame(), pl.DataFrame()
@@ -358,7 +383,11 @@ def build_schedule_extras(*, base: Path) -> tuple[pl.DataFrame, pl.DataFrame]:
         df = pl.read_parquet(f)
         # Float64 intermediate keeps R as.integer semantics ("59.0" -> 59).
         df = df.with_columns(
-            [pl.col(c).cast(pl.Float64, strict=False).cast(pl.Int32) for c in _MASTER_INT32_COLS if c in df.columns]
+            [
+                pl.col(c).cast(pl.Float64, strict=False).cast(pl.Int32)
+                for c in _MASTER_INT32_COLS
+                if c in df.columns
+            ]
         )
         if "status_display_clock" in df.columns:
             df = df.with_columns(pl.col("status_display_clock").cast(pl.Utf8))
