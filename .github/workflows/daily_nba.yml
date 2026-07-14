@@ -16,6 +16,11 @@ on:
       end_year:
         required: false
         type: string
+      use_python_build:
+        required: false
+        description: "Use the python nba_data_build processor instead of R (default: R)"
+        type: boolean
+        default: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -54,7 +59,11 @@ jobs:
             sportsdataverse/hoopR
             sportsdataverse/sportsdataverse-data
             ropensci/piggyback
-
+      - name: Set up uv (for the python build)
+        uses: astral-sh/setup-uv@v5
+      - name: Sync python build deps
+        shell: bash
+        run: uv sync --project python
       - name: Check hoopR_nba_data_trigger for inputs
         if: ${{ github.event.client_payload.event_name == 'daily_nba_data'}}
         run: |
@@ -68,5 +77,15 @@ jobs:
       - name: Update NBA Data ${{ env.START_YEAR }}-${{ env.END_YEAR }}
         env:
           GITHUB_PAT: ${{ secrets.SDV_GH_TOKEN }}
+          # gh CLI (python publish) needs cross-repo write to sportsdataverse-data;
+          # the default github.token only reaches this repo. R uses GITHUB_PAT above.
+          GH_TOKEN: ${{ secrets.SDV_GH_TOKEN }}
         run: |
-          bash scripts/daily_nba_R_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
+          # OPT-IN: the python path mirrors the (CI-validated) MBB cutover but has
+          # not itself had a CI shadow run yet, so R stays the default. Dispatch
+          # with use_python_build=true to validate, then flip this to python.
+          if [ "${{ inputs.use_python_build }}" = "true" ]; then
+            bash scripts/daily_nba_python_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
+          else
+            bash scripts/daily_nba_R_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
+          fi

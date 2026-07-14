@@ -12,12 +12,10 @@ before ``player_season_stats`` for a season (see ``reshapers.player_season_stats
 
 from __future__ import annotations
 
-import sys
 import time
 from pathlib import Path
 
 import polars as pl
-from tqdm import tqdm
 
 from nba_data_build import ingest, io, publish, reshapers
 from nba_data_build._logging import get_logger
@@ -74,7 +72,9 @@ def build_season(
         log.info("%s %s: season-level build starting (raw=%s via %s)", dataset, season, root, mode)
         out = reshapers.SEASON_BUILDERS[dataset](season, raw_root=root, base=Path(base))
         if out.height == 0:
-            log.warning("%s %s: season-level build produced 0 rows; nothing written", dataset, season)
+            log.warning(
+                "%s %s: season-level build produced 0 rows; nothing written", dataset, season
+            )
             return out
         io.write_dataset(out, spec, season, base=base)
         if publish_release or dry_run:
@@ -109,7 +109,9 @@ def build_season(
         return out
     game_ids = ingest.season_game_ids(season, raw_root=root)
     if not game_ids:
-        log.warning("%s %s: no game_json games in the season schedule; nothing built", dataset, season)
+        log.warning(
+            "%s %s: no game_json games in the season schedule; nothing built", dataset, season
+        )
         return pl.DataFrame()
     log.info(
         "%s %s: per-game build starting -- %d games (raw=%s via %s)",
@@ -123,23 +125,35 @@ def build_season(
     frames: list[pl.DataFrame] = []
     missing = 0
     failed = 0
-    for n, gid in enumerate(tqdm(game_ids, desc=f"{dataset} {season}", disable=None), start=1):
+
+    def _read_reshape(gid: int):
         final = ingest.read_final(gid, raw_root=root)
         if final is None:
-            missing += 1
-            continue
+            return ("missing", None)
         try:
             frame = reshape(final, season=season, game_id=gid)
         except Exception as e:  # R tryCatch(...) -> NULL parity
             log.warning("%s %s: reshape failed for game %s: %s", dataset, season, gid, e)
+            return ("failed", None)
+        return ("ok", frame if (frame is not None and frame.height) else None)
+
+    # Fan the per-game reads+reshapes out over a thread pool -- the reads are
+    # I/O-bound (HTTP in CI), so this is the difference between a minutes-long
+    # and a tens-of-minutes-long season. Results come back in game_ids order,
+    # so the concat + stable sort below stay byte-identical to the serial build.
+    for n, (status, frame) in enumerate(ingest.parallel_map(_read_reshape, game_ids), start=1):
+        if status == "missing":
+            missing += 1
+        elif status == "failed":
             failed += 1
-            continue
-        if frame is not None and frame.height:
+        elif frame is not None:
             frames.append(frame)
-        if not sys.stderr.isatty() and n % _PROGRESS_EVERY == 0:
-            log.info("%s %s: %d/%d games processed", dataset, season, n, len(game_ids))
+        if n % _PROGRESS_EVERY == 0:
+            log.info("%s %s: %d/%d games collected", dataset, season, n, len(game_ids))
     if missing:
-        log.warning("%s %s: %d/%d games had no readable payload", dataset, season, missing, len(game_ids))
+        log.warning(
+            "%s %s: %d/%d games had no readable payload", dataset, season, missing, len(game_ids)
+        )
     if failed:
         log.warning("%s %s: %d/%d games failed to reshape", dataset, season, failed, len(game_ids))
     if not frames:
