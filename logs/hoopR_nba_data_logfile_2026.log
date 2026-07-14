@@ -1,294 +1,148 @@
 From https://github.com/sportsdataverse/hoopR-nba-data
- * [new branch]        AE/remove-qs -> origin/AE/remove-qs
-ℹ Compiling 2026 ESPN NBA pbps (1326 games)
-✔ Compiled 2026 ESPN NBA pbps! [5m 12.4s]
-
-ℹ Updating 2026 ESPN NBA PBP GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA PBP GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_pbp
-ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA PBP GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_pbp on 2026-07-13 12:00:28.781705
-ℹ Updating 2026 ESPN NBA PBP GitHub Release✔ Updated 2026 ESPN NBA PBP GitHub Release! [28.3s]
-
-ℹ Updating 2026 ESPN NBA Shots GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Shots GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_shots
-ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Shots GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_shots on 2026-07-13 12:00:33.727843
-ℹ Updating 2026 ESPN NBA Shots GitHub Release✔ Updated 2026 ESPN NBA Shots GitHub Release! [3.8s]
-
-ℹ Compiling ESPN NBA master schedule
-Error in `map()`:
-ℹ In index: 1.
-Caused by error in `dplyr::mutate()`:
-ℹ In argument: `status_display_clock =
-  as.character(.data$status_display_clock)`.
-Caused by error in `.data$status_display_clock`:
-! Column `status_display_clock` not found in `.data`.
-Backtrace:
-     ▆
-  1. ├─purrr::map_dfr(...)
-  2. │ └─purrr::map(.x, .f, ...)
-  3. │   └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
-  4. │     ├─purrr:::with_indexed_errors(...)
-  5. │     │ └─base::withCallingHandlers(...)
-  6. │     ├─purrr:::call_with_cleanup(...)
-  7. │     └─global .f(.x[[i]], ...)
-  8. │       └─... %>% ...
-  9. ├─dplyr::mutate(...)
- 10. ├─dplyr:::mutate.data.frame(...)
- 11. │ └─dplyr:::mutate_cols(.data, dplyr_quosures(...), by)
- 12. │   ├─base::withCallingHandlers(...)
- 13. │   └─dplyr:::mutate_col(dots[[i]], data, mask, new_columns)
- 14. │     └─mask$eval_all_mutate(quo)
- 15. │       └─dplyr (local) eval()
- 16. ├─status_display_clock
- 17. ├─rlang:::`$.rlang_data_pronoun`(.data, status_display_clock)
- 18. │ └─rlang:::data_pronoun_get(...)
- 19. └─rlang:::abort_data_pronoun(x, call = y)
- 20.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
-Execution halted
-::warning ::R/espn_nba_01_pbp_creation.R for season 2026 exited with code 1
-ℹ Compiling 2026 ESPN NBA Team Boxscores (1326 games)
-✔ Compiled 2026 ESPN NBA Team Boxscores! [2m 13.2s]
-
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_team_boxscores
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_boxscores on 2026-07-13 12:02:51.332802
-ℹ Updating 2026 ESPN NBA Team Boxscores GitHub Release✔ Updated 2026 ESPN NBA Team Boxscores GitHub Release! [2.5s]
-
-ℹ Compiling ESPN NBA master schedule
-Error in `map()`:
-ℹ In index: 1.
-Caused by error in `dplyr::mutate()`:
-ℹ In argument: `status_display_clock =
-  as.character(.data$status_display_clock)`.
-Caused by error in `.data$status_display_clock`:
-! Column `status_display_clock` not found in `.data`.
-Backtrace:
-     ▆
-  1. ├─purrr::map_dfr(...)
-  2. │ └─purrr::map(.x, .f, ...)
-  3. │   └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
-  4. │     ├─purrr:::with_indexed_errors(...)
-  5. │     │ └─base::withCallingHandlers(...)
-  6. │     ├─purrr:::call_with_cleanup(...)
-  7. │     └─global .f(.x[[i]], ...)
-  8. │       └─... %>% ...
-  9. ├─dplyr::mutate(...)
- 10. ├─dplyr:::mutate.data.frame(...)
- 11. │ └─dplyr:::mutate_cols(.data, dplyr_quosures(...), by)
- 12. │   ├─base::withCallingHandlers(...)
- 13. │   └─dplyr:::mutate_col(dots[[i]], data, mask, new_columns)
- 14. │     └─mask$eval_all_mutate(quo)
- 15. │       └─dplyr (local) eval()
- 16. ├─status_display_clock
- 17. ├─rlang:::`$.rlang_data_pronoun`(.data, status_display_clock)
- 18. │ └─rlang:::data_pronoun_get(...)
- 19. └─rlang:::abort_data_pronoun(x, call = y)
- 20.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
-Execution halted
-::warning ::R/espn_nba_02_team_box_creation.R for season 2026 exited with code 1
-ℹ Compiling 2026 ESPN NBA Player Boxscores (1326 games)
-✔ Compiled 2026 ESPN NBA Player Boxscores! [2m 16.7s]
-
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_player_boxscores
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_boxscores on 2026-07-13 12:05:13.200807
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_schedules
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_schedules on 2026-07-13 12:05:15.608635
-ℹ Updating 2026 ESPN NBA Player Boxscores GitHub Release✔ Updated 2026 ESPN NBA Player Boxscores GitHub Release! [5.9s]
-
-ℹ Compiling ESPN NBA master schedule
-Error in `map()`:
-ℹ In index: 1.
-Caused by error in `dplyr::mutate()`:
-ℹ In argument: `status_display_clock =
-  as.character(.data$status_display_clock)`.
-Caused by error in `.data$status_display_clock`:
-! Column `status_display_clock` not found in `.data`.
-Backtrace:
-     ▆
-  1. ├─purrr::map_dfr(...)
-  2. │ └─purrr::map(.x, .f, ...)
-  3. │   └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
-  4. │     ├─purrr:::with_indexed_errors(...)
-  5. │     │ └─base::withCallingHandlers(...)
-  6. │     ├─purrr:::call_with_cleanup(...)
-  7. │     └─global .f(.x[[i]], ...)
-  8. │       └─... %>% ...
-  9. ├─dplyr::mutate(...)
- 10. ├─dplyr:::mutate.data.frame(...)
- 11. │ └─dplyr:::mutate_cols(.data, dplyr_quosures(...), by)
- 12. │   ├─base::withCallingHandlers(...)
- 13. │   └─dplyr:::mutate_col(dots[[i]], data, mask, new_columns)
- 14. │     └─mask$eval_all_mutate(quo)
- 15. │       └─dplyr (local) eval()
- 16. ├─status_display_clock
- 17. ├─rlang:::`$.rlang_data_pronoun`(.data, status_display_clock)
- 18. │ └─rlang:::data_pronoun_get(...)
- 19. └─rlang:::abort_data_pronoun(x, call = y)
- 20.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
-Execution halted
-::warning ::R/espn_nba_03_player_box_creation.R for season 2026 exited with code 1
-ℹ Compiling 2026 ESPN NBA rosters (33 teams)
-✔ Compiled 2026 ESPN NBA rosters! [3.8s]
-
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Rosters GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_rosters
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-07-13 12:05:25.095276
-ℹ Updating 2026 ESPN NBA Rosters GitHub Release✔ Updated 2026 ESPN NBA Rosters GitHub Release! [2s]
-
-7.885 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_rosters
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-07-13 12:05:26.473396
-
-ℹ Compiling 2026 ESPN NBA player season stats (591 athletes)
-✔ Compiled 2026 ESPN NBA player season stats! [19.1s]
-
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_player_season_stats
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-07-13 12:05:49.669908
-ℹ Updating 2026 ESPN NBA Player Season Stats GitHub Release✔ Updated 2026 ESPN NBA Player Season Stats GitHub Release! [2.2s]
-
-22.072 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_player_season_stats
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-07-13 12:05:51.016058
-
-ℹ Compiling 2026 ESPN NBA team season stats (30 teams)
-✔ Compiled 2026 ESPN NBA team season stats! [3.3s]
-
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_team_season_stats
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-07-13 12:05:57.659167
-ℹ Updating 2026 ESPN NBA Team Season Stats GitHub Release✔ Updated 2026 ESPN NBA Team Season Stats GitHub Release! [1.9s]
-
-5.487 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_team_season_stats
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-07-13 12:05:59.241668
-
-ℹ Compiling 2026 ESPN NBA standings
-✔ Compiled 2026 ESPN NBA standings! [378ms]
-
-ℹ Updating 2026 ESPN NBA Standings GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Standings GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_standings
-ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Standings GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-07-13 12:06:03.151767
-ℹ Updating 2026 ESPN NBA Standings GitHub Release✔ Updated 2026 ESPN NBA Standings GitHub Release! [2.2s]
-
-2.75 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_standings
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-07-13 12:06:04.587466
-
-ℹ Compiling 2026 ESPN NBA game rosters (1326 games)
-✔ Compiled 2026 ESPN NBA game rosters! [5m 48.2s]
-
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_game_rosters
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-07-13 12:11:56.697815
-ℹ Updating 2026 ESPN NBA Game Rosters GitHub Release✔ Updated 2026 ESPN NBA Game Rosters GitHub Release! [2.6s]
-
-350.964 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_game_rosters
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-07-13 12:11:58.140848
-
-ℹ Compiling 2026 ESPN NBA officials (1326 games)
-✔ Compiled 2026 ESPN NBA officials! [1m 26.1s]
-
-ℹ Updating 2026 ESPN NBA Officials GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Officials GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_officials
-ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Officials GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-07-13 12:13:27.64878
-ℹ Updating 2026 ESPN NBA Officials GitHub Release✔ Updated 2026 ESPN NBA Officials GitHub Release! [2.1s]
-
-88.387 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_officials
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-07-13 12:13:29.051435
-
-ℹ Compiling 2026 ESPN NBA draft
-✔ Compiled 2026 ESPN NBA draft! [537ms]
-
-ℹ Updating 2026 ESPN NBA Draft GitHub Release
-→ Uploading 3 files!
-ℹ Updating 2026 ESPN NBA Draft GitHub Releaseℹ Start upload of 7 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_draft
-ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 ESPN NBA Draft GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-07-13 12:13:33.221859
-ℹ Updating 2026 ESPN NBA Draft GitHub Release✔ Updated 2026 ESPN NBA Draft GitHub Release! [2s]
-
-2.949 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_draft
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-07-13 12:13:34.621688
-
+ * [new branch]        AE/remove-qs        -> origin/AE/remove-qs
+ * [new branch]        feat/nba-ci-cutover-python -> origin/feat/nba-ci-cutover-python
+ * [new branch]        feat/nba-data-build -> origin/feat/nba-data-build
+ * [new branch]        feat/nba-data-build-docs -> origin/feat/nba-data-build-docs
+ * [new branch]        feat/nba-flip-python-default -> origin/feat/nba-flip-python-default
+2026-07-14 11:55:38 [INFO] nba_data_build: pbp 2026: per-game build starting -- 1326 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:56:19 [INFO] nba_data_build: pbp 2026: 250/1326 games collected
+2026-07-14 11:56:19 [INFO] nba_data_build: pbp 2026: 500/1326 games collected
+2026-07-14 11:56:19 [INFO] nba_data_build: pbp 2026: 750/1326 games collected
+2026-07-14 11:56:19 [INFO] nba_data_build: pbp 2026: 1000/1326 games collected
+2026-07-14 11:56:19 [INFO] nba_data_build: pbp 2026: 1250/1326 games collected
+2026-07-14 11:56:19 [INFO] nba_data_build: wrote ../nba/pbp/parquet/play_by_play_2026.parquet (20.3MB), 642472 rows x 64 cols; manifest n/a (not manifested)
+2026-07-14 11:56:21 [INFO] nba_data_build: uploading play_by_play_2026.parquet (20.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-07-14 11:56:23 [INFO] nba_data_build: uploaded play_by_play_2026.parquet -> espn_nba_pbp (asset 1/2)
+2026-07-14 11:56:23 [INFO] nba_data_build: uploading play_by_play_2026.csv (256.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-07-14 11:56:32 [INFO] nba_data_build: uploaded play_by_play_2026.csv -> espn_nba_pbp (asset 2/2)
+2026-07-14 11:56:32 [INFO] nba_data_build: pbp 2026: done -- 642472 rows from 1325/1326 games in 54.6s
+2026-07-14 11:56:32 [INFO] nba_data_build: pbp 2026: season complete -- 642472 rows
+2026-07-14 11:56:35 [INFO] nba_data_build: team_box 2026: per-game build starting -- 1326 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:56:47 [INFO] nba_data_build: team_box 2026: 250/1326 games collected
+2026-07-14 11:56:47 [INFO] nba_data_build: team_box 2026: 500/1326 games collected
+2026-07-14 11:56:47 [INFO] nba_data_build: team_box 2026: 750/1326 games collected
+2026-07-14 11:56:47 [INFO] nba_data_build: team_box 2026: 1000/1326 games collected
+2026-07-14 11:56:47 [INFO] nba_data_build: team_box 2026: 1250/1326 games collected
+2026-07-14 11:56:47 [INFO] nba_data_build: wrote ../nba/team_box/parquet/team_box_2026.parquet (137.3KB), 2652 rows x 59 cols; manifest n/a (not manifested)
+2026-07-14 11:56:48 [INFO] nba_data_build: uploading team_box_2026.parquet (137.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-07-14 11:56:49 [INFO] nba_data_build: uploaded team_box_2026.parquet -> espn_nba_team_boxscores (asset 1/2)
+2026-07-14 11:56:49 [INFO] nba_data_build: uploading team_box_2026.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-07-14 11:56:50 [INFO] nba_data_build: uploaded team_box_2026.csv -> espn_nba_team_boxscores (asset 2/2)
+2026-07-14 11:56:50 [INFO] nba_data_build: team_box 2026: done -- 2652 rows from 1326/1326 games in 15.4s
+2026-07-14 11:56:50 [INFO] nba_data_build: team_box 2026: season complete -- 2652 rows
+2026-07-14 11:56:52 [INFO] nba_data_build: player_box 2026: per-game build starting -- 1326 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:57:06 [INFO] nba_data_build: player_box 2026: 250/1326 games collected
+2026-07-14 11:57:06 [INFO] nba_data_build: player_box 2026: 500/1326 games collected
+2026-07-14 11:57:06 [INFO] nba_data_build: player_box 2026: 750/1326 games collected
+2026-07-14 11:57:06 [INFO] nba_data_build: player_box 2026: 1000/1326 games collected
+2026-07-14 11:57:06 [INFO] nba_data_build: player_box 2026: 1250/1326 games collected
+2026-07-14 11:57:06 [INFO] nba_data_build: wrote ../nba/player_box/parquet/player_box_2026.parquet (592.2KB), 34883 rows x 57 cols; manifest n/a (not manifested)
+2026-07-14 11:57:07 [INFO] nba_data_build: uploading player_box_2026.parquet (592.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-07-14 11:57:08 [INFO] nba_data_build: uploaded player_box_2026.parquet -> espn_nba_player_boxscores (asset 1/2)
+2026-07-14 11:57:08 [INFO] nba_data_build: uploading player_box_2026.csv (16.9MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-07-14 11:57:10 [INFO] nba_data_build: uploaded player_box_2026.csv -> espn_nba_player_boxscores (asset 2/2)
+2026-07-14 11:57:10 [INFO] nba_data_build: player_box 2026: done -- 34883 rows from 1326/1326 games in 17.8s
+2026-07-14 11:57:10 [INFO] nba_data_build: player_box 2026: season complete -- 34883 rows
+2026-07-14 11:57:12 [INFO] nba_data_build: schedules 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:57:12 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_2026.parquet (513.5KB) + nba_schedule_2026.csv (8.7MB), 1330 rows x 77 cols; manifest n/a (not manifested)
+2026-07-14 11:57:13 [INFO] nba_data_build: uploading nba_schedule_2026.parquet (513.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-07-14 11:57:14 [INFO] nba_data_build: uploaded nba_schedule_2026.parquet -> espn_nba_schedules (asset 1/2)
+2026-07-14 11:57:14 [INFO] nba_data_build: uploading nba_schedule_2026.csv (8.7MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-07-14 11:57:15 [INFO] nba_data_build: uploaded nba_schedule_2026.csv -> espn_nba_schedules (asset 2/2)
+2026-07-14 11:57:15 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (2.3MB), 32290 rows x 78 cols
+2026-07-14 11:57:15 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.2MB), 31141 rows x 78 cols
+2026-07-14 11:57:15 [INFO] nba_data_build: uploading nba_schedule_master.parquet (2.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-07-14 11:57:17 [INFO] nba_data_build: uploaded nba_schedule_master.parquet -> espn_nba_schedules (asset 1/4)
+2026-07-14 11:57:17 [INFO] nba_data_build: uploading nba_schedule_master.csv (35.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-07-14 11:57:19 [INFO] nba_data_build: uploaded nba_schedule_master.csv -> espn_nba_schedules (asset 2/4)
+2026-07-14 11:57:19 [INFO] nba_data_build: uploading nba_games_in_data_repo.parquet (2.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-07-14 11:57:20 [INFO] nba_data_build: uploaded nba_games_in_data_repo.parquet -> espn_nba_schedules (asset 3/4)
+2026-07-14 11:57:20 [INFO] nba_data_build: uploading nba_games_in_data_repo.csv (34.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-07-14 11:57:22 [INFO] nba_data_build: uploaded nba_games_in_data_repo.csv -> espn_nba_schedules (asset 4/4)
+2026-07-14 11:57:22 [INFO] nba_data_build: schedules 2026: done -- 1330 rows in 10.2s
+2026-07-14 11:57:22 [INFO] nba_data_build: schedules 2026: season complete -- 1330 rows
+2026-07-14 11:57:24 [INFO] nba_data_build: shots 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:57:24 [INFO] nba_data_build: wrote ../nba/shots/parquet/shots_2026.parquet (3.0MB) + shots_2026.csv (24.2MB), 298411 rows x 15 cols; manifest nba_shots_in_data_repo.csv appended
+2026-07-14 11:57:24 [INFO] nba_data_build: uploading shots_2026.parquet (3.0MB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-07-14 11:57:25 [INFO] nba_data_build: uploaded shots_2026.parquet -> espn_nba_shots (asset 1/3)
+2026-07-14 11:57:25 [INFO] nba_data_build: uploading shots_2026.csv (24.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-07-14 11:57:28 [INFO] nba_data_build: uploaded shots_2026.csv -> espn_nba_shots (asset 2/3)
+2026-07-14 11:57:28 [INFO] nba_data_build: uploading nba_shots_in_data_repo.csv (174B) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-07-14 11:57:29 [INFO] nba_data_build: uploaded nba_shots_in_data_repo.csv -> espn_nba_shots (asset 3/3)
+2026-07-14 11:57:29 [INFO] nba_data_build: shots 2026: done -- 298411 rows in 4.8s
+2026-07-14 11:57:29 [INFO] nba_data_build: shots 2026: season complete -- 298411 rows
+2026-07-14 11:57:30 [INFO] nba_data_build: rosters 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:57:31 [INFO] nba_data_build: wrote ../nba/rosters/parquet/rosters_2026.parquet (70.7KB) + rosters_2026.csv (224.9KB), 537 rows x 36 cols; manifest nba_rosters_in_data_repo.csv appended
+2026-07-14 11:57:31 [INFO] nba_data_build: uploading rosters_2026.parquet (70.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-07-14 11:57:32 [INFO] nba_data_build: uploaded rosters_2026.parquet -> espn_nba_rosters (asset 1/3)
+2026-07-14 11:57:32 [INFO] nba_data_build: uploading rosters_2026.csv (224.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-07-14 11:57:33 [INFO] nba_data_build: uploaded rosters_2026.csv -> espn_nba_rosters (asset 2/3)
+2026-07-14 11:57:33 [INFO] nba_data_build: uploading nba_rosters_in_data_repo.csv (338B) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-07-14 11:57:34 [INFO] nba_data_build: uploaded nba_rosters_in_data_repo.csv -> espn_nba_rosters (asset 3/3)
+2026-07-14 11:57:34 [INFO] nba_data_build: rosters 2026: done -- 537 rows in 3.9s
+2026-07-14 11:57:34 [INFO] nba_data_build: rosters 2026: season complete -- 537 rows
+2026-07-14 11:57:36 [INFO] nba_data_build: player_season_stats 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:57:44 [INFO] nba_data_build: wrote ../nba/player_season_stats/parquet/player_season_stats_2026.parquet (108.3KB) + player_season_stats_2026.csv (4.8MB), 25006 rows x 15 cols; manifest nba_player_season_stats_in_data_repo.csv appended
+2026-07-14 11:57:44 [INFO] nba_data_build: uploading player_season_stats_2026.parquet (108.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-07-14 11:57:45 [INFO] nba_data_build: uploaded player_season_stats_2026.parquet -> espn_nba_player_season_stats (asset 1/3)
+2026-07-14 11:57:45 [INFO] nba_data_build: uploading player_season_stats_2026.csv (4.8MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-07-14 11:57:46 [INFO] nba_data_build: uploaded player_season_stats_2026.csv -> espn_nba_player_season_stats (asset 2/3)
+2026-07-14 11:57:46 [INFO] nba_data_build: uploading nba_player_season_stats_in_data_repo.csv (3.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-07-14 11:57:47 [INFO] nba_data_build: uploaded nba_player_season_stats_in_data_repo.csv -> espn_nba_player_season_stats (asset 3/3)
+2026-07-14 11:57:47 [INFO] nba_data_build: player_season_stats 2026: done -- 25006 rows in 11.1s
+2026-07-14 11:57:47 [INFO] nba_data_build: player_season_stats 2026: season complete -- 25006 rows
+2026-07-14 11:57:49 [INFO] nba_data_build: team_season_stats 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:57:50 [INFO] nba_data_build: wrote ../nba/team_season_stats/parquet/team_season_stats_2026.parquet (18.7KB) + team_season_stats_2026.csv (288.0KB), 1380 rows x 16 cols; manifest nba_team_season_stats_in_data_repo.csv appended
+2026-07-14 11:57:50 [INFO] nba_data_build: uploading team_season_stats_2026.parquet (18.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-07-14 11:57:51 [INFO] nba_data_build: uploaded team_season_stats_2026.parquet -> espn_nba_team_season_stats (asset 1/3)
+2026-07-14 11:57:51 [INFO] nba_data_build: uploading team_season_stats_2026.csv (288.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-07-14 11:57:52 [INFO] nba_data_build: uploaded team_season_stats_2026.csv -> espn_nba_team_season_stats (asset 2/3)
+2026-07-14 11:57:52 [INFO] nba_data_build: uploading nba_team_season_stats_in_data_repo.csv (3.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-07-14 11:57:53 [INFO] nba_data_build: uploaded nba_team_season_stats_in_data_repo.csv -> espn_nba_team_season_stats (asset 3/3)
+2026-07-14 11:57:53 [INFO] nba_data_build: team_season_stats 2026: done -- 1380 rows in 4.3s
+2026-07-14 11:57:53 [INFO] nba_data_build: team_season_stats 2026: season complete -- 1380 rows
+2026-07-14 11:57:55 [INFO] nba_data_build: standings 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:57:55 [INFO] nba_data_build: wrote ../nba/standings/parquet/standings_2026.parquet (16.4KB) + standings_2026.csv (147.4KB), 690 rows x 24 cols; manifest nba_standings_in_data_repo.csv appended
+2026-07-14 11:57:56 [INFO] nba_data_build: uploading standings_2026.parquet (16.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_standings
+2026-07-14 11:57:57 [INFO] nba_data_build: uploaded standings_2026.parquet -> espn_nba_standings (asset 1/3)
+2026-07-14 11:57:57 [INFO] nba_data_build: uploading standings_2026.csv (147.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_standings
+2026-07-14 11:57:58 [INFO] nba_data_build: uploaded standings_2026.csv -> espn_nba_standings (asset 2/3)
+2026-07-14 11:57:58 [INFO] nba_data_build: uploading nba_standings_in_data_repo.csv (312B) -> sportsdataverse/sportsdataverse-data:espn_nba_standings
+2026-07-14 11:57:59 [INFO] nba_data_build: uploaded nba_standings_in_data_repo.csv -> espn_nba_standings (asset 3/3)
+2026-07-14 11:57:59 [INFO] nba_data_build: standings 2026: done -- 690 rows in 3.6s
+2026-07-14 11:57:59 [INFO] nba_data_build: standings 2026: season complete -- 690 rows
+2026-07-14 11:58:01 [INFO] nba_data_build: game_rosters 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:58:24 [INFO] nba_data_build: wrote ../nba/game_rosters/parquet/game_rosters_2026.parquet (292.1KB) + game_rosters_2026.csv (8.5MB), 34883 rows x 22 cols; manifest nba_game_rosters_in_data_repo.csv appended
+2026-07-14 11:58:25 [INFO] nba_data_build: uploading game_rosters_2026.parquet (292.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-07-14 11:58:26 [INFO] nba_data_build: uploaded game_rosters_2026.parquet -> espn_nba_game_rosters (asset 1/3)
+2026-07-14 11:58:26 [INFO] nba_data_build: uploading game_rosters_2026.csv (8.5MB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-07-14 11:58:27 [INFO] nba_data_build: uploaded game_rosters_2026.csv -> espn_nba_game_rosters (asset 2/3)
+2026-07-14 11:58:27 [INFO] nba_data_build: uploading nba_game_rosters_in_data_repo.csv (2.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-07-14 11:58:28 [INFO] nba_data_build: uploaded nba_game_rosters_in_data_repo.csv -> espn_nba_game_rosters (asset 3/3)
+2026-07-14 11:58:28 [INFO] nba_data_build: game_rosters 2026: done -- 34883 rows in 27.4s
+2026-07-14 11:58:28 [INFO] nba_data_build: game_rosters 2026: season complete -- 34883 rows
+2026-07-14 11:58:30 [INFO] nba_data_build: officials 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:58:38 [INFO] nba_data_build: wrote ../nba/officials/parquet/officials_2026.parquet (19.1KB) + officials_2026.csv (214.4KB), 4056 rows x 7 cols; manifest nba_officials_in_data_repo.csv appended
+2026-07-14 11:58:38 [INFO] nba_data_build: uploading officials_2026.parquet (19.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-07-14 11:58:39 [INFO] nba_data_build: uploaded officials_2026.parquet -> espn_nba_officials (asset 1/3)
+2026-07-14 11:58:39 [INFO] nba_data_build: uploading officials_2026.csv (214.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-07-14 11:58:40 [INFO] nba_data_build: uploaded officials_2026.csv -> espn_nba_officials (asset 2/3)
+2026-07-14 11:58:40 [INFO] nba_data_build: uploading nba_officials_in_data_repo.csv (2.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-07-14 11:58:41 [INFO] nba_data_build: uploaded nba_officials_in_data_repo.csv -> espn_nba_officials (asset 3/3)
+2026-07-14 11:58:41 [INFO] nba_data_build: officials 2026: done -- 4056 rows in 11.2s
+2026-07-14 11:58:41 [INFO] nba_data_build: officials 2026: season complete -- 4056 rows
+2026-07-14 11:58:43 [INFO] nba_data_build: draft 2026: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-07-14 11:58:43 [INFO] nba_data_build: wrote ../nba/draft/parquet/draft_2026.parquet (14.7KB) + draft_2026.csv (7.9KB), 60 rows x 35 cols; manifest nba_draft_in_data_repo.csv appended
+2026-07-14 11:58:43 [INFO] nba_data_build: uploading draft_2026.parquet (14.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-07-14 11:58:44 [INFO] nba_data_build: uploaded draft_2026.parquet -> espn_nba_draft (asset 1/3)
+2026-07-14 11:58:44 [INFO] nba_data_build: uploading draft_2026.csv (7.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-07-14 11:58:45 [INFO] nba_data_build: uploaded draft_2026.csv -> espn_nba_draft (asset 2/3)
+2026-07-14 11:58:45 [INFO] nba_data_build: uploading nba_draft_in_data_repo.csv (302B) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-07-14 11:58:46 [INFO] nba_data_build: uploaded nba_draft_in_data_repo.csv -> espn_nba_draft (asset 3/3)
+2026-07-14 11:58:46 [INFO] nba_data_build: draft 2026: done -- 60 rows in 3.3s
+2026-07-14 11:58:46 [INFO] nba_data_build: draft 2026: season complete -- 60 rows
 ℹ Compiling 2026 NBA team crosswalk
-✔ Compiled 2026 NBA team crosswalk! [2.3s]
+✔ Compiled 2026 NBA team crosswalk! [2.8s]
 
 ℹ Updating 2026 NBA Team Crosswalk GitHub Release
 → Uploading 3 files!
@@ -296,28 +150,28 @@ espn_nba_draft
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ℹ Updating 2026 NBA Team Crosswalk GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 NBA Team Crosswalk GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-13 12:13:40.047318
-ℹ Updating 2026 NBA Team Crosswalk GitHub Release✔ Updated 2026 NBA Team Crosswalk GitHub Release! [2s]
+ℹ Updating 2026 NBA Team Crosswalk GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-14 11:58:52.828871
+ℹ Updating 2026 NBA Team Crosswalk GitHub Release✔ Updated 2026 NBA Team Crosswalk GitHub Release! [1.8s]
 
-4.246 sec elapsed
+4.669 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-13 12:13:41.395569
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-14 11:58:54.11834
 
 ℹ Compiling 2026 NBA schedule crosswalk
-✖ 2026-07-13 12:13:43.614218: Invalid arguments or no league schedule data for 2025-26 available!
+✖ 2026-07-14 11:58:56.425489: Invalid arguments or no league schedule data for 2025-26 available!
 ℹ Compiling 2026 NBA schedule crosswalk✖ Args: league_id = "00", season = "2025-26"
 ℹ Compiling 2026 NBA schedule crosswalk✖ Error: lexical error: invalid char in json text.                                        <HTML><HEAD> <TITLE>Access Deni                      (right here) ------^ 
-ℹ Compiling 2026 NBA schedule crosswalk! 2026-07-13 12:13:43.635809: no schedule crosswalk rows for 2026
-ℹ Compiling 2026 NBA schedule crosswalk✔ Compiled 2026 NBA schedule crosswalk! [916ms]
+ℹ Compiling 2026 NBA schedule crosswalk! 2026-07-14 11:58:56.446537: no schedule crosswalk rows for 2026
+ℹ Compiling 2026 NBA schedule crosswalk✔ Compiled 2026 NBA schedule crosswalk! [1.1s]
 
-0.948 sec elapsed
+1.101 sec elapsed
 
 ℹ Compiling 2026 NBA player crosswalk
-✔ Compiled 2026 NBA player crosswalk! [25.3s]
+✔ Compiled 2026 NBA player crosswalk! [26.1s]
 
 ℹ Updating 2026 NBA Player Crosswalk GitHub Release
 → Uploading 3 files!
@@ -325,18 +179,18 @@ nba_crosswalk
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ℹ Updating 2026 NBA Player Crosswalk GitHub Release✔ Upload successfully completed.
-ℹ Updating 2026 NBA Player Crosswalk GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-13 12:14:12.214897
-ℹ Updating 2026 NBA Player Crosswalk GitHub Release✔ Updated 2026 NBA Player Crosswalk GitHub Release! [2s]
+ℹ Updating 2026 NBA Player Crosswalk GitHub Release→ Uploaded 7 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-14 11:59:25.443161
+ℹ Updating 2026 NBA Player Crosswalk GitHub Release✔ Updated 2026 NBA Player Crosswalk GitHub Release! [1.8s]
 
-27.364 sec elapsed
+27.883 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-13 12:14:13.582802
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-07-14 11:59:26.818511
 
-[main 86f18510] NBA Data Updated (Start: 2026 End: 2026)
- 37 files changed, 9 insertions(+)
+[main 1ad638d3] NBA Data Updated (Start: 2026 End: 2026)
+ 26 files changed, 10 insertions(+)
 To https://github.com/sportsdataverse/hoopR-nba-data
-   1f830753..86f18510  main -> main
+   5c047df8..1ad638d3  main -> main
