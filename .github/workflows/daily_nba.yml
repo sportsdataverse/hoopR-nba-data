@@ -81,11 +81,10 @@ jobs:
           # the default github.token only reaches this repo. R uses GITHUB_PAT above.
           GH_TOKEN: ${{ secrets.SDV_GH_TOKEN }}
         run: |
-          # OPT-IN: the python path mirrors the (CI-validated) MBB cutover but has
-          # not itself had a CI shadow run yet, so R stays the default. Dispatch
-          # with use_python_build=true to validate, then flip this to python.
-          if [ "${{ inputs.use_python_build }}" = "true" ]; then
-            bash scripts/daily_nba_python_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
-          else
+          # Python is the default (CI-validated: run 29307565217 built + published
+          # all NBA datasets). Set use_python_build=false to fall back to R.
+          if [ "${{ inputs.use_python_build }}" = "false" ]; then
             bash scripts/daily_nba_R_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
+          else
+            bash scripts/daily_nba_python_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
           fi
