@@ -13,3 +13,5 @@ __pycache__
 *.pyc
 */*.pyc
 *.pyc
+# python build writes release-only CSVs locally; never commit them
+nba/*/csv/
