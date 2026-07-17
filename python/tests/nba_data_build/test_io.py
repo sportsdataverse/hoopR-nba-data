@@ -9,9 +9,14 @@ def test_write_dataset_emits_parquet_and_plain_csv(tmp_path):
     spec = REGISTRY["rosters"]  # write_tree_csv=True, plain .csv
     paths = io.write_dataset(df, spec, 2025, base=tmp_path)
     names = sorted(p.name for p in paths)
-    assert names == ["rosters_2025.csv", "rosters_2025.parquet"]
+    # rds is emitted alongside the parquet in the SAME pass: it is
+    # hoopR::load_*'s only read path, and leaving it to a separate step is
+    # what let the two drift (NBA published fresh parquet against a
+    # 3-day-stale rds after the python cutover).
+    assert names == ["rosters_2025.csv", "rosters_2025.parquet", "rosters_2025.rds"]
     assert (tmp_path / "rosters" / "parquet" / "rosters_2025.parquet").exists()
     assert (tmp_path / "rosters" / "csv" / "rosters_2025.csv").exists()
+    assert (tmp_path / "rosters" / "rds" / "rosters_2025.rds").exists()
 
 
 def test_write_dataset_skips_tree_csv_for_write_tree_csv_false(tmp_path):
@@ -21,8 +26,10 @@ def test_write_dataset_skips_tree_csv_for_write_tree_csv_false(tmp_path):
     spec = REGISTRY["team_box"]
     assert spec.write_tree_csv is False
     paths = io.write_dataset(df, spec, 2025, base=tmp_path)
-    assert [p.name for p in paths] == ["team_box_2025.parquet"]
+    # ... but the rds is NOT optional -- write_tree_csv only gates the csv.
+    assert [p.name for p in paths] == ["team_box_2025.parquet", "team_box_2025.rds"]
     assert not (tmp_path / "team_box" / "csv").exists()
+    assert (tmp_path / "team_box" / "rds" / "team_box_2025.rds").exists()
 
 
 def test_no_manifest_for_datasets_r_does_not_manifest(tmp_path):

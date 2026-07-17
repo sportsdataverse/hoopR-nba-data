@@ -78,6 +78,11 @@ def _dataset_files(spec: DatasetSpec, season: int, base: Path) -> list[Path]:
     root = base / spec.dataset
     pq = root / "parquet" / f"{spec.stem}_{season}.parquet"
     files = [pq] if pq.exists() else []
+    # .rds is hoopR::load_nba_*'s only read path -- publishing the parquet
+    # without it is what left NBA serving 2026-07-13 data on 2026-07-16.
+    rds = root / "rds" / f"{spec.stem}_{season}.rds"
+    if rds.exists():
+        files.append(rds)
     if spec.write_tree_csv:
         csv = root / "csv" / f"{spec.stem}_{season}.csv"
         if csv.exists():

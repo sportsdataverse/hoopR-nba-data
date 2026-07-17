@@ -19,7 +19,7 @@ def test_publish_uploads_each_file_with_clobber(tmp_path):
     )
     uploads = [c for c in calls if c[:2] == ["release", "upload"]]
     assets = sorted(Path(c[3]).name for c in uploads)  # gh release upload <tag> <path>
-    assert assets == ["nba_schedule_2025.csv", "nba_schedule_2025.parquet"]
+    assert assets == ["nba_schedule_2025.csv", "nba_schedule_2025.parquet", "nba_schedule_2025.rds"]
     assert all("--clobber" in c for c in uploads)
     assert res["tag"] == spec.tag
 
@@ -40,7 +40,7 @@ def test_publish_generates_csv_on_the_fly_for_write_tree_csv_false(tmp_path):
     )
     uploads = [c for c in calls if c[:2] == ["release", "upload"]]
     assets = sorted(Path(c[3]).name for c in uploads)
-    assert assets == ["team_box_2025.csv", "team_box_2025.parquet"]
+    assert assets == ["team_box_2025.csv", "team_box_2025.parquet", "team_box_2025.rds"]
     # the on-the-fly csv actually carries the data (not an empty placeholder).
     csv_path = next(Path(c[3]) for c in uploads if Path(c[3]).name == "team_box_2025.csv")
     assert pl.read_csv(csv_path).height == 1
@@ -63,6 +63,7 @@ def test_publish_uploads_manifest_for_manifested_datasets(tmp_path):
         "nba_standings_in_data_repo.csv",
         "standings_2025.csv",
         "standings_2025.parquet",
+        "standings_2025.rds",
     ]
 
 
