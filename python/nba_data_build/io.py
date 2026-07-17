@@ -20,8 +20,15 @@ from pathlib import Path
 
 import polars as pl
 
+from sportsdataverse._rds import write_rds
+
 from nba_data_build._logging import get_logger, human_size
-from nba_data_build.config import DatasetSpec
+from nba_data_build.config import (
+    RDS_ATTR_PREFIX,
+    RDS_CLASS,
+    RDS_TYPE_TEMPLATE,
+    DatasetSpec,
+)
 
 _LEAGUE = "nba"
 
@@ -77,6 +84,32 @@ def write_dataset(
     pq = pq_dir / f"{spec.stem}_{season}.parquet"
     df.write_parquet(pq)
     paths = [pq]
+
+    # .rds is hoopR::load_nba_*'s ONLY read path -- written natively here, in
+    # the same pass as the parquet, so the two can never drift apart. They did:
+    # the python cutover left rds to a retained R step that nba/mbb never had,
+    # so the parquet updated daily while the rds froze and every load_nba_* user
+    # was served stale data from a release that looked fresh.
+    rds_dir = base / spec.dataset / "rds"
+    rds_dir.mkdir(parents=True, exist_ok=True)
+    rds = rds_dir / f"{spec.stem}_{season}.rds"
+    stamped = datetime.now(timezone.utc)
+    write_rds(
+        df,
+        rds,
+        cls=list(RDS_CLASS),
+        # Attribute ORDER is the published contract (make_hoopR_data stamps its
+        # pair first, sportsdataverse_save appends its own).
+        attributes={
+            f"{RDS_ATTR_PREFIX}_timestamp": stamped,
+            f"{RDS_ATTR_PREFIX}_type": RDS_TYPE_TEMPLATE.format(dataset=spec.dataset),
+            "sportsdataverse_type": f"{spec.dataset} data",
+            "sportsdataverse_timestamp": stamped,
+        },
+    )
+    paths.append(rds)
+    rds_note = f" + {rds.name} ({human_size(rds.stat().st_size)})"
+
     csv_note = ""
     if spec.write_tree_csv:
         csv_dir = base / spec.dataset / "csv"
@@ -87,9 +120,10 @@ def write_dataset(
         csv_note = f" + {csv.name} ({human_size(csv.stat().st_size)})"
     manifest = _append_manifest(spec, season, df.height, base)
     log.info(
-        "wrote %s (%s)%s, %d rows x %d cols; manifest %s",
+        "wrote %s (%s)%s%s, %d rows x %d cols; manifest %s",
         pq,
         human_size(pq.stat().st_size),
+        rds_note,
         csv_note,
         df.height,
         df.width,
