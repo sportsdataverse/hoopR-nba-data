@@ -73,8 +73,12 @@ REGISTRY: dict[str, DatasetSpec] = {
         "shots",
         manifest_endpoint="derived from espn_nba pbp",
     ),
-    "team_box": DatasetSpec("team_box", "team_box", _T + "team_boxscores", "team_box", write_tree_csv=False),
-    "player_box": DatasetSpec("player_box", "player_box", _T + "player_boxscores", "player_box", write_tree_csv=False),
+    "team_box": DatasetSpec(
+        "team_box", "team_box", _T + "team_boxscores", "team_box", write_tree_csv=False
+    ),
+    "player_box": DatasetSpec(
+        "player_box", "player_box", _T + "player_boxscores", "player_box", write_tree_csv=False
+    ),
     "rosters": DatasetSpec(
         "rosters",
         "rosters",
@@ -89,6 +93,20 @@ REGISTRY: dict[str, DatasetSpec] = {
         "player_season_stats",
         # NB: no {season} segment -- the raw payload is flat/full-career.
         manifest_endpoint=_RAW + "/player_season_stats/json/<athlete_id>.json",
+    ),
+    # Athlete identity + bio. NEW dataset -- no R creation script exists, and
+    # nothing published this before: the player_season_stats payload carries no
+    # identity at all (not even the athlete id -- only the filename does).
+    # Raw is flat/athlete-keyed like player_season_stats, so no {season}
+    # segment; "who played in season Y" comes from the built player_box.
+    "player_core": DatasetSpec(
+        "player_core",
+        "player_core",
+        _T + "player_core",
+        "player_core",
+        # NO manifest_endpoint: a manifest is the contract for an R
+        # load_nba_<ds>_manifest() loader, and player_core has no loader yet --
+        # manifesting it would publish an asset nothing reads.
     ),
     "team_season_stats": DatasetSpec(
         "team_season_stats",
@@ -133,9 +151,13 @@ REGISTRY: dict[str, DatasetSpec] = {
     # crosswalks -- all three publish to the shared release tag "nba_crosswalk"
     # (not the per-dataset espn_nba_* prefix used by the per-game datasets
     # above); stems match each script's `file_name = glue::glue("nba_{...}_crosswalk_{y}")`.
-    "team_crosswalk": DatasetSpec("team_crosswalk", "nba_team_crosswalk", "nba_crosswalk", "team_crosswalk"),
+    "team_crosswalk": DatasetSpec(
+        "team_crosswalk", "nba_team_crosswalk", "nba_crosswalk", "team_crosswalk"
+    ),
     "schedule_crosswalk": DatasetSpec(
         "schedule_crosswalk", "nba_schedule_crosswalk", "nba_crosswalk", "schedule_crosswalk"
     ),
-    "player_crosswalk": DatasetSpec("player_crosswalk", "nba_player_crosswalk", "nba_crosswalk", "player_crosswalk"),
+    "player_crosswalk": DatasetSpec(
+        "player_crosswalk", "nba_player_crosswalk", "nba_crosswalk", "player_crosswalk"
+    ),
 }
