@@ -32,6 +32,7 @@ PY_DATASETS=(
     pbp
     team_box
     player_box
+    player_core
     schedules
     shots
     rosters
