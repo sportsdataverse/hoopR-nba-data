@@ -15,3 +15,7 @@ __pycache__
 *.pyc
 # python build writes release-only CSVs locally; never commit them
 nba/*/csv/
+
+# Built rds/csv ship to the sportsdataverse-data releases, not to git.
+nba/*/rds/
+nba/*/csv/
