@@ -28,6 +28,12 @@ option_list <- list(
     default = hoopR:::most_recent_nba_season(),
     type = "integer",
     help = "End year of the seasons to process"
+  ),
+  make_option(
+    c("-n", "--no_upload"),
+    action = "store_true",
+    default = FALSE,
+    help = "Write local rds/parquet only; skip the GitHub Release upload"
   )
 )
 opt <- parse_args(OptionParser(option_list = option_list))
@@ -35,14 +41,76 @@ options(stringsAsFactors = FALSE)
 options(scipen = 999)
 years_vec <- opt$s:opt$e
 
+# Optional local checkout of hoopR-nba-raw (env HOOPR_NBA_RAW_DIR). When set,
+# schedules + per-game JSON are read from disk instead of raw.githubusercontent.
+raw_base <- Sys.getenv(
+  "HOOPR_NBA_RAW_DIR",
+  unset = "https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main"
+)
+raw_is_local <- !grepl("^http", raw_base)
+
+# Per-game athlete lookup from the summary payload's boxscore.players tree —
+# the same file the pbp parse reads, so adding names costs no extra HTTP.
+espn_nba_game_athletes <- function(path) {
+  empty <- data.frame(
+    athlete_id = integer(0),
+    athlete_display_name = character(0),
+    stringsAsFactors = FALSE
+  )
+  gj <- tryCatch(
+    jsonlite::fromJSON(path, simplifyVector = FALSE),
+    error = function(e) NULL
+  )
+  players <- purrr::pluck(gj, "boxscore", "players", .default = list())
+  out <- purrr::map_dfr(players, function(tm) {
+    purrr::map_dfr(
+      purrr::pluck(tm, "statistics", .default = list()),
+      function(st) {
+        purrr::map_dfr(
+          purrr::pluck(st, "athletes", .default = list()),
+          function(a) {
+            data.frame(
+              athlete_id = suppressWarnings(as.integer(
+                purrr::pluck(a, "athlete", "id", .default = NA_character_)
+              )),
+              athlete_display_name = purrr::pluck(
+                a,
+                "athlete",
+                "displayName",
+                .default = NA_character_
+              ),
+              stringsAsFactors = FALSE
+            )
+          }
+        )
+      }
+    )
+  })
+  if (nrow(out) == 0) {
+    return(empty)
+  }
+  out %>%
+    dplyr::filter(!is.na(.data$athlete_id)) %>%
+    dplyr::distinct(.data$athlete_id, .keep_all = TRUE)
+}
+
 # --- compile into play_by_play_{year}.parquet ---------
 nba_pbp_games <- function(y) {
   espn_df <- data.frame()
-  sched <- hoopR:::rds_from_url(paste0(
-    "https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_",
-    y,
-    ".rds"
-  ))
+  if (raw_is_local) {
+    sched <- readRDS(file.path(
+      raw_base,
+      "nba/schedules/rds",
+      paste0("nba_schedule_", y, ".rds")
+    ))
+  } else {
+    sched <- hoopR:::rds_from_url(paste0(
+      raw_base,
+      "/nba/schedules/rds/nba_schedule_",
+      y,
+      ".rds"
+    ))
+  }
   ifelse(
     !dir.exists(file.path("nba/schedules")),
     dir.create(file.path("nba/schedules")),
@@ -78,11 +146,42 @@ nba_pbp_games <- function(y) {
     espn_df <- furrr::future_map_dfr(
       season_pbp_list,
       function(x) {
-        resp <- glue::glue(
-          "https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/json/final/{x}.json"
-        )
         tryCatch(
-          hoopR:::helper_espn_nba_pbp(resp),
+          {
+            local_path <- if (raw_is_local) {
+              file.path(raw_base, "nba/json/final", paste0(x, ".json"))
+            } else {
+              tf <- tempfile(fileext = ".json")
+              utils::download.file(
+                glue::glue("{raw_base}/nba/json/final/{x}.json"),
+                tf,
+                quiet = TRUE,
+                mode = "wb"
+              )
+              tf
+            }
+            plays <- hoopR:::helper_espn_nba_pbp(local_path)
+            if (!is.null(plays) && nrow(plays) > 0) {
+              lk <- espn_nba_game_athletes(local_path)
+              for (i in 1:3) {
+                idc <- paste0("athlete_id_", i)
+                nmc <- paste0("athlete_name_", i)
+                if (idc %in% colnames(plays) && nrow(lk) > 0) {
+                  plays <- plays %>%
+                    dplyr::left_join(
+                      stats::setNames(lk, c(idc, nmc)),
+                      by = idc
+                    )
+                } else {
+                  plays[[nmc]] <- NA_character_
+                }
+              }
+            }
+            if (!raw_is_local) {
+              unlink(local_path)
+            }
+            plays
+          },
           error = function(e) NULL,
           warning = function(w) NULL
         )
@@ -145,28 +244,47 @@ nba_pbp_games <- function(y) {
       paste0("nba/pbp/parquet/play_by_play_", y, ".parquet")
     )
 
-    retry_rate <- purrr::rate_backoff(
-      pause_base = 1,
-      pause_min = 60,
-      max_times = 10
-    )
-    purrr::insistently(
-      sportsdataversedata::sportsdataverse_save,
-      rate = retry_rate,
-      quiet = FALSE
-    )(
-      data_frame = espn_df,
-      file_name = glue::glue("play_by_play_{y}"),
-      sportsdataverse_type = "play-by-play data",
-      release_tag = "espn_nba_pbp",
-      pkg_function = "hoopR::load_nba_pbp()",
-      file_types = c("rds", "csv", "parquet"),
-      .token = Sys.getenv("GITHUB_PAT")
-    )
+    if (!opt$no_upload) {
+      retry_rate <- purrr::rate_backoff(
+        pause_base = 1,
+        pause_min = 60,
+        max_times = 10
+      )
+      purrr::insistently(
+        sportsdataversedata::sportsdataverse_save,
+        rate = retry_rate,
+        quiet = FALSE
+      )(
+        data_frame = espn_df,
+        file_name = glue::glue("play_by_play_{y}"),
+        sportsdataverse_type = "play-by-play data",
+        release_tag = "espn_nba_pbp",
+        pkg_function = "hoopR::load_nba_pbp()",
+        file_types = c("rds", "csv", "parquet"),
+        .token = Sys.getenv("GITHUB_PAT")
+      )
+    }
 
     # --- Shots extraction (derived from in-memory PBP frame; no extra HTTP) ---
     shots_df <- espn_df %>%
       dplyr::filter(.data$shooting_play == TRUE) %>%
+      dplyr::mutate(
+        team_name = ifelse(
+          .data$team_id == .data$home_team_id,
+          .data$home_team_name,
+          .data$away_team_name
+        ),
+        team_mascot = ifelse(
+          .data$team_id == .data$home_team_id,
+          .data$home_team_mascot,
+          .data$away_team_mascot
+        ),
+        team_abbrev = ifelse(
+          .data$team_id == .data$home_team_id,
+          .data$home_team_abbrev,
+          .data$away_team_abbrev
+        )
+      ) %>%
       dplyr::select(
         dplyr::any_of(c(
           "game_id",
@@ -183,7 +301,12 @@ nba_pbp_games <- function(y) {
           "coordinate_x",
           "coordinate_y",
           "coordinate_x_raw",
-          "coordinate_y_raw"
+          "coordinate_y_raw",
+          "athlete_name_1",
+          "athlete_name_2",
+          "team_name",
+          "team_mascot",
+          "team_abbrev"
         ))
       )
 
@@ -205,20 +328,22 @@ nba_pbp_games <- function(y) {
         msg_done = "Updated {y} ESPN NBA Shots GitHub Release!"
       )
 
-      shots_retry_rate <- purrr::rate_backoff(pause_base = 1, pause_min = 1, max_times = 5)
-      purrr::insistently(
-        sportsdataversedata::sportsdataverse_save,
-        rate = shots_retry_rate,
-        quiet = FALSE
-      )(
-        data_frame = shots_df,
-        file_name = glue::glue("shots_{y}"),
-        sportsdataverse_type = "shots data",
-        release_tag = "espn_nba_shots",
-        pkg_function = "hoopR::load_nba_pbp()",
-        file_types = c("rds", "csv", "parquet"),
-        .token = Sys.getenv("GITHUB_PAT")
-      )
+      if (!opt$no_upload) {
+        shots_retry_rate <- purrr::rate_backoff(pause_base = 1, pause_min = 1, max_times = 5)
+        purrr::insistently(
+          sportsdataversedata::sportsdataverse_save,
+          rate = shots_retry_rate,
+          quiet = FALSE
+        )(
+          data_frame = shots_df,
+          file_name = glue::glue("shots_{y}"),
+          sportsdataverse_type = "shots data",
+          release_tag = "espn_nba_shots",
+          pkg_function = "hoopR::load_nba_pbp()",
+          file_types = c("rds", "csv", "parquet"),
+          .token = Sys.getenv("GITHUB_PAT")
+        )
+      }
     }
   }
 
