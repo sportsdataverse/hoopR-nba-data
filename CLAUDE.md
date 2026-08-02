@@ -96,6 +96,7 @@ R/
   nba_13_player_crosswalk_creation.R  # Cross-source player crosswalk
   run_summary.R                       # Post-run cli summary -> Action log + $GITHUB_STEP_SUMMARY
   manifest_upload_helper.R            # Shared release-upload helper sourced by creation scripts
+ops/init/
   0000_create_hoopR_releases_init.R   # One-time bootstrap of release tags on sportsdataverse-data
   0001_push_existing_release_data.R   # One-time backfill of historical seasons into releases
 scripts/
@@ -140,7 +141,7 @@ from ESPN's `categories[].statistics[]` for true single-season values.
 Add a new compiled dataset by writing a new `R/espn_nba_0N_*.R` script,
 appending the matching `nba/<key>/` subdirectory, adding the script to
 `scripts/daily_nba_R_processor.sh`, and creating the release tag (one-time
-via `R/0000_create_hoopR_releases_init.R`). The corresponding loader on
+via `ops/init/0000_create_hoopR_releases_init.R`). The corresponding loader on
 the `hoopR` package side (`load_nba_<key>()`) also needs a catalog entry.
 
 ## Daily CI Workflow

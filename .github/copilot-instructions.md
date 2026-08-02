@@ -36,7 +36,7 @@ Rscript R/espn_nba_02_team_box_creation.R    -s 2026 -e 2026
 Rscript R/espn_nba_03_player_box_creation.R  -s 2026 -e 2026
 
 # One-time bootstrap of release tags (rare; run only on a fresh org)
-Rscript R/0000_create_hoopR_releases_init.R
+Rscript ops/init/0000_create_hoopR_releases_init.R
 ```
 
 Season is the **end year** (`2026` = 2025-26 season). All compiled
