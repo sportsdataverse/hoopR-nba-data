@@ -1,0 +1,236 @@
+From https://github.com/sportsdataverse/hoopR-nba-data
+ * [new branch]        AE/remove-qs          -> origin/AE/remove-qs
+ * [new branch]        feat/nba-ci-cutover-python -> origin/feat/nba-ci-cutover-python
+ * [new branch]        feat/nba-data-build   -> origin/feat/nba-data-build
+ * [new branch]        feat/nba-data-build-docs -> origin/feat/nba-data-build-docs
+ * [new branch]        feat/nba-flip-python-default -> origin/feat/nba-flip-python-default
+ * [new branch]        feat/nba-native-rds   -> origin/feat/nba-native-rds
+ * [new branch]        feat/nba-player-core-daily -> origin/feat/nba-player-core-daily
+ * [new branch]        feat/nba-player-core-dataset -> origin/feat/nba-player-core-dataset
+ * [new branch]        feat/nba-player-core-tree -> origin/feat/nba-player-core-tree
+ * [new branch]        fix/nba-serialize-rds -> origin/fix/nba-serialize-rds
+2026-08-02 13:35:49 [INFO] nba_data_build: pbp 2023: per-game build starting -- 1321 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:36:30 [INFO] nba_data_build: pbp 2023: 250/1321 games collected
+2026-08-02 13:36:30 [INFO] nba_data_build: pbp 2023: 500/1321 games collected
+2026-08-02 13:36:30 [INFO] nba_data_build: pbp 2023: 750/1321 games collected
+2026-08-02 13:36:30 [INFO] nba_data_build: pbp 2023: 1000/1321 games collected
+2026-08-02 13:36:30 [INFO] nba_data_build: pbp 2023: 1250/1321 games collected
+2026-08-02 13:37:51 [INFO] nba_data_build: wrote ../nba/pbp/parquet/play_by_play_2023.parquet (20.1MB) + play_by_play_2023.rds (21.6MB), 620855 rows x 65 cols; manifest n/a (not manifested)
+2026-08-02 13:37:52 [INFO] nba_data_build: uploading play_by_play_2023.parquet (20.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-08-02 13:37:54 [INFO] nba_data_build: uploaded play_by_play_2023.parquet -> espn_nba_pbp (asset 1/3)
+2026-08-02 13:37:54 [INFO] nba_data_build: uploading play_by_play_2023.rds (21.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-08-02 13:37:56 [INFO] nba_data_build: uploaded play_by_play_2023.rds -> espn_nba_pbp (asset 2/3)
+2026-08-02 13:37:56 [INFO] nba_data_build: uploading play_by_play_2023.csv (250.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-08-02 13:38:04 [INFO] nba_data_build: uploaded play_by_play_2023.csv -> espn_nba_pbp (asset 3/3)
+2026-08-02 13:38:04 [INFO] nba_data_build: pbp 2023: done -- 620855 rows from 1321/1321 games in 135.5s
+2026-08-02 13:38:04 [INFO] nba_data_build: pbp 2023: season complete -- 620855 rows
+2026-08-02 13:38:06 [INFO] nba_data_build: team_box 2023: per-game build starting -- 1321 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:38:18 [INFO] nba_data_build: team_box 2023: 250/1321 games collected
+2026-08-02 13:38:18 [INFO] nba_data_build: team_box 2023: 500/1321 games collected
+2026-08-02 13:38:18 [INFO] nba_data_build: team_box 2023: 750/1321 games collected
+2026-08-02 13:38:18 [INFO] nba_data_build: team_box 2023: 1000/1321 games collected
+2026-08-02 13:38:18 [INFO] nba_data_build: team_box 2023: 1250/1321 games collected
+2026-08-02 13:38:19 [INFO] nba_data_build: wrote ../nba/team_box/parquet/team_box_2023.parquet (132.9KB) + team_box_2023.rds (166.1KB), 2642 rows x 57 cols; manifest n/a (not manifested)
+2026-08-02 13:38:19 [INFO] nba_data_build: uploading team_box_2023.parquet (132.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-02 13:38:20 [INFO] nba_data_build: uploaded team_box_2023.parquet -> espn_nba_team_boxscores (asset 1/3)
+2026-08-02 13:38:20 [INFO] nba_data_build: uploading team_box_2023.rds (166.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-02 13:38:21 [INFO] nba_data_build: uploaded team_box_2023.rds -> espn_nba_team_boxscores (asset 2/3)
+2026-08-02 13:38:21 [INFO] nba_data_build: uploading team_box_2023.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-02 13:38:22 [INFO] nba_data_build: uploaded team_box_2023.csv -> espn_nba_team_boxscores (asset 3/3)
+2026-08-02 13:38:22 [INFO] nba_data_build: team_box 2023: done -- 2642 rows from 1321/1321 games in 16.0s
+2026-08-02 13:38:22 [INFO] nba_data_build: team_box 2023: season complete -- 2642 rows
+2026-08-02 13:38:24 [INFO] nba_data_build: player_box 2023: per-game build starting -- 1321 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:38:38 [INFO] nba_data_build: player_box 2023: 250/1321 games collected
+2026-08-02 13:38:38 [INFO] nba_data_build: player_box 2023: 500/1321 games collected
+2026-08-02 13:38:38 [INFO] nba_data_build: player_box 2023: 750/1321 games collected
+2026-08-02 13:38:38 [INFO] nba_data_build: player_box 2023: 1000/1321 games collected
+2026-08-02 13:38:38 [INFO] nba_data_build: player_box 2023: 1250/1321 games collected
+2026-08-02 13:38:42 [INFO] nba_data_build: wrote ../nba/player_box/parquet/player_box_2023.parquet (581.9KB) + player_box_2023.rds (789.6KB), 34057 rows x 57 cols; manifest n/a (not manifested)
+2026-08-02 13:38:42 [INFO] nba_data_build: uploading player_box_2023.parquet (581.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-02 13:38:44 [INFO] nba_data_build: uploaded player_box_2023.parquet -> espn_nba_player_boxscores (asset 1/3)
+2026-08-02 13:38:44 [INFO] nba_data_build: uploading player_box_2023.rds (789.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-02 13:38:45 [INFO] nba_data_build: uploaded player_box_2023.rds -> espn_nba_player_boxscores (asset 2/3)
+2026-08-02 13:38:45 [INFO] nba_data_build: uploading player_box_2023.csv (16.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-02 13:38:46 [INFO] nba_data_build: uploaded player_box_2023.csv -> espn_nba_player_boxscores (asset 3/3)
+2026-08-02 13:38:46 [INFO] nba_data_build: player_box 2023: done -- 34057 rows from 1321/1321 games in 21.9s
+2026-08-02 13:38:46 [INFO] nba_data_build: player_box 2023: season complete -- 34057 rows
+2026-08-02 13:38:48 [INFO] nba_data_build: player_core 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:38:55 [INFO] nba_data_build: wrote ../nba/player_core/parquet/player_core_2023.parquet (64.6KB) + player_core_2023.rds (52.2KB) + player_core_2023.csv (183.1KB), 549 rows x 36 cols; manifest n/a (not manifested)
+2026-08-02 13:38:56 [INFO] nba_data_build: uploading player_core_2023.parquet (64.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-08-02 13:38:57 [INFO] nba_data_build: uploaded player_core_2023.parquet -> espn_nba_player_core (asset 1/3)
+2026-08-02 13:38:57 [INFO] nba_data_build: uploading player_core_2023.rds (52.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-08-02 13:38:58 [INFO] nba_data_build: uploaded player_core_2023.rds -> espn_nba_player_core (asset 2/3)
+2026-08-02 13:38:58 [INFO] nba_data_build: uploading player_core_2023.csv (183.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-08-02 13:38:59 [INFO] nba_data_build: uploaded player_core_2023.csv -> espn_nba_player_core (asset 3/3)
+2026-08-02 13:38:59 [INFO] nba_data_build: player_core 2023: done -- 549 rows in 10.5s
+2026-08-02 13:38:59 [INFO] nba_data_build: player_core 2023: season complete -- 549 rows
+2026-08-02 13:39:01 [INFO] nba_data_build: schedules 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:39:01 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_2023.parquet (134.9KB) + nba_schedule_2023.rds (130.2KB) + nba_schedule_2023.csv (1.7MB), 1322 rows x 77 cols; manifest n/a (not manifested)
+2026-08-02 13:39:01 [INFO] nba_data_build: uploading nba_schedule_2023.parquet (134.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-02 13:39:02 [INFO] nba_data_build: uploaded nba_schedule_2023.parquet -> espn_nba_schedules (asset 1/3)
+2026-08-02 13:39:02 [INFO] nba_data_build: uploading nba_schedule_2023.rds (130.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-02 13:39:03 [INFO] nba_data_build: uploaded nba_schedule_2023.rds -> espn_nba_schedules (asset 2/3)
+2026-08-02 13:39:03 [INFO] nba_data_build: uploading nba_schedule_2023.csv (1.7MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-02 13:39:04 [INFO] nba_data_build: uploaded nba_schedule_2023.csv -> espn_nba_schedules (asset 3/3)
+2026-08-02 13:39:04 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (2.3MB), 32290 rows x 78 cols
+2026-08-02 13:39:05 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.2MB), 31141 rows x 78 cols
+2026-08-02 13:39:05 [INFO] nba_data_build: uploading nba_schedule_master.parquet (2.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-02 13:39:06 [INFO] nba_data_build: uploaded nba_schedule_master.parquet -> espn_nba_schedules (asset 1/4)
+2026-08-02 13:39:06 [INFO] nba_data_build: uploading nba_schedule_master.csv (35.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-02 13:39:08 [INFO] nba_data_build: uploaded nba_schedule_master.csv -> espn_nba_schedules (asset 2/4)
+2026-08-02 13:39:08 [INFO] nba_data_build: uploading nba_games_in_data_repo.parquet (2.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-02 13:39:09 [INFO] nba_data_build: uploaded nba_games_in_data_repo.parquet -> espn_nba_schedules (asset 3/4)
+2026-08-02 13:39:09 [INFO] nba_data_build: uploading nba_games_in_data_repo.csv (34.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-02 13:39:11 [INFO] nba_data_build: uploaded nba_games_in_data_repo.csv -> espn_nba_schedules (asset 4/4)
+2026-08-02 13:39:11 [INFO] nba_data_build: schedules 2023: done -- 1322 rows in 10.0s
+2026-08-02 13:39:11 [INFO] nba_data_build: schedules 2023: season complete -- 1322 rows
+2026-08-02 13:39:13 [INFO] nba_data_build: shots 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:39:28 [INFO] nba_data_build: wrote ../nba/shots/parquet/shots_2023.parquet (3.8MB) + shots_2023.rds (4.1MB) + shots_2023.csv (34.8MB), 294914 rows x 20 cols; manifest nba_shots_in_data_repo.csv appended
+2026-08-02 13:39:28 [INFO] nba_data_build: uploading shots_2023.parquet (3.8MB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-08-02 13:39:30 [INFO] nba_data_build: uploaded shots_2023.parquet -> espn_nba_shots (asset 1/4)
+2026-08-02 13:39:30 [INFO] nba_data_build: uploading shots_2023.rds (4.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-08-02 13:39:31 [INFO] nba_data_build: uploaded shots_2023.rds -> espn_nba_shots (asset 2/4)
+2026-08-02 13:39:31 [INFO] nba_data_build: uploading shots_2023.csv (34.8MB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-08-02 13:39:33 [INFO] nba_data_build: uploaded shots_2023.csv -> espn_nba_shots (asset 3/4)
+2026-08-02 13:39:33 [INFO] nba_data_build: uploading nba_shots_in_data_repo.csv (236B) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-08-02 13:39:34 [INFO] nba_data_build: uploaded nba_shots_in_data_repo.csv -> espn_nba_shots (asset 4/4)
+2026-08-02 13:39:34 [INFO] nba_data_build: shots 2023: done -- 294914 rows in 21.1s
+2026-08-02 13:39:34 [INFO] nba_data_build: shots 2023: season complete -- 294914 rows
+2026-08-02 13:39:36 [INFO] nba_data_build: rosters 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:39:36 [WARNING] nba_data_build: rosters 2023: season-level build produced 0 rows; nothing written
+2026-08-02 13:39:36 [INFO] nba_data_build: rosters 2023: season complete -- 0 rows
+2026-08-02 13:39:38 [INFO] nba_data_build: player_season_stats 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:39:45 [INFO] nba_data_build: wrote ../nba/player_season_stats/parquet/player_season_stats_2023.parquet (102.2KB) + player_season_stats_2023.rds (130.0KB) + player_season_stats_2023.csv (4.5MB), 23132 rows x 15 cols; manifest nba_player_season_stats_in_data_repo.csv appended
+2026-08-02 13:39:46 [INFO] nba_data_build: uploading player_season_stats_2023.parquet (102.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-08-02 13:39:47 [INFO] nba_data_build: uploaded player_season_stats_2023.parquet -> espn_nba_player_season_stats (asset 1/4)
+2026-08-02 13:39:47 [INFO] nba_data_build: uploading player_season_stats_2023.rds (130.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-08-02 13:39:48 [INFO] nba_data_build: uploaded player_season_stats_2023.rds -> espn_nba_player_season_stats (asset 2/4)
+2026-08-02 13:39:48 [INFO] nba_data_build: uploading player_season_stats_2023.csv (4.5MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-08-02 13:39:49 [INFO] nba_data_build: uploaded player_season_stats_2023.csv -> espn_nba_player_season_stats (asset 3/4)
+2026-08-02 13:39:49 [INFO] nba_data_build: uploading nba_player_season_stats_in_data_repo.csv (3.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-08-02 13:39:50 [INFO] nba_data_build: uploaded nba_player_season_stats_in_data_repo.csv -> espn_nba_player_season_stats (asset 4/4)
+2026-08-02 13:39:50 [INFO] nba_data_build: player_season_stats 2023: done -- 23132 rows in 12.3s
+2026-08-02 13:39:50 [INFO] nba_data_build: player_season_stats 2023: season complete -- 23132 rows
+2026-08-02 13:39:52 [INFO] nba_data_build: team_season_stats 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:39:53 [INFO] nba_data_build: wrote ../nba/team_season_stats/parquet/team_season_stats_2023.parquet (18.5KB) + team_season_stats_2023.rds (14.7KB) + team_season_stats_2023.csv (288.9KB), 1380 rows x 16 cols; manifest nba_team_season_stats_in_data_repo.csv appended
+2026-08-02 13:39:53 [INFO] nba_data_build: uploading team_season_stats_2023.parquet (18.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-08-02 13:39:54 [INFO] nba_data_build: uploaded team_season_stats_2023.parquet -> espn_nba_team_season_stats (asset 1/4)
+2026-08-02 13:39:54 [INFO] nba_data_build: uploading team_season_stats_2023.rds (14.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-08-02 13:39:55 [INFO] nba_data_build: uploaded team_season_stats_2023.rds -> espn_nba_team_season_stats (asset 2/4)
+2026-08-02 13:39:55 [INFO] nba_data_build: uploading team_season_stats_2023.csv (288.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-08-02 13:39:56 [INFO] nba_data_build: uploaded team_season_stats_2023.csv -> espn_nba_team_season_stats (asset 3/4)
+2026-08-02 13:39:56 [INFO] nba_data_build: uploading nba_team_season_stats_in_data_repo.csv (3.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-08-02 13:39:57 [INFO] nba_data_build: uploaded nba_team_season_stats_in_data_repo.csv -> espn_nba_team_season_stats (asset 4/4)
+2026-08-02 13:39:57 [INFO] nba_data_build: team_season_stats 2023: done -- 1380 rows in 4.6s
+2026-08-02 13:39:57 [INFO] nba_data_build: team_season_stats 2023: season complete -- 1380 rows
+2026-08-02 13:39:59 [INFO] nba_data_build: standings 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:39:59 [INFO] nba_data_build: wrote ../nba/standings/parquet/standings_2023.parquet (16.2KB) + standings_2023.rds (7.7KB) + standings_2023.csv (147.3KB), 690 rows x 24 cols; manifest nba_standings_in_data_repo.csv appended
+2026-08-02 13:39:59 [INFO] nba_data_build: uploading standings_2023.parquet (16.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_standings
+2026-08-02 13:40:00 [INFO] nba_data_build: uploaded standings_2023.parquet -> espn_nba_standings (asset 1/4)
+2026-08-02 13:40:00 [INFO] nba_data_build: uploading standings_2023.rds (7.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_standings
+2026-08-02 13:40:01 [INFO] nba_data_build: uploaded standings_2023.rds -> espn_nba_standings (asset 2/4)
+2026-08-02 13:40:01 [INFO] nba_data_build: uploading standings_2023.csv (147.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_standings
+2026-08-02 13:40:02 [INFO] nba_data_build: uploaded standings_2023.csv -> espn_nba_standings (asset 3/4)
+2026-08-02 13:40:02 [INFO] nba_data_build: uploading nba_standings_in_data_repo.csv (443B) -> sportsdataverse/sportsdataverse-data:espn_nba_standings
+2026-08-02 13:40:03 [INFO] nba_data_build: uploaded nba_standings_in_data_repo.csv -> espn_nba_standings (asset 4/4)
+2026-08-02 13:40:03 [INFO] nba_data_build: standings 2023: done -- 690 rows in 4.1s
+2026-08-02 13:40:03 [INFO] nba_data_build: standings 2023: season complete -- 690 rows
+2026-08-02 13:40:05 [INFO] nba_data_build: game_rosters 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:40:29 [INFO] nba_data_build: wrote ../nba/game_rosters/parquet/game_rosters_2023.parquet (277.1KB) + game_rosters_2023.rds (412.6KB) + game_rosters_2023.csv (8.3MB), 34057 rows x 22 cols; manifest nba_game_rosters_in_data_repo.csv appended
+2026-08-02 13:40:29 [INFO] nba_data_build: uploading game_rosters_2023.parquet (277.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-08-02 13:40:30 [INFO] nba_data_build: uploaded game_rosters_2023.parquet -> espn_nba_game_rosters (asset 1/4)
+2026-08-02 13:40:30 [INFO] nba_data_build: uploading game_rosters_2023.rds (412.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-08-02 13:40:31 [INFO] nba_data_build: uploaded game_rosters_2023.rds -> espn_nba_game_rosters (asset 2/4)
+2026-08-02 13:40:31 [INFO] nba_data_build: uploading game_rosters_2023.csv (8.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-08-02 13:40:32 [INFO] nba_data_build: uploaded game_rosters_2023.csv -> espn_nba_game_rosters (asset 3/4)
+2026-08-02 13:40:32 [INFO] nba_data_build: uploading nba_game_rosters_in_data_repo.csv (2.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-08-02 13:40:33 [INFO] nba_data_build: uploaded nba_game_rosters_in_data_repo.csv -> espn_nba_game_rosters (asset 4/4)
+2026-08-02 13:40:33 [INFO] nba_data_build: game_rosters 2023: done -- 34057 rows in 28.4s
+2026-08-02 13:40:33 [INFO] nba_data_build: game_rosters 2023: season complete -- 34057 rows
+2026-08-02 13:40:35 [INFO] nba_data_build: officials 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:40:44 [INFO] nba_data_build: wrote ../nba/officials/parquet/officials_2023.parquet (18.7KB) + officials_2023.rds (19.0KB) + officials_2023.csv (208.9KB), 3956 rows x 7 cols; manifest nba_officials_in_data_repo.csv appended
+2026-08-02 13:40:44 [INFO] nba_data_build: uploading officials_2023.parquet (18.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-08-02 13:40:45 [INFO] nba_data_build: uploaded officials_2023.parquet -> espn_nba_officials (asset 1/4)
+2026-08-02 13:40:45 [INFO] nba_data_build: uploading officials_2023.rds (19.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-08-02 13:40:46 [INFO] nba_data_build: uploaded officials_2023.rds -> espn_nba_officials (asset 2/4)
+2026-08-02 13:40:46 [INFO] nba_data_build: uploading officials_2023.csv (208.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-08-02 13:40:47 [INFO] nba_data_build: uploaded officials_2023.csv -> espn_nba_officials (asset 3/4)
+2026-08-02 13:40:47 [INFO] nba_data_build: uploading nba_officials_in_data_repo.csv (2.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-08-02 13:40:48 [INFO] nba_data_build: uploaded nba_officials_in_data_repo.csv -> espn_nba_officials (asset 4/4)
+2026-08-02 13:40:48 [INFO] nba_data_build: officials 2023: done -- 3956 rows in 12.6s
+2026-08-02 13:40:48 [INFO] nba_data_build: officials 2023: season complete -- 3956 rows
+2026-08-02 13:40:50 [INFO] nba_data_build: draft 2023: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-02 13:40:50 [INFO] nba_data_build: wrote ../nba/draft/parquet/draft_2023.parquet (17.2KB) + draft_2023.rds (4.5KB) + draft_2023.csv (11.2KB), 60 rows x 35 cols; manifest nba_draft_in_data_repo.csv appended
+2026-08-02 13:40:50 [INFO] nba_data_build: uploading draft_2023.parquet (17.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-08-02 13:40:51 [INFO] nba_data_build: uploaded draft_2023.parquet -> espn_nba_draft (asset 1/4)
+2026-08-02 13:40:51 [INFO] nba_data_build: uploading draft_2023.rds (4.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-08-02 13:40:52 [INFO] nba_data_build: uploaded draft_2023.rds -> espn_nba_draft (asset 2/4)
+2026-08-02 13:40:52 [INFO] nba_data_build: uploading draft_2023.csv (11.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-08-02 13:40:53 [INFO] nba_data_build: uploaded draft_2023.csv -> espn_nba_draft (asset 3/4)
+2026-08-02 13:40:53 [INFO] nba_data_build: uploading nba_draft_in_data_repo.csv (428B) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-08-02 13:40:54 [INFO] nba_data_build: uploaded nba_draft_in_data_repo.csv -> espn_nba_draft (asset 4/4)
+2026-08-02 13:40:54 [INFO] nba_data_build: draft 2023: done -- 60 rows in 4.0s
+2026-08-02 13:40:54 [INFO] nba_data_build: draft 2023: season complete -- 60 rows
+ℹ Compiling 2023 NBA team crosswalk
+✖ 2026-08-02 13:41:56.751336: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 2023 NBA team crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 2023 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 2023 NBA team crosswalk✖ 2026-08-02 13:42:56.792809: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 2023 NBA team crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 2023 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 2023 NBA team crosswalk✖ 2026-08-02 13:42:56.809432: Invalid arguments or no team details data available!
+ℹ Compiling 2023 NBA team crosswalk✖ Error: argument is of length zero
+ℹ Compiling 2023 NBA team crosswalk! 2026-08-02 13:42:56.822655: skip team crosswalk 2023: invalid argument type
+ℹ Compiling 2023 NBA team crosswalk! 2026-08-02 13:42:56.827205: no team crosswalk rows for 2023
+ℹ Compiling 2023 NBA team crosswalk✔ Compiled 2023 NBA team crosswalk! [2m 0.6s]
+
+120.654 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+nba_crosswalk
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-02 13:42:58.032121
+
+ℹ Compiling 2023 NBA schedule crosswalk
+✖ 2026-08-02 13:43:59.766717: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 2023 NBA schedule crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 2023 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 2023 NBA schedule crosswalk✖ 2026-08-02 13:44:59.80722: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 2023 NBA schedule crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 2023 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 2023 NBA schedule crosswalk✖ 2026-08-02 13:44:59.824165: Invalid arguments or no team details data available!
+ℹ Compiling 2023 NBA schedule crosswalk✖ Error: argument is of length zero
+ℹ Compiling 2023 NBA schedule crosswalk! 2026-08-02 13:44:59.837792: skip schedule crosswalk 2023: invalid argument type
+ℹ Compiling 2023 NBA schedule crosswalk! 2026-08-02 13:44:59.842549: no schedule crosswalk rows for 2023
+ℹ Compiling 2023 NBA schedule crosswalk✔ Compiled 2023 NBA schedule crosswalk! [2m 0.5s]
+
+120.522 sec elapsed
+
+ℹ Compiling 2023 NBA player crosswalk
+✖ 2026-08-02 13:46:01.733912: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 2023 NBA player crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 2023 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 2023 NBA player crosswalk✖ 2026-08-02 13:47:01.773898: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 2023 NBA player crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 2023 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 2023 NBA player crosswalk✖ 2026-08-02 13:47:01.790128: Invalid arguments or no team details data available!
+ℹ Compiling 2023 NBA player crosswalk✖ Error: argument is of length zero
+ℹ Compiling 2023 NBA player crosswalk! 2026-08-02 13:47:01.802953: skip player crosswalk 2023: invalid argument type
+ℹ Compiling 2023 NBA player crosswalk! 2026-08-02 13:47:01.807329: no player crosswalk rows for 2023
+ℹ Compiling 2023 NBA player crosswalk✔ Compiled 2023 NBA player crosswalk! [2m 0.6s]
+
+120.594 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+nba_crosswalk
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-02 13:47:02.992666
+
+[main 1227049e] NBA Data Updated (Start: 2023 End: 2023)
+ 17 files changed, 7 insertions(+)
+ create mode 100644 nba/draft/parquet/draft_2023.parquet
+ create mode 100644 nba/standings/parquet/standings_2023.parquet
+To https://github.com/sportsdataverse/hoopR-nba-data
+   00642c67..1227049e  main -> main
