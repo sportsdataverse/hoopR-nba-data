@@ -1,103 +1,108 @@
-error: 7111 bytes of body are still expected
+error: 6503 bytes of body are still expected
 fetch-pack: unexpected disconnect while reading sideband packet
 fatal: early EOF
 fatal: fetch-pack: invalid index-pack output
-2026-08-03 09:05:36 [WARNING] nba_data_build: pbp 0: no game_json games in the season schedule; nothing built
-2026-08-03 09:05:36 [INFO] nba_data_build: pbp 0: season complete -- 0 rows
-2026-08-03 09:05:38 [WARNING] nba_data_build: team_box 0: no game_json games in the season schedule; nothing built
-2026-08-03 09:05:38 [INFO] nba_data_build: team_box 0: season complete -- 0 rows
-2026-08-03 09:05:40 [WARNING] nba_data_build: player_box 0: no game_json games in the season schedule; nothing built
-2026-08-03 09:05:40 [INFO] nba_data_build: player_box 0: season complete -- 0 rows
-2026-08-03 09:05:42 [INFO] nba_data_build: player_core 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:42 [WARNING] nba_data_build: player_core 0: no built player_box parquet at ../nba/player_box/parquet/player_box_0.parquet -- cannot resolve which athletes played this season (build player_box first)
-2026-08-03 09:05:42 [WARNING] nba_data_build: player_core 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:42 [INFO] nba_data_build: player_core 0: season complete -- 0 rows
-2026-08-03 09:05:44 [INFO] nba_data_build: schedules 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:44 [WARNING] nba_data_build: schedules 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:44 [INFO] nba_data_build: schedules 0: season complete -- 0 rows
-2026-08-03 09:05:46 [INFO] nba_data_build: shots 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:46 [WARNING] nba_data_build: shots 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:46 [INFO] nba_data_build: shots 0: season complete -- 0 rows
-2026-08-03 09:05:48 [INFO] nba_data_build: rosters 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:48 [WARNING] nba_data_build: rosters 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:48 [INFO] nba_data_build: rosters 0: season complete -- 0 rows
-2026-08-03 09:05:50 [INFO] nba_data_build: player_season_stats 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:50 [WARNING] nba_data_build: player_season_stats 0: no built player_box parquet at ../nba/player_box/parquet/player_box_0.parquet -- identity columns will be blank (build player_box first)
-2026-08-03 09:05:50 [WARNING] nba_data_build: player_season_stats 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:50 [INFO] nba_data_build: player_season_stats 0: season complete -- 0 rows
-2026-08-03 09:05:52 [INFO] nba_data_build: team_season_stats 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:52 [WARNING] nba_data_build: team_season_stats 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:52 [INFO] nba_data_build: team_season_stats 0: season complete -- 0 rows
-2026-08-03 09:05:54 [INFO] nba_data_build: standings 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:54 [WARNING] nba_data_build: standings 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:54 [INFO] nba_data_build: standings 0: season complete -- 0 rows
-2026-08-03 09:05:56 [INFO] nba_data_build: game_rosters 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:56 [WARNING] nba_data_build: game_rosters 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:56 [INFO] nba_data_build: game_rosters 0: season complete -- 0 rows
-2026-08-03 09:05:58 [INFO] nba_data_build: officials 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:05:58 [WARNING] nba_data_build: officials 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:05:58 [INFO] nba_data_build: officials 0: season complete -- 0 rows
-2026-08-03 09:06:00 [INFO] nba_data_build: draft 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:06:01 [WARNING] nba_data_build: draft 0: season-level build produced 0 rows; nothing written
-2026-08-03 09:06:01 [INFO] nba_data_build: draft 0: season complete -- 0 rows
+2026-08-03 08:24:02 [WARNING] nba_data_build: pbp 0: no game_json games in the season schedule; nothing built
+2026-08-03 08:24:02 [INFO] nba_data_build: pbp 0: season complete -- 0 rows
+2026-08-03 08:24:04 [WARNING] nba_data_build: team_box 0: no game_json games in the season schedule; nothing built
+2026-08-03 08:24:04 [INFO] nba_data_build: team_box 0: season complete -- 0 rows
+2026-08-03 08:24:06 [WARNING] nba_data_build: player_box 0: no game_json games in the season schedule; nothing built
+2026-08-03 08:24:06 [INFO] nba_data_build: player_box 0: season complete -- 0 rows
+2026-08-03 08:24:07 [INFO] nba_data_build: player_core 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:07 [WARNING] nba_data_build: player_core 0: no built player_box parquet at ../nba/player_box/parquet/player_box_0.parquet -- cannot resolve which athletes played this season (build player_box first)
+2026-08-03 08:24:07 [WARNING] nba_data_build: player_core 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:07 [INFO] nba_data_build: player_core 0: season complete -- 0 rows
+2026-08-03 08:24:09 [INFO] nba_data_build: schedules 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:09 [WARNING] nba_data_build: schedules 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:09 [INFO] nba_data_build: schedules 0: season complete -- 0 rows
+2026-08-03 08:24:11 [INFO] nba_data_build: shots 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:11 [WARNING] nba_data_build: shots 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:11 [INFO] nba_data_build: shots 0: season complete -- 0 rows
+2026-08-03 08:24:13 [INFO] nba_data_build: rosters 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:13 [WARNING] nba_data_build: rosters 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:13 [INFO] nba_data_build: rosters 0: season complete -- 0 rows
+2026-08-03 08:24:15 [INFO] nba_data_build: player_season_stats 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:15 [WARNING] nba_data_build: player_season_stats 0: no built player_box parquet at ../nba/player_box/parquet/player_box_0.parquet -- identity columns will be blank (build player_box first)
+2026-08-03 08:24:15 [WARNING] nba_data_build: player_season_stats 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:15 [INFO] nba_data_build: player_season_stats 0: season complete -- 0 rows
+2026-08-03 08:24:16 [INFO] nba_data_build: team_season_stats 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:17 [WARNING] nba_data_build: team_season_stats 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:17 [INFO] nba_data_build: team_season_stats 0: season complete -- 0 rows
+2026-08-03 08:24:18 [INFO] nba_data_build: standings 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:18 [WARNING] nba_data_build: standings 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:18 [INFO] nba_data_build: standings 0: season complete -- 0 rows
+2026-08-03 08:24:20 [INFO] nba_data_build: game_rosters 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:20 [WARNING] nba_data_build: game_rosters 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:20 [INFO] nba_data_build: game_rosters 0: season complete -- 0 rows
+2026-08-03 08:24:22 [INFO] nba_data_build: officials 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:22 [WARNING] nba_data_build: officials 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:22 [INFO] nba_data_build: officials 0: season complete -- 0 rows
+2026-08-03 08:24:24 [INFO] nba_data_build: draft 0: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 08:24:24 [WARNING] nba_data_build: draft 0: season-level build produced 0 rows; nothing written
+2026-08-03 08:24:24 [INFO] nba_data_build: draft 0: season complete -- 0 rows
 ℹ Compiling 0 NBA team crosswalk
-✖ 2026-08-03 09:07:03.423067: Invalid arguments or no league standings v3 data available for 2025-26!
+✖ 2026-08-03 08:25:25.864631: Invalid arguments or no league standings v3 data available for 2025-26!
 ℹ Compiling 0 NBA team crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
 ℹ Compiling 0 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-ℹ Compiling 0 NBA team crosswalk✖ 2026-08-03 09:08:03.461751: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 0 NBA team crosswalk✖ 2026-08-03 08:26:25.900259: Invalid arguments or no league game log data for 2025-26 available!
 ℹ Compiling 0 NBA team crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
 ℹ Compiling 0 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-ℹ Compiling 0 NBA team crosswalk✖ 2026-08-03 09:08:03.47789: Invalid arguments or no team details data available!
+ℹ Compiling 0 NBA team crosswalk✖ 2026-08-03 08:26:25.915481: Invalid arguments or no team details data available!
 ℹ Compiling 0 NBA team crosswalk✖ Error: argument is of length zero
-ℹ Compiling 0 NBA team crosswalk! 2026-08-03 09:08:03.490346: skip team crosswalk 0: invalid argument type
-ℹ Compiling 0 NBA team crosswalk! 2026-08-03 09:08:03.494672: no team crosswalk rows for 0
-ℹ Compiling 0 NBA team crosswalk✔ Compiled 0 NBA team crosswalk! [2m 0.8s]
+ℹ Compiling 0 NBA team crosswalk! 2026-08-03 08:26:25.926893: skip team crosswalk 0: invalid argument type
+ℹ Compiling 0 NBA team crosswalk! 2026-08-03 08:26:25.931337: no team crosswalk rows for 0
+ℹ Compiling 0 NBA team crosswalk✔ Compiled 0 NBA team crosswalk! [2m 0.5s]
 
-120.829 sec elapsed
+120.496 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 09:08:05.18348
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 08:26:27.421742
 
 ℹ Compiling 0 NBA schedule crosswalk
-✖ 2026-08-03 09:09:07.050497: Invalid arguments or no league standings v3 data available for 2025-26!
+✖ 2026-08-03 08:27:28.87672: Invalid arguments or no league standings v3 data available for 2025-26!
 ℹ Compiling 0 NBA schedule crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
-ℹ Compiling 0 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 0 NBA schedule crosswalk✖ 2026-08-03 09:10:07.090771: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 0 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+ℹ Compiling 0 NBA schedule crosswalk✖ 2026-08-03 08:28:28.911638: Invalid arguments or no league game log data for 2025-26 available!
 ℹ Compiling 0 NBA schedule crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
-ℹ Compiling 0 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 0 NBA schedule crosswalk✖ 2026-08-03 09:10:07.1069: Invalid arguments or no team details data available!
+ℹ Compiling 0 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+ℹ Compiling 0 NBA schedule crosswalk✖ 2026-08-03 08:28:28.926665: Invalid arguments or no team details data available!
 ℹ Compiling 0 NBA schedule crosswalk✖ Error: argument is of length zero
-ℹ Compiling 0 NBA schedule crosswalk! 2026-08-03 09:10:07.11918: skip schedule crosswalk 0: invalid argument type
-ℹ Compiling 0 NBA schedule crosswalk! 2026-08-03 09:10:07.123574: no schedule crosswalk rows for 0
-ℹ Compiling 0 NBA schedule crosswalk✔ Compiled 0 NBA schedule crosswalk! [2m 0.7s]
+ℹ Compiling 0 NBA schedule crosswalk! 2026-08-03 08:28:28.937562: skip schedule crosswalk 0: invalid argument type
+ℹ Compiling 0 NBA schedule crosswalk! 2026-08-03 08:28:28.941869: no schedule crosswalk rows for 0
+ℹ Compiling 0 NBA schedule crosswalk✔ Compiled 0 NBA schedule crosswalk! [2m 0.4s]
 
-120.683 sec elapsed
+120.417 sec elapsed
 
 ℹ Compiling 0 NBA player crosswalk
-✖ 2026-08-03 09:11:08.894255: Invalid arguments or no league standings v3 data available for 2025-26!
+✖ 2026-08-03 08:29:30.406981: Invalid arguments or no league standings v3 data available for 2025-26!
 ℹ Compiling 0 NBA player crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
 ℹ Compiling 0 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 0 NBA player crosswalk✖ 2026-08-03 09:12:08.934526: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 0 NBA player crosswalk✖ 2026-08-03 08:30:30.442759: Invalid arguments or no league game log data for 2025-26 available!
 ℹ Compiling 0 NBA player crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
 ℹ Compiling 0 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 0 NBA player crosswalk✖ 2026-08-03 09:12:08.950366: Invalid arguments or no team details data available!
+ℹ Compiling 0 NBA player crosswalk✖ 2026-08-03 08:30:30.457958: Invalid arguments or no team details data available!
 ℹ Compiling 0 NBA player crosswalk✖ Error: argument is of length zero
-ℹ Compiling 0 NBA player crosswalk! 2026-08-03 09:12:08.962653: skip player crosswalk 0: invalid argument type
-ℹ Compiling 0 NBA player crosswalk! 2026-08-03 09:12:08.96707: no player crosswalk rows for 0
-ℹ Compiling 0 NBA player crosswalk✔ Compiled 0 NBA player crosswalk! [2m 0.5s]
+ℹ Compiling 0 NBA player crosswalk! 2026-08-03 08:30:30.469123: skip player crosswalk 0: invalid argument type
+ℹ Compiling 0 NBA player crosswalk! 2026-08-03 08:30:30.473402: no player crosswalk rows for 0
+ℹ Compiling 0 NBA player crosswalk✔ Compiled 0 NBA player crosswalk! [2m 0.4s]
 
-120.573 sec elapsed
+120.427 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
 nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 09:12:10.389795
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 08:30:31.66213
 
+error: 3231 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
 From https://github.com/sportsdataverse/hoopR-nba-data
+   d85ec4a2..ea5b1148  main                  -> origin/main
  * [new branch]        AE/remove-qs          -> origin/AE/remove-qs
  * [new branch]        feat/nba-ci-cutover-python -> origin/feat/nba-ci-cutover-python
  * [new branch]        feat/nba-data-build   -> origin/feat/nba-data-build
@@ -108,8 +113,11 @@ From https://github.com/sportsdataverse/hoopR-nba-data
  * [new branch]        feat/nba-player-core-dataset -> origin/feat/nba-player-core-dataset
  * [new branch]        feat/nba-player-core-tree -> origin/feat/nba-player-core-tree
  * [new branch]        fix/nba-serialize-rds -> origin/fix/nba-serialize-rds
-[main dde23098] NBA Data Updated (Start: 0 End: 0)
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 =
-To https://github.com/sportsdataverse/hoopR-nba-data
-   d85ec4a2..dde23098  main -> main
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+No changes to commit
+From https://github.com/sportsdataverse/hoopR-nba-data
+   ea5b1148..74917451  main       -> origin/main
+Everything up-to-date
