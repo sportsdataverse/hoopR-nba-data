@@ -19,3 +19,6 @@ nba/*/csv/
 # Built rds/csv ship to the sportsdataverse-data releases, not to git.
 nba/*/rds/
 nba/*/csv/
+
+# uv-managed project virtualenv (now at the repo root).
+.venv/

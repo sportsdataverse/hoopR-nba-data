@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"export MSYS_NO_PATHCONV=1 PYTHONIOENCODING=utf-8 ; \\\"C:/Users/saiem/Documents/GitHub-Data/sdv-dev/sdv-py/.venv/Scripts/python.exe\\\" - <<'PYEOF'\\nimport pathlib\\nSDV = pathlib.Path(\\\"C:/Use...",
+  "error": "Exit code 1\n  wnba: config already wired (earlier partial run)\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 72, in <module>\r\nAssertionError: wnba: publish anchor count=0",
+  "timestamp": "2026-07-17T04:08:17.938Z",
+  "retry_count": 1
+}
