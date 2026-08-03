@@ -1,5 +1,4 @@
 import polars as pl
-
 from nba_data_build import io
 from nba_data_build.config import REGISTRY
 

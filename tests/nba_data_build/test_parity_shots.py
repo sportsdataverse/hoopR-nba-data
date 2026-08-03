@@ -13,7 +13,6 @@ import polars as pl
 from tests.nba_data_build._parity_helpers import assert_parquet_parity
 from tests.nba_data_build.conftest import oracle_path
 
-
 ADDITIVE_COLS = (
     "athlete_name_1",
     "athlete_name_2",

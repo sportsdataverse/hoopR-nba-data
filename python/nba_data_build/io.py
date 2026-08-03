@@ -19,7 +19,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import polars as pl
-
 from sportsdataverse._rds import write_rds
 
 from nba_data_build._logging import get_logger, human_size

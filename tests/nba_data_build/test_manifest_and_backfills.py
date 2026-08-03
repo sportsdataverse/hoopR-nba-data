@@ -5,7 +5,6 @@ team_box ``largest_lead`` backfill.
 """
 
 import polars as pl
-
 from nba_data_build.config import REGISTRY
 from nba_data_build.reshapers import team_box_season_postprocess
 

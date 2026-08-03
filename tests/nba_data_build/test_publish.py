@@ -1,7 +1,6 @@
 from pathlib import Path
 
 import polars as pl
-
 from nba_data_build import io, publish
 from nba_data_build.config import REGISTRY
 

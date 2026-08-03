@@ -3,7 +3,6 @@ processor tees into the per-season rotating logfile, incl. explicit gh-release
 upload confirmations."""
 
 import polars as pl
-
 from nba_data_build import io as build_io
 from nba_data_build import publish
 from nba_data_build.config import REGISTRY

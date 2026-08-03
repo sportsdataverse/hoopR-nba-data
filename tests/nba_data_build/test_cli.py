@@ -1,5 +1,4 @@
 import pytest
-
 from nba_data_build.cli import main
 
 
