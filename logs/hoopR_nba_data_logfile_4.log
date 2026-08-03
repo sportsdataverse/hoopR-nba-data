@@ -1,184 +1,103 @@
-Error in `purrr::map()`:
-ℹ In index: 1.
-Caused by error in `dplyr::filter()`:
-ℹ In argument: `.data$game_json == TRUE`.
-Caused by error in `.data$game_json`:
-! Column `game_json` not found in `.data`.
-Backtrace:
-     ▆
-  1. ├─purrr::map(...)
-  2. │ └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
-  3. │   ├─purrr:::with_indexed_errors(...)
-  4. │   │ └─base::withCallingHandlers(...)
-  5. │   ├─purrr:::call_with_cleanup(...)
-  6. │   └─global .f(.x[[i]], ...)
-  7. │     └─global nba_pbp_games(y)
-  8. │       └─sched %>% dplyr::filter(.data$game_json == TRUE) %>% ...
-  9. ├─dplyr::pull(., "game_id")
- 10. ├─dplyr::filter(., .data$game_json == TRUE)
- 11. ├─dplyr:::filter.data.frame(., .data$game_json == TRUE)
- 12. │ └─dplyr:::filter_impl(...)
- 13. │   └─dplyr:::filter_rows(...)
- 14. │     └─dplyr:::filter_eval(...)
- 15. │       ├─base::withCallingHandlers(...)
- 16. │       └─mask$eval_all_filter(dots_expanded, invert, env_filter)
- 17. │         └─dplyr (local) eval()
- 18. ├─game_json
- 19. ├─rlang:::`$.rlang_data_pronoun`(.data, game_json)
- 20. │ └─rlang:::data_pronoun_get(...)
- 21. └─rlang:::abort_data_pronoun(x, call = y)
- 22.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
-Warning messages:
-1: In readRDS(con) :
-  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_4.rds': HTTP status was '404 Not Found'
-2: Failed to readRDS from <https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_4.rds> 
-Execution halted
-::warning ::R/espn_nba_01_pbp_creation.R for season 4 exited with code 1
-Error in `purrr::map()`:
-ℹ In index: 1.
-Caused by error in `dplyr::filter()`:
-ℹ In argument: `.data$game_json == TRUE`.
-Caused by error in `.data$game_json`:
-! Column `game_json` not found in `.data`.
-Backtrace:
-     ▆
-  1. ├─purrr::map(...)
-  2. │ └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
-  3. │   ├─purrr:::with_indexed_errors(...)
-  4. │   │ └─base::withCallingHandlers(...)
-  5. │   ├─purrr:::call_with_cleanup(...)
-  6. │   └─global .f(.x[[i]], ...)
-  7. │     └─global nba_team_box_games(y)
-  8. │       └─sched %>% dplyr::filter(.data$game_json == TRUE) %>% ...
-  9. ├─dplyr::pull(., "game_id")
- 10. ├─dplyr::filter(., .data$game_json == TRUE)
- 11. ├─dplyr:::filter.data.frame(., .data$game_json == TRUE)
- 12. │ └─dplyr:::filter_impl(...)
- 13. │   └─dplyr:::filter_rows(...)
- 14. │     └─dplyr:::filter_eval(...)
- 15. │       ├─base::withCallingHandlers(...)
- 16. │       └─mask$eval_all_filter(dots_expanded, invert, env_filter)
- 17. │         └─dplyr (local) eval()
- 18. ├─game_json
- 19. ├─rlang:::`$.rlang_data_pronoun`(.data, game_json)
- 20. │ └─rlang:::data_pronoun_get(...)
- 21. └─rlang:::abort_data_pronoun(x, call = y)
- 22.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
-Execution halted
-::warning ::R/espn_nba_02_team_box_creation.R for season 4 exited with code 1
-Error in `purrr::map()`:
-ℹ In index: 1.
-Caused by error in `dplyr::filter()`:
-ℹ In argument: `.data$game_json == TRUE`.
-Caused by error in `.data$game_json`:
-! Column `game_json` not found in `.data`.
-Backtrace:
-     ▆
-  1. ├─purrr::map(...)
-  2. │ └─purrr:::map_("list", .x, .f, ..., .progress = .progress)
-  3. │   ├─purrr:::with_indexed_errors(...)
-  4. │   │ └─base::withCallingHandlers(...)
-  5. │   ├─purrr:::call_with_cleanup(...)
-  6. │   └─global .f(.x[[i]], ...)
-  7. │     └─global nba_player_box_games(y)
-  8. │       └─sched %>% dplyr::filter(.data$game_json == TRUE) %>% ...
-  9. ├─dplyr::pull(., "game_id")
- 10. ├─dplyr::filter(., .data$game_json == TRUE)
- 11. ├─dplyr:::filter.data.frame(., .data$game_json == TRUE)
- 12. │ └─dplyr:::filter_impl(...)
- 13. │   └─dplyr:::filter_rows(...)
- 14. │     └─dplyr:::filter_eval(...)
- 15. │       ├─base::withCallingHandlers(...)
- 16. │       └─mask$eval_all_filter(dots_expanded, invert, env_filter)
- 17. │         └─dplyr (local) eval()
- 18. ├─game_json
- 19. ├─rlang:::`$.rlang_data_pronoun`(.data, game_json)
- 20. │ └─rlang:::data_pronoun_get(...)
- 21. └─rlang:::abort_data_pronoun(x, call = y)
- 22.   └─rlang::abort(msg, "rlang_error_data_pronoun_not_found", call = call)
-Execution halted
-::warning ::R/espn_nba_03_player_box_creation.R for season 4 exited with code 1
-2026-06-03 03:11:14.527086: no team rosters in raw repo for 4; skipping
-0.321 sec elapsed
+2026-08-03 09:47:09 [WARNING] nba_data_build: pbp 4: no game_json games in the season schedule; nothing built
+2026-08-03 09:47:09 [INFO] nba_data_build: pbp 4: season complete -- 0 rows
+2026-08-03 09:47:11 [WARNING] nba_data_build: team_box 4: no game_json games in the season schedule; nothing built
+2026-08-03 09:47:11 [INFO] nba_data_build: team_box 4: season complete -- 0 rows
+2026-08-03 09:47:13 [WARNING] nba_data_build: player_box 4: no game_json games in the season schedule; nothing built
+2026-08-03 09:47:13 [INFO] nba_data_build: player_box 4: season complete -- 0 rows
+2026-08-03 09:47:15 [INFO] nba_data_build: player_core 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:15 [WARNING] nba_data_build: player_core 4: no built player_box parquet at ../nba/player_box/parquet/player_box_4.parquet -- cannot resolve which athletes played this season (build player_box first)
+2026-08-03 09:47:15 [WARNING] nba_data_build: player_core 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:15 [INFO] nba_data_build: player_core 4: season complete -- 0 rows
+2026-08-03 09:47:17 [INFO] nba_data_build: schedules 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:17 [WARNING] nba_data_build: schedules 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:17 [INFO] nba_data_build: schedules 4: season complete -- 0 rows
+2026-08-03 09:47:19 [INFO] nba_data_build: shots 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:19 [WARNING] nba_data_build: shots 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:19 [INFO] nba_data_build: shots 4: season complete -- 0 rows
+2026-08-03 09:47:21 [INFO] nba_data_build: rosters 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:21 [WARNING] nba_data_build: rosters 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:21 [INFO] nba_data_build: rosters 4: season complete -- 0 rows
+2026-08-03 09:47:23 [INFO] nba_data_build: player_season_stats 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:23 [WARNING] nba_data_build: player_season_stats 4: no built player_box parquet at ../nba/player_box/parquet/player_box_4.parquet -- identity columns will be blank (build player_box first)
+2026-08-03 09:47:23 [WARNING] nba_data_build: player_season_stats 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:23 [INFO] nba_data_build: player_season_stats 4: season complete -- 0 rows
+2026-08-03 09:47:25 [INFO] nba_data_build: team_season_stats 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:25 [WARNING] nba_data_build: team_season_stats 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:25 [INFO] nba_data_build: team_season_stats 4: season complete -- 0 rows
+2026-08-03 09:47:27 [INFO] nba_data_build: standings 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:27 [WARNING] nba_data_build: standings 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:27 [INFO] nba_data_build: standings 4: season complete -- 0 rows
+2026-08-03 09:47:29 [INFO] nba_data_build: game_rosters 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:29 [WARNING] nba_data_build: game_rosters 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:29 [INFO] nba_data_build: game_rosters 4: season complete -- 0 rows
+2026-08-03 09:47:31 [INFO] nba_data_build: officials 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:31 [WARNING] nba_data_build: officials 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:31 [INFO] nba_data_build: officials 4: season complete -- 0 rows
+2026-08-03 09:47:33 [INFO] nba_data_build: draft 4: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 09:47:33 [WARNING] nba_data_build: draft 4: season-level build produced 0 rows; nothing written
+2026-08-03 09:47:33 [INFO] nba_data_build: draft 4: season complete -- 0 rows
+ℹ Compiling 4 NBA team crosswalk
+✖ 2026-08-03 09:48:35.433094: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 4 NBA team crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 4 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 4 NBA team crosswalk✖ 2026-08-03 09:49:35.472234: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 4 NBA team crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 4 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 4 NBA team crosswalk✖ 2026-08-03 09:49:35.488316: Invalid arguments or no team details data available!
+ℹ Compiling 4 NBA team crosswalk✖ Error: argument is of length zero
+ℹ Compiling 4 NBA team crosswalk! 2026-08-03 09:49:35.501651: skip team crosswalk 4: invalid argument type
+ℹ Compiling 4 NBA team crosswalk! 2026-08-03 09:49:35.506284: no team crosswalk rows for 4
+ℹ Compiling 4 NBA team crosswalk✔ Compiled 4 NBA team crosswalk! [2m 0.6s]
+
+120.622 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_rosters
+nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_rosters on 2026-06-03 03:11:16.452685
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 09:49:36.844427
 
-! 2026-06-03 03:11:17.665725: could not load player_box for 4: seasons >= 2002 is not TRUE
-! 2026-06-03 03:11:17.680556: no player_box athletes for 4; skipping player_season_stats
-0.069 sec elapsed
+ℹ Compiling 4 NBA schedule crosswalk
+✖ 2026-08-03 09:50:38.630867: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 4 NBA schedule crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 4 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+ℹ Compiling 4 NBA schedule crosswalk✖ 2026-08-03 09:51:38.670132: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 4 NBA schedule crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 4 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+ℹ Compiling 4 NBA schedule crosswalk✖ 2026-08-03 09:51:38.685921: Invalid arguments or no team details data available!
+ℹ Compiling 4 NBA schedule crosswalk✖ Error: argument is of length zero
+ℹ Compiling 4 NBA schedule crosswalk! 2026-08-03 09:51:38.698627: skip schedule crosswalk 4: invalid argument type
+ℹ Compiling 4 NBA schedule crosswalk! 2026-08-03 09:51:38.70314: no schedule crosswalk rows for 4
+ℹ Compiling 4 NBA schedule crosswalk✔ Compiled 4 NBA schedule crosswalk! [2m 0.5s]
+
+120.557 sec elapsed
+
+ℹ Compiling 4 NBA player crosswalk
+✖ 2026-08-03 09:52:40.434478: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 4 NBA player crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 4 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+ℹ Compiling 4 NBA player crosswalk✖ 2026-08-03 09:53:40.473525: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 4 NBA player crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 4 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+ℹ Compiling 4 NBA player crosswalk✖ 2026-08-03 09:53:40.489369: Invalid arguments or no team details data available!
+ℹ Compiling 4 NBA player crosswalk✖ Error: argument is of length zero
+ℹ Compiling 4 NBA player crosswalk! 2026-08-03 09:53:40.501624: skip player crosswalk 4: invalid argument type
+ℹ Compiling 4 NBA player crosswalk! 2026-08-03 09:53:40.506032: no player crosswalk rows for 4
+ℹ Compiling 4 NBA player crosswalk✔ Compiled 4 NBA player crosswalk! [2m 0.5s]
+
+120.521 sec elapsed
 → Uploading 1 files!
 ℹ Start upload of 5 files to
 <https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_player_season_stats
+nba_crosswalk
 ✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_player_season_stats on 2026-06-03 03:11:19.58975
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 09:53:41.851542
 
-! 2026-06-03 03:11:21.064681: no team_stats in raw repo for 4; skipping
-0.328 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_team_season_stats
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_team_season_stats on 2026-06-03 03:11:22.972175
+From https://github.com/sportsdataverse/hoopR-nba-data
+   74917451..700dd591  main       -> origin/main
+On branch main
+Your branch is up to date with 'origin/main'.
 
-! 2026-06-03 03:11:24.285971: skip standings 4: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/4.json'
-Warning message:
-In open.connection(con, "rb") :
-  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/4.json': HTTP status was '404 Not Found'
-0.181 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_standings
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_standings on 2026-06-03 03:11:26.13648
-
-! 2026-06-03 03:11:27.480907: no games listed for 4; skipping game_rosters
-Warning messages:
-1: In readRDS(con) :
-  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_4.rds': HTTP status was '404 Not Found'
-2: Failed to readRDS from <https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_4.rds> 
-0.121 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_game_rosters
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_game_rosters on 2026-06-03 03:11:29.442838
-
-! 2026-06-03 03:11:30.718701: no games listed for 4; skipping officials
-Warning messages:
-1: In readRDS(con) :
-  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_4.rds': HTTP status was '404 Not Found'
-2: Failed to readRDS from <https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/schedules/rds/nba_schedule_4.rds> 
-0.119 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_officials
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_officials on 2026-06-03 03:11:32.635373
-
-! 2026-06-03 03:11:33.986586: skip draft 4: cannot open the connection to 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/4.json'
-Warning message:
-In open.connection(con, "rb") :
-  cannot open URL 'https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/4.json': HTTP status was '404 Not Found'
-0.212 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-espn_nba_draft
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ espn_nba_draft on 2026-06-03 03:11:35.976769
-
-[main 1e478e86] NBA Data Updated (Start: 4 End: 4)
- 2 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 nba/schedules/parquet/nba_schedule_4.parquet
- create mode 100644 nba/schedules/rds/nba_schedule_4.rds
-To https://github.com/sportsdataverse/hoopR-nba-data
-   261840a9..1e478e86  main -> main
+nothing to commit, working tree clean
+No changes to commit
+Everything up-to-date
