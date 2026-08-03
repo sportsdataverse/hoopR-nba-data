@@ -1,0 +1,101 @@
+2026-08-03 11:46:34 [WARNING] nba_data_build: pbp 22: no game_json games in the season schedule; nothing built
+2026-08-03 11:46:34 [INFO] nba_data_build: pbp 22: season complete -- 0 rows
+2026-08-03 11:46:36 [WARNING] nba_data_build: team_box 22: no game_json games in the season schedule; nothing built
+2026-08-03 11:46:36 [INFO] nba_data_build: team_box 22: season complete -- 0 rows
+2026-08-03 11:46:38 [WARNING] nba_data_build: player_box 22: no game_json games in the season schedule; nothing built
+2026-08-03 11:46:38 [INFO] nba_data_build: player_box 22: season complete -- 0 rows
+2026-08-03 11:46:40 [INFO] nba_data_build: player_core 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:40 [WARNING] nba_data_build: player_core 22: no built player_box parquet at ../nba/player_box/parquet/player_box_22.parquet -- cannot resolve which athletes played this season (build player_box first)
+2026-08-03 11:46:40 [WARNING] nba_data_build: player_core 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:40 [INFO] nba_data_build: player_core 22: season complete -- 0 rows
+2026-08-03 11:46:42 [INFO] nba_data_build: schedules 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:42 [WARNING] nba_data_build: schedules 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:42 [INFO] nba_data_build: schedules 22: season complete -- 0 rows
+2026-08-03 11:46:44 [INFO] nba_data_build: shots 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:44 [WARNING] nba_data_build: shots 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:44 [INFO] nba_data_build: shots 22: season complete -- 0 rows
+2026-08-03 11:46:46 [INFO] nba_data_build: rosters 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:46 [WARNING] nba_data_build: rosters 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:46 [INFO] nba_data_build: rosters 22: season complete -- 0 rows
+2026-08-03 11:46:48 [INFO] nba_data_build: player_season_stats 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:48 [WARNING] nba_data_build: player_season_stats 22: no built player_box parquet at ../nba/player_box/parquet/player_box_22.parquet -- identity columns will be blank (build player_box first)
+2026-08-03 11:46:48 [WARNING] nba_data_build: player_season_stats 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:48 [INFO] nba_data_build: player_season_stats 22: season complete -- 0 rows
+2026-08-03 11:46:49 [INFO] nba_data_build: team_season_stats 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:50 [WARNING] nba_data_build: team_season_stats 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:50 [INFO] nba_data_build: team_season_stats 22: season complete -- 0 rows
+2026-08-03 11:46:52 [INFO] nba_data_build: standings 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:52 [WARNING] nba_data_build: standings 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:52 [INFO] nba_data_build: standings 22: season complete -- 0 rows
+2026-08-03 11:46:54 [INFO] nba_data_build: game_rosters 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:54 [WARNING] nba_data_build: game_rosters 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:54 [INFO] nba_data_build: game_rosters 22: season complete -- 0 rows
+2026-08-03 11:46:56 [INFO] nba_data_build: officials 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:56 [WARNING] nba_data_build: officials 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:56 [INFO] nba_data_build: officials 22: season complete -- 0 rows
+2026-08-03 11:46:58 [INFO] nba_data_build: draft 22: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-08-03 11:46:58 [WARNING] nba_data_build: draft 22: season-level build produced 0 rows; nothing written
+2026-08-03 11:46:58 [INFO] nba_data_build: draft 22: season complete -- 0 rows
+ℹ Compiling 22 NBA team crosswalk
+✖ 2026-08-03 11:48:00.038244: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 22 NBA team crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 22 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+ℹ Compiling 22 NBA team crosswalk✖ 2026-08-03 11:49:00.079576: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 22 NBA team crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 22 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 22 NBA team crosswalk✖ 2026-08-03 11:49:00.096089: Invalid arguments or no team details data available!
+ℹ Compiling 22 NBA team crosswalk✖ Error: argument is of length zero
+ℹ Compiling 22 NBA team crosswalk! 2026-08-03 11:49:00.109243: skip team crosswalk 22: invalid argument type
+ℹ Compiling 22 NBA team crosswalk! 2026-08-03 11:49:00.113721: no team crosswalk rows for 22
+ℹ Compiling 22 NBA team crosswalk✔ Compiled 22 NBA team crosswalk! [2m 0.5s]
+
+120.578 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+nba_crosswalk
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 11:49:01.531765
+
+ℹ Compiling 22 NBA schedule crosswalk
+✖ 2026-08-03 11:50:03.248008: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 22 NBA schedule crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 22 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 22 NBA schedule crosswalk✖ 2026-08-03 11:51:03.288596: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 22 NBA schedule crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 22 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 22 NBA schedule crosswalk✖ 2026-08-03 11:51:03.304202: Invalid arguments or no team details data available!
+ℹ Compiling 22 NBA schedule crosswalk✖ Error: argument is of length zero
+ℹ Compiling 22 NBA schedule crosswalk! 2026-08-03 11:51:03.316079: skip schedule crosswalk 22: invalid argument type
+ℹ Compiling 22 NBA schedule crosswalk! 2026-08-03 11:51:03.320343: no schedule crosswalk rows for 22
+ℹ Compiling 22 NBA schedule crosswalk✔ Compiled 22 NBA schedule crosswalk! [2m 0.5s]
+
+120.571 sec elapsed
+
+ℹ Compiling 22 NBA player crosswalk
+✖ 2026-08-03 11:52:04.99162: Invalid arguments or no league standings v3 data available for 2025-26!
+ℹ Compiling 22 NBA player crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+ℹ Compiling 22 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+ℹ Compiling 22 NBA player crosswalk✖ 2026-08-03 11:53:05.031193: Invalid arguments or no league game log data for 2025-26 available!
+ℹ Compiling 22 NBA player crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+ℹ Compiling 22 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+ℹ Compiling 22 NBA player crosswalk✖ 2026-08-03 11:53:05.047282: Invalid arguments or no team details data available!
+ℹ Compiling 22 NBA player crosswalk✖ Error: argument is of length zero
+ℹ Compiling 22 NBA player crosswalk! 2026-08-03 11:53:05.059262: skip player crosswalk 22: invalid argument type
+ℹ Compiling 22 NBA player crosswalk! 2026-08-03 11:53:05.063553: no player crosswalk rows for 22
+ℹ Compiling 22 NBA player crosswalk✔ Compiled 22 NBA player crosswalk! [2m 0.5s]
+
+120.536 sec elapsed
+→ Uploading 1 files!
+ℹ Start upload of 5 files to
+<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
+nba_crosswalk
+✔ Upload successfully completed.
+→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 11:53:06.433875
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+No changes to commit
+Everything up-to-date
