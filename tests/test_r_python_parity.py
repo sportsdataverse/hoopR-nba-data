@@ -37,7 +37,23 @@ _PY_STAGE = re.compile(r"^espn_nba_(?P<num>\d{2})_(?P<key>.+)_creation$")
 KNOWN_UNPAIRED: dict[str, str] = {
     "schedules": "R emits it inside espn_nba_01_pbp_creation.R (bundled with pbp), not as its own numbered stage.",
     "shots": "R emits it inside espn_nba_01_pbp_creation.R (bundled with pbp), not as its own numbered stage.",
-    "player_core": "OPEN PARITY GAP — no R file references player_core at all, yet Python produces it.",
+    # OPEN PARITY GAP, and blocked upstream rather than simply unwritten.
+    #
+    # Python builds it from `sportsdataverse.nba.helper_nba_player_core`, a flat
+    # ONE-ROW-PER-ATHLETE projection of the ESPN core-v2 athlete resource. hoopR's
+    # nearest function, `hoopR:::.espn_basketball_athlete_info`, is not a twin:
+    #   1. it FETCHES (builds the core-v2 URL and calls .retry_request) with no
+    #      parse-only entry point, so a stage cannot feed it the raw tree —
+    #      and re-fetching would break the one-way raw->data boundary AND mean
+    #      the two pipelines read different bytes;
+    #   2. it returns a NAMED LIST of tibbles (Bio, Team, ...), not the flat
+    #      single row player_core releases.
+    # So closing this needs an hoopR change (parse-only + flat projection, with
+    # roxygen + testthat per that repo's rules) and an hoopR release BEFORE a
+    # stage here can call it. This repo's own rule — "All HTTP / JSON I/O goes
+    # through hoopR ... Do not add bespoke parsing here" — rules out fixing it
+    # locally. Tracked as upstream work, not a missing file.
+    "player_core": "OPEN PARITY GAP — blocked on an hoopR-side parse-only flat projection; see the note above.",
 }
 
 
