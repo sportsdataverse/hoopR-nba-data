@@ -2,11 +2,34 @@
 
 ## Project Context
 
-This repo is the R-side parser/compiler stage for ESPN NBA data. It reads
+This repo is the parser/compiler stage for ESPN NBA data. It reads
 per-game JSON from `hoopR-nba-raw` via `raw.githubusercontent.com`,
 compiles season-level `.rds`/`.csv`/`.parquet` files under `nba/`, and
 uploads them as GitHub Releases on `sportsdataverse-data`. Downstream
 `hoopR::load_nba_*()` reads from those releases via piggyback URLs.
+
+**Two pipelines, both maintained (standing policy, 2026-08-03).** Python
+(`python/nba_data_build` + the numbered shims beside it) is PRIMARY and gets
+the work; the R chain (`R/espn_nba_NN_*_creation.R`) is maintained as the
+methodological / language equivalent. **Both move together when either
+changes** — adding, renaming or removing a dataset on one side alone is a
+defect, and `tests/test_r_python_parity.py` fails the build for it.
+
+The two sides decompose differently on purpose: R is dataset-per-file, Python
+is a build package with datasets as `config.REGISTRY` rows. The numbered shims
+`python/espn_nba_NN_<key>_creation.py` bridge that — **each carries the same
+number as its R twin**, so the stage sequence is comparable by eye and the
+directory listing IS the pipeline. A shim is thin: it forces its own
+`--dataset` and delegates to the package.
+
+Known unpaired datasets (declared in the parity test, not silently tolerated):
+`schedules` and `shots` are emitted inside `R/espn_nba_01_pbp_creation.R`
+rather than as their own numbered stages; **`player_core` is an OPEN PARITY
+GAP** — Python produces it and no R file references it.
+
+Neither side is automatically authoritative. If the two disagree, that is a
+review item: decide which pipeline is methodologically right, then update the
+other. Do not "fix" the parity test by editing one side to match.
 
 Pipeline: `ESPN -> hoopR-nba-raw -> hoopR-nba-data [HERE] -> sportsdataverse-data -> hoopR`.
 
@@ -30,7 +53,13 @@ and is not installed as a library by users.
 # Full daily flow for one or more seasons
 bash scripts/daily_nba_R_processor.sh -s 2026 -e 2026 -r false
 
-# Call individual compile scripts directly
+# Python stages (PRIMARY) — the numbered shims mirror the R numbers
+uv run python python/espn_nba_01_pbp_creation.py        -s 2026 -e 2026
+uv run python python/espn_nba_02_team_box_creation.py   -s 2026 -e 2026
+# ...equivalently, the package CLI the shims delegate to:
+uv run python -m nba_data_build --dataset pbp -s 2026 -e 2026
+
+# R stages (maintained equivalent) — same numbers, same datasets
 Rscript R/espn_nba_01_pbp_creation.R         -s 2026 -e 2026
 Rscript R/espn_nba_02_team_box_creation.R    -s 2026 -e 2026
 Rscript R/espn_nba_03_player_box_creation.R  -s 2026 -e 2026
