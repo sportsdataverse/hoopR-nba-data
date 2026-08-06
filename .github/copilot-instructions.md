@@ -24,8 +24,15 @@ directory listing IS the pipeline. A shim is thin: it forces its own
 
 Known unpaired datasets (declared in the parity test, not silently tolerated):
 `schedules` and `shots` are emitted inside `R/espn_nba_01_pbp_creation.R`
-rather than as their own numbered stages; **`player_core` is an OPEN PARITY
-GAP** — Python produces it and no R file references it.
+rather than as their own numbered stages. That is a bundling difference, not a
+gap.
+
+`player_core` **was** an open parity gap and is now closed (2026-08-03):
+`R/espn_nba_16_player_core_creation.R` builds it via
+`hoopR::espn_basketball_player_core()`, a pure payload->row projection added to
+hoopR for this purpose. It parses the core-v2 `$ref` URLs and never fetches
+them, so the stage reads the same committed raw payloads the Python builder
+does.
 
 Neither side is automatically authoritative. If the two disagree, that is a
 review item: decide which pipeline is methodologically right, then update the
