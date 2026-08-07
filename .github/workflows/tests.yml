@@ -19,12 +19,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          # Sparse: these repos carry large committed data trees and a full
-          # checkout is slow to useless here -- no test reads them (verified).
+          # Sparse: this repo carries a large committed data tree under nba/
+          # and a full checkout is slow to useless here. Code paths only --
+          # R/ MUST be included: tests/test_r_python_parity.py enumerates the
+          # numbered R stages, and omitting it makes _r_stages() return {} and
+          # reds the gate (the exact failure this list previously caused).
           sparse-checkout: |
             python
             tests
             scripts
+            R
             pyproject.toml
             uv.lock
           sparse-checkout-cone-mode: false
@@ -40,8 +44,9 @@ jobs:
 
       - name: Tests
         # --no-sync: `uv run` would otherwise re-sync and undo the --frozen
-        # install above.
-        run: uv run --no-sync pytest -q
+        # install above. `archive` tests read the committed nba/ tree, which
+        # isn't checked out here.
+        run: uv run --no-sync pytest -q -m "not archive"
 
       - name: Lint
         run: uv run --no-sync ruff check python tests

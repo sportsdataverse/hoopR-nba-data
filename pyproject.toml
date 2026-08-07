@@ -25,6 +25,12 @@ sportsdataverse = { git = "https://github.com/sportsdataverse/sportsdataverse-py
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["python"]
+markers = [
+    # Reads the committed nba/ archive tree, which PR CI does not check out
+    # (sparse checkout of the code paths only). None yet; registered so
+    # archive-backed tests can be added without touching CI.
+    "archive: requires the committed nba/ payload tree",
+]
 
 [tool.ruff]
 line-length = 100
