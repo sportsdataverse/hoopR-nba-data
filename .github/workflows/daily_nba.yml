@@ -82,9 +82,12 @@ jobs:
           GH_TOKEN: ${{ secrets.SDV_GH_TOKEN }}
         run: |
           # Python is the default (CI-validated: run 29307565217 built + published
-          # all NBA datasets). Set use_python_build=false to fall back to R.
+          # all NBA datasets). use_python_build=false selects the R path within
+          # the SAME processor -- the old daily_nba_R_processor.sh /
+          # daily_nba_python_processor.sh are deprecation shims now, so the two
+          # paths cannot drift in season handling, logging or commit format.
           if [ "${{ inputs.use_python_build }}" = "false" ]; then
-            bash scripts/daily_nba_R_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
+            bash scripts/daily_nba_data_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }} -l R
           else
-            bash scripts/daily_nba_python_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }}
+            bash scripts/daily_nba_data_processor.sh -s ${{ env.START_YEAR }} -e ${{ env.END_YEAR }} -l python
           fi

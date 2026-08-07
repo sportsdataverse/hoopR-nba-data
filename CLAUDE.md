@@ -40,17 +40,22 @@ upload `.rds` + `.csv` + `.parquet` assets to the release tags below using
 
 ## Build & Development Commands
 
-The repo is driven by `scripts/daily_nba_R_processor.sh`, which runs a
-fixed **array of 12 numbered R scripts** in `R/` (`espn_nba_01`…`10`,
-`espn_nba_08_draft`, and the three crosswalk scripts) for each season in a
-range, then runs `R/run_summary.R` for the whole range:
+The repo is driven by the single entrypoint
+`scripts/daily_nba_data_processor.sh`, which builds each season in a range,
+commits + pushes, then runs the language-appropriate run summary for the
+whole range. `-l python` (the default) builds the 13 raw-derived datasets
+with `nba_data_build`; `-l R` is the retained rollback path over the
+numbered `espn_nba_01`…`10` scripts (plus `espn_nba_08_draft`). The three
+`nba_11/12/13` crosswalk scripts run in R in BOTH modes (best-effort — a
+crosswalk failure warns but does not fail the run):
 
 ```sh
 # Daily flow for a single end-year season (the CI entry point)
-bash scripts/daily_nba_R_processor.sh -s 2026 -e 2026
+bash scripts/daily_nba_data_processor.sh -s 2026 -e 2026          # python (default)
+bash scripts/daily_nba_data_processor.sh -s 2026 -e 2026 -l R     # R rollback
 
 # Range of seasons
-bash scripts/daily_nba_R_processor.sh -s 2024 -e 2026
+bash scripts/daily_nba_data_processor.sh -s 2024 -e 2026
 
 # Call individual R scripts directly when iterating
 Rscript R/espn_nba_01_pbp_creation.R         -s 2026 -e 2026
@@ -100,7 +105,9 @@ ops/init/
   0000_create_hoopR_releases_init.R   # One-time bootstrap of release tags on sportsdataverse-data
   0001_push_existing_release_data.R   # One-time backfill of historical seasons into releases
 scripts/
-  daily_nba_R_processor.sh            # CI entry point; loops seasons over 12 scripts, commits + pushes
+  daily_nba_data_processor.sh         # CI entry point; loops seasons (-l python|R), commits + pushes
+  daily_nba_python_processor.sh       # deprecated shim -> daily_nba_data_processor.sh -l python
+  daily_nba_R_processor.sh            # deprecated shim -> daily_nba_data_processor.sh -l R
 nba/                                   # Committed compiled output (one folder per dataset)
   schedules/{rds,parquet}/             # Master schedule mirror (also re-released)
   pbp/{rds,parquet}/                   # Per-season play-by-play
@@ -140,7 +147,7 @@ from ESPN's `categories[].statistics[]` for true single-season values.
 
 Add a new compiled dataset by writing a new `R/espn_nba_0N_*.R` script,
 appending the matching `nba/<key>/` subdirectory, adding the script to
-`scripts/daily_nba_R_processor.sh`, and creating the release tag (one-time
+`scripts/daily_nba_data_processor.sh`, and creating the release tag (one-time
 via `ops/init/0000_create_hoopR_releases_init.R`). The corresponding loader on
 the `hoopR` package side (`load_nba_<key>()`) also needs a catalog entry.
 
@@ -162,7 +169,9 @@ the `hoopR` package side (`load_nba_<key>()`) also needs a catalog entry.
   the `Check hoopR_nba_data_trigger for inputs` step.
 - **`workflow_dispatch`** inputs: `start_year`, `end_year` strings.
 - Empty inputs fall back to `hoopR::most_recent_nba_season()`.
-- Calls `bash scripts/daily_nba_R_processor.sh -s $START_YEAR -e $END_YEAR`.
+- Calls
+  `bash scripts/daily_nba_data_processor.sh -s $START_YEAR -e $END_YEAR -l python`
+  (`-l R` when `use_python_build=false`).
 
 The shell script commits with `"NBA Data Updated (Start: $i End: $i)"`
 per season. That message format may also be parsed by downstream

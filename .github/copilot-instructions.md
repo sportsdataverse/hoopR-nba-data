@@ -46,7 +46,11 @@ and is not installed as a library by users.
 ## Repository Workflow
 
 - Branch from `main`; `main` is the default and release branch.
-- CI entry point: `scripts/daily_nba_R_processor.sh -s <START> -e <END> -r false`.
+- CI entry point:
+  `scripts/daily_nba_data_processor.sh -s <START> -e <END> [-l python|R]`
+  (python is the default; `-l R` is the retained rollback path).
+  `scripts/daily_nba_python_processor.sh` and
+  `scripts/daily_nba_R_processor.sh` are deprecation shims that exec it.
 - Compile scripts call into `sportsdataverse/hoopR`. Fix ESPN parser bugs
   upstream there, not here.
 - Don't reorganize the `nba/` output tree without aligning the matching
@@ -58,7 +62,8 @@ and is not installed as a library by users.
 
 ```sh
 # Full daily flow for one or more seasons
-bash scripts/daily_nba_R_processor.sh -s 2026 -e 2026 -r false
+bash scripts/daily_nba_data_processor.sh -s 2026 -e 2026 -l python
+bash scripts/daily_nba_data_processor.sh -s 2026 -e 2026 -l R   # rollback
 
 # Python stages (PRIMARY) — the numbered shims mirror the R numbers
 uv run python python/espn_nba_01_pbp_creation.py        -s 2026 -e 2026

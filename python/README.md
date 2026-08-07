@@ -14,8 +14,8 @@ scripts remain the byte-parity oracle.
 hoopR-nba-raw ──(per-game JSON)──▶ nba_data_build ──(release upload)──▶ sportsdataverse-data ──▶ hoopR::load_nba_*()
 ```
 
-This is a **parallel implementation** — the R pipeline (`scripts/daily_nba_R_processor.sh`)
-still drives daily CI. Wiring this package into CI is a separate cutover.
+This is the daily producer — `scripts/daily_nba_data_processor.sh` runs it by
+default. The R pipeline is retained as the rollback path (`-l R`).
 
 ## Run
 
