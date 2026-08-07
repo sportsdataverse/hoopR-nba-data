@@ -108,7 +108,7 @@ do
     fi
 done
 
-Rscript R/run_summary.R -s "$START_YEAR" -e "$END_YEAR" || true
+( cd python && uv run python -m nba_data_build.summary --logs ../logs -s "$START_YEAR" -e "$END_YEAR" ) || true
 
 if [ "${ANY_FAILED:-0}" != "0" ]; then
     echo "::error ::At least one season's builder exited non-zero. See per-season logs."
