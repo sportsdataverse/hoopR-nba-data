@@ -5,6 +5,12 @@ description = "Python producer for the ESPN NBA release datasets (parity port of
 requires-python = ">=3.11"
 dependencies = [
     "sportsdataverse>=0.0.71",
+    # stats.nba.com TLS/JA3-blocks plain requests (silent timeout, not a 4xx),
+    # so the crosswalk stages' NBA Stats source needs curl_cffi. It is an
+    # OPTIONAL extra in sdv-py -- without it every nba_* column comes back
+    # null instead of failing, which is the exact silent-defect this producer
+    # must not ship.
+    "curl_cffi>=0.7",
     "polars>=1.0,<2.0",
     "pyarrow>=15.0",
     "requests>=2.28",
