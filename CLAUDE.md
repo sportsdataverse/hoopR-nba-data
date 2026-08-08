@@ -46,8 +46,9 @@ commits + pushes, then runs the language-appropriate run summary for the
 whole range. `-l python` (the default) builds the 13 raw-derived datasets
 with `nba_data_build`; `-l R` is the retained rollback path over the
 numbered `espn_nba_01`…`10` scripts (plus `espn_nba_08_draft`). The three
-`nba_11/12/13` crosswalk scripts run in R in BOTH modes (best-effort — a
-crosswalk failure warns but does not fail the run):
+`nba_11/12/13` crosswalks build in Python too; `-l R` runs their `.R`
+originals. Crosswalks are best-effort in both modes (they read live
+ESPN/NBA Stats/Fox — a crosswalk failure warns but does not fail the run):
 
 ```sh
 # Daily flow for a single end-year season (the CI entry point)
