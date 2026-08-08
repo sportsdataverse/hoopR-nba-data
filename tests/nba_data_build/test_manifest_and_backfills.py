@@ -22,6 +22,11 @@ EXPECTED_ENDPOINT = {
     # NBA delta: officials have no dedicated raw dir -- projected from
     # game_rosters.
     "officials": f"{_RAW}/game_rosters/json/<game_id>.json",
+    # Crosswalks don't read the raw repo at all -- R records the producer
+    # call as the source_endpoint (nba_1{1,2,3}_*_crosswalk_creation.R).
+    "team_crosswalk": "hoopR::nba_team_crosswalk()",
+    "schedule_crosswalk": "hoopR::nba_schedule_crosswalk()",
+    "player_crosswalk": "hoopR::nba_player_crosswalk()",
 }
 
 

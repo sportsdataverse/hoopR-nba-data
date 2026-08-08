@@ -5,9 +5,10 @@
 # port of espn_nba_01..10). Build order matters: shots project the built pbp
 # parquet; schedules stamp flags from the built pbp/team_box/player_box
 # parquets; player_season_stats reads the built player_box for identity.
-# NBA has a draft dataset (MBB does not). Crosswalks (nba_11-13) stay on R
-# (live ESPN+Torvik+Fox inputs). `.rds` is written natively by io.write_dataset
-# in the same pass as the parquet, so there is no separate serialize step.
+# NBA has a draft dataset (MBB does not). Of the crosswalks (nba_11-13) only
+# 12 (schedule) builds in Python; 11 + 13 stay on R (see PY_CROSSWALKS below).
+# `.rds` is written natively by io.write_dataset in the same pass as the
+# parquet, so there is no separate serialize step.
 #
 # Usage: bash scripts/daily_nba_data_processor.sh -s 2026 -e 2026 [-l python|R]
 set -uo pipefail
@@ -78,7 +79,24 @@ R_DATASETS=(
     R/espn_nba_10_officials_creation.R
     R/espn_nba_08_draft_creation.R
 )
-# No python port -- crosswalks stay on R in BOTH modes.
+# Crosswalks (stages 11-13). PARTIAL flip: only schedule_crosswalk (12) is
+# live-parity-clean against the R golden, so only it builds in Python.
+#
+# 11 (team) and 13 (player) stay on R: sdv-py has no `fox_nba_teams`, and
+# `nba_team_crosswalk` swallows that ImportError, so every fox_* column comes
+# back null where the R golden populates it (30/30 teams, 520/536 players);
+# `_stats_team_directory` also hard-nulls `nba_team_abbreviation`. Flip them
+# once sdv-py grows the NBA Fox team directory and re-runs clean.
+#
+# `-l R` still runs ALL THREE R scripts unchanged (design D20 rollback).
+PY_CROSSWALKS=(
+    schedule_crosswalk
+)
+# Run in R even in python mode (see above).
+R_CROSSWALKS_IN_PY_MODE=(
+    R/nba_11_team_crosswalk_creation.R
+    R/nba_13_player_crosswalk_creation.R
+)
 R_CROSSWALKS=(
     R/nba_11_team_crosswalk_creation.R
     R/nba_12_schedule_crosswalk_creation.R
@@ -135,13 +153,27 @@ do
             for DS in "${PY_DATASETS[@]}"; do run_py "$DS"; done
         fi
 
-        for SCRIPT in "${R_CROSSWALKS[@]}"
+        # Crosswalks build from LIVE ESPN+NBA Stats+Fox sources and are
+        # known-fragile (timeouts on external flakiness). Best-effort in both
+        # modes: a crosswalk failure warns but does NOT fail the run -- the
+        # core datasets are the daily deliverable and publish independently
+        # above.
+        if [ "$LANG_MODE" = "R" ]; then
+            XWALK_R=("${R_CROSSWALKS[@]}")
+        else
+            XWALK_R=("${R_CROSSWALKS_IN_PY_MODE[@]}")
+            for DS in "${PY_CROSSWALKS[@]}"
+            do
+                echo "::group::nba_data_build $DS $i"
+                ( cd python && uv run python -m nba_data_build \
+                    --dataset "$DS" -s "$i" -e "$i" --base ../nba --raw-root "$RAW_ROOT" --publish ) \
+                    || echo "::warning ::nba_data_build $DS for season $i exited with code $? (crosswalk; non-fatal, live external source)"
+                echo "::endgroup::"
+            done
+        fi
+        for SCRIPT in "${XWALK_R[@]}"
         do
             echo "::group::$SCRIPT $i"
-            # Crosswalks build from LIVE ESPN+Torvik+Fox sources and are known-fragile
-            # (segfaults/timeouts on external flakiness). Best-effort: a crosswalk
-            # failure warns but does NOT fail the run -- the core datasets are the
-            # daily deliverable and publish independently above.
             Rscript "$SCRIPT" -s "$i" -e "$i" || echo "::warning ::$SCRIPT for season $i exited with code $? (crosswalk; non-fatal, live external source)"
             echo "::endgroup::"
         done

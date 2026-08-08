@@ -38,8 +38,17 @@ def _utc_now_str() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
 
+def dataset_dir(spec: DatasetSpec, base: Path) -> Path:
+    """Where this dataset's ``parquet/``/``rds/``/``csv/`` + manifest live.
+
+    Almost always ``{base}/{dataset}``; the three crosswalks share one
+    ``{base}/crosswalk`` dir (``spec.out_dir``).
+    """
+    return base / (spec.out_dir or spec.dataset)
+
+
 def manifest_path(spec: DatasetSpec, base: Path) -> Path:
-    return base / spec.dataset / f"{_LEAGUE}_{spec.dataset}_in_data_repo.csv"
+    return dataset_dir(spec, base) / f"{_LEAGUE}_{spec.dataset}_in_data_repo.csv"
 
 
 def _append_manifest(spec: DatasetSpec, season: int, row_count: int, base: Path) -> Path | None:
@@ -49,6 +58,11 @@ def _append_manifest(spec: DatasetSpec, season: int, row_count: int, base: Path)
     committed manifests carry one row per historical run). ``publish`` is what
     collapses it to one row per season for the release asset. Rewriting the
     tree file as an upsert here would silently destroy that published history.
+
+    The crosswalks are the exception (``spec.manifest_upsert``): one row per
+    season IS their manifest contract, and blind-appending is precisely what
+    left the committed ``nba_team_crosswalk_in_data_repo.csv`` carrying nine
+    identical 2026 rows. A re-run replaces the season's row.
     """
     if spec.manifest_endpoint is None:
         return None  # R does not manifest this dataset; see DatasetSpec
@@ -64,6 +78,8 @@ def _append_manifest(spec: DatasetSpec, season: int, row_count: int, base: Path)
     )
     if f.exists():
         row = pl.concat([pl.read_csv(f), row], how="diagonal_relaxed")
+        if spec.manifest_upsert:
+            row = row.unique(subset=["season"], keep="last", maintain_order=True).sort("season")
     # Atomic write: temp in the same dir + os.replace so a mid-write crash can't
     # truncate the append log (read-modify-write is otherwise not crash-safe).
     tmp = f.with_suffix(f.suffix + ".tmp")
@@ -78,7 +94,8 @@ def write_dataset(
     """Write parquet (+ csv when ``spec.write_tree_csv``) + manifest for one
     dataset/season; return the written paths."""
     base = Path(base)
-    pq_dir = base / spec.dataset / "parquet"
+    root = dataset_dir(spec, base)
+    pq_dir = root / "parquet"
     pq_dir.mkdir(parents=True, exist_ok=True)
     pq = pq_dir / f"{spec.stem}_{season}.parquet"
     df.write_parquet(pq)
@@ -89,7 +106,7 @@ def write_dataset(
     # the python cutover left rds to a retained R step that nba/mbb never had,
     # so the parquet updated daily while the rds froze and every load_nba_* user
     # was served stale data from a release that looked fresh.
-    rds_dir = base / spec.dataset / "rds"
+    rds_dir = root / "rds"
     rds_dir.mkdir(parents=True, exist_ok=True)
     rds = rds_dir / f"{spec.stem}_{season}.rds"
     stamped = datetime.now(timezone.utc)
@@ -101,8 +118,9 @@ def write_dataset(
         # pair first, sportsdataverse_save appends its own).
         attributes={
             f"{RDS_ATTR_PREFIX}_timestamp": stamped,
-            f"{RDS_ATTR_PREFIX}_type": RDS_TYPE_TEMPLATE.format(dataset=spec.dataset),
-            "sportsdataverse_type": f"{spec.dataset} data",
+            f"{RDS_ATTR_PREFIX}_type": spec.rds_type
+            or RDS_TYPE_TEMPLATE.format(dataset=spec.dataset),
+            "sportsdataverse_type": spec.sdv_type or f"{spec.dataset} data",
             "sportsdataverse_timestamp": stamped,
         },
     )
@@ -111,7 +129,7 @@ def write_dataset(
 
     csv_note = ""
     if spec.write_tree_csv:
-        csv_dir = base / spec.dataset / "csv"
+        csv_dir = root / "csv"
         csv_dir.mkdir(parents=True, exist_ok=True)
         csv = csv_dir / f"{spec.stem}_{season}{spec.csv_suffix}"
         df.write_csv(csv)

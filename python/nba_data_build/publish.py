@@ -75,7 +75,7 @@ def _manifest_asset(spec: DatasetSpec, base: Path) -> Path | None:
 
 
 def _dataset_files(spec: DatasetSpec, season: int, base: Path) -> list[Path]:
-    root = base / spec.dataset
+    root = build_io.dataset_dir(spec, base)
     pq = root / "parquet" / f"{spec.stem}_{season}.parquet"
     files = [pq] if pq.exists() else []
     # .rds is hoopR::load_nba_*'s only read path -- publishing the parquet
