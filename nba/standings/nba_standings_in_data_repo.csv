@@ -89,3 +89,4 @@ season,row_count,generated_at_utc,source_endpoint
 2023,690,2026-08-02 13:39:59 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/2023.json
 2026,690,2026-08-03 02:15:04 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/2026.json
 2026,690,2026-08-07 15:58:37 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/2026.json
+2026,690,2026-08-12 06:01:20 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/standings/json/2026.json
