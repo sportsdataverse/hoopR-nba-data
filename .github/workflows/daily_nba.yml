@@ -73,7 +73,7 @@ jobs:
             sportsdataverse/sportsdataverse-data
             ropensci/piggyback
       - name: Set up uv (for the python build)
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v8.1.0
       - name: Sync python build deps
         shell: bash
         run: uv sync --project python
