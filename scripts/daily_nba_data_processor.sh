@@ -231,11 +231,8 @@ do
     # into its tracked location and commit/push it on its own.
     cp "$TMPLOG" "$LOGFILE"
     git stash -u --quiet 2>/dev/null || true
-    git pull --rebase >> /dev/null || true
     git stash pop --quiet 2>/dev/null || true
-    git add "$LOGFILE"
-    git commit -m "NBA Data log update (Start: $i End: $i)" >> /dev/null || echo "No log changes to commit"
-    git push >> /dev/null
+    sdv_commit_push "NBA Data log update (Start: $i End: $i)" "$LOGFILE" || PUSH_RC=1
     rm -f "$TMPLOG"
 
     # Propagate any non-zero exit code so the workflow reports failure.
