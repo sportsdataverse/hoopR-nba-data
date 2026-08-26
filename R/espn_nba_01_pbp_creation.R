@@ -113,6 +113,15 @@ repair_locf <- function(x) {
 # 10). Anything above is upstream garbage (#178's "25OT" row).
 REPAIR_PERIOD_MAX <- 10
 
+# NA-safe cummax (base cummax propagates NA forward).
+repair_cummax <- function(x) {
+  v <- ifelse(is.na(x), -Inf, as.numeric(x))
+  cm <- cummax(v)
+  out <- ifelse(is.na(x), NA_real_, cm)
+  if (is.integer(x)) out <- as.integer(out)
+  out
+}
+
 repair_one_pbp_game <- function(sub) {
   # #178: a row with an impossible period borrows its period identity and
   # half/game seconds offsets from the nearest valid neighbour; its own
@@ -213,6 +222,19 @@ repair_nba_pbp <- function(df) {
       idx <- which(df$game_id == g)
       df[idx, ] <- repair_one_pbp_game(df[idx, ])
     }
+  }
+  # #146 step 2: clamp cumulative scores to the per-game running max -- ESPN's
+  # stale duplicate rows carry earlier-game scores that no reordering can fix
+  # (the true score at any instant is the running max); no-op on well-formed
+  # games.
+  if (all(c("home_score", "away_score") %in% names(df))) {
+    df <- df %>%
+      dplyr::group_by(.data$game_id) %>%
+      dplyr::mutate(
+        home_score = repair_cummax(.data$home_score),
+        away_score = repair_cummax(.data$away_score)
+      ) %>%
+      dplyr::ungroup()
   }
   # #140: replace pickcenter-default spreads with real consensus closing lines
   # from the committed odds-api lookup (game_spread_available flips TRUE only

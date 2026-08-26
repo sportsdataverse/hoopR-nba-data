@@ -59,6 +59,9 @@ INTENDED = {
     "lead_half",
     "lag_game_half",
     "lead_game_half",
+    # 146 stale-duplicate score clamp (running max)
+    "home_score",
+    "away_score",
     # 140 spread injection
     "game_spread",
     "home_team_spread",
@@ -66,8 +69,14 @@ INTENDED = {
     "game_spread_available",
 }
 
+# Known benign drift: the raw repo is re-scraped continuously, and a handful of
+# rows carry a literal "NA" type_abbreviation the older R-built assets show as
+# null (same class as the divergence documented in tests/test_parity_pbp.py).
+KNOWN_DRIFT_MAX = {"type_abbreviation": 10}
+
 
 def fetch_published(season: int, cache: Path) -> Path:
+    cache.mkdir(parents=True, exist_ok=True)
     dest = cache / f"published_play_by_play_{season}.parquet"
     if not dest.exists():
         url = RELEASE_URL.format(season=season)
@@ -87,7 +96,6 @@ def main() -> int:
     pub_path = a.published or fetch_published(
         a.season, Path(tempfile.gettempdir()) / "nba_pbp_gate"
     )
-    pub_path.parent.mkdir(parents=True, exist_ok=True) if a.published is None else None
 
     new = pl.read_parquet(rebuilt_path)
     old = pl.read_parquet(pub_path)
@@ -118,16 +126,27 @@ def main() -> int:
         lhs = pl.col(c)
         rhs = pl.col(f"{c}_new")
         if j.schema[c] != j.schema[f"{c}_new"]:
-            lhs = lhs.cast(pl.Utf8, strict=False)
-            rhs = rhs.cast(pl.Utf8, strict=False)
+            # dtype-only contract changes (R Int32 -> Python Float64, Float64
+            # id -> Int64) compare numerically, not lexically
+            if j.schema[c].is_numeric() and j.schema[f"{c}_new"].is_numeric():
+                lhs = lhs.cast(pl.Float64, strict=False)
+                rhs = rhs.cast(pl.Float64, strict=False)
+            else:
+                lhs = lhs.cast(pl.Utf8, strict=False)
+                rhs = rhs.cast(pl.Utf8, strict=False)
         ne = j.filter(lhs.ne_missing(rhs)).height
         if ne:
             changed[c] = ne
     print("[b] changed columns:")
     for c, cnt in sorted(changed.items(), key=lambda kv: -kv[1]):
-        tag = "intended" if c in INTENDED else "UNEXPECTED"
+        if c in INTENDED:
+            tag = "intended"
+        elif c in KNOWN_DRIFT_MAX and cnt <= KNOWN_DRIFT_MAX[c]:
+            tag = "known raw-refresh drift"
+        else:
+            tag = "UNEXPECTED"
         print(f"    {c}: {cnt} cells ({tag})")
-        if c not in INTENDED:
+        if tag == "UNEXPECTED":
             failures.append(f"unexpected column changed: {c} ({cnt} cells)")
     if not changed:
         print("    (none)")
@@ -152,21 +171,9 @@ def main() -> int:
         if g.height:
             failures.append(f"401616465 still has {g.height} score-decrease rows")
     if dec.height:
-        # Residual decreases mean ESPN's scores themselves are wrong (not just
-        # ordering) -- report, and fail only if resequencing made things worse
-        # than the published asset.
-        old_dec = old.with_columns(
-            (
-                (pl.col("home_score").cast(pl.Int64).diff().over("game_id") < 0)
-                | (pl.col("away_score").cast(pl.Int64).diff().over("game_id") < 0)
-            ).alias("_dec")
-        ).filter(pl.col("_dec") == True)  # noqa: E712
-        print(f"[c] published asset score-decrease rows: {old_dec.height}")
-        if dec.height >= old_dec.height:
-            failures.append(
-                f"resequencing did not reduce score-decrease rows "
-                f"({old_dec.height} -> {dec.height})"
-            )
+        # The running-max clamp guarantees monotone scores; any residual
+        # decrease is a repair bug.
+        failures.append(f"{dec.height} score-decrease rows survived the clamp")
 
     if a.season >= 2024:
         games = new.unique(subset=["game_id"])

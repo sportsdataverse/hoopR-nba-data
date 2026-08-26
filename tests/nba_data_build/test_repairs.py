@@ -72,6 +72,16 @@ def test_disordered_game_resequenced(tmp_path):
     assert out["lead_qtr"].to_list() == [1, 1, 2, None]
 
 
+def test_stale_duplicate_scores_clamped(tmp_path):
+    # clock-ordered game with a stale-score duplicate row (401616465 pattern):
+    # no reorder possible, so the running-max clamp must repair the scores
+    g = _game(7, [(1, 1, 700, 0, 0), (2, 1, 650, 10, 13), (3, 1, 640, 3, 4), (4, 1, 600, 12, 13)])
+    out = repair_pbp_season(g, base=tmp_path)
+    assert out["sequence_number"].to_list() == [1, 2, 3, 4]
+    assert out["home_score"].to_list() == [0, 10, 10, 12]
+    assert out["away_score"].to_list() == [0, 13, 13, 13]
+
+
 def test_ordered_game_untouched(tmp_path):
     g = _game(3, [(1, 1, 700, 0, 0), (2, 1, 650, 2, 0), (3, 2, 700, 4, 2)])
     out = repair_pbp_season(g, base=tmp_path)
