@@ -94,6 +94,159 @@ espn_nba_game_athletes <- function(path) {
     dplyr::distinct(.data$athlete_id, .keep_all = TRUE)
 }
 
+# --- season-level pbp repairs (hoopR #178 / #146 / #140) ----------------------
+# Mirror of python/nba_data_build/repairs.py -- both pipelines move together.
+
+# LOCF with backward fill for leading NAs (no zoo/tidyr dependency).
+repair_locf <- function(x) {
+  ok <- which(!is.na(x))
+  if (length(ok) == 0) {
+    return(x)
+  }
+  idx <- findInterval(seq_along(x), ok)
+  out <- x[ok[pmax(idx, 1)]]
+  out[idx == 0] <- x[ok[1]]
+  out
+}
+
+# NBA regulation is 4 periods; the longest game ever reached 6 OTs (period
+# 10). Anything above is upstream garbage (#178's "25OT" row).
+REPAIR_PERIOD_MAX <- 10
+
+repair_one_pbp_game <- function(sub) {
+  # #178: a row with an impossible period borrows its period identity and
+  # half/game seconds offsets from the nearest valid neighbour; its own
+  # clock-derived quarter seconds are kept, and the garbage end_* trio is
+  # pinned to the repaired start_* values.
+  b <- !is.na(sub$period_number) & sub$period_number > REPAIR_PERIOD_MAX
+  if (any(b)) {
+    for (cc in intersect(
+      c("period_number", "period", "qtr", "period_display_value", "half", "game_half"),
+      names(sub)
+    )) {
+      v <- sub[[cc]]
+      v[b] <- NA
+      sub[[cc]] <- repair_locf(v)
+    }
+    sec_cols <- c(
+      "start_quarter_seconds_remaining",
+      "start_half_seconds_remaining",
+      "start_game_seconds_remaining"
+    )
+    if (all(sec_cols %in% names(sub))) {
+      for (tgt in sec_cols[2:3]) {
+        off <- sub[[tgt]] - sub$start_quarter_seconds_remaining
+        off[b] <- NA
+        off <- repair_locf(off)
+        sub[[tgt]][b] <- sub$start_quarter_seconds_remaining[b] + off[b]
+      }
+      for (i in seq_along(sec_cols)) {
+        end_c <- sub("^start_", "end_", sec_cols[i])
+        if (end_c %in% names(sub)) {
+          sub[[end_c]][b] <- sub[[sec_cols[i]]][b]
+        }
+      }
+    }
+  }
+  # #146: stable-sort within period by descending game clock (existing order
+  # kept for ties); rows with no clock inherit a neighbour's key.
+  ck <- if ("start_quarter_seconds_remaining" %in% names(sub)) {
+    as.numeric(sub$start_quarter_seconds_remaining)
+  } else {
+    rep(NA_real_, nrow(sub))
+  }
+  if (all(c("clock_minutes", "clock_seconds") %in% names(sub))) {
+    fallback <- as.numeric(sub$clock_minutes) * 60 + as.numeric(sub$clock_seconds)
+    ck[is.na(ck)] <- fallback[is.na(ck)]
+  }
+  ck <- stats::ave(ck, sub$period_number, FUN = repair_locf)
+  o <- order(sub$period_number, -ck, seq_len(nrow(sub)), na.last = TRUE)
+  sub <- sub[o, ]
+  # recompute the order-dependent columns
+  if ("game_play_number" %in% names(sub)) {
+    sub$game_play_number <- seq_len(nrow(sub))
+  }
+  laglead <- list(
+    lag_qtr = c("qtr", 1L), lead_qtr = c("qtr", -1L),
+    lag_half = c("half", 1L), lead_half = c("half", -1L),
+    lag_game_half = c("game_half", 1L), lead_game_half = c("game_half", -1L)
+  )
+  for (cc in names(laglead)) {
+    src <- laglead[[cc]][1]
+    if (cc %in% names(sub) && src %in% names(sub)) {
+      sub[[cc]] <- if (laglead[[cc]][2] == "1") {
+        dplyr::lag(sub[[src]])
+      } else {
+        dplyr::lead(sub[[src]])
+      }
+    }
+  }
+  sub
+}
+
+repair_nba_pbp <- function(df) {
+  if (nrow(df) == 0 || !all(c("game_id", "period_number") %in% names(df))) {
+    return(df)
+  }
+  bad_period_games <- unique(df$game_id[
+    !is.na(df$period_number) & df$period_number > REPAIR_PERIOD_MAX
+  ])
+  # games whose cumulative scores are not monotone non-decreasing in stored order
+  viol_games <- if (all(c("home_score", "away_score") %in% names(df))) {
+    v <- df %>%
+      dplyr::group_by(.data$game_id) %>%
+      dplyr::summarise(
+        v = any(diff(.data$home_score) < 0, na.rm = TRUE) |
+          any(diff(.data$away_score) < 0, na.rm = TRUE),
+        .groups = "drop"
+      )
+    v$game_id[v$v]
+  } else {
+    integer(0)
+  }
+  affected <- union(bad_period_games, viol_games)
+  if (length(affected) > 0) {
+    cli::cli_alert_info(
+      "pbp repair (#178/#146): repairing {length(affected)} game{?s}: {affected}"
+    )
+    for (g in affected) {
+      idx <- which(df$game_id == g)
+      df[idx, ] <- repair_one_pbp_game(df[idx, ])
+    }
+  }
+  # #140: replace pickcenter-default spreads with real consensus closing lines
+  # from the committed odds-api lookup (game_spread_available flips TRUE only
+  # when a real book line was injected; games with no line keep the default).
+  lk_path <- "nba/betting_lines/closing_lines_odds_api.parquet"
+  spread_cols <- c(
+    "game_spread", "home_team_spread", "home_favorite", "game_spread_available"
+  )
+  if (file.exists(lk_path) && all(spread_cols %in% names(df))) {
+    lk <- arrow::read_parquet(lk_path) %>%
+      dplyr::select(
+        "game_id", "game_spread", "home_team_spread", "home_favorite"
+      ) %>%
+      dplyr::distinct(.data$game_id, .keep_all = TRUE)
+    m <- match(as.numeric(df$game_id), as.numeric(lk$game_id))
+    need <- (is.na(df$game_spread_available) | df$game_spread_available == FALSE)
+    hit <- need & !is.na(m) & !is.na(lk$game_spread[m])
+    if (any(hit)) {
+      cli::cli_alert_info(
+        "pbp repair (#140): injected closing spreads for {length(unique(df$game_id[hit]))} game{?s}"
+      )
+      df$game_spread[hit] <- lk$game_spread[m[hit]]
+      df$home_team_spread[hit] <- lk$home_team_spread[m[hit]]
+      df$home_favorite[hit] <- lk$home_favorite[m[hit]]
+      df$game_spread_available[hit] <- TRUE
+    }
+  } else if (!file.exists(lk_path)) {
+    cli::cli_alert_warning(
+      "pbp repair (#140): {lk_path} missing -- spread injection skipped"
+    )
+  }
+  df
+}
+
 # --- compile into play_by_play_{year}.parquet ---------
 nba_pbp_games <- function(y) {
   espn_df <- data.frame()
@@ -212,6 +365,7 @@ nba_pbp_games <- function(y) {
     )
   }
   if (nrow(espn_df) > 1) {
+    espn_df <- repair_nba_pbp(espn_df)
     espn_df <- espn_df %>%
       dplyr::arrange(dplyr::desc(.data$game_date)) %>%
       hoopR:::make_hoopR_data(

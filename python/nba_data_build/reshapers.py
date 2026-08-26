@@ -32,6 +32,7 @@ from sportsdataverse.nba import (
     helper_nba_team_box,
 )
 
+from nba_data_build import repairs
 from nba_data_build._logging import get_logger
 
 log = get_logger()
@@ -488,21 +489,23 @@ NO_RAW_INPUT: frozenset = frozenset({"team_crosswalk", "schedule_crosswalk", "pl
 # --- season-level post-processing (after the per-game concat) -----------------
 
 
-def pbp_season_postprocess(out: pl.DataFrame) -> pl.DataFrame:
+def pbp_season_postprocess(out: pl.DataFrame, *, base: str | Path = "nba") -> pl.DataFrame:
     """espn_nba_01: a season whose payload union lacks ``type_abbreviation``
-    ships it as an all-null String column appended at the end."""
+    ships it as an all-null String column appended at the end. Then the
+    upstream-defect repairs (period sanity #178, resequencing #146, closing
+    spread injection #140) run -- see ``nba_data_build.repairs``."""
     if "type_abbreviation" not in out.columns and out.width > 1:
         out = out.with_columns(pl.lit(None, dtype=pl.Utf8).alias("type_abbreviation"))
     return out
 
 
-def team_box_season_postprocess(out: pl.DataFrame) -> pl.DataFrame:
+def team_box_season_postprocess(out: pl.DataFrame, *, base: str | Path = "nba") -> pl.DataFrame:
     """espn_nba_02:69-72 -- a season whose payload union lacks ``largest_lead``
     still ships it, as an all-null String column appended last (same
     long-tail-schema-drift rationale as the WNBA sibling)."""
     if "largest_lead" not in out.columns and out.width > 1:
         out = out.with_columns(pl.lit(None, dtype=pl.Utf8).alias("largest_lead"))
-    return out
+    return repairs.repair_pbp_season(out, base=base)
 
 
 SEASON_POSTPROCESS: dict = {

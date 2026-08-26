@@ -165,7 +165,7 @@ def build_season(
         out = out.sort("game_date", descending=True, nulls_last=True, maintain_order=True)
     # NBA season-level fixups (e.g. espn_nba_01's type_abbreviation backfill).
     if spec.reshaper in reshapers.SEASON_POSTPROCESS:
-        out = reshapers.SEASON_POSTPROCESS[spec.reshaper](out)
+        out = reshapers.SEASON_POSTPROCESS[spec.reshaper](out, base=base)
     io.write_dataset(out, spec, season, base=base)
     if publish_release or dry_run:
         publish.publish_dataset(spec, season, base=base, dry_run=dry_run)
