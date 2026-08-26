@@ -38,8 +38,115 @@ from nba_data_build._logging import get_logger
 log = get_logger()
 
 
+#: Team stats that are exactly the sum of that team's player rows and can be
+#: rebuilt from them when ESPN's team block is provably wrong (hoopR#164).
+_REPAIR_SUMMABLE = ("assists", "steals", "blocks", "turnovers", "fouls")
+
+#: Team-only stats that CANNOT be rebuilt from player rows. When the summable
+#: block is wholesale-corrupt (2018: ESPN serves a label-shifted stats tail --
+#: e.g. the value under ``assists`` is really blocks, ``flagrantFouls`` is
+#: really steals -- and the live endpoint returns the same corruption), these
+#: hold permuted values of OTHER stats, so shipping them as-is is provably
+#: wrong and the honest value is null.
+_REPAIR_UNKNOWABLE = (
+    "team_turnovers",
+    "total_turnovers",
+    "technical_fouls",
+    "total_technical_fouls",
+    "flagrant_fouls",
+    "turnover_points",
+    "fast_break_points",
+    "points_in_paint",
+    "largest_lead",
+)
+
+
+def _repair_team_box(team: pl.DataFrame, players: pl.DataFrame) -> pl.DataFrame:
+    """Rebuild provably-wrong team counting stats from the same game's player rows.
+
+    hoopR#164: the 2018 season's ESPN team boxscore block (raw AND live) carries
+    a label-shifted stats tail -- every value from ``assists`` onward belongs to
+    a different stat, and the true assists value is absent entirely. The player
+    table for those games is correct (shooting splits and rebounds in the team
+    block's clean head agree with player sums), so the WNBA pre-2005 repair
+    pattern applies: rebuild each summable team stat from the player sums.
+
+    Guard rails:
+
+    * The repair only fires when the player table is CREDIBLE for the game:
+      player points sum == team_score AND player FGM sum == team FGM (both from
+      the uncorrupted head of the team block). A stale pre-final snapshot
+      (players zeroed, hoopR#163) or an ESPN duplicate-athlete payload (2019:
+      dup rows inflate player sums while the team block is right) fails the
+      gate and is left untouched.
+    * A repaired stat is replaced cell-by-cell; nothing else moves.
+    * When >= 3 of the summable stats disagree (the 2018 wholesale-shift
+      signature, never a single-stat glitch), the team-only tail stats --
+      permuted garbage in that payload shape -- are nulled rather than shipped.
+    """
+    if team.is_empty() or not {"team_id", "team_score", "field_goals_made"}.issubset(team.columns):
+        return team
+    stats = [s for s in _REPAIR_SUMMABLE if s in team.columns]
+    if not stats:
+        return team
+    if players.is_empty() or not {"team_id", "points", "field_goals_made", *stats}.issubset(
+        players.columns
+    ):
+        return team
+    sums = (
+        players.group_by("team_id")
+        .agg(
+            pl.col("points").cast(pl.Int64, strict=False).sum().alias("__ps_points"),
+            pl.col("field_goals_made").cast(pl.Int64, strict=False).sum().alias("__ps_fgm"),
+            *[pl.col(s).cast(pl.Int64, strict=False).sum().alias(f"__ps_{s}") for s in stats],
+        )
+        .with_columns(pl.col("team_id").cast(team.schema["team_id"], strict=False))
+    )
+    out = team.join(sums, on="team_id", how="left")
+
+    def _wrong(s: str) -> pl.Expr:
+        return (
+            (pl.col(s).cast(pl.Int64, strict=False) != pl.col(f"__ps_{s}")).fill_null(True)
+        ) & pl.col(f"__ps_{s}").is_not_null()
+
+    credible = (
+        (pl.col("team_score").cast(pl.Int64, strict=False) == pl.col("__ps_points"))
+        & (pl.col("field_goals_made").cast(pl.Int64, strict=False) == pl.col("__ps_fgm"))
+    ).fill_null(False)
+    out = out.with_columns(
+        credible.alias("__cred"),
+        pl.sum_horizontal([_wrong(s).cast(pl.Int8) for s in stats]).alias("__nwrong"),
+    )
+    out = out.with_columns(
+        [
+            pl.when(pl.col("__cred") & _wrong(s))
+            .then(pl.col(f"__ps_{s}").cast(team.schema[s], strict=False))
+            .otherwise(pl.col(s))
+            .alias(s)
+            for s in stats
+        ]
+    )
+    tail = [c for c in _REPAIR_UNKNOWABLE if c in out.columns]
+    if tail:
+        out = out.with_columns(
+            [
+                pl.when(pl.col("__cred") & (pl.col("__nwrong") >= 3))
+                .then(pl.lit(None, dtype=out.schema[c]))
+                .otherwise(pl.col(c))
+                .alias(c)
+                for c in tail
+            ]
+        )
+    return out.drop([c for c in out.columns if c.startswith("__")])
+
+
 def team_box_reshaper(final: dict, *, season: int, game_id: int) -> pl.DataFrame:
-    return helper_nba_team_box(final)
+    team = helper_nba_team_box(final)
+    try:
+        players = helper_nba_player_box(final)
+    except Exception:
+        return team
+    return _repair_team_box(team, players)
 
 
 def _game_athlete_names(final: dict) -> pl.DataFrame:
@@ -496,7 +603,7 @@ def pbp_season_postprocess(out: pl.DataFrame, *, base: str | Path = "nba") -> pl
     spread injection #140) run -- see ``nba_data_build.repairs``."""
     if "type_abbreviation" not in out.columns and out.width > 1:
         out = out.with_columns(pl.lit(None, dtype=pl.Utf8).alias("type_abbreviation"))
-    return out
+    return repairs.repair_pbp_season(out, base=base)
 
 
 def team_box_season_postprocess(out: pl.DataFrame, *, base: str | Path = "nba") -> pl.DataFrame:
@@ -505,7 +612,7 @@ def team_box_season_postprocess(out: pl.DataFrame, *, base: str | Path = "nba") 
     long-tail-schema-drift rationale as the WNBA sibling)."""
     if "largest_lead" not in out.columns and out.width > 1:
         out = out.with_columns(pl.lit(None, dtype=pl.Utf8).alias("largest_lead"))
-    return repairs.repair_pbp_season(out, base=base)
+    return out
 
 
 SEASON_POSTPROCESS: dict = {

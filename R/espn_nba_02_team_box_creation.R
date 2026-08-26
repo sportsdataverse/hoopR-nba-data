@@ -34,6 +34,89 @@ opt <- parse_args(OptionParser(option_list = option_list))
 options(stringsAsFactors = FALSE)
 options(scipen = 999)
 years_vec <- opt$s:opt$e
+
+# --- hoopR#164 team-box repair --------------------------------------------
+# Mirrors python/nba_data_build/reshapers.py::_repair_team_box. The 2018
+# season's ESPN team boxscore block (raw AND live) carries a label-shifted
+# stats tail -- the value under `assists` is really blocks, `flagrantFouls`
+# is really steals, and the true assists value is absent entirely. The player
+# table for those games is correct, so each summable team stat is rebuilt
+# from the player sums. Guard rails: the repair fires only when the player
+# table is CREDIBLE (player points sum == team_score AND player FGM sum ==
+# team FGM -- a stale pre-final snapshot (hoopR#163) or an ESPN dup-athlete
+# payload (2019) fails the gate and is left untouched); when >= 3 summable
+# stats disagree (the wholesale-shift signature) the team-only tail stats --
+# permuted garbage in that payload shape -- are nulled rather than shipped.
+repair_summable_stats <- c("assists", "steals", "blocks", "turnovers", "fouls")
+repair_unknowable_stats <- c(
+  "team_turnovers",
+  "total_turnovers",
+  "technical_fouls",
+  "total_technical_fouls",
+  "flagrant_fouls",
+  "turnover_points",
+  "fast_break_points",
+  "points_in_paint",
+  "largest_lead"
+)
+
+nba_repair_team_box <- function(tb, pb) {
+  if (is.null(tb) || nrow(tb) == 0 || is.null(pb) || nrow(pb) == 0) {
+    return(tb)
+  }
+  if (!all(c("team_id", "team_score", "field_goals_made") %in% colnames(tb))) {
+    return(tb)
+  }
+  stats <- intersect(repair_summable_stats, colnames(tb))
+  pcols <- c("team_id", "points", "field_goals_made", stats)
+  if (length(stats) == 0 || !all(pcols %in% colnames(pb))) {
+    return(tb)
+  }
+  to_int <- function(x) suppressWarnings(as.integer(as.character(x)))
+  sums <- pb %>%
+    dplyr::mutate(ps_team_id = to_int(.data$team_id)) %>%
+    dplyr::group_by(.data$ps_team_id) %>%
+    dplyr::summarise(
+      ps_points = sum(to_int(.data$points), na.rm = TRUE),
+      ps_fgm = sum(to_int(.data$field_goals_made), na.rm = TRUE),
+      dplyr::across(
+        dplyr::all_of(stats),
+        ~ sum(to_int(.x), na.rm = TRUE),
+        .names = "ps_{.col}"
+      ),
+      .groups = "drop"
+    )
+  idx <- match(to_int(tb$team_id), sums$ps_team_id)
+  for (i in seq_len(nrow(tb))) {
+    j <- idx[i]
+    if (is.na(j)) {
+      next
+    }
+    credible <- isTRUE(to_int(tb$team_score[i]) == sums$ps_points[j]) &&
+      isTRUE(to_int(tb$field_goals_made[i]) == sums$ps_fgm[j])
+    if (!credible) {
+      next
+    }
+    wrong <- character(0)
+    for (s in stats) {
+      ps <- sums[[paste0("ps_", s)]][j]
+      if (!is.na(ps) && !isTRUE(to_int(tb[[s]][i]) == ps)) {
+        wrong <- c(wrong, s)
+      }
+    }
+    for (s in wrong) {
+      ps <- sums[[paste0("ps_", s)]][j]
+      tb[[s]][i] <- if (is.character(tb[[s]])) as.character(ps) else as.integer(ps)
+    }
+    if (length(wrong) >= 3) {
+      for (s in intersect(repair_unknowable_stats, colnames(tb))) {
+        tb[[s]][i] <- if (is.character(tb[[s]])) NA_character_ else NA_integer_
+      }
+    }
+  }
+  tb
+}
+
 # --- compile into team_box_{year}.parquet ---------
 
 nba_team_box_games <- function(y) {
@@ -57,10 +140,23 @@ nba_team_box_games <- function(y) {
         resp <- glue::glue(
           "https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/json/final/{x}.json"
         )
-        tryCatch(
+        tb <- tryCatch(
           hoopR:::helper_espn_nba_team_box(resp),
           error = function(e) NULL,
           warning = function(w) NULL
+        )
+        if (is.null(tb) || nrow(tb) == 0) {
+          return(NULL)
+        }
+        # hoopR#164: player sums from the SAME payload back the repair
+        pb <- tryCatch(
+          hoopR:::helper_espn_nba_player_box(resp),
+          error = function(e) NULL,
+          warning = function(w) NULL
+        )
+        tryCatch(
+          nba_repair_team_box(tb, pb),
+          error = function(e) tb
         )
       },
       .options = furrr::furrr_options(seed = TRUE)
