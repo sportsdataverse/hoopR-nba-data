@@ -37,7 +37,9 @@ def _gh(args: list[str]) -> None:
     # block an unattended pipeline step indefinitely. Args are internal literals /
     # controlled fields passed as a list (no shell=True) -- the SAST injection flag
     # is a false positive.
-    subprocess.run(["gh", *args], check=True, timeout=120)
+    # 1800s: a per-season pbp csv is 100MB+ and can exceed the old 120s budget
+    # on a slow uplink (same bump as the MBB sibling repo).
+    subprocess.run(["gh", *args], check=True, timeout=1800)
 
 
 def _gh_release_exists(tag: str, repo: str) -> bool:

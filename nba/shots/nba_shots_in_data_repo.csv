@@ -7,3 +7,5 @@ season,row_count,generated_at_utc,source_endpoint
 2026,298411,2026-08-03 02:14:21 UTC,derived from espn_nba pbp
 2026,298411,2026-08-07 15:57:49 UTC,derived from espn_nba pbp
 2026,298411,2026-08-12 06:00:40 UTC,derived from espn_nba pbp
+2015,278903,2026-08-26 06:03:41 UTC,derived from espn_nba pbp
+2015,278903,2026-08-26 06:17:38 UTC,derived from espn_nba pbp
