@@ -1,0 +1,131 @@
+C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-data\.venv\Scripts\python.exe: No module named nba_data_build
+C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-data\.venv\Scripts\python.exe: No module named nba_data_build
+C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-data\.venv\Scripts\python.exe: No module named nba_data_build
+C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-data\.venv\Scripts\python.exe: No module named nba_data_build
+C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-data\.venv\Scripts\python.exe: No module named nba_data_build
+C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-data\.venv\Scripts\python.exe: No module named nba_data_build
+C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-data\.venv\Scripts\python.exe: No module named nba_data_build
+2026-08-26 02:06:28 [INFO] nba_data_build: team_box 2018: per-game build starting -- 1314 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:06:43 [INFO] nba_data_build: team_box 2018: 250/1314 games collected
+2026-08-26 02:06:43 [INFO] nba_data_build: team_box 2018: 500/1314 games collected
+2026-08-26 02:06:43 [INFO] nba_data_build: team_box 2018: 750/1314 games collected
+2026-08-26 02:06:43 [INFO] nba_data_build: team_box 2018: 1000/1314 games collected
+2026-08-26 02:06:43 [INFO] nba_data_build: team_box 2018: 1250/1314 games collected
+2026-08-26 02:06:43 [INFO] nba_data_build: wrote nba\team_box\parquet\team_box_2018.parquet (125.0KB) + team_box_2018.rds (149.3KB), 2626 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:06:43 [INFO] nba_data_build: team_box 2018: done -- 2626 rows from 1313/1314 games in 15.6s
+2026-08-26 02:06:43 [INFO] nba_data_build: team_box 2018: season complete -- 2626 rows
+2026-08-26 02:06:46 [INFO] nba_data_build: player_box 2018: per-game build starting -- 1314 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:06:58 [INFO] nba_data_build: player_box 2018: 250/1314 games collected
+2026-08-26 02:06:58 [INFO] nba_data_build: player_box 2018: 500/1314 games collected
+2026-08-26 02:06:58 [INFO] nba_data_build: player_box 2018: 750/1314 games collected
+2026-08-26 02:06:58 [INFO] nba_data_build: player_box 2018: 1000/1314 games collected
+2026-08-26 02:06:58 [INFO] nba_data_build: player_box 2018: 1250/1314 games collected
+2026-08-26 02:06:59 [INFO] nba_data_build: wrote nba\player_box\parquet\player_box_2018.parquet (549.0KB) + player_box_2018.rds (740.1KB), 33119 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:06:59 [INFO] nba_data_build: player_box 2018: done -- 33119 rows from 1313/1314 games in 13.0s
+2026-08-26 02:06:59 [INFO] nba_data_build: player_box 2018: season complete -- 33119 rows
+2026-08-26 02:07:02 [INFO] nba_data_build: team_box 2021: per-game build starting -- 1172 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:07:16 [INFO] nba_data_build: team_box 2021: 250/1172 games collected
+2026-08-26 02:07:16 [INFO] nba_data_build: team_box 2021: 500/1172 games collected
+2026-08-26 02:07:16 [INFO] nba_data_build: team_box 2021: 750/1172 games collected
+2026-08-26 02:07:16 [INFO] nba_data_build: team_box 2021: 1000/1172 games collected
+2026-08-26 02:07:16 [INFO] nba_data_build: wrote nba\team_box\parquet\team_box_2021.parquet (120.4KB) + team_box_2021.rds (149.6KB), 2332 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:07:16 [INFO] nba_data_build: team_box 2021: done -- 2332 rows from 1166/1172 games in 13.9s
+2026-08-26 02:07:16 [INFO] nba_data_build: team_box 2021: season complete -- 2332 rows
+2026-08-26 02:07:19 [INFO] nba_data_build: player_box 2021: per-game build starting -- 1172 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:07:28 [INFO] nba_data_build: player_box 2021: 250/1172 games collected
+2026-08-26 02:07:28 [INFO] nba_data_build: player_box 2021: 500/1172 games collected
+2026-08-26 02:07:28 [INFO] nba_data_build: player_box 2021: 750/1172 games collected
+2026-08-26 02:07:28 [INFO] nba_data_build: player_box 2021: 1000/1172 games collected
+2026-08-26 02:07:29 [INFO] nba_data_build: wrote nba\player_box\parquet\player_box_2021.parquet (533.7KB) + player_box_2021.rds (713.6KB), 31593 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:07:29 [INFO] nba_data_build: player_box 2021: done -- 31593 rows from 1172/1172 games in 10.2s
+2026-08-26 02:07:29 [INFO] nba_data_build: player_box 2021: season complete -- 31593 rows
+2026-08-26 02:07:32 [INFO] nba_data_build: team_box 2022: per-game build starting -- 1324 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:07:45 [INFO] nba_data_build: team_box 2022: 250/1324 games collected
+2026-08-26 02:07:45 [INFO] nba_data_build: team_box 2022: 500/1324 games collected
+2026-08-26 02:07:45 [INFO] nba_data_build: team_box 2022: 750/1324 games collected
+2026-08-26 02:07:45 [INFO] nba_data_build: team_box 2022: 1000/1324 games collected
+2026-08-26 02:07:45 [INFO] nba_data_build: team_box 2022: 1250/1324 games collected
+2026-08-26 02:07:45 [INFO] nba_data_build: wrote nba\team_box\parquet\team_box_2022.parquet (132.9KB) + team_box_2022.rds (166.0KB), 2648 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:07:45 [INFO] nba_data_build: team_box 2022: done -- 2648 rows from 1324/1324 games in 13.7s
+2026-08-26 02:07:45 [INFO] nba_data_build: team_box 2022: season complete -- 2648 rows
+2026-08-26 02:07:48 [INFO] nba_data_build: player_box 2022: per-game build starting -- 1324 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:07:57 [INFO] nba_data_build: player_box 2022: 250/1324 games collected
+2026-08-26 02:07:57 [INFO] nba_data_build: player_box 2022: 500/1324 games collected
+2026-08-26 02:07:57 [INFO] nba_data_build: player_box 2022: 750/1324 games collected
+2026-08-26 02:07:57 [INFO] nba_data_build: player_box 2022: 1000/1324 games collected
+2026-08-26 02:07:57 [INFO] nba_data_build: player_box 2022: 1250/1324 games collected
+2026-08-26 02:07:59 [INFO] nba_data_build: wrote nba\player_box\parquet\player_box_2022.parquet (591.8KB) + player_box_2022.rds (782.8KB), 33880 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:07:59 [INFO] nba_data_build: player_box 2022: done -- 33880 rows from 1324/1324 games in 11.1s
+2026-08-26 02:07:59 [INFO] nba_data_build: player_box 2022: season complete -- 33880 rows
+2026-08-26 02:08:01 [INFO] nba_data_build: team_box 2023: per-game build starting -- 1321 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:08:15 [INFO] nba_data_build: team_box 2023: 250/1321 games collected
+2026-08-26 02:08:15 [INFO] nba_data_build: team_box 2023: 500/1321 games collected
+2026-08-26 02:08:15 [INFO] nba_data_build: team_box 2023: 750/1321 games collected
+2026-08-26 02:08:15 [INFO] nba_data_build: team_box 2023: 1000/1321 games collected
+2026-08-26 02:08:15 [INFO] nba_data_build: team_box 2023: 1250/1321 games collected
+2026-08-26 02:08:15 [INFO] nba_data_build: wrote nba\team_box\parquet\team_box_2023.parquet (132.9KB) + team_box_2023.rds (166.0KB), 2642 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:08:15 [INFO] nba_data_build: team_box 2023: done -- 2642 rows from 1321/1321 games in 13.9s
+2026-08-26 02:08:15 [INFO] nba_data_build: team_box 2023: season complete -- 2642 rows
+2026-08-26 02:08:18 [INFO] nba_data_build: player_box 2023: per-game build starting -- 1321 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:08:28 [INFO] nba_data_build: player_box 2023: 250/1321 games collected
+2026-08-26 02:08:28 [INFO] nba_data_build: player_box 2023: 500/1321 games collected
+2026-08-26 02:08:28 [INFO] nba_data_build: player_box 2023: 750/1321 games collected
+2026-08-26 02:08:28 [INFO] nba_data_build: player_box 2023: 1000/1321 games collected
+2026-08-26 02:08:28 [INFO] nba_data_build: player_box 2023: 1250/1321 games collected
+2026-08-26 02:08:29 [INFO] nba_data_build: wrote nba\player_box\parquet\player_box_2023.parquet (582.0KB) + player_box_2023.rds (779.8KB), 34057 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:08:29 [INFO] nba_data_build: player_box 2023: done -- 34057 rows from 1321/1321 games in 11.2s
+2026-08-26 02:08:29 [INFO] nba_data_build: player_box 2023: season complete -- 34057 rows
+2026-08-26 02:08:31 [INFO] nba_data_build: team_box 2024: per-game build starting -- 1320 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:08:44 [INFO] nba_data_build: team_box 2024: 250/1320 games collected
+2026-08-26 02:08:44 [INFO] nba_data_build: team_box 2024: 500/1320 games collected
+2026-08-26 02:08:44 [INFO] nba_data_build: team_box 2024: 750/1320 games collected
+2026-08-26 02:08:44 [INFO] nba_data_build: team_box 2024: 1000/1320 games collected
+2026-08-26 02:08:44 [INFO] nba_data_build: team_box 2024: 1250/1320 games collected
+2026-08-26 02:08:44 [INFO] nba_data_build: wrote nba\team_box\parquet\team_box_2024.parquet (132.7KB) + team_box_2024.rds (165.9KB), 2640 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:08:44 [INFO] nba_data_build: team_box 2024: done -- 2640 rows from 1320/1320 games in 12.8s
+2026-08-26 02:08:44 [INFO] nba_data_build: team_box 2024: season complete -- 2640 rows
+2026-08-26 02:08:46 [INFO] nba_data_build: player_box 2024: per-game build starting -- 1320 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:08:56 [INFO] nba_data_build: player_box 2024: 250/1320 games collected
+2026-08-26 02:08:56 [INFO] nba_data_build: player_box 2024: 500/1320 games collected
+2026-08-26 02:08:56 [INFO] nba_data_build: player_box 2024: 750/1320 games collected
+2026-08-26 02:08:56 [INFO] nba_data_build: player_box 2024: 1000/1320 games collected
+2026-08-26 02:08:56 [INFO] nba_data_build: player_box 2024: 1250/1320 games collected
+2026-08-26 02:08:57 [INFO] nba_data_build: wrote nba\player_box\parquet\player_box_2024.parquet (596.3KB) + player_box_2024.rds (801.4KB), 35028 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:08:57 [INFO] nba_data_build: player_box 2024: done -- 35028 rows from 1320/1320 games in 10.8s
+2026-08-26 02:08:57 [INFO] nba_data_build: player_box 2024: season complete -- 35028 rows
+2026-08-26 02:09:00 [INFO] nba_data_build: team_box 2025: per-game build starting -- 1324 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:09:14 [INFO] nba_data_build: team_box 2025: 250/1324 games collected
+2026-08-26 02:09:14 [INFO] nba_data_build: team_box 2025: 500/1324 games collected
+2026-08-26 02:09:14 [INFO] nba_data_build: team_box 2025: 750/1324 games collected
+2026-08-26 02:09:14 [INFO] nba_data_build: team_box 2025: 1000/1324 games collected
+2026-08-26 02:09:14 [INFO] nba_data_build: team_box 2025: 1250/1324 games collected
+2026-08-26 02:09:14 [INFO] nba_data_build: wrote nba\team_box\parquet\team_box_2025.parquet (133.3KB) + team_box_2025.rds (161.9KB), 2648 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:09:14 [INFO] nba_data_build: team_box 2025: done -- 2648 rows from 1324/1324 games in 14.5s
+2026-08-26 02:09:14 [INFO] nba_data_build: team_box 2025: season complete -- 2648 rows
+2026-08-26 02:09:16 [INFO] nba_data_build: player_box 2025: per-game build starting -- 1324 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:09:26 [INFO] nba_data_build: player_box 2025: 250/1324 games collected
+2026-08-26 02:09:26 [INFO] nba_data_build: player_box 2025: 500/1324 games collected
+2026-08-26 02:09:26 [INFO] nba_data_build: player_box 2025: 750/1324 games collected
+2026-08-26 02:09:26 [INFO] nba_data_build: player_box 2025: 1000/1324 games collected
+2026-08-26 02:09:26 [INFO] nba_data_build: player_box 2025: 1250/1324 games collected
+2026-08-26 02:09:27 [INFO] nba_data_build: wrote nba\player_box\parquet\player_box_2025.parquet (596.0KB) + player_box_2025.rds (803.3KB), 35250 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:09:27 [INFO] nba_data_build: player_box 2025: done -- 35250 rows from 1324/1324 games in 10.9s
+2026-08-26 02:09:27 [INFO] nba_data_build: player_box 2025: season complete -- 35250 rows
+2026-08-26 02:09:29 [INFO] nba_data_build: team_box 2026: per-game build starting -- 1326 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:09:43 [INFO] nba_data_build: team_box 2026: 250/1326 games collected
+2026-08-26 02:09:43 [INFO] nba_data_build: team_box 2026: 500/1326 games collected
+2026-08-26 02:09:43 [INFO] nba_data_build: team_box 2026: 750/1326 games collected
+2026-08-26 02:09:43 [INFO] nba_data_build: team_box 2026: 1000/1326 games collected
+2026-08-26 02:09:43 [INFO] nba_data_build: team_box 2026: 1250/1326 games collected
+2026-08-26 02:09:43 [INFO] nba_data_build: wrote nba\team_box\parquet\team_box_2026.parquet (137.3KB) + team_box_2026.rds (167.1KB), 2652 rows x 59 cols; manifest n/a (not manifested)
+2026-08-26 02:09:43 [INFO] nba_data_build: team_box 2026: done -- 2652 rows from 1326/1326 games in 13.8s
+2026-08-26 02:09:43 [INFO] nba_data_build: team_box 2026: season complete -- 2652 rows
+2026-08-26 02:09:46 [INFO] nba_data_build: player_box 2026: per-game build starting -- 1326 games (raw=C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\hoopR-nba-raw via disk)
+2026-08-26 02:09:55 [INFO] nba_data_build: player_box 2026: 250/1326 games collected
+2026-08-26 02:09:55 [INFO] nba_data_build: player_box 2026: 500/1326 games collected
+2026-08-26 02:09:55 [INFO] nba_data_build: player_box 2026: 750/1326 games collected
+2026-08-26 02:09:55 [INFO] nba_data_build: player_box 2026: 1000/1326 games collected
+2026-08-26 02:09:55 [INFO] nba_data_build: player_box 2026: 1250/1326 games collected
+2026-08-26 02:09:56 [INFO] nba_data_build: wrote nba\player_box\parquet\player_box_2026.parquet (592.2KB) + player_box_2026.rds (795.0KB), 34883 rows x 57 cols; manifest n/a (not manifested)
+2026-08-26 02:09:56 [INFO] nba_data_build: player_box 2026: done -- 34883 rows from 1326/1326 games in 10.9s
+2026-08-26 02:09:56 [INFO] nba_data_build: player_box 2026: season complete -- 34883 rows
