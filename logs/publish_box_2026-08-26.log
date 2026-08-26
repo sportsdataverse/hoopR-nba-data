@@ -1,0 +1,103 @@
+2026-08-26 02:13:39 [INFO] nba_data_build: uploading team_box_2018.parquet (125.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:13:40 [INFO] nba_data_build: uploaded team_box_2018.parquet -> espn_nba_team_boxscores (asset 1/3)
+2026-08-26 02:13:40 [INFO] nba_data_build: uploading team_box_2018.rds (149.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:13:42 [INFO] nba_data_build: uploaded team_box_2018.rds -> espn_nba_team_boxscores (asset 2/3)
+2026-08-26 02:13:42 [INFO] nba_data_build: uploading team_box_2018.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:13:47 [INFO] nba_data_build: uploaded team_box_2018.csv -> espn_nba_team_boxscores (asset 3/3)
+PUBLISHED team_box 2018: 3 assets
+2026-08-26 02:13:49 [INFO] nba_data_build: uploading team_box_2021.parquet (120.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:13:51 [INFO] nba_data_build: uploaded team_box_2021.parquet -> espn_nba_team_boxscores (asset 1/3)
+2026-08-26 02:13:51 [INFO] nba_data_build: uploading team_box_2021.rds (149.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:13:52 [INFO] nba_data_build: uploaded team_box_2021.rds -> espn_nba_team_boxscores (asset 2/3)
+2026-08-26 02:13:52 [INFO] nba_data_build: uploading team_box_2021.csv (1003.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:13:56 [INFO] nba_data_build: uploaded team_box_2021.csv -> espn_nba_team_boxscores (asset 3/3)
+PUBLISHED team_box 2021: 3 assets
+2026-08-26 02:13:58 [INFO] nba_data_build: uploading team_box_2022.parquet (132.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:00 [INFO] nba_data_build: uploaded team_box_2022.parquet -> espn_nba_team_boxscores (asset 1/3)
+2026-08-26 02:14:00 [INFO] nba_data_build: uploading team_box_2022.rds (166.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:02 [INFO] nba_data_build: uploaded team_box_2022.rds -> espn_nba_team_boxscores (asset 2/3)
+2026-08-26 02:14:02 [INFO] nba_data_build: uploading team_box_2022.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:06 [INFO] nba_data_build: uploaded team_box_2022.csv -> espn_nba_team_boxscores (asset 3/3)
+PUBLISHED team_box 2022: 3 assets
+2026-08-26 02:14:08 [INFO] nba_data_build: uploading team_box_2023.parquet (132.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:10 [INFO] nba_data_build: uploaded team_box_2023.parquet -> espn_nba_team_boxscores (asset 1/3)
+2026-08-26 02:14:10 [INFO] nba_data_build: uploading team_box_2023.rds (166.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:12 [INFO] nba_data_build: uploaded team_box_2023.rds -> espn_nba_team_boxscores (asset 2/3)
+2026-08-26 02:14:12 [INFO] nba_data_build: uploading team_box_2023.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:15 [INFO] nba_data_build: uploaded team_box_2023.csv -> espn_nba_team_boxscores (asset 3/3)
+PUBLISHED team_box 2023: 3 assets
+2026-08-26 02:14:17 [INFO] nba_data_build: uploading team_box_2024.parquet (132.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:19 [INFO] nba_data_build: uploaded team_box_2024.parquet -> espn_nba_team_boxscores (asset 1/3)
+2026-08-26 02:14:19 [INFO] nba_data_build: uploading team_box_2024.rds (165.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:20 [INFO] nba_data_build: uploaded team_box_2024.rds -> espn_nba_team_boxscores (asset 2/3)
+2026-08-26 02:14:20 [INFO] nba_data_build: uploading team_box_2024.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:24 [INFO] nba_data_build: uploaded team_box_2024.csv -> espn_nba_team_boxscores (asset 3/3)
+PUBLISHED team_box 2024: 3 assets
+2026-08-26 02:14:26 [INFO] nba_data_build: uploading team_box_2026.parquet (137.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:28 [INFO] nba_data_build: uploaded team_box_2026.parquet -> espn_nba_team_boxscores (asset 1/3)
+2026-08-26 02:14:28 [INFO] nba_data_build: uploading team_box_2026.rds (167.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:30 [INFO] nba_data_build: uploaded team_box_2026.rds -> espn_nba_team_boxscores (asset 2/3)
+2026-08-26 02:14:30 [INFO] nba_data_build: uploading team_box_2026.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-08-26 02:14:34 [INFO] nba_data_build: uploaded team_box_2026.csv -> espn_nba_team_boxscores (asset 3/3)
+PUBLISHED team_box 2026: 3 assets
+2026-08-26 02:14:36 [INFO] nba_data_build: uploading player_box_2021.parquet (533.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:14:40 [INFO] nba_data_build: uploaded player_box_2021.parquet -> espn_nba_player_boxscores (asset 1/3)
+2026-08-26 02:14:40 [INFO] nba_data_build: uploading player_box_2021.rds (713.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:14:43 [INFO] nba_data_build: uploaded player_box_2021.rds -> espn_nba_player_boxscores (asset 2/3)
+2026-08-26 02:14:43 [INFO] nba_data_build: uploading player_box_2021.csv (15.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:15:07 [INFO] nba_data_build: uploaded player_box_2021.csv -> espn_nba_player_boxscores (asset 3/3)
+PUBLISHED player_box 2021: 3 assets
+2026-08-26 02:15:10 [INFO] nba_data_build: uploading player_box_2022.parquet (591.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:15:12 [INFO] nba_data_build: uploaded player_box_2022.parquet -> espn_nba_player_boxscores (asset 1/3)
+2026-08-26 02:15:12 [INFO] nba_data_build: uploading player_box_2022.rds (782.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:15:16 [INFO] nba_data_build: uploaded player_box_2022.rds -> espn_nba_player_boxscores (asset 2/3)
+2026-08-26 02:15:16 [INFO] nba_data_build: uploading player_box_2022.csv (16.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:15:39 [INFO] nba_data_build: uploaded player_box_2022.csv -> espn_nba_player_boxscores (asset 3/3)
+PUBLISHED player_box 2022: 3 assets
+2026-08-26 02:15:42 [INFO] nba_data_build: uploading player_box_2023.parquet (582.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:15:45 [INFO] nba_data_build: uploaded player_box_2023.parquet -> espn_nba_player_boxscores (asset 1/3)
+2026-08-26 02:15:45 [INFO] nba_data_build: uploading player_box_2023.rds (779.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:15:47 [INFO] nba_data_build: uploaded player_box_2023.rds -> espn_nba_player_boxscores (asset 2/3)
+2026-08-26 02:15:47 [INFO] nba_data_build: uploading player_box_2023.csv (16.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:16:11 [INFO] nba_data_build: uploaded player_box_2023.csv -> espn_nba_player_boxscores (asset 3/3)
+PUBLISHED player_box 2023: 3 assets
+2026-08-26 02:16:13 [INFO] nba_data_build: uploading player_box_2024.parquet (596.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:16:17 [INFO] nba_data_build: uploaded player_box_2024.parquet -> espn_nba_player_boxscores (asset 1/3)
+2026-08-26 02:16:17 [INFO] nba_data_build: uploading player_box_2024.rds (801.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:16:19 [INFO] nba_data_build: uploaded player_box_2024.rds -> espn_nba_player_boxscores (asset 2/3)
+2026-08-26 02:16:19 [INFO] nba_data_build: uploading player_box_2024.csv (17.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:16:51 [INFO] nba_data_build: uploaded player_box_2024.csv -> espn_nba_player_boxscores (asset 3/3)
+PUBLISHED player_box 2024: 3 assets
+2026-08-26 02:16:53 [INFO] nba_data_build: uploading player_box_2025.parquet (596.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:16:57 [INFO] nba_data_build: uploaded player_box_2025.parquet -> espn_nba_player_boxscores (asset 1/3)
+2026-08-26 02:16:57 [INFO] nba_data_build: uploading player_box_2025.rds (803.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:17:00 [INFO] nba_data_build: uploaded player_box_2025.rds -> espn_nba_player_boxscores (asset 2/3)
+2026-08-26 02:17:00 [INFO] nba_data_build: uploading player_box_2025.csv (17.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:17:31 [INFO] nba_data_build: uploaded player_box_2025.csv -> espn_nba_player_boxscores (asset 3/3)
+PUBLISHED player_box 2025: 3 assets
+2026-08-26 02:17:33 [INFO] nba_data_build: uploading player_box_2026.parquet (592.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:17:36 [INFO] nba_data_build: uploaded player_box_2026.parquet -> espn_nba_player_boxscores (asset 1/3)
+2026-08-26 02:17:36 [INFO] nba_data_build: uploading player_box_2026.rds (795.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:17:41 [INFO] nba_data_build: uploaded player_box_2026.rds -> espn_nba_player_boxscores (asset 2/3)
+2026-08-26 02:17:41 [INFO] nba_data_build: uploading player_box_2026.csv (16.9MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-08-26 02:18:06 [INFO] nba_data_build: uploaded player_box_2026.csv -> espn_nba_player_boxscores (asset 3/3)
+PUBLISHED player_box 2026: 3 assets
+2026-08-26 02:18:08 [INFO] nba_data_build: uploading nba_schedule_2021.parquet (127.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-26 02:18:10 [INFO] nba_data_build: uploaded nba_schedule_2021.parquet -> espn_nba_schedules (asset 1/3)
+2026-08-26 02:18:10 [INFO] nba_data_build: uploading nba_schedule_2021.rds (121.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-26 02:18:12 [INFO] nba_data_build: uploaded nba_schedule_2021.rds -> espn_nba_schedules (asset 2/3)
+2026-08-26 02:18:12 [INFO] nba_data_build: uploading nba_schedule_2021.csv (1.5MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-26 02:18:17 [INFO] nba_data_build: uploaded nba_schedule_2021.csv -> espn_nba_schedules (asset 3/3)
+PUBLISHED schedules 2021: 3 assets
+2026-08-26 02:18:19 [INFO] nba_data_build: wrote nba\schedules\nba_schedule_master.parquet (2.4MB), 33496 rows x 78 cols
+2026-08-26 02:18:20 [INFO] nba_data_build: wrote nba\schedules\nba_games_in_data_repo.parquet (2.2MB), 31141 rows x 78 cols
+2026-08-26 02:18:20 [INFO] nba_data_build: uploading nba_schedule_master.parquet (2.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-26 02:18:29 [INFO] nba_data_build: uploaded nba_schedule_master.parquet -> espn_nba_schedules (asset 1/4)
+2026-08-26 02:18:29 [INFO] nba_data_build: uploading nba_schedule_master.csv (36.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-26 02:19:29 [INFO] nba_data_build: uploaded nba_schedule_master.csv -> espn_nba_schedules (asset 2/4)
+2026-08-26 02:19:29 [INFO] nba_data_build: uploading nba_games_in_data_repo.parquet (2.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-26 02:19:38 [INFO] nba_data_build: uploaded nba_games_in_data_repo.parquet -> espn_nba_schedules (asset 3/4)
+2026-08-26 02:19:38 [INFO] nba_data_build: uploading nba_games_in_data_repo.csv (34.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-08-26 02:20:35 [INFO] nba_data_build: uploaded nba_games_in_data_repo.csv -> espn_nba_schedules (asset 4/4)
+PUBLISHED schedule extras: 4 assets
+ALL_DONE
