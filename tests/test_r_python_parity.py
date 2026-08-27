@@ -134,6 +134,24 @@ def _stages(subdir: str, suffix: str) -> dict[str, str]:
     assert not dupes, f"duplicate dataset keys among {subdir}/*{suffix}:\n" + "\n".join(
         f"  {k}: numbered both {a} and {b}" for k, a, b in dupes
     )
+
+    # The mirror image: two DIFFERENT datasets claiming the same number. The dict
+    # above cannot catch it -- the keys differ, so both entries survive and every
+    # check downstream passes on a sequence that is ambiguous about what NN means.
+    # That matters because the number is the cross-language, cross-repo IDENTITY of
+    # a dataset; two owners makes it identify nothing. Hand-assigned contiguous
+    # blocks (a decomposed stage split across 20-29, say) are where this shows up.
+    by_num: dict[str, str] = {}
+    clashes = []
+    for key, num in sorted(seen.items()):
+        if num in by_num:
+            clashes.append((num, by_num[num], key))
+        by_num[num] = key
+    assert not clashes, (
+        f"duplicate stage numbers among {subdir}/*{suffix}:\n"
+        + "\n".join(f"  {n}: claimed by both {a} and {b}" for n, a, b in clashes)
+        + "\nA number identifies ONE dataset; renumber one of them (holes are fine)."
+    )
     return seen
 
 
