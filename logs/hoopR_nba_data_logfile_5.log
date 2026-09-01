@@ -1,101 +1,296 @@
-2026-08-03 09:53:46 [WARNING] nba_data_build: pbp 5: no game_json games in the season schedule; nothing built
-2026-08-03 09:53:46 [INFO] nba_data_build: pbp 5: season complete -- 0 rows
-2026-08-03 09:53:48 [WARNING] nba_data_build: team_box 5: no game_json games in the season schedule; nothing built
-2026-08-03 09:53:48 [INFO] nba_data_build: team_box 5: season complete -- 0 rows
-2026-08-03 09:53:50 [WARNING] nba_data_build: player_box 5: no game_json games in the season schedule; nothing built
-2026-08-03 09:53:50 [INFO] nba_data_build: player_box 5: season complete -- 0 rows
-2026-08-03 09:53:52 [INFO] nba_data_build: player_core 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:53:52 [WARNING] nba_data_build: player_core 5: no built player_box parquet at ../nba/player_box/parquet/player_box_5.parquet -- cannot resolve which athletes played this season (build player_box first)
-2026-08-03 09:53:52 [WARNING] nba_data_build: player_core 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:53:52 [INFO] nba_data_build: player_core 5: season complete -- 0 rows
-2026-08-03 09:53:54 [INFO] nba_data_build: schedules 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:53:54 [WARNING] nba_data_build: schedules 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:53:54 [INFO] nba_data_build: schedules 5: season complete -- 0 rows
-2026-08-03 09:53:56 [INFO] nba_data_build: shots 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:53:56 [WARNING] nba_data_build: shots 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:53:56 [INFO] nba_data_build: shots 5: season complete -- 0 rows
-2026-08-03 09:53:58 [INFO] nba_data_build: rosters 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:53:58 [WARNING] nba_data_build: rosters 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:53:58 [INFO] nba_data_build: rosters 5: season complete -- 0 rows
-2026-08-03 09:54:00 [INFO] nba_data_build: player_season_stats 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:54:00 [WARNING] nba_data_build: player_season_stats 5: no built player_box parquet at ../nba/player_box/parquet/player_box_5.parquet -- identity columns will be blank (build player_box first)
-2026-08-03 09:54:00 [WARNING] nba_data_build: player_season_stats 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:54:00 [INFO] nba_data_build: player_season_stats 5: season complete -- 0 rows
-2026-08-03 09:54:02 [INFO] nba_data_build: team_season_stats 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:54:03 [WARNING] nba_data_build: team_season_stats 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:54:03 [INFO] nba_data_build: team_season_stats 5: season complete -- 0 rows
-2026-08-03 09:54:04 [INFO] nba_data_build: standings 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:54:05 [WARNING] nba_data_build: standings 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:54:05 [INFO] nba_data_build: standings 5: season complete -- 0 rows
-2026-08-03 09:54:07 [INFO] nba_data_build: game_rosters 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:54:07 [WARNING] nba_data_build: game_rosters 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:54:07 [INFO] nba_data_build: game_rosters 5: season complete -- 0 rows
-2026-08-03 09:54:09 [INFO] nba_data_build: officials 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:54:09 [WARNING] nba_data_build: officials 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:54:09 [INFO] nba_data_build: officials 5: season complete -- 0 rows
-2026-08-03 09:54:11 [INFO] nba_data_build: draft 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-08-03 09:54:11 [WARNING] nba_data_build: draft 5: season-level build produced 0 rows; nothing written
-2026-08-03 09:54:11 [INFO] nba_data_build: draft 5: season complete -- 0 rows
-ℹ Compiling 5 NBA team crosswalk
-✖ 2026-08-03 09:55:13.123996: Invalid arguments or no league standings v3 data available for 2025-26!
-ℹ Compiling 5 NBA team crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
-ℹ Compiling 5 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 5 NBA team crosswalk✖ 2026-08-03 09:56:13.16446: Invalid arguments or no league game log data for 2025-26 available!
-ℹ Compiling 5 NBA team crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
-ℹ Compiling 5 NBA team crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-ℹ Compiling 5 NBA team crosswalk✖ 2026-08-03 09:56:13.180827: Invalid arguments or no team details data available!
-ℹ Compiling 5 NBA team crosswalk✖ Error: argument is of length zero
-ℹ Compiling 5 NBA team crosswalk! 2026-08-03 09:56:13.194031: skip team crosswalk 5: invalid argument type
-ℹ Compiling 5 NBA team crosswalk! 2026-08-03 09:56:13.198465: no team crosswalk rows for 5
-ℹ Compiling 5 NBA team crosswalk✔ Compiled 5 NBA team crosswalk! [2m 0.6s]
+From https://github.com/sportsdataverse/hoopR-nba-data
+   f45d4826..f1178e03  main                  -> origin/main
+ * [new branch]        AE/remove-qs          -> origin/AE/remove-qs
+ * [new branch]        feat/nba-ci-cutover-python -> origin/feat/nba-ci-cutover-python
+ * [new branch]        feat/nba-data-build   -> origin/feat/nba-data-build
+ * [new branch]        feat/nba-data-build-docs -> origin/feat/nba-data-build-docs
+ * [new branch]        feat/nba-flip-python-default -> origin/feat/nba-flip-python-default
+ * [new branch]        feat/nba-native-rds   -> origin/feat/nba-native-rds
+ * [new branch]        feat/nba-player-core-daily -> origin/feat/nba-player-core-daily
+ * [new branch]        feat/nba-player-core-dataset -> origin/feat/nba-player-core-dataset
+ * [new branch]        feat/nba-player-core-tree -> origin/feat/nba-player-core-tree
+ * [new branch]        feat/weekly-output-parity -> origin/feat/weekly-output-parity
+ * [new branch]        fix/nba-serialize-rds -> origin/fix/nba-serialize-rds
+ * [new branch]        fix/player-core-manifest -> origin/fix/player-core-manifest
+::group::nba_data_build pbp 5
+2026-09-01 19:42:24 [WARNING] nba_data_build: pbp 5: no game_json games in the season schedule; nothing built
+2026-09-01 19:42:24 [INFO] nba_data_build: pbp 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build team_box 5
+2026-09-01 19:42:26 [WARNING] nba_data_build: team_box 5: no game_json games in the season schedule; nothing built
+2026-09-01 19:42:26 [INFO] nba_data_build: team_box 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build player_box 5
+2026-09-01 19:42:28 [WARNING] nba_data_build: player_box 5: no game_json games in the season schedule; nothing built
+2026-09-01 19:42:28 [INFO] nba_data_build: player_box 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build player_core 5
+2026-09-01 19:42:30 [INFO] nba_data_build: player_core 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:30 [WARNING] nba_data_build: player_core 5: no built player_box parquet at ../nba/player_box/parquet/player_box_5.parquet -- cannot resolve which athletes played this season (build player_box first)
+2026-09-01 19:42:30 [WARNING] nba_data_build: player_core 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:30 [INFO] nba_data_build: player_core 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build schedules 5
+2026-09-01 19:42:32 [INFO] nba_data_build: schedules 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:32 [WARNING] nba_data_build: schedules 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:32 [INFO] nba_data_build: schedules 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build shots 5
+2026-09-01 19:42:34 [INFO] nba_data_build: shots 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:34 [WARNING] nba_data_build: shots 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:34 [INFO] nba_data_build: shots 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build rosters 5
+2026-09-01 19:42:36 [INFO] nba_data_build: rosters 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:37 [WARNING] nba_data_build: rosters 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:37 [INFO] nba_data_build: rosters 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build player_season_stats 5
+2026-09-01 19:42:39 [INFO] nba_data_build: player_season_stats 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:39 [WARNING] nba_data_build: player_season_stats 5: no built player_box parquet at ../nba/player_box/parquet/player_box_5.parquet -- identity columns will be blank (build player_box first)
+2026-09-01 19:42:39 [WARNING] nba_data_build: player_season_stats 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:39 [INFO] nba_data_build: player_season_stats 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build team_season_stats 5
+2026-09-01 19:42:41 [INFO] nba_data_build: team_season_stats 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:41 [WARNING] nba_data_build: team_season_stats 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:41 [INFO] nba_data_build: team_season_stats 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build standings 5
+2026-09-01 19:42:43 [INFO] nba_data_build: standings 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:43 [WARNING] nba_data_build: standings 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:43 [INFO] nba_data_build: standings 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build game_rosters 5
+2026-09-01 19:42:45 [INFO] nba_data_build: game_rosters 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:45 [WARNING] nba_data_build: game_rosters 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:45 [INFO] nba_data_build: game_rosters 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build officials 5
+2026-09-01 19:42:47 [INFO] nba_data_build: officials 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:47 [WARNING] nba_data_build: officials 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:47 [INFO] nba_data_build: officials 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build draft 5
+2026-09-01 19:42:49 [INFO] nba_data_build: draft 5: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-09-01 19:42:49 [WARNING] nba_data_build: draft 5: season-level build produced 0 rows; nothing written
+2026-09-01 19:42:49 [INFO] nba_data_build: draft 5: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build team_crosswalk 5
+2026-09-01 19:42:51 [INFO] nba_data_build: team_crosswalk 5: season-level build starting (raw=None via disk)
+Traceback (most recent call last):
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 830, in _request_once
+    c.perform()
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 587, in perform
+    self._check_error(ret, "perform")
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 320, in _check_error
+    raise error
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
 
-120.653 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-nba_crosswalk
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 09:56:14.644852
+The above exception was the direct cause of the following exception:
 
-ℹ Compiling 5 NBA schedule crosswalk
-✖ 2026-08-03 09:57:16.435636: Invalid arguments or no league standings v3 data available for 2025-26!
-ℹ Compiling 5 NBA schedule crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
-ℹ Compiling 5 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
-ℹ Compiling 5 NBA schedule crosswalk✖ 2026-08-03 09:58:16.475175: Invalid arguments or no league game log data for 2025-26 available!
-ℹ Compiling 5 NBA schedule crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
-ℹ Compiling 5 NBA schedule crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-ℹ Compiling 5 NBA schedule crosswalk✖ 2026-08-03 09:58:16.491526: Invalid arguments or no team details data available!
-ℹ Compiling 5 NBA schedule crosswalk✖ Error: argument is of length zero
-ℹ Compiling 5 NBA schedule crosswalk! 2026-08-03 09:58:16.503908: skip schedule crosswalk 5: invalid argument type
-ℹ Compiling 5 NBA schedule crosswalk! 2026-08-03 09:58:16.508328: no schedule crosswalk rows for 5
-ℹ Compiling 5 NBA schedule crosswalk✔ Compiled 5 NBA schedule crosswalk! [2m 0.6s]
+Traceback (most recent call last):
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 137, in require_source
+    out = fetch()
+          ^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 303, in _fetch
+    raw = nba_stats_leaguestandingsv3(season=stats_season, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats.py", line 4292, in nba_stats_leaguestandingsv3
+    raw = _get(
+          ^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 177, in _get
+    status, text = _transport(url, clean, _headers, proxy_url)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 82, in _curl_transport
+    r = creq.get(
+        ^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 153, in get
+    return request(method="GET", url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 145, in request
+    return s.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 903, in request
+    return self._request_once(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 837, in _request_once
+    raise error(str(e), e.code, rsp) from e
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
 
-120.599 sec elapsed
+The above exception was the direct cause of the following exception:
 
-ℹ Compiling 5 NBA player crosswalk
-✖ 2026-08-03 09:59:18.204406: Invalid arguments or no league standings v3 data available for 2025-26!
-ℹ Compiling 5 NBA player crosswalk✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
-ℹ Compiling 5 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-ℹ Compiling 5 NBA player crosswalk✖ 2026-08-03 10:00:18.244443: Invalid arguments or no league game log data for 2025-26 available!
-ℹ Compiling 5 NBA player crosswalk✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
-ℹ Compiling 5 NBA player crosswalk✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-ℹ Compiling 5 NBA player crosswalk✖ 2026-08-03 10:00:18.26009: Invalid arguments or no team details data available!
-ℹ Compiling 5 NBA player crosswalk✖ Error: argument is of length zero
-ℹ Compiling 5 NBA player crosswalk! 2026-08-03 10:00:18.272229: skip player crosswalk 5: invalid argument type
-ℹ Compiling 5 NBA player crosswalk! 2026-08-03 10:00:18.276484: no player crosswalk rows for 5
-ℹ Compiling 5 NBA player crosswalk✔ Compiled 5 NBA player crosswalk! [2m 0.5s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/__main__.py", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/cli.py", line 26, in main
+    df = build_season(
+         ^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/build.py", line 72, in build_season
+    out = reshapers.SEASON_BUILDERS[dataset](season, raw_root=root, base=Path(base))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/reshapers.py", line 569, in build
+    return fn(season=season)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 406, in nba_team_crosswalk
+    stats = _stats_team_directory(season, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 306, in _stats_team_directory
+    standings = require_source(label, _fetch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 141, in require_source
+    raise CrosswalkSourceError(f"{label} could not be produced: {type(exc).__name__}: {exc}") from exc
+sportsdataverse._crosswalk_basketball_sources.CrosswalkSourceError: nba_stats_leaguestandingsv3(season='4-5') could not be produced: Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+::warning ::nba_data_build team_crosswalk for season 5 exited with code 1 (crosswalk; non-fatal, live external source)
+::endgroup::
+::group::nba_data_build schedule_crosswalk 5
+2026-09-01 19:43:23 [INFO] nba_data_build: schedule_crosswalk 5: season-level build starting (raw=None via disk)
+Traceback (most recent call last):
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 830, in _request_once
+    c.perform()
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 587, in perform
+    self._check_error(ret, "perform")
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 320, in _check_error
+    raise error
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
 
-120.517 sec elapsed
-→ Uploading 1 files!
-ℹ Start upload of 5 files to
-<https://github.com/sportsdataverse/sportsdataverse-data/releases> @
-nba_crosswalk
-✔ Upload successfully completed.
-→ Uploaded 5 to sportsdataverse/sportsdataverse-data @ nba_crosswalk on 2026-08-03 10:00:19.756902
+The above exception was the direct cause of the following exception:
 
-On branch main
-Your branch is up to date with 'origin/main'.
+Traceback (most recent call last):
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 137, in require_source
+    out = fetch()
+          ^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 303, in _fetch
+    raw = nba_stats_leaguestandingsv3(season=stats_season, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats.py", line 4292, in nba_stats_leaguestandingsv3
+    raw = _get(
+          ^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 177, in _get
+    status, text = _transport(url, clean, _headers, proxy_url)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 82, in _curl_transport
+    r = creq.get(
+        ^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 153, in get
+    return request(method="GET", url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 145, in request
+    return s.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 903, in request
+    return self._request_once(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 837, in _request_once
+    raise error(str(e), e.code, rsp) from e
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
 
-nothing to commit, working tree clean
-No changes to commit
-Everything up-to-date
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/__main__.py", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/cli.py", line 26, in main
+    df = build_season(
+         ^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/build.py", line 72, in build_season
+    out = reshapers.SEASON_BUILDERS[dataset](season, raw_root=root, base=Path(base))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/reshapers.py", line 569, in build
+    return fn(season=season)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 463, in nba_schedule_crosswalk
+    team_xwalk = nba_team_crosswalk(season=season, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 406, in nba_team_crosswalk
+    stats = _stats_team_directory(season, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 306, in _stats_team_directory
+    standings = require_source(label, _fetch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 141, in require_source
+    raise CrosswalkSourceError(f"{label} could not be produced: {type(exc).__name__}: {exc}") from exc
+sportsdataverse._crosswalk_basketball_sources.CrosswalkSourceError: nba_stats_leaguestandingsv3(season='4-5') could not be produced: Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+::warning ::nba_data_build schedule_crosswalk for season 5 exited with code 1 (crosswalk; non-fatal, live external source)
+::endgroup::
+::group::nba_data_build player_crosswalk 5
+2026-09-01 19:43:56 [INFO] nba_data_build: player_crosswalk 5: season-level build starting (raw=None via disk)
+Traceback (most recent call last):
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 830, in _request_once
+    c.perform()
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 587, in perform
+    self._check_error(ret, "perform")
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 320, in _check_error
+    raise error
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 137, in require_source
+    out = fetch()
+          ^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 303, in _fetch
+    raw = nba_stats_leaguestandingsv3(season=stats_season, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats.py", line 4292, in nba_stats_leaguestandingsv3
+    raw = _get(
+          ^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 177, in _get
+    status, text = _transport(url, clean, _headers, proxy_url)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 82, in _curl_transport
+    r = creq.get(
+        ^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 153, in get
+    return request(method="GET", url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 145, in request
+    return s.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 903, in request
+    return self._request_once(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 837, in _request_once
+    raise error(str(e), e.code, rsp) from e
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/__main__.py", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/cli.py", line 26, in main
+    df = build_season(
+         ^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/build.py", line 72, in build_season
+    out = reshapers.SEASON_BUILDERS[dataset](season, raw_root=root, base=Path(base))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/reshapers.py", line 569, in build
+    return fn(season=season)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 523, in nba_player_crosswalk
+    team_xwalk = nba_team_crosswalk(season=season, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 406, in nba_team_crosswalk
+    stats = _stats_team_directory(season, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 306, in _stats_team_directory
+    standings = require_source(label, _fetch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 141, in require_source
+    raise CrosswalkSourceError(f"{label} could not be produced: {type(exc).__name__}: {exc}") from exc
+sportsdataverse._crosswalk_basketball_sources.CrosswalkSourceError: nba_stats_leaguestandingsv3(season='4-5') could not be produced: Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+::warning ::nba_data_build player_crosswalk for season 5 exited with code 1 (crosswalk; non-fatal, live external source)
+::endgroup::
+season 5 EXIT=0
+nothing to commit for: NBA Data Updated (Start: 5 End: 5)
