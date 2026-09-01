@@ -147,3 +147,31 @@ daily drivers (the `00` role); stage numbers are intended build order, not run o
 | [`nba_crosswalk`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk) | 25 | 0.7 MB | 2026-08-19 |
 
 <!-- END GENERATED: status -->
+
+## Consumers
+
+The packages that read what this repo produces:
+
+- **R:** [hoopR](https://hoopR.sportsdataverse.org) — docs at <https://hoopR.sportsdataverse.org>
+- **Python:** [`sportsdataverse.nba`](https://github.com/sportsdataverse/sportsdataverse-py) — docs at <https://py.sportsdataverse.org>
+
+## Stage inventory
+
+Every numbered pipeline stage in `python/` (auto-listed; run subsets with the `scripts/*.sh` drivers by number or name):
+
+- `python/espn_nba_01_pbp_creation.py`
+- `python/espn_nba_02_team_box_creation.py`
+- `python/espn_nba_03_player_box_creation.py`
+- `python/espn_nba_04_rosters_creation.py`
+- `python/espn_nba_05_player_season_stats_creation.py`
+- `python/espn_nba_06_team_season_stats_creation.py`
+- `python/espn_nba_07_standings_creation.py`
+- `python/espn_nba_08_draft_creation.py`
+- `python/espn_nba_09_game_rosters_creation.py`
+- `python/espn_nba_10_officials_creation.py`
+- `python/espn_nba_11_team_crosswalk_creation.py`
+- `python/espn_nba_12_schedule_crosswalk_creation.py`
+- `python/espn_nba_13_player_crosswalk_creation.py`
+- `python/espn_nba_14_schedules_creation.py`
+- `python/espn_nba_15_shots_creation.py`
+- `python/espn_nba_16_player_core_creation.py`
