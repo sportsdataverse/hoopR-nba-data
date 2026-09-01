@@ -109,6 +109,74 @@ daily drivers (the `00` role); stage numbers are intended build order, not run o
 
 [hoopR-kp-data repository (source: KenPom, dormant)](https://github.com/sportsdataverse/hoopR-kp-data)
 
+## Repository layout
+
+<!-- BEGIN GENERATED: layout -->
+
+```
+hoopR-nba-data/
+├── R/   # R pipeline stages and publish toolchain
+│   ├── espn_nba_01_pbp_creation.R
+│   ├── espn_nba_02_team_box_creation.R
+│   ├── espn_nba_03_player_box_creation.R
+│   ├── espn_nba_04_rosters_creation.R
+│   ├── espn_nba_05_player_season_stats_creation.R
+│   ├── espn_nba_06_team_season_stats_creation.R
+│   ├── espn_nba_07_standings_creation.R
+│   ├── espn_nba_08_draft_creation.R
+│   ├── espn_nba_09_game_rosters_creation.R
+│   ├── espn_nba_10_officials_creation.R
+│   ├── espn_nba_16_player_core_creation.R
+│   ├── manifest_upload_helper.R
+│   ├── nba_11_team_crosswalk_creation.R
+│   ├── nba_12_schedule_crosswalk_creation.R
+│   ├── nba_13_player_crosswalk_creation.R
+│   └── run_summary.R
+├── logs/   # per-run logs (gitignored where large)
+├── nba/
+│   ├── betting_lines/
+│   ├── crosswalk/
+│   ├── draft/
+│   ├── game_rosters/
+│   ├── officials/
+│   ├── pbp/
+│   ├── player_box/
+│   ├── player_core/
+│   └── … 7 more
+├── ops/   # cron definitions and runbooks
+│   ├── init/
+│   └── oneoff/
+├── python/   # Python pipeline stages, numbered in build order
+│   ├── nba_data_build/
+│   ├── espn_nba_01_pbp_creation.py
+│   ├── espn_nba_02_team_box_creation.py
+│   ├── espn_nba_03_player_box_creation.py
+│   ├── espn_nba_04_rosters_creation.py
+│   ├── espn_nba_05_player_season_stats_creation.py
+│   ├── espn_nba_06_team_season_stats_creation.py
+│   ├── espn_nba_07_standings_creation.py
+│   ├── espn_nba_08_draft_creation.py
+│   ├── espn_nba_09_game_rosters_creation.py
+│   ├── espn_nba_10_officials_creation.py
+│   ├── espn_nba_11_team_crosswalk_creation.py
+│   ├── espn_nba_12_schedule_crosswalk_creation.py
+│   ├── espn_nba_13_player_crosswalk_creation.py
+│   ├── espn_nba_14_schedules_creation.py
+│   ├── espn_nba_15_shots_creation.py
+│   └── espn_nba_16_player_core_creation.py
+├── scripts/   # bash drivers (the daily/weekly entry points)
+│   ├── daily_nba_R_processor.sh
+│   ├── daily_nba_data_processor.sh
+│   └── daily_nba_python_processor.sh
+├── tests/   # test suite
+│   ├── nba_data_build/
+│   ├── __init__.py
+│   └── test_r_python_parity.py
+└── themes/   # plot themes
+```
+
+<!-- END GENERATED: layout -->
+
 ## Reports & explainers
 
 <!-- BEGIN GENERATED: reports -->
