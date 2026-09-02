@@ -227,3 +227,32 @@ REGISTRY: dict[str, DatasetSpec] = {
         sdv_type="player crosswalk data",
     ),
 }
+
+
+# --- release sidecar metadata -------------------------------------------------
+# Every published tag carries package_function.txt/.json naming the loader a
+# consumer reaches the data through -- the R half of sportsdataverse_save()
+# that the Python publisher used to drop. Values are NOT invented: they are the
+# strings the R producer already published to these tags (read back off the
+# release assets), so re-stamping a tag from Python does not change what a
+# consumer sees. espn_nba_player_core is Python-only and never had one, so it
+# names the sdv-py loader instead.
+#
+# Keyed by tag, not dataset: the three crosswalks share one tag.
+# tests/nba_data_build/test_publish.py asserts every REGISTRY tag has an entry.
+PKG_FUNCTION: dict[str, str] = {
+    "espn_nba_draft": "hoopR::load_nba_draft_manifest()",
+    "espn_nba_game_rosters": "hoopR::load_nba_game_rosters_manifest()",
+    "espn_nba_officials": "hoopR::load_nba_officials_manifest()",
+    "espn_nba_pbp": "hoopR::load_nba_pbp()",
+    "espn_nba_player_boxscores": "hoopR::load_nba_player_box()",
+    "espn_nba_player_core": "sportsdataverse.nba.load_nba_player_core()",
+    "espn_nba_player_season_stats": "hoopR::load_nba_player_stats_manifest()",
+    "espn_nba_rosters": "hoopR::load_nba_rosters_manifest()",
+    "espn_nba_schedules": "hoopR::load_nba_schedule()",
+    "espn_nba_shots": "hoopR::load_nba_pbp()",
+    "espn_nba_standings": "hoopR::load_nba_standings_manifest()",
+    "espn_nba_team_boxscores": "hoopR::load_nba_team_box()",
+    "espn_nba_team_season_stats": "hoopR::load_nba_team_stats_manifest()",
+    "nba_crosswalk": "hoopR::load_nba_player_crosswalk()",
+}
