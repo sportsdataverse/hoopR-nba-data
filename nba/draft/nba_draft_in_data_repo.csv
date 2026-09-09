@@ -96,3 +96,4 @@ season,row_count,generated_at_utc,source_endpoint
 2026,60,2026-09-01 06:45:37 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/2026.json
 2026,60,2026-09-01 19:24:15 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/2026.json
 2026,60,2026-09-09 05:21:15 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/2026.json
+2027,60,2026-09-09 05:40:19 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/draft/json/2027.json
