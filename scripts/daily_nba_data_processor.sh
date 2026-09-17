@@ -46,6 +46,13 @@ RAW_ROOT="${HOOPR_NBA_RAW_ROOT:-https://raw.githubusercontent.com/sportsdatavers
 export PYTHONUNBUFFERED=1
 export PYTHONIOENCODING=utf-8
 
+# The crosswalk builders' stats.nba.com / stats.wnba.com fetches raise on a
+# refused or throttled request (sportsdataverse-py #522) instead of emitting
+# null ids, and sdv-py retries nothing by default. Retry transient throttles
+# first: 3 retries, linear backoff 5s/10s/15s. Override either from the env.
+export SDV_PY_NBA_STATS_RETRIES="${SDV_PY_NBA_STATS_RETRIES:-3}"
+export SDV_PY_NBA_STATS_BACKOFF="${SDV_PY_NBA_STATS_BACKOFF:-5}"
+
 # Dependency order: pbp/team_box/player_box first (schedules reads their
 # game-id sets; shots read the pbp parquet), then the rest.
 PY_DATASETS=(
