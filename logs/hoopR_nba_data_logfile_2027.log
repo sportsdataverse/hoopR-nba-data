@@ -14,326 +14,155 @@ From https://github.com/sportsdataverse/hoopR-nba-data
  * [new branch]        fix/player-core-manifest -> origin/fix/player-core-manifest
  * [new branch]        fix/player-crosswalk-match-rate -> origin/fix/player-crosswalk-match-rate
 ::group::nba_data_build pbp 2027
-2026-10-06 12:14:45 [WARNING] nba_data_build: pbp 2027: no game_json games in the season schedule; nothing built
-2026-10-06 12:14:45 [INFO] nba_data_build: pbp 2027: season complete -- 0 rows
+2026-10-07 11:31:58 [WARNING] nba_data_build: pbp 2027: no game_json games in the season schedule; nothing built
+2026-10-07 11:31:58 [INFO] nba_data_build: pbp 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build team_box 2027
-2026-10-06 12:14:47 [WARNING] nba_data_build: team_box 2027: no game_json games in the season schedule; nothing built
-2026-10-06 12:14:47 [INFO] nba_data_build: team_box 2027: season complete -- 0 rows
+2026-10-07 11:31:59 [WARNING] nba_data_build: team_box 2027: no game_json games in the season schedule; nothing built
+2026-10-07 11:31:59 [INFO] nba_data_build: team_box 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build player_box 2027
-2026-10-06 12:14:49 [WARNING] nba_data_build: player_box 2027: no game_json games in the season schedule; nothing built
-2026-10-06 12:14:49 [INFO] nba_data_build: player_box 2027: season complete -- 0 rows
+2026-10-07 11:32:01 [WARNING] nba_data_build: player_box 2027: no game_json games in the season schedule; nothing built
+2026-10-07 11:32:01 [INFO] nba_data_build: player_box 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build player_core 2027
-2026-10-06 12:14:50 [INFO] nba_data_build: player_core 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:14:50 [WARNING] nba_data_build: player_core 2027: no built player_box parquet at ../nba/player_box/parquet/player_box_2027.parquet -- cannot resolve which athletes played this season (build player_box first)
-2026-10-06 12:14:50 [WARNING] nba_data_build: player_core 2027: season-level build produced 0 rows; nothing written
-2026-10-06 12:14:50 [INFO] nba_data_build: player_core 2027: season complete -- 0 rows
+2026-10-07 11:32:02 [INFO] nba_data_build: player_core 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:02 [WARNING] nba_data_build: player_core 2027: no built player_box parquet at ../nba/player_box/parquet/player_box_2027.parquet -- cannot resolve which athletes played this season (build player_box first)
+2026-10-07 11:32:02 [WARNING] nba_data_build: player_core 2027: season-level build produced 0 rows; nothing written
+2026-10-07 11:32:02 [INFO] nba_data_build: player_core 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build schedules 2027
-2026-10-06 12:14:52 [INFO] nba_data_build: schedules 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:14:52 [WARNING] nba_data_build: pbp 2027: no built parquet at ../nba/pbp/parquet/play_by_play_2027.parquet -- schedule flags for it will all be False
-2026-10-06 12:14:52 [WARNING] nba_data_build: team_box 2027: no built parquet at ../nba/team_box/parquet/team_box_2027.parquet -- schedule flags for it will all be False
-2026-10-06 12:14:52 [WARNING] nba_data_build: player_box 2027: no built parquet at ../nba/player_box/parquet/player_box_2027.parquet -- schedule flags for it will all be False
-2026-10-06 12:14:52 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_2027.parquet (85.2KB) + nba_schedule_2027.rds (87.8KB) + nba_schedule_2027.csv (1.4MB), 1206 rows x 76 cols; manifest n/a (not manifested)
-2026-10-06 12:14:53 [INFO] nba_data_build: uploading nba_schedule_2027.parquet (85.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
-2026-10-06 12:14:55 [INFO] nba_data_build: uploaded nba_schedule_2027.parquet -> espn_nba_schedules (asset 1/3)
-2026-10-06 12:14:55 [INFO] nba_data_build: uploading nba_schedule_2027.rds (87.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
-2026-10-06 12:14:56 [INFO] nba_data_build: uploaded nba_schedule_2027.rds -> espn_nba_schedules (asset 2/3)
-2026-10-06 12:14:56 [INFO] nba_data_build: uploading nba_schedule_2027.csv (1.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
-2026-10-06 12:14:58 [INFO] nba_data_build: uploaded nba_schedule_2027.csv -> espn_nba_schedules (asset 3/3)
-2026-10-06 12:15:06 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
-2026-10-06 12:15:06 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (2.4MB), 33496 rows x 78 cols
-2026-10-06 12:15:06 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.2MB), 31141 rows x 78 cols
-2026-10-06 12:15:06 [INFO] nba_data_build: uploading nba_schedule_master.parquet (2.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
-2026-10-06 12:15:09 [INFO] nba_data_build: uploaded nba_schedule_master.parquet -> espn_nba_schedules (asset 1/4)
-2026-10-06 12:15:09 [INFO] nba_data_build: uploading nba_schedule_master.csv (36.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
-2026-10-06 12:15:12 [INFO] nba_data_build: uploaded nba_schedule_master.csv -> espn_nba_schedules (asset 2/4)
-2026-10-06 12:15:12 [INFO] nba_data_build: uploading nba_games_in_data_repo.parquet (2.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
-2026-10-06 12:15:14 [INFO] nba_data_build: uploaded nba_games_in_data_repo.parquet -> espn_nba_schedules (asset 3/4)
-2026-10-06 12:15:14 [INFO] nba_data_build: uploading nba_games_in_data_repo.csv (34.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
-2026-10-06 12:15:17 [INFO] nba_data_build: uploaded nba_games_in_data_repo.csv -> espn_nba_schedules (asset 4/4)
-2026-10-06 12:15:24 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
-2026-10-06 12:15:24 [INFO] nba_data_build: schedules 2027: done -- 1206 rows in 31.8s
-2026-10-06 12:15:24 [INFO] nba_data_build: schedules 2027: season complete -- 1206 rows
+2026-10-07 11:32:03 [INFO] nba_data_build: schedules 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:03 [WARNING] nba_data_build: pbp 2027: no built parquet at ../nba/pbp/parquet/play_by_play_2027.parquet -- schedule flags for it will all be False
+2026-10-07 11:32:03 [WARNING] nba_data_build: team_box 2027: no built parquet at ../nba/team_box/parquet/team_box_2027.parquet -- schedule flags for it will all be False
+2026-10-07 11:32:03 [WARNING] nba_data_build: player_box 2027: no built parquet at ../nba/player_box/parquet/player_box_2027.parquet -- schedule flags for it will all be False
+2026-10-07 11:32:03 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_2027.parquet (88.7KB) + nba_schedule_2027.rds (92.8KB) + nba_schedule_2027.csv (1.6MB), 1206 rows x 78 cols; manifest n/a (not manifested)
+2026-10-07 11:32:04 [INFO] nba_data_build: uploading nba_schedule_2027.parquet (88.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-07 11:32:05 [INFO] nba_data_build: uploaded nba_schedule_2027.parquet -> espn_nba_schedules (asset 1/3)
+2026-10-07 11:32:05 [INFO] nba_data_build: uploading nba_schedule_2027.rds (92.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-07 11:32:07 [INFO] nba_data_build: uploaded nba_schedule_2027.rds -> espn_nba_schedules (asset 2/3)
+2026-10-07 11:32:07 [INFO] nba_data_build: uploading nba_schedule_2027.csv (1.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-07 11:32:09 [INFO] nba_data_build: uploaded nba_schedule_2027.csv -> espn_nba_schedules (asset 3/3)
+2026-10-07 11:32:16 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-07 11:32:16 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (2.4MB), 33496 rows x 80 cols
+2026-10-07 11:32:16 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.2MB), 31141 rows x 80 cols
+2026-10-07 11:32:16 [INFO] nba_data_build: uploading nba_schedule_master.parquet (2.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-07 11:32:18 [INFO] nba_data_build: uploaded nba_schedule_master.parquet -> espn_nba_schedules (asset 1/4)
+2026-10-07 11:32:18 [INFO] nba_data_build: uploading nba_schedule_master.csv (36.8MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-07 11:32:21 [INFO] nba_data_build: uploaded nba_schedule_master.csv -> espn_nba_schedules (asset 2/4)
+2026-10-07 11:32:21 [INFO] nba_data_build: uploading nba_games_in_data_repo.parquet (2.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-07 11:32:23 [INFO] nba_data_build: uploaded nba_games_in_data_repo.parquet -> espn_nba_schedules (asset 3/4)
+2026-10-07 11:32:23 [INFO] nba_data_build: uploading nba_games_in_data_repo.csv (34.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-07 11:32:26 [INFO] nba_data_build: uploaded nba_games_in_data_repo.csv -> espn_nba_schedules (asset 4/4)
+2026-10-07 11:32:32 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-07 11:32:32 [INFO] nba_data_build: schedules 2027: done -- 1206 rows in 28.6s
+2026-10-07 11:32:32 [INFO] nba_data_build: schedules 2027: season complete -- 1206 rows
 ::endgroup::
 ::group::nba_data_build shots 2027
-2026-10-06 12:15:25 [INFO] nba_data_build: shots 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:25 [WARNING] nba_data_build: shots 2027: season-level build produced 0 rows; nothing written
-2026-10-06 12:15:25 [INFO] nba_data_build: shots 2027: season complete -- 0 rows
+2026-10-07 11:32:33 [INFO] nba_data_build: shots 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:33 [WARNING] nba_data_build: shots 2027: season-level build produced 0 rows; nothing written
+2026-10-07 11:32:33 [INFO] nba_data_build: shots 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build rosters 2027
-2026-10-06 12:15:27 [INFO] nba_data_build: rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:28 [INFO] nba_data_build: wrote ../nba/rosters/parquet/rosters_2027.parquet (77.3KB) + rosters_2027.rds (62.4KB) + rosters_2027.csv (250.8KB), 607 rows x 36 cols; manifest nba_rosters_in_data_repo.csv appended
-2026-10-06 12:15:29 [INFO] nba_data_build: uploading rosters_2027.parquet (77.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
-2026-10-06 12:15:31 [INFO] nba_data_build: uploaded rosters_2027.parquet -> espn_nba_rosters (asset 1/4)
-2026-10-06 12:15:31 [INFO] nba_data_build: uploading rosters_2027.rds (62.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
-2026-10-06 12:15:32 [INFO] nba_data_build: uploaded rosters_2027.rds -> espn_nba_rosters (asset 2/4)
-2026-10-06 12:15:32 [INFO] nba_data_build: uploading rosters_2027.csv (250.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
-2026-10-06 12:15:34 [INFO] nba_data_build: uploaded rosters_2027.csv -> espn_nba_rosters (asset 3/4)
-2026-10-06 12:15:34 [INFO] nba_data_build: uploading nba_rosters_in_data_repo.csv (482B) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
-2026-10-06 12:15:36 [INFO] nba_data_build: uploaded nba_rosters_in_data_repo.csv -> espn_nba_rosters (asset 4/4)
-2026-10-06 12:15:42 [INFO] nba_data_build: stamped espn_nba_rosters with timestamp.txt, timestamp.json, package_function.txt, package_function.json
-2026-10-06 12:15:42 [INFO] nba_data_build: rosters 2027: done -- 607 rows in 15.1s
-2026-10-06 12:15:42 [INFO] nba_data_build: rosters 2027: season complete -- 607 rows
+2026-10-07 11:32:34 [INFO] nba_data_build: rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:35 [INFO] nba_data_build: wrote ../nba/rosters/parquet/rosters_2027.parquet (77.2KB) + rosters_2027.rds (62.3KB) + rosters_2027.csv (250.5KB), 606 rows x 36 cols; manifest nba_rosters_in_data_repo.csv appended
+2026-10-07 11:32:35 [INFO] nba_data_build: uploading rosters_2027.parquet (77.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-07 11:32:37 [INFO] nba_data_build: uploaded rosters_2027.parquet -> espn_nba_rosters (asset 1/4)
+2026-10-07 11:32:37 [INFO] nba_data_build: uploading rosters_2027.rds (62.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-07 11:32:38 [INFO] nba_data_build: uploaded rosters_2027.rds -> espn_nba_rosters (asset 2/4)
+2026-10-07 11:32:38 [INFO] nba_data_build: uploading rosters_2027.csv (250.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-07 11:32:40 [INFO] nba_data_build: uploaded rosters_2027.csv -> espn_nba_rosters (asset 3/4)
+2026-10-07 11:32:40 [INFO] nba_data_build: uploading nba_rosters_in_data_repo.csv (482B) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-07 11:32:41 [INFO] nba_data_build: uploaded nba_rosters_in_data_repo.csv -> espn_nba_rosters (asset 4/4)
+2026-10-07 11:32:47 [INFO] nba_data_build: stamped espn_nba_rosters with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-07 11:32:47 [INFO] nba_data_build: rosters 2027: done -- 606 rows in 12.6s
+2026-10-07 11:32:47 [INFO] nba_data_build: rosters 2027: season complete -- 606 rows
 ::endgroup::
 ::group::nba_data_build player_season_stats 2027
-2026-10-06 12:15:44 [INFO] nba_data_build: player_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:44 [WARNING] nba_data_build: player_season_stats 2027: no built player_box parquet at ../nba/player_box/parquet/player_box_2027.parquet -- identity columns will be blank (build player_box first)
-2026-10-06 12:15:44 [WARNING] nba_data_build: player_season_stats 2027: season-level build produced 0 rows; nothing written
-2026-10-06 12:15:44 [INFO] nba_data_build: player_season_stats 2027: season complete -- 0 rows
+2026-10-07 11:32:48 [INFO] nba_data_build: player_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:48 [WARNING] nba_data_build: player_season_stats 2027: no built player_box parquet at ../nba/player_box/parquet/player_box_2027.parquet -- identity columns will be blank (build player_box first)
+2026-10-07 11:32:48 [WARNING] nba_data_build: player_season_stats 2027: season-level build produced 0 rows; nothing written
+2026-10-07 11:32:48 [INFO] nba_data_build: player_season_stats 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build team_season_stats 2027
-2026-10-06 12:15:45 [INFO] nba_data_build: team_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:46 [WARNING] nba_data_build: team_season_stats 2027: season-level build produced 0 rows; nothing written
-2026-10-06 12:15:46 [INFO] nba_data_build: team_season_stats 2027: season complete -- 0 rows
+2026-10-07 11:32:49 [INFO] nba_data_build: team_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:49 [WARNING] nba_data_build: team_season_stats 2027: season-level build produced 0 rows; nothing written
+2026-10-07 11:32:49 [INFO] nba_data_build: team_season_stats 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build standings 2027
-2026-10-06 12:15:47 [INFO] nba_data_build: standings 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:47 [WARNING] nba_data_build: standings 2027: season-level build produced 0 rows; nothing written
-2026-10-06 12:15:47 [INFO] nba_data_build: standings 2027: season complete -- 0 rows
+2026-10-07 11:32:51 [INFO] nba_data_build: standings 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:51 [WARNING] nba_data_build: standings 2027: season-level build produced 0 rows; nothing written
+2026-10-07 11:32:51 [INFO] nba_data_build: standings 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build game_rosters 2027
-2026-10-06 12:15:49 [INFO] nba_data_build: game_rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:49 [WARNING] nba_data_build: game_rosters 2027: season-level build produced 0 rows; nothing written
-2026-10-06 12:15:49 [INFO] nba_data_build: game_rosters 2027: season complete -- 0 rows
+2026-10-07 11:32:52 [INFO] nba_data_build: game_rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:52 [WARNING] nba_data_build: game_rosters 2027: season-level build produced 0 rows; nothing written
+2026-10-07 11:32:52 [INFO] nba_data_build: game_rosters 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build officials 2027
-2026-10-06 12:15:50 [INFO] nba_data_build: officials 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:51 [WARNING] nba_data_build: officials 2027: season-level build produced 0 rows; nothing written
-2026-10-06 12:15:51 [INFO] nba_data_build: officials 2027: season complete -- 0 rows
+2026-10-07 11:32:53 [INFO] nba_data_build: officials 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:53 [WARNING] nba_data_build: officials 2027: season-level build produced 0 rows; nothing written
+2026-10-07 11:32:53 [INFO] nba_data_build: officials 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build draft 2027
-2026-10-06 12:15:52 [INFO] nba_data_build: draft 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-06 12:15:52 [INFO] nba_data_build: wrote ../nba/draft/parquet/draft_2027.parquet (16.0KB) + draft_2027.rds (4.1KB) + draft_2027.csv (13.8KB), 60 rows x 35 cols; manifest nba_draft_in_data_repo.csv appended
-2026-10-06 12:15:53 [INFO] nba_data_build: uploading draft_2027.parquet (16.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
-2026-10-06 12:15:54 [INFO] nba_data_build: uploaded draft_2027.parquet -> espn_nba_draft (asset 1/4)
-2026-10-06 12:15:54 [INFO] nba_data_build: uploading draft_2027.rds (4.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
-2026-10-06 12:15:56 [INFO] nba_data_build: uploaded draft_2027.rds -> espn_nba_draft (asset 2/4)
-2026-10-06 12:15:56 [INFO] nba_data_build: uploading draft_2027.csv (13.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
-2026-10-06 12:15:58 [INFO] nba_data_build: uploaded draft_2027.csv -> espn_nba_draft (asset 3/4)
-2026-10-06 12:15:58 [INFO] nba_data_build: uploading nba_draft_in_data_repo.csv (554B) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
-2026-10-06 12:15:59 [INFO] nba_data_build: uploaded nba_draft_in_data_repo.csv -> espn_nba_draft (asset 4/4)
-2026-10-06 12:16:06 [INFO] nba_data_build: stamped espn_nba_draft with timestamp.txt, timestamp.json, package_function.txt, package_function.json
-2026-10-06 12:16:06 [INFO] nba_data_build: draft 2027: done -- 60 rows in 14.2s
-2026-10-06 12:16:06 [INFO] nba_data_build: draft 2027: season complete -- 60 rows
+2026-10-07 11:32:55 [INFO] nba_data_build: draft 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-07 11:32:55 [INFO] nba_data_build: wrote ../nba/draft/parquet/draft_2027.parquet (16.0KB) + draft_2027.rds (4.1KB) + draft_2027.csv (13.8KB), 60 rows x 35 cols; manifest nba_draft_in_data_repo.csv appended
+2026-10-07 11:32:55 [INFO] nba_data_build: uploading draft_2027.parquet (16.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-10-07 11:32:57 [INFO] nba_data_build: uploaded draft_2027.parquet -> espn_nba_draft (asset 1/4)
+2026-10-07 11:32:57 [INFO] nba_data_build: uploading draft_2027.rds (4.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-10-07 11:32:58 [INFO] nba_data_build: uploaded draft_2027.rds -> espn_nba_draft (asset 2/4)
+2026-10-07 11:32:58 [INFO] nba_data_build: uploading draft_2027.csv (13.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-10-07 11:33:00 [INFO] nba_data_build: uploaded draft_2027.csv -> espn_nba_draft (asset 3/4)
+2026-10-07 11:33:00 [INFO] nba_data_build: uploading nba_draft_in_data_repo.csv (554B) -> sportsdataverse/sportsdataverse-data:espn_nba_draft
+2026-10-07 11:33:01 [INFO] nba_data_build: uploaded nba_draft_in_data_repo.csv -> espn_nba_draft (asset 4/4)
+2026-10-07 11:33:08 [INFO] nba_data_build: stamped espn_nba_draft with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-07 11:33:08 [INFO] nba_data_build: draft 2027: done -- 60 rows in 13.2s
+2026-10-07 11:33:08 [INFO] nba_data_build: draft 2027: season complete -- 60 rows
 ::endgroup::
 ::group::nba_data_build team_crosswalk 2027
-2026-10-06 12:16:08 [INFO] nba_data_build: team_crosswalk 2027: season-level build starting (raw=None via disk)
-Traceback (most recent call last):
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 830, in _request_once
-    c.perform()
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 587, in perform
-    self._check_error(ret, "perform")
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 320, in _check_error
-    raise error
-curl_cffi.curl.CurlError: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 199, in _stats_result_set
-    payload = fetch()
-              ^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 312, in _fetch
-    return nba_stats_leaguestandingsv3(season=stats_season, return_parsed=False, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats.py", line 5130, in nba_stats_leaguestandingsv3
-    raw = _get(
-          ^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 177, in _get
-    status, text = _transport(url, clean, _headers, proxy_url)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 82, in _curl_transport
-    r = creq.get(
-        ^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 153, in get
-    return request(method="GET", url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 145, in request
-    return s.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 903, in request
-    return self._request_once(
-           ^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 837, in _request_once
-    raise error(str(e), e.code, rsp) from e
-curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/__main__.py", line 6, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/cli.py", line 26, in main
-    df = build_season(
-         ^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/build.py", line 72, in build_season
-    out = reshapers.SEASON_BUILDERS[dataset](season, raw_root=root, base=Path(base))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/reshapers.py", line 569, in build
-    return fn(season=season)
-           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 417, in nba_team_crosswalk
-    stats = _stats_team_directory(season, **kwargs)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 314, in _stats_team_directory
-    standings = _stats_result_set(label, _fetch, "Standings")
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 201, in _stats_result_set
-    raise CrosswalkSourceError(f"{label} failed: {type(exc).__name__}: {exc} ({_STATS_RETRY_HINT})") from exc
-sportsdataverse._crosswalk_basketball_sources.CrosswalkSourceError: nba_stats_leaguestandingsv3(season='2026-27') failed: Timeout: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details. (set SDV_PY_NBA_STATS_RETRIES / SDV_PY_NBA_STATS_BACKOFF to retry; default is 0 retries)
-::warning ::nba_data_build team_crosswalk for season 2027 exited with code 1 (crosswalk; non-fatal, live external source)
+2026-10-07 11:33:09 [INFO] nba_data_build: team_crosswalk 2027: season-level build starting (raw=None via disk)
+2026-10-07 11:33:10 [INFO] nba_data_build: wrote ../nba/crosswalk/parquet/nba_team_crosswalk_2027.parquet (10.7KB) + nba_team_crosswalk_2027.rds (1.7KB), 30 rows x 21 cols; manifest nba_team_crosswalk_in_data_repo.csv appended
+2026-10-07 11:33:11 [INFO] nba_data_build: uploading nba_team_crosswalk_2027.parquet (10.7KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:12 [INFO] nba_data_build: uploaded nba_team_crosswalk_2027.parquet -> nba_crosswalk (asset 1/4)
+2026-10-07 11:33:12 [INFO] nba_data_build: uploading nba_team_crosswalk_2027.rds (1.7KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:14 [INFO] nba_data_build: uploaded nba_team_crosswalk_2027.rds -> nba_crosswalk (asset 2/4)
+2026-10-07 11:33:14 [INFO] nba_data_build: uploading nba_team_crosswalk_2027.csv (4.8KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:15 [INFO] nba_data_build: uploaded nba_team_crosswalk_2027.csv -> nba_crosswalk (asset 3/4)
+2026-10-07 11:33:15 [INFO] nba_data_build: uploading nba_team_crosswalk_in_data_repo.csv (170B) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:17 [INFO] nba_data_build: uploaded nba_team_crosswalk_in_data_repo.csv -> nba_crosswalk (asset 4/4)
+2026-10-07 11:33:23 [INFO] nba_data_build: stamped nba_crosswalk with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-07 11:33:23 [INFO] nba_data_build: team_crosswalk 2027: done -- 30 rows in 13.7s
+2026-10-07 11:33:23 [INFO] nba_data_build: team_crosswalk 2027: season complete -- 30 rows
 ::endgroup::
 ::group::nba_data_build schedule_crosswalk 2027
-2026-10-06 12:18:40 [INFO] nba_data_build: schedule_crosswalk 2027: season-level build starting (raw=None via disk)
-Traceback (most recent call last):
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 830, in _request_once
-    c.perform()
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 587, in perform
-    self._check_error(ret, "perform")
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 320, in _check_error
-    raise error
-curl_cffi.curl.CurlError: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 199, in _stats_result_set
-    payload = fetch()
-              ^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 312, in _fetch
-    return nba_stats_leaguestandingsv3(season=stats_season, return_parsed=False, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats.py", line 5130, in nba_stats_leaguestandingsv3
-    raw = _get(
-          ^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 177, in _get
-    status, text = _transport(url, clean, _headers, proxy_url)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 82, in _curl_transport
-    r = creq.get(
-        ^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 153, in get
-    return request(method="GET", url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 145, in request
-    return s.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 903, in request
-    return self._request_once(
-           ^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 837, in _request_once
-    raise error(str(e), e.code, rsp) from e
-curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/__main__.py", line 6, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/cli.py", line 26, in main
-    df = build_season(
-         ^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/build.py", line 72, in build_season
-    out = reshapers.SEASON_BUILDERS[dataset](season, raw_root=root, base=Path(base))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/reshapers.py", line 569, in build
-    return fn(season=season)
-           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 485, in nba_schedule_crosswalk
-    team_xwalk = nba_team_crosswalk(season=season, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 417, in nba_team_crosswalk
-    stats = _stats_team_directory(season, **kwargs)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 314, in _stats_team_directory
-    standings = _stats_result_set(label, _fetch, "Standings")
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 201, in _stats_result_set
-    raise CrosswalkSourceError(f"{label} failed: {type(exc).__name__}: {exc} ({_STATS_RETRY_HINT})") from exc
-sportsdataverse._crosswalk_basketball_sources.CrosswalkSourceError: nba_stats_leaguestandingsv3(season='2026-27') failed: Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details. (set SDV_PY_NBA_STATS_RETRIES / SDV_PY_NBA_STATS_BACKOFF to retry; default is 0 retries)
-::warning ::nba_data_build schedule_crosswalk for season 2027 exited with code 1 (crosswalk; non-fatal, live external source)
+2026-10-07 11:33:24 [INFO] nba_data_build: schedule_crosswalk 2027: season-level build starting (raw=None via disk)
+2026-10-07 11:33:44 [INFO] nba_data_build: wrote ../nba/crosswalk/parquet/nba_schedule_crosswalk_2027.parquet (18.5KB) + nba_schedule_crosswalk_2027.rds (20.7KB), 1281 rows x 16 cols; manifest nba_schedule_crosswalk_in_data_repo.csv appended
+2026-10-07 11:33:44 [INFO] nba_data_build: uploading nba_schedule_crosswalk_2027.parquet (18.5KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:46 [INFO] nba_data_build: uploaded nba_schedule_crosswalk_2027.parquet -> nba_crosswalk (asset 1/4)
+2026-10-07 11:33:46 [INFO] nba_data_build: uploading nba_schedule_crosswalk_2027.rds (20.7KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:48 [INFO] nba_data_build: uploaded nba_schedule_crosswalk_2027.rds -> nba_crosswalk (asset 2/4)
+2026-10-07 11:33:48 [INFO] nba_data_build: uploading nba_schedule_crosswalk_2027.csv (134.9KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:49 [INFO] nba_data_build: uploaded nba_schedule_crosswalk_2027.csv -> nba_crosswalk (asset 3/4)
+2026-10-07 11:33:49 [INFO] nba_data_build: uploading nba_schedule_crosswalk_in_data_repo.csv (116B) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:33:50 [INFO] nba_data_build: uploaded nba_schedule_crosswalk_in_data_repo.csv -> nba_crosswalk (asset 4/4)
+2026-10-07 11:33:56 [INFO] nba_data_build: stamped nba_crosswalk with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-07 11:33:56 [INFO] nba_data_build: schedule_crosswalk 2027: done -- 1281 rows in 32.1s
+2026-10-07 11:33:56 [INFO] nba_data_build: schedule_crosswalk 2027: season complete -- 1281 rows
 ::endgroup::
 ::group::nba_data_build player_crosswalk 2027
-2026-10-06 12:21:12 [INFO] nba_data_build: player_crosswalk 2027: season-level build starting (raw=None via disk)
-Traceback (most recent call last):
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 830, in _request_once
-    c.perform()
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 587, in perform
-    self._check_error(ret, "perform")
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/curl.py", line 320, in _check_error
-    raise error
-curl_cffi.curl.CurlError: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 199, in _stats_result_set
-    payload = fetch()
-              ^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 312, in _fetch
-    return nba_stats_leaguestandingsv3(season=stats_season, return_parsed=False, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats.py", line 5130, in nba_stats_leaguestandingsv3
-    raw = _get(
-          ^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 177, in _get
-    status, text = _transport(url, clean, _headers, proxy_url)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_stats_runtime.py", line 82, in _curl_transport
-    r = creq.get(
-        ^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 153, in get
-    return request(method="GET", url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/__init__.py", line 145, in request
-    return s.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 903, in request
-    return self._request_once(
-           ^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/curl_cffi/requests/session.py", line 837, in _request_once
-    raise error(str(e), e.code, rsp) from e
-curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/__main__.py", line 6, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/cli.py", line 26, in main
-    df = build_season(
-         ^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/build.py", line 72, in build_season
-    out = reshapers.SEASON_BUILDERS[dataset](season, raw_root=root, base=Path(base))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/python/nba_data_build/reshapers.py", line 569, in build
-    return fn(season=season)
-           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 564, in nba_player_crosswalk
-    team_xwalk = nba_team_crosswalk(season=season, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 417, in nba_team_crosswalk
-    stats = _stats_team_directory(season, **kwargs)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/nba/nba_crosswalk.py", line 314, in _stats_team_directory
-    standings = _stats_result_set(label, _fetch, "Standings")
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/hoopR-nba-data/hoopR-nba-data/.venv/lib/python3.12/site-packages/sportsdataverse/_crosswalk_basketball_sources.py", line 201, in _stats_result_set
-    raise CrosswalkSourceError(f"{label} failed: {type(exc).__name__}: {exc} ({_STATS_RETRY_HINT})") from exc
-sportsdataverse._crosswalk_basketball_sources.CrosswalkSourceError: nba_stats_leaguestandingsv3(season='2026-27') failed: Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details. (set SDV_PY_NBA_STATS_RETRIES / SDV_PY_NBA_STATS_BACKOFF to retry; default is 0 retries)
-::warning ::nba_data_build player_crosswalk for season 2027 exited with code 1 (crosswalk; non-fatal, live external source)
+2026-10-07 11:33:57 [INFO] nba_data_build: player_crosswalk 2027: season-level build starting (raw=None via disk)
+2026-10-07 11:34:11 [INFO] nba_data_build: wrote ../nba/crosswalk/parquet/nba_player_crosswalk_2027.parquet (35.4KB) + nba_player_crosswalk_2027.rds (25.3KB), 606 rows x 21 cols; manifest nba_player_crosswalk_in_data_repo.csv appended
+2026-10-07 11:34:12 [INFO] nba_data_build: uploading nba_player_crosswalk_2027.parquet (35.4KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:34:13 [INFO] nba_data_build: uploaded nba_player_crosswalk_2027.parquet -> nba_crosswalk (asset 1/4)
+2026-10-07 11:34:13 [INFO] nba_data_build: uploading nba_player_crosswalk_2027.rds (25.3KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:34:15 [INFO] nba_data_build: uploaded nba_player_crosswalk_2027.rds -> nba_crosswalk (asset 2/4)
+2026-10-07 11:34:15 [INFO] nba_data_build: uploading nba_player_crosswalk_2027.csv (73.6KB) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:34:16 [INFO] nba_data_build: uploaded nba_player_crosswalk_2027.csv -> nba_crosswalk (asset 3/4)
+2026-10-07 11:34:16 [INFO] nba_data_build: uploading nba_player_crosswalk_in_data_repo.csv (176B) -> sportsdataverse/sportsdataverse-data:nba_crosswalk
+2026-10-07 11:34:18 [INFO] nba_data_build: uploaded nba_player_crosswalk_in_data_repo.csv -> nba_crosswalk (asset 4/4)
+2026-10-07 11:34:23 [INFO] nba_data_build: stamped nba_crosswalk with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-07 11:34:23 [INFO] nba_data_build: player_crosswalk 2027: done -- 606 rows in 25.9s
+2026-10-07 11:34:23 [INFO] nba_data_build: player_crosswalk 2027: season complete -- 606 rows
 ::endgroup::
 season 2027 EXIT=0
 pushed: NBA Data Updated (Start: 2027 End: 2027) (attempt 1)
