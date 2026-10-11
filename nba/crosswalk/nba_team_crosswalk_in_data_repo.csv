@@ -1,5 +1,5 @@
 season,row_count,generated_at_utc,source_endpoint
-2002,31,2026-10-11 15:42:47 UTC,hoopR::nba_team_crosswalk()
+2002,29,2026-10-11 19:31:46 UTC,hoopR::nba_team_crosswalk()
 2003,31,2026-10-11 15:44:40 UTC,hoopR::nba_team_crosswalk()
 2004,31,2026-10-11 15:46:26 UTC,hoopR::nba_team_crosswalk()
 2005,32,2026-10-11 15:48:15 UTC,hoopR::nba_team_crosswalk()
