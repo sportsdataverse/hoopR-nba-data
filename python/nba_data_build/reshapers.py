@@ -590,14 +590,16 @@ def crosswalk_from_archive(
     so a past season keeps them null). ``stats_root`` defaults to
     ``$HOOPR_NBA_STATS_RAW_ROOT`` or the sibling checkout.
     """
-    from sportsdataverse.nba import nba_crosswalks_from_archive
+    from sportsdataverse.nba import most_recent_nba_season, nba_crosswalks_from_archive
 
     stats = Path(stats_root or os.environ.get("HOOPR_NBA_STATS_RAW_ROOT") or STATS_ARCHIVE_ROOT)
     root = Path(archive_root)
     schedule = pl.read_parquet(root / "schedules" / "parquet" / f"nba_schedule_{season}.parquet")
     rosters = pl.read_parquet(root / "game_rosters" / "parquet" / f"game_rosters_{season}.parquet")
     fox = kind != "schedule"  # Fox team ids join by name for any season; sdv-py fills Fox player ids only for the current season
-    return nba_crosswalks_from_archive(season, schedule, rosters, stats, fox=fox)[kind]
+    # Fox game ids cost one Fox call per game date, so only the current season fetches them.
+    fox_games = kind == "schedule" and season == most_recent_nba_season()
+    return nba_crosswalks_from_archive(season, schedule, rosters, stats, fox=fox, fox_games=fox_games)[kind]
 
 
 SEASON_BUILDERS: dict = {
