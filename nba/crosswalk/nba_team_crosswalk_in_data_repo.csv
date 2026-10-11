@@ -16,7 +16,7 @@ season,row_count,generated_at_utc,source_endpoint
 2016,30,2026-10-11 19:57:20 UTC,hoopR::nba_team_crosswalk()
 2017,30,2026-10-11 19:59:10 UTC,hoopR::nba_team_crosswalk()
 2018,30,2026-10-11 20:01:01 UTC,hoopR::nba_team_crosswalk()
-2019,34,2026-10-11 16:13:54 UTC,hoopR::nba_team_crosswalk()
+2019,30,2026-10-11 20:02:50 UTC,hoopR::nba_team_crosswalk()
 2020,34,2026-10-11 16:15:45 UTC,hoopR::nba_team_crosswalk()
 2021,32,2026-10-11 16:17:35 UTC,hoopR::nba_team_crosswalk()
 2022,32,2026-10-11 16:19:25 UTC,hoopR::nba_team_crosswalk()
