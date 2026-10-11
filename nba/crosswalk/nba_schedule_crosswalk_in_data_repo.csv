@@ -20,4 +20,5 @@ season,row_count,generated_at_utc,source_endpoint
 2020,1162,2026-10-11 16:16:06 UTC,hoopR::nba_schedule_crosswalk()
 2021,1253,2026-10-11 16:17:53 UTC,hoopR::nba_schedule_crosswalk()
 2022,1404,2026-10-11 16:19:42 UTC,hoopR::nba_schedule_crosswalk()
+2023,1395,2026-10-11 16:21:34 UTC,hoopR::nba_schedule_crosswalk()
 2027,1281,2026-10-10 11:50:54 UTC,hoopR::nba_schedule_crosswalk()
