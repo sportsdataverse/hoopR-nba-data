@@ -8,4 +8,5 @@ season,row_count,generated_at_utc,source_endpoint
 2008,1438,2026-10-11 15:54:03 UTC,hoopR::nba_schedule_crosswalk()
 2009,1432,2026-10-11 15:55:55 UTC,hoopR::nba_schedule_crosswalk()
 2010,1434,2026-10-11 15:57:43 UTC,hoopR::nba_schedule_crosswalk()
+2011,1433,2026-10-11 15:59:31 UTC,hoopR::nba_schedule_crosswalk()
 2027,1281,2026-10-10 11:50:54 UTC,hoopR::nba_schedule_crosswalk()
