@@ -110,6 +110,9 @@ R_CROSSWALKS=(
     R/nba_12_schedule_crosswalk_creation.R
     R/nba_13_player_crosswalk_creation.R
 )
+# stats.nba.com times out from GitHub runners: daily_nba.yml sets SDV_SKIP_CROSSWALKS=1 and the
+# droplet builds them from the stats archive instead (scripts/cron_crosswalks.sh, 2026-10-11).
+[ "${SDV_SKIP_CROSSWALKS:-0}" = "1" ] && { PY_CROSSWALKS=(); R_CROSSWALKS=(); }
 
 mkdir -p logs
 ANY_FAILED=0

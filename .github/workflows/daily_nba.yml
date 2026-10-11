@@ -110,6 +110,7 @@ jobs:
           # gh CLI (python publish) needs cross-repo write to sportsdataverse-data;
           # the default github.token only reaches this repo. R uses GITHUB_PAT above.
           GH_TOKEN: ${{ secrets.SDV_GH_TOKEN }}
+          SDV_SKIP_CROSSWALKS: '1'   # built on the droplet (scripts/cron_crosswalks.sh)
         run: |
           # Python is the default (CI-validated: run 29307565217 built + published
           # all NBA datasets). use_python_build=false selects the R path within
