@@ -15,5 +15,6 @@ season,row_count,generated_at_utc,source_endpoint
 2015,618,2026-10-11 16:07:09 UTC,hoopR::nba_player_crosswalk()
 2016,560,2026-10-11 16:08:57 UTC,hoopR::nba_player_crosswalk()
 2017,575,2026-10-11 16:10:48 UTC,hoopR::nba_player_crosswalk()
+2018,662,2026-10-11 16:12:38 UTC,hoopR::nba_player_crosswalk()
 2026,544,2026-07-14 11:59:25 UTC,hoopR::nba_player_crosswalk()
 2027,610,2026-10-10 11:51:19 UTC,hoopR::nba_player_crosswalk()
