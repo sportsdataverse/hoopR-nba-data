@@ -7,7 +7,7 @@ season,row_count,generated_at_utc,source_endpoint
 2007,30,2026-10-11 19:40:50 UTC,hoopR::nba_team_crosswalk()
 2008,30,2026-10-11 19:42:40 UTC,hoopR::nba_team_crosswalk()
 2009,30,2026-10-11 19:44:33 UTC,hoopR::nba_team_crosswalk()
-2010,32,2026-10-11 15:57:25 UTC,hoopR::nba_team_crosswalk()
+2010,30,2026-10-11 19:46:21 UTC,hoopR::nba_team_crosswalk()
 2011,32,2026-10-11 15:59:15 UTC,hoopR::nba_team_crosswalk()
 2012,32,2026-10-11 16:01:05 UTC,hoopR::nba_team_crosswalk()
 2013,32,2026-10-11 16:02:55 UTC,hoopR::nba_team_crosswalk()
