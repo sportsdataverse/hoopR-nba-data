@@ -603,10 +603,16 @@ def crosswalk_from_archive(
     fox_games = kind == "schedule" and season == most_recent_nba_season()
     # The parsed Fox / Yahoo history fills the player legs offline. Passed only when the season
     # has it, so an sdv-py without alt_root= fails loudly here instead of dropping those legs.
-    alt = {"alt_root": alt_root} if kind == "player" and (alt_root := _alt_root(season)) else {}
-    return nba_crosswalks_from_archive(
+    alt_root = _alt_root(season)
+    alt = {"alt_root": alt_root} if kind == "player" and alt_root else {}
+    out = nba_crosswalks_from_archive(
         season, schedule, rosters, stats, fox=fox, fox_games=fox_games, **alt
     )[kind]
+    if kind == "schedule" and alt_root:  # the parsed Fox games fill the past seasons' game legs
+        from sportsdataverse._crosswalk_alt import with_alt_game_legs
+
+        out = with_alt_game_legs("nba", season, out, schedule, rosters, alt_root)
+    return out
 
 
 #: The private hoopR-nba-alt-data checkout (parsed Fox / Yahoo history), a sibling by default.
@@ -624,38 +630,41 @@ def _alt_root(season: int) -> Path | None:
 
 
 def crosswalk_fill_alt(kind: str, season: int, *, base: Path, archive_root: Path) -> pl.DataFrame:
-    """Fill the committed player crosswalk's Fox / Yahoo legs from hoopR-nba-alt-data (``--fill-alt``).
+    """Fill the committed player or schedule crosswalk's Fox / Yahoo legs from hoopR-nba-alt-data (``--fill-alt``).
 
-    Offline and narrow: reads ``crosswalk/parquet/nba_player_crosswalk_{season}.parquet``, the
+    Offline and narrow: reads ``crosswalk/parquet/nba_{kind}_crosswalk_{season}.parquet``, the
     season's ESPN schedule + game rosters under ``archive_root``, and the parsed provider
-    seasons, then fills only null ``fox_athlete_id`` / ``fox_player`` / ``yahoo_player_id`` /
-    ``yahoo_player_name`` (``sportsdataverse._crosswalk_alt.with_alt_player_legs``). Every other
-    column is the committed file's. Raises if any column would lose non-null values.
+    seasons, then fills only null provider ids: the player legs ``fox_athlete_id`` /
+    ``fox_player`` / ``yahoo_player_id`` / ``yahoo_player_name``
+    (``sportsdataverse._crosswalk_alt.with_alt_player_legs``) or the game legs ``fox_game_id`` /
+    ``fox_home_team_id`` / ``fox_away_team_id`` / ``yahoo_game_id`` (``with_alt_game_legs``).
+    Every other column is the committed file's. Raises if any column would lose non-null values.
     """
-    from sportsdataverse._crosswalk_alt import with_alt_player_legs
+    from sportsdataverse._crosswalk_alt import with_alt_game_legs, with_alt_player_legs
 
-    if kind != "player":
-        raise ValueError(f"--fill-alt applies to the player crosswalk only, not {kind}")
+    if kind not in ("player", "schedule"):
+        raise ValueError(f"--fill-alt applies to the player and schedule crosswalks, not {kind}")
     alt_root = _alt_root(season)
     current = pl.read_parquet(
-        Path(base) / "crosswalk" / "parquet" / f"nba_player_crosswalk_{season}.parquet"
+        Path(base) / "crosswalk" / "parquet" / f"nba_{kind}_crosswalk_{season}.parquet"
     )
     if alt_root is None:
-        log.info("player_crosswalk %s: no parsed Fox / Yahoo season; unchanged", season)
+        log.info("%s_crosswalk %s: no parsed Fox / Yahoo season; unchanged", kind, season)
         return current
     root = Path(archive_root)
     schedule = pl.read_parquet(root / "schedules" / "parquet" / f"nba_schedule_{season}.parquet")
     rosters = pl.read_parquet(root / "game_rosters" / "parquet" / f"game_rosters_{season}.parquet")
-    out = with_alt_player_legs("nba", season, current, schedule, rosters, alt_root)
+    fill = with_alt_player_legs if kind == "player" else with_alt_game_legs
+    out = fill("nba", season, current, schedule, rosters, alt_root)
     before = current.select(pl.all().is_not_null().sum()).row(0, named=True)
     after = out.select(pl.all().is_not_null().sum()).row(0, named=True)
     lost = {c: (before[c], after[c]) for c in before if after[c] < before[c]}
     if out.columns != current.columns or out.height != current.height or lost:
         raise RuntimeError(
-            f"player_crosswalk {season}: fill would drop data {lost or 'rows/columns'}"
+            f"{kind}_crosswalk {season}: fill would drop data {lost or 'rows/columns'}"
         )
     gained = {c: f"{before[c]}->{after[c]}" for c in before if after[c] != before[c]}
-    log.info("player_crosswalk %s: %d rows, non-null %s", season, out.height, gained or "unchanged")
+    log.info("%s_crosswalk %s: %d rows, non-null %s", kind, season, out.height, gained or "unchanged")
     return out
 
 

@@ -55,9 +55,9 @@ def build_season(
             of the live sources. Writes a ``crosswalk/unmatched/`` triage csv.
         archive_root: ESPN parquet tree for ``from_archive`` (default ``base``).
         stats_root: Stats JSON archive root for ``from_archive``.
-        fill_alt: Player crosswalk only -- fill the committed season's Fox / Yahoo
-            player ids from hoopR-nba-alt-data (``reshapers.crosswalk_fill_alt``),
-            offline, leaving every other column as committed.
+        fill_alt: Player or schedule crosswalk -- fill the committed season's null
+            Fox / Yahoo player or game ids from hoopR-nba-alt-data
+            (``reshapers.crosswalk_fill_alt``), offline, leaving every other column as committed.
 
     Returns:
         pl.DataFrame: The built season frame, or an empty frame if no games qualified.

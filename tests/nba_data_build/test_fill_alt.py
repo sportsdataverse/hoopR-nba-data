@@ -1,4 +1,4 @@
-"""--fill-alt: the player crosswalk's Fox / Yahoo legs filled from hoopR-nba-alt-data, never dropping data."""
+"""--fill-alt: the player and schedule crosswalks' Fox / Yahoo legs filled from hoopR-nba-alt-data, never dropping data."""
 
 from __future__ import annotations
 
@@ -21,6 +21,7 @@ def tree(tmp_path, monkeypatch):
     base = tmp_path / "nba"
     for rel in (
         f"crosswalk/parquet/nba_player_crosswalk_{SEASON}.parquet",
+        f"crosswalk/parquet/nba_schedule_crosswalk_{SEASON}.parquet",
         f"schedules/parquet/nba_schedule_{SEASON}.parquet",
         f"game_rosters/parquet/game_rosters_{SEASON}.parquet",
     ):
@@ -58,5 +59,23 @@ def test_fill_keeps_columns_and_counts_and_refuses_a_loss(tree, monkeypatch):
     monkeypatch.setattr(alt, "with_alt_player_legs", drop)
     with pytest.raises(RuntimeError, match="nba_player_id"):
         reshapers.crosswalk_fill_alt("player", SEASON, base=tree, archive_root=tree)
-    with pytest.raises(ValueError, match="player crosswalk only"):
+    with pytest.raises(ValueError, match="player and schedule crosswalks"):
         reshapers.crosswalk_fill_alt("team", SEASON, base=tree, archive_root=tree)
+
+
+def test_schedule_fill_uses_the_game_legs_and_refuses_a_loss(tree, monkeypatch):
+    import sportsdataverse._crosswalk_alt as alt
+
+    def fill(league, season, xwalk, *args, **kwargs):
+        return xwalk.with_columns(pl.lit("42000").alias("fox_game_id"))
+
+    monkeypatch.setattr(alt, "with_alt_game_legs", fill)
+    out = reshapers.crosswalk_fill_alt("schedule", SEASON, base=tree, archive_root=tree)
+    assert out["fox_game_id"].null_count() == 0
+
+    def drop(league, season, xwalk, *args, **kwargs):
+        return xwalk.with_columns(pl.lit(None, dtype=pl.Utf8).alias("yahoo_game_id"))
+
+    monkeypatch.setattr(alt, "with_alt_game_legs", drop)
+    with pytest.raises(RuntimeError, match="yahoo_game_id"):
+        reshapers.crosswalk_fill_alt("schedule", SEASON, base=tree, archive_root=tree)
