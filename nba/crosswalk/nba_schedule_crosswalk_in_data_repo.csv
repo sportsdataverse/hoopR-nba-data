@@ -1,5 +1,5 @@
 season,row_count,generated_at_utc,source_endpoint
-2002,1379,2026-10-11 15:43:05 UTC,hoopR::nba_schedule_crosswalk()
+2002,1379,2026-10-12 11:29:42 UTC,hoopR::nba_schedule_crosswalk()
 2003,1392,2026-10-11 15:44:59 UTC,hoopR::nba_schedule_crosswalk()
 2004,1390,2026-10-11 15:46:42 UTC,hoopR::nba_schedule_crosswalk()
 2005,1469,2026-10-11 15:48:33 UTC,hoopR::nba_schedule_crosswalk()
