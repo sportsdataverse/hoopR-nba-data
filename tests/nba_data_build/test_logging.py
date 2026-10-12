@@ -21,7 +21,7 @@ def test_publish_logs_upload_confirmations(tmp_path, capsys):
     )
     out = capsys.readouterr().out
     assert "uploading nba_schedule_2025.parquet" in out
-    assert f"uploaded nba_schedule_2025.csv -> {spec.tag} (asset 3/3)" in out
+    assert f"uploaded nba_schedule_2025.parquet -> {spec.tag} (asset 3/3)" in out
     assert "[INFO] nba_data_build:" in out  # timestamped, labeled lines
 
 
@@ -37,7 +37,7 @@ def test_publish_logs_the_manifest_upload(tmp_path, capsys):
         exists_check=lambda tag, repo: True,
     )
     out = capsys.readouterr().out
-    assert f"uploaded nba_standings_in_data_repo.csv -> {spec.tag} (asset 4/4)" in out
+    assert f"uploaded nba_standings_in_data_repo.csv -> {spec.tag} (asset 3/4)" in out
 
 
 def test_publish_dry_run_logs_would_be_uploads(tmp_path, capsys):
