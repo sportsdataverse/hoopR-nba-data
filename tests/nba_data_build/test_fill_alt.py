@@ -1,0 +1,62 @@
+"""--fill-alt: the player crosswalk's Fox / Yahoo legs filled from hoopR-nba-alt-data, never dropping data."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import polars as pl
+import pytest
+
+pytest.importorskip("sportsdataverse._crosswalk_alt")
+
+from nba_data_build import reshapers  # noqa: E402
+
+NBA = Path(__file__).resolve().parents[2] / "nba"
+SEASON = 2024
+
+
+@pytest.fixture
+def tree(tmp_path, monkeypatch):
+    """A base tree holding the committed 2024 crosswalk, schedule and game rosters, and an alt root."""
+    base = tmp_path / "nba"
+    for rel in (
+        f"crosswalk/parquet/nba_player_crosswalk_{SEASON}.parquet",
+        f"schedules/parquet/nba_schedule_{SEASON}.parquet",
+        f"game_rosters/parquet/game_rosters_{SEASON}.parquet",
+    ):
+        src = NBA / rel
+        if not src.exists():
+            pytest.skip(f"{rel} not in this checkout")
+        (base / rel).parent.mkdir(parents=True, exist_ok=True)
+        (base / rel).write_bytes(src.read_bytes())
+    alt = tmp_path / "alt"
+    marker = alt / "yahoo" / "game_rosters" / "parquet" / f"nba_yahoo_game_rosters_{SEASON}.parquet"
+    marker.parent.mkdir(parents=True)
+    pl.DataFrame({"x": [1]}).write_parquet(marker)
+    monkeypatch.setenv("HOOPR_NBA_ALT_DATA_ROOT", str(alt))
+    return base
+
+
+def test_alt_root_needs_a_parsed_season(tree):
+    assert reshapers._alt_root(SEASON) is not None
+    assert reshapers._alt_root(SEASON - 1) is None
+
+
+def test_fill_keeps_columns_and_counts_and_refuses_a_loss(tree, monkeypatch):
+    import sportsdataverse._crosswalk_alt as alt
+
+    def fill(league, season, xwalk, *args, **kwargs):
+        return xwalk.with_columns(pl.lit("nba.p.1").alias("yahoo_player_id"))
+
+    monkeypatch.setattr(alt, "with_alt_player_legs", fill)
+    out = reshapers.crosswalk_fill_alt("player", SEASON, base=tree, archive_root=tree)
+    assert out["yahoo_player_id"].null_count() == 0
+
+    def drop(league, season, xwalk, *args, **kwargs):
+        return xwalk.with_columns(pl.lit(None, dtype=pl.Utf8).alias("nba_player_id"))
+
+    monkeypatch.setattr(alt, "with_alt_player_legs", drop)
+    with pytest.raises(RuntimeError, match="nba_player_id"):
+        reshapers.crosswalk_fill_alt("player", SEASON, base=tree, archive_root=tree)
+    with pytest.raises(ValueError, match="player crosswalk only"):
+        reshapers.crosswalk_fill_alt("team", SEASON, base=tree, archive_root=tree)
