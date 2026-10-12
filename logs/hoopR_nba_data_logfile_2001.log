@@ -1,0 +1,149 @@
+From https://github.com/sportsdataverse/hoopR-nba-data
+ * [new branch]        AE/remove-qs          -> origin/AE/remove-qs
+ * [new branch]        feat/nba-ci-cutover-python -> origin/feat/nba-ci-cutover-python
+ * [new branch]        feat/nba-data-build   -> origin/feat/nba-data-build
+ * [new branch]        feat/nba-data-build-docs -> origin/feat/nba-data-build-docs
+ * [new branch]        feat/nba-flip-python-default -> origin/feat/nba-flip-python-default
+ * [new branch]        feat/nba-native-rds   -> origin/feat/nba-native-rds
+ * [new branch]        feat/nba-player-core-daily -> origin/feat/nba-player-core-daily
+ * [new branch]        feat/nba-player-core-dataset -> origin/feat/nba-player-core-dataset
+ * [new branch]        feat/nba-player-core-tree -> origin/feat/nba-player-core-tree
+ * [new branch]        feat/release-sidecars -> origin/feat/release-sidecars
+ * [new branch]        feat/weekly-output-parity -> origin/feat/weekly-output-parity
+ * [new branch]        fix/nba-serialize-rds -> origin/fix/nba-serialize-rds
+ * [new branch]        fix/player-core-manifest -> origin/fix/player-core-manifest
+ * [new branch]        fix/player-crosswalk-match-rate -> origin/fix/player-crosswalk-match-rate
+::group::nba_data_build pbp 2001
+2026-10-12 21:27:03 [INFO] nba_data_build: pbp 2001: per-game build starting -- 1250 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:27:21 [INFO] nba_data_build: pbp 2001: 250/1250 games collected
+2026-10-12 21:27:21 [INFO] nba_data_build: pbp 2001: 500/1250 games collected
+2026-10-12 21:27:21 [INFO] nba_data_build: pbp 2001: 750/1250 games collected
+2026-10-12 21:27:21 [INFO] nba_data_build: pbp 2001: 1000/1250 games collected
+2026-10-12 21:27:21 [INFO] nba_data_build: pbp 2001: 1250/1250 games collected
+2026-10-12 21:27:21 [WARNING] nba_data_build: pbp 2001: 0 games reshaped; nothing written
+2026-10-12 21:27:21 [INFO] nba_data_build: pbp 2001: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build team_box 2001
+2026-10-12 21:27:23 [INFO] nba_data_build: team_box 2001: per-game build starting -- 1250 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:27:33 [INFO] nba_data_build: team_box 2001: 250/1250 games collected
+2026-10-12 21:27:33 [INFO] nba_data_build: team_box 2001: 500/1250 games collected
+2026-10-12 21:27:33 [INFO] nba_data_build: team_box 2001: 750/1250 games collected
+2026-10-12 21:27:33 [INFO] nba_data_build: team_box 2001: 1000/1250 games collected
+2026-10-12 21:27:33 [INFO] nba_data_build: team_box 2001: 1250/1250 games collected
+2026-10-12 21:27:34 [INFO] nba_data_build: wrote ../nba/team_box/parquet/team_box_2001.parquet (117.5KB) + team_box_2001.rds (147.4KB), 2500 rows x 57 cols; manifest n/a (not manifested)
+2026-10-12 21:27:34 [INFO] nba_data_build: uploading team_box_2001.rds (147.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-10-12 21:27:35 [INFO] nba_data_build: uploaded team_box_2001.rds -> espn_nba_team_boxscores (asset 1/3)
+2026-10-12 21:27:35 [INFO] nba_data_build: uploading team_box_2001.csv (1.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-10-12 21:27:36 [INFO] nba_data_build: uploaded team_box_2001.csv -> espn_nba_team_boxscores (asset 2/3)
+2026-10-12 21:27:36 [INFO] nba_data_build: uploading team_box_2001.parquet (117.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-10-12 21:27:37 [INFO] nba_data_build: uploaded team_box_2001.parquet -> espn_nba_team_boxscores (asset 3/3)
+2026-10-12 21:27:42 [INFO] nba_data_build: stamped espn_nba_team_boxscores with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-12 21:27:42 [INFO] nba_data_build: team_box 2001: done -- 2500 rows from 1250/1250 games in 19.2s
+2026-10-12 21:27:42 [INFO] nba_data_build: team_box 2001: season complete -- 2500 rows
+::endgroup::
+::group::nba_data_build player_box 2001
+2026-10-12 21:27:44 [INFO] nba_data_build: player_box 2001: per-game build starting -- 1250 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:27:49 [INFO] nba_data_build: player_box 2001: 250/1250 games collected
+2026-10-12 21:27:49 [INFO] nba_data_build: player_box 2001: 500/1250 games collected
+2026-10-12 21:27:49 [INFO] nba_data_build: player_box 2001: 750/1250 games collected
+2026-10-12 21:27:49 [INFO] nba_data_build: player_box 2001: 1000/1250 games collected
+2026-10-12 21:27:49 [INFO] nba_data_build: player_box 2001: 1250/1250 games collected
+2026-10-12 21:27:52 [INFO] nba_data_build: wrote ../nba/player_box/parquet/player_box_2001.parquet (421.4KB) + player_box_2001.rds (561.8KB), 29941 rows x 56 cols; manifest n/a (not manifested)
+2026-10-12 21:27:53 [INFO] nba_data_build: uploading player_box_2001.rds (561.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-10-12 21:27:54 [INFO] nba_data_build: uploaded player_box_2001.rds -> espn_nba_player_boxscores (asset 1/3)
+2026-10-12 21:27:54 [INFO] nba_data_build: uploading player_box_2001.csv (12.8MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-10-12 21:27:55 [INFO] nba_data_build: uploaded player_box_2001.csv -> espn_nba_player_boxscores (asset 2/3)
+2026-10-12 21:27:55 [INFO] nba_data_build: uploading player_box_2001.parquet (421.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-10-12 21:27:56 [INFO] nba_data_build: uploaded player_box_2001.parquet -> espn_nba_player_boxscores (asset 3/3)
+2026-10-12 21:28:02 [INFO] nba_data_build: stamped espn_nba_player_boxscores with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-12 21:28:02 [INFO] nba_data_build: player_box 2001: done -- 29941 rows from 1250/1250 games in 17.8s
+2026-10-12 21:28:02 [INFO] nba_data_build: player_box 2001: season complete -- 29941 rows
+::endgroup::
+::group::nba_data_build player_core 2001
+2026-10-12 21:28:04 [INFO] nba_data_build: player_core 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:28:10 [INFO] nba_data_build: wrote ../nba/player_core/parquet/player_core_2001.parquet (46.8KB) + player_core_2001.rds (34.1KB) + player_core_2001.csv (104.7KB), 372 rows x 36 cols; manifest n/a (not manifested)
+2026-10-12 21:28:10 [INFO] nba_data_build: uploading player_core_2001.rds (34.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-10-12 21:28:11 [INFO] nba_data_build: uploaded player_core_2001.rds -> espn_nba_player_core (asset 1/3)
+2026-10-12 21:28:11 [INFO] nba_data_build: uploading player_core_2001.csv (104.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-10-12 21:28:12 [INFO] nba_data_build: uploaded player_core_2001.csv -> espn_nba_player_core (asset 2/3)
+2026-10-12 21:28:12 [INFO] nba_data_build: uploading player_core_2001.parquet (46.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-10-12 21:28:13 [INFO] nba_data_build: uploaded player_core_2001.parquet -> espn_nba_player_core (asset 3/3)
+2026-10-12 21:28:18 [INFO] nba_data_build: stamped espn_nba_player_core with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-12 21:28:18 [INFO] nba_data_build: player_core 2001: done -- 372 rows in 14.2s
+2026-10-12 21:28:18 [INFO] nba_data_build: player_core 2001: season complete -- 372 rows
+::endgroup::
+::group::nba_data_build schedules 2001
+2026-10-12 21:28:20 [INFO] nba_data_build: schedules 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:28:20 [WARNING] nba_data_build: pbp 2001: no built parquet at ../nba/pbp/parquet/play_by_play_2001.parquet -- schedule flags for it will all be False
+2026-10-12 21:28:20 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_2001.parquet (138.0KB) + nba_schedule_2001.rds (132.4KB) + nba_schedule_2001.csv (2.1MB), 1250 rows x 77 cols; manifest n/a (not manifested)
+2026-10-12 21:28:21 [INFO] nba_data_build: uploading nba_schedule_2001.rds (132.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-12 21:28:22 [INFO] nba_data_build: uploaded nba_schedule_2001.rds -> espn_nba_schedules (asset 1/3)
+2026-10-12 21:28:22 [INFO] nba_data_build: uploading nba_schedule_2001.csv (2.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-12 21:28:23 [INFO] nba_data_build: uploaded nba_schedule_2001.csv -> espn_nba_schedules (asset 2/3)
+2026-10-12 21:28:23 [INFO] nba_data_build: uploading nba_schedule_2001.parquet (138.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-12 21:28:24 [INFO] nba_data_build: uploaded nba_schedule_2001.parquet -> espn_nba_schedules (asset 3/3)
+2026-10-12 21:28:29 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-12 21:28:29 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (3.2MB), 43109 rows x 80 cols
+2026-10-12 21:28:29 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.2MB), 31141 rows x 80 cols
+2026-10-12 21:28:30 [INFO] nba_data_build: uploading nba_schedule_master.parquet (3.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-12 21:28:31 [INFO] nba_data_build: uploaded nba_schedule_master.parquet -> espn_nba_schedules (asset 1/4)
+2026-10-12 21:28:31 [INFO] nba_data_build: uploading nba_schedule_master.csv (53.0MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-12 21:28:34 [INFO] nba_data_build: uploaded nba_schedule_master.csv -> espn_nba_schedules (asset 2/4)
+2026-10-12 21:28:34 [INFO] nba_data_build: unchanged nba_games_in_data_repo.parquet on espn_nba_schedules -- skipped
+2026-10-12 21:28:34 [INFO] nba_data_build: unchanged nba_games_in_data_repo.csv on espn_nba_schedules -- skipped
+2026-10-12 21:28:40 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-12 21:28:40 [INFO] nba_data_build: schedules 2001: done -- 1250 rows in 20.1s
+2026-10-12 21:28:40 [INFO] nba_data_build: schedules 2001: season complete -- 1250 rows
+::endgroup::
+::group::nba_data_build shots 2001
+2026-10-12 21:28:42 [INFO] nba_data_build: shots 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:28:42 [WARNING] nba_data_build: shots 2001: season-level build produced 0 rows; nothing written
+2026-10-12 21:28:42 [INFO] nba_data_build: shots 2001: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build rosters 2001
+2026-10-12 21:28:44 [INFO] nba_data_build: rosters 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:28:44 [WARNING] nba_data_build: rosters 2001: season-level build produced 0 rows; nothing written
+2026-10-12 21:28:44 [INFO] nba_data_build: rosters 2001: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build player_season_stats 2001
+2026-10-12 21:28:46 [INFO] nba_data_build: player_season_stats 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:28:52 [INFO] nba_data_build: wrote ../nba/player_season_stats/parquet/player_season_stats_2001.parquet (72.9KB) + player_season_stats_2001.rds (91.5KB) + player_season_stats_2001.csv (3.0MB), 15910 rows x 15 cols; manifest nba_player_season_stats_in_data_repo.csv appended
+2026-10-12 21:28:52 [INFO] nba_data_build: uploading player_season_stats_2001.rds (91.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-12 21:28:53 [INFO] nba_data_build: uploaded player_season_stats_2001.rds -> espn_nba_player_season_stats (asset 1/4)
+2026-10-12 21:28:53 [INFO] nba_data_build: uploading player_season_stats_2001.csv (3.0MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-12 21:28:54 [INFO] nba_data_build: uploaded player_season_stats_2001.csv -> espn_nba_player_season_stats (asset 2/4)
+2026-10-12 21:28:54 [INFO] nba_data_build: uploading nba_player_season_stats_in_data_repo.csv (4.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-12 21:28:56 [INFO] nba_data_build: uploaded nba_player_season_stats_in_data_repo.csv -> espn_nba_player_season_stats (asset 3/4)
+2026-10-12 21:28:56 [INFO] nba_data_build: uploading player_season_stats_2001.parquet (72.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-12 21:28:56 [INFO] nba_data_build: uploaded player_season_stats_2001.parquet -> espn_nba_player_season_stats (asset 4/4)
+2026-10-12 21:29:02 [INFO] nba_data_build: stamped espn_nba_player_season_stats with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-12 21:29:02 [INFO] nba_data_build: player_season_stats 2001: done -- 15910 rows in 15.7s
+2026-10-12 21:29:02 [INFO] nba_data_build: player_season_stats 2001: season complete -- 15910 rows
+::endgroup::
+::group::nba_data_build team_season_stats 2001
+2026-10-12 21:29:03 [INFO] nba_data_build: team_season_stats 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:29:04 [WARNING] nba_data_build: team_season_stats 2001: season-level build produced 0 rows; nothing written
+2026-10-12 21:29:04 [INFO] nba_data_build: team_season_stats 2001: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build standings 2001
+2026-10-12 21:29:06 [INFO] nba_data_build: standings 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:29:06 [WARNING] nba_data_build: standings 2001: season-level build produced 0 rows; nothing written
+2026-10-12 21:29:06 [INFO] nba_data_build: standings 2001: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build game_rosters 2001
+2026-10-12 21:29:08 [INFO] nba_data_build: game_rosters 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:29:24 [WARNING] nba_data_build: game_rosters 2001: season-level build produced 0 rows; nothing written
+2026-10-12 21:29:24 [INFO] nba_data_build: game_rosters 2001: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build officials 2001
+2026-10-12 21:29:26 [INFO] nba_data_build: officials 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:29:42 [WARNING] nba_data_build: officials 2001: season-level build produced 0 rows; nothing written
+2026-10-12 21:29:42 [INFO] nba_data_build: officials 2001: season complete -- 0 rows
+::endgroup::
+::group::nba_data_build draft 2001
+2026-10-12 21:29:44 [INFO] nba_data_build: draft 2001: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-12 21:29:44 [WARNING] nba_data_build: draft 2001: season-level build produced 0 rows; nothing written
+2026-10-12 21:29:44 [INFO] nba_data_build: draft 2001: season complete -- 0 rows
+::endgroup::
+season 2001 EXIT=0
+pushed: NBA Data Updated (Start: 2001 End: 2001) (attempt 1)
