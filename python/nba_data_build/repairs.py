@@ -14,14 +14,14 @@ and are NOT rewritten -- the repair is a build step, mirrored in
 * **#146 -- plays out of order / stale duplicate rows.** Some games (e.g.
   401616465) ship plays out of chronological order upstream, and some carry
   stale-score duplicate rows (ESPN double-recorded a stretch of the feed
-  with earlier-game scores) that no reordering can fix. Two-step repair:
-  games whose scores are not monotone non-decreasing in stored order are
-  stable-sorted within (game, period) by descending game clock (existing
-  order kept for ties) and their order-dependent columns
-  (``game_play_number``, ``lag_*``/``lead_*``) recomputed; then
-  ``home_score``/``away_score`` are clamped to the per-game running maximum,
-  which corrects the stale rows (the true score at any instant is the
-  running max) and guarantees monotone cumulative scores everywhere.
+  with earlier-game scores). Games whose scores are not monotone
+  non-decreasing in stored order are stable-sorted within (game, period) by
+  descending game clock (existing order kept for ties) and their
+  order-dependent columns (``game_play_number``, ``lag_*``/``lead_*``)
+  recomputed. Scores are never rewritten here: sportsdataverse rebuilds them
+  from the scoring plays when that reproduces the official final
+  (``score_source``), and a running-max clamp would rewrite the games it
+  flags as ESPN's (it also worsened 128 games in 2024).
 * **#140 -- pickcenter default spreads.** ESPN's pickcenter went empty for
   2024+ seasons so every game baked the ``(2.5, home favorite, unavailable)``
   default. Games with ``game_spread_available == False`` get the real
@@ -68,7 +68,6 @@ def repair_pbp_season(out: pl.DataFrame, *, base: str | Path = "nba") -> pl.Data
         return out
     out, period_games = _repair_impossible_periods(out)
     out = _resequence_disordered_games(out, force_games=period_games)
-    out = _clamp_scores_monotone(out)
     out = _inject_closing_spreads(out, base=Path(base))
     return out
 
@@ -231,34 +230,6 @@ def _resequence_disordered_games(
                 .alias(col)
             )
     return out.with_columns(repl).drop("_ri")
-
-
-def _clamp_scores_monotone(out: pl.DataFrame) -> pl.DataFrame:
-    """#146 step 2: clamp cumulative scores to the per-game running maximum.
-
-    ESPN's stale duplicate rows carry earlier-game scores (401616465: a
-    re-recorded stretch of period 1 interleaved at the right clock but with
-    scores from minutes earlier). The true score at any instant is the
-    running max, so the clamp corrects exactly those rows and is a no-op on
-    every well-formed game. Score spikes that would poison the running max
-    were measured at <= 7 rows per season (2024-2026) and 0 outside stale
-    tails, so the clamp is safe.
-    """
-    if not {"game_id", "home_score", "away_score"}.issubset(out.columns):
-        return out
-    n_before = out.filter(
-        (pl.col("home_score").cast(pl.Int64).diff().over("game_id") < 0)
-        | (pl.col("away_score").cast(pl.Int64).diff().over("game_id") < 0)
-    ).height
-    if n_before == 0:
-        return out
-    log.warning(
-        "pbp repair (#146): clamping %d stale-score row boundaries to running max", n_before
-    )
-    return out.with_columns(
-        pl.col("home_score").cum_max().over("game_id").alias("home_score"),
-        pl.col("away_score").cum_max().over("game_id").alias("away_score"),
-    )
 
 
 def _inject_closing_spreads(out: pl.DataFrame, *, base: Path) -> pl.DataFrame:

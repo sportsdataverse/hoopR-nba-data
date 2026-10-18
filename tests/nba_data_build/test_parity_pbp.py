@@ -23,6 +23,11 @@ from tests.nba_data_build.conftest import oracle_path
 KEYS = ["game_id", "game_play_number"]
 
 NAME_COLS = ("athlete_name_1", "athlete_name_2", "athlete_name_3")
+# sdv-py >= the score-repair PR rebuilds home_score/away_score from the scoring plays and adds
+# score_source; sdv-py's tests/test_basketball_score_repair.py owns that contract, so the two
+# score columns leave the oracle comparison and score_source is an allowed additive column.
+SCORE_COLS = ("home_score", "away_score")
+ADDITIVE_COLS = (*NAME_COLS, "score_source")
 
 
 @pytest.mark.xfail(
@@ -43,13 +48,13 @@ def test_pbp_parity_full_2025(built_base):
         f"athlete_name_1 resolved on {matched}/{has_id.height} id-bearing rows"
     )
     oracle = oracle_path("pbp", "play_by_play")
-    sample = [c for c in pl.read_parquet_schema(str(oracle)) if c not in KEYS]
+    sample = [c for c in pl.read_parquet_schema(str(oracle)) if c not in KEYS and c not in SCORE_COLS]
     assert_parquet_parity(
         py,
         oracle,
         keys=KEYS,
         sample_cols=sample,
-        py_only_additive=NAME_COLS,
+        py_only_additive=ADDITIVE_COLS,
         # pbp column order is payload-first-seen; matches the WNBA template's
         # rationale (raw repo re-scraped since the oracle was compiled).
         require_order=False,
@@ -63,5 +68,5 @@ def test_pbp_row_and_column_count_match_oracle(built_base):
     # Cheap, always-green sanity check independent of the one-row xfail above.
     py = pl.read_parquet(built_base / "pbp" / "parquet" / "play_by_play_2025.parquet")
     r = pl.read_parquet(oracle_path("pbp", "play_by_play"))
-    assert py.shape == r.shape
-    assert set(py.columns) == set(r.columns)
+    assert py.shape[0] == r.shape[0]
+    assert set(py.columns) - {"score_source"} == set(r.columns)
