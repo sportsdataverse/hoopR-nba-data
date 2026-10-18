@@ -49,6 +49,8 @@ def test_pbp_parity_full_2025(built_base):
     )
     oracle = oracle_path("pbp", "play_by_play")
     sample = [c for c in pl.read_parquet_schema(str(oracle)) if c not in KEYS and c not in SCORE_COLS]
+    for c in SCORE_COLS:  # left the value comparison; keep the dtype contract
+        assert py.schema[c] == pl.read_parquet_schema(str(oracle))[c], c
     assert_parquet_parity(
         py,
         oracle,
@@ -69,4 +71,4 @@ def test_pbp_row_and_column_count_match_oracle(built_base):
     py = pl.read_parquet(built_base / "pbp" / "parquet" / "play_by_play_2025.parquet")
     r = pl.read_parquet(oracle_path("pbp", "play_by_play"))
     assert py.shape[0] == r.shape[0]
-    assert set(py.columns) - {"score_source"} == set(r.columns)
+    assert set(py.columns) == set(r.columns) | {"score_source"}

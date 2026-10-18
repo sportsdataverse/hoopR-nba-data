@@ -21,7 +21,9 @@ and are NOT rewritten -- the repair is a build step, mirrored in
   recomputed. Scores are never rewritten here: sportsdataverse rebuilds them
   from the scoring plays when that reproduces the official final
   (``score_source``), and a running-max clamp would rewrite the games it
-  flags as ESPN's (it also worsened 128 games in 2024).
+  flags as ESPN's (it also worsened 128 games in 2024). A rebuilt game's
+  score never falls, so the resequencer's trigger now fires only on
+  ``score_source == "espn"`` games and period-repaired ones.
 * **#140 -- pickcenter default spreads.** ESPN's pickcenter went empty for
   2024+ seasons so every game baked the ``(2.5, home favorite, unavailable)``
   default. Games with ``game_spread_available == False`` get the real

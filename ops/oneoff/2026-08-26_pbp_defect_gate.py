@@ -8,8 +8,11 @@ against the currently-published ``espn_nba_pbp`` release asset and enforces:
     aligned on ``(game_id, id)``);
 (c) defect invariants on the rebuilt asset:
     * period_number <= 10 everywhere (no "25OT" garbage);
-    * every game's cumulative scores monotone non-decreasing in stored order
-      (401616465 called out explicitly for season 2024);
+    * every ``score_source == "rebuilt"`` game's cumulative scores monotone
+      non-decreasing in stored order (sportsdataverse rebuilds them; games it
+      flags ``"espn"`` keep ESPN's values, falling ones included, by design --
+      the running-max clamp is retired). 401616465 is called out for 2024: it
+      must be monotone or honestly flagged ``"espn"``;
     * for 2024+ seasons: game_spread has realistic variance (> 50 distinct
       values) and > 90% of games carry a real (game_spread_available) line.
 
@@ -59,7 +62,7 @@ INTENDED = {
     "lead_half",
     "lag_game_half",
     "lead_game_half",
-    # 146 stale-duplicate score clamp (running max)
+    # running-score rebuild (sportsdataverse score_source; the clamp is retired)
     "home_score",
     "away_score",
     # 140 spread injection
@@ -157,7 +160,9 @@ def main() -> int:
     if bad_p.height:
         failures.append(f"{bad_p.height} rows with period_number > 10")
 
-    dec = new.with_columns(
+    # Only rebuilt games are guaranteed monotone; "espn"-flagged games keep ESPN's scores.
+    scored = new.filter(pl.col("score_source") == "rebuilt") if "score_source" in new.columns else new
+    dec = scored.with_columns(
         (
             (pl.col("home_score").cast(pl.Int64).diff().over("game_id") < 0)
             | (pl.col("away_score").cast(pl.Int64).diff().over("game_id") < 0)
@@ -168,12 +173,15 @@ def main() -> int:
     if a.season == 2024:
         g = dec.filter(pl.col("game_id") == 401616465)
         print(f"[c] 401616465 score-decrease rows: {g.height}")
+        if "score_source" in new.columns:
+            src = new.filter(pl.col("game_id") == 401616465)["score_source"].unique().to_list()
+            print(f"[c] 401616465 score_source: {src}")
         if g.height:
             failures.append(f"401616465 still has {g.height} score-decrease rows")
     if dec.height:
-        # The running-max clamp guarantees monotone scores; any residual
-        # decrease is a repair bug.
-        failures.append(f"{dec.height} score-decrease rows survived the clamp")
+        # A rebuilt game's score is a running sum of scoring plays; any
+        # decrease means the producer resequenced it after the rebuild.
+        failures.append(f"{dec.height} score-decrease rows in rebuilt games")
 
     if a.season >= 2024:
         games = new.unique(subset=["game_id"])
