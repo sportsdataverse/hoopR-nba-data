@@ -15,97 +15,180 @@ From https://github.com/sportsdataverse/hoopR-nba-data
  * [new branch]        fix/player-core-manifest -> origin/fix/player-core-manifest
  * [new branch]        fix/player-crosswalk-match-rate -> origin/fix/player-crosswalk-match-rate
 ::group::nba_data_build pbp 2027
-2026-10-25 12:26:56 [INFO] nba_data_build: pbp 2027: per-game build starting -- 36 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:10 [INFO] nba_data_build: wrote ../nba/pbp/parquet/play_by_play_2027.parquet (707.9KB) + play_by_play_2027.rds (682.8KB), 18676 rows x 68 cols; manifest n/a (not manifested)
-2026-10-25 12:27:12 [INFO] nba_data_build: pbp 2027: unchanged on espn_nba_pbp -- skipped
-2026-10-25 12:27:12 [INFO] nba_data_build: pbp 2027: done -- 18676 rows from 36/36 games in 16.8s
-2026-10-25 12:27:12 [INFO] nba_data_build: pbp 2027: season complete -- 18676 rows
+2026-10-26 11:34:36 [INFO] nba_data_build: pbp 2027: per-game build starting -- 43 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:34:40 [INFO] nba_data_build: wrote ../nba/pbp/parquet/play_by_play_2027.parquet (826.4KB) + play_by_play_2027.rds (802.1KB), 22214 rows x 68 cols; manifest n/a (not manifested)
+2026-10-26 11:34:41 [INFO] nba_data_build: uploading play_by_play_2027.rds (802.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-10-26 11:34:43 [INFO] nba_data_build: uploaded play_by_play_2027.rds -> espn_nba_pbp (asset 1/3)
+2026-10-26 11:34:43 [INFO] nba_data_build: uploading play_by_play_2027.csv (9.4MB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-10-26 11:34:46 [INFO] nba_data_build: uploaded play_by_play_2027.csv -> espn_nba_pbp (asset 2/3)
+2026-10-26 11:34:46 [INFO] nba_data_build: uploading play_by_play_2027.parquet (826.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_pbp
+2026-10-26 11:34:48 [INFO] nba_data_build: uploaded play_by_play_2027.parquet -> espn_nba_pbp (asset 3/3)
+2026-10-26 11:35:00 [INFO] nba_data_build: stamped espn_nba_pbp with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:35:00 [INFO] nba_data_build: pbp 2027: done -- 22214 rows from 43/43 games in 24.5s
+2026-10-26 11:35:00 [INFO] nba_data_build: pbp 2027: season complete -- 22214 rows
 ::endgroup::
 ::group::nba_data_build team_box 2027
-2026-10-25 12:27:15 [INFO] nba_data_build: team_box 2027: per-game build starting -- 36 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:15 [INFO] nba_data_build: wrote ../nba/team_box/parquet/team_box_2027.parquet (30.7KB) + team_box_2027.rds (7.9KB), 72 rows x 59 cols; manifest n/a (not manifested)
-2026-10-25 12:27:16 [INFO] nba_data_build: team_box 2027: unchanged on espn_nba_team_boxscores -- skipped
-2026-10-25 12:27:16 [INFO] nba_data_build: team_box 2027: done -- 72 rows from 36/36 games in 1.0s
-2026-10-25 12:27:16 [INFO] nba_data_build: team_box 2027: season complete -- 72 rows
+2026-10-26 11:35:03 [INFO] nba_data_build: team_box 2027: per-game build starting -- 43 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:35:03 [INFO] nba_data_build: wrote ../nba/team_box/parquet/team_box_2027.parquet (31.4KB) + team_box_2027.rds (9.5KB), 86 rows x 59 cols; manifest n/a (not manifested)
+2026-10-26 11:35:04 [INFO] nba_data_build: uploading team_box_2027.rds (9.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-10-26 11:35:05 [INFO] nba_data_build: uploaded team_box_2027.rds -> espn_nba_team_boxscores (asset 1/3)
+2026-10-26 11:35:05 [INFO] nba_data_build: uploading team_box_2027.csv (38.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-10-26 11:35:07 [INFO] nba_data_build: uploaded team_box_2027.csv -> espn_nba_team_boxscores (asset 2/3)
+2026-10-26 11:35:07 [INFO] nba_data_build: uploading team_box_2027.parquet (31.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_boxscores
+2026-10-26 11:35:10 [INFO] nba_data_build: uploaded team_box_2027.parquet -> espn_nba_team_boxscores (asset 3/3)
+2026-10-26 11:35:17 [INFO] nba_data_build: stamped espn_nba_team_boxscores with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:35:17 [INFO] nba_data_build: team_box 2027: done -- 86 rows from 43/43 games in 14.9s
+2026-10-26 11:35:17 [INFO] nba_data_build: team_box 2027: season complete -- 86 rows
 ::endgroup::
 ::group::nba_data_build player_box 2027
-2026-10-25 12:27:18 [INFO] nba_data_build: player_box 2027: per-game build starting -- 36 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:18 [INFO] nba_data_build: wrote ../nba/player_box/parquet/player_box_2027.parquet (54.3KB) + player_box_2027.rds (37.9KB), 995 rows x 57 cols; manifest n/a (not manifested)
-2026-10-25 12:27:18 [INFO] nba_data_build: player_box 2027: unchanged on espn_nba_player_boxscores -- skipped
-2026-10-25 12:27:18 [INFO] nba_data_build: player_box 2027: done -- 995 rows from 36/36 games in 0.8s
-2026-10-25 12:27:18 [INFO] nba_data_build: player_box 2027: season complete -- 995 rows
+2026-10-26 11:35:19 [INFO] nba_data_build: player_box 2027: per-game build starting -- 43 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:35:20 [INFO] nba_data_build: wrote ../nba/player_box/parquet/player_box_2027.parquet (57.8KB) + player_box_2027.rds (43.6KB), 1191 rows x 57 cols; manifest n/a (not manifested)
+2026-10-26 11:35:20 [INFO] nba_data_build: uploading player_box_2027.rds (43.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-10-26 11:35:22 [INFO] nba_data_build: uploaded player_box_2027.rds -> espn_nba_player_boxscores (asset 1/3)
+2026-10-26 11:35:22 [INFO] nba_data_build: uploading player_box_2027.csv (591.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-10-26 11:35:24 [INFO] nba_data_build: uploaded player_box_2027.csv -> espn_nba_player_boxscores (asset 2/3)
+2026-10-26 11:35:24 [INFO] nba_data_build: uploading player_box_2027.parquet (57.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_boxscores
+2026-10-26 11:35:27 [INFO] nba_data_build: uploaded player_box_2027.parquet -> espn_nba_player_boxscores (asset 3/3)
+2026-10-26 11:35:35 [INFO] nba_data_build: stamped espn_nba_player_boxscores with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:35:35 [INFO] nba_data_build: player_box 2027: done -- 1191 rows from 43/43 games in 15.5s
+2026-10-26 11:35:35 [INFO] nba_data_build: player_box 2027: season complete -- 1191 rows
 ::endgroup::
 ::group::nba_data_build player_core 2027
-2026-10-25 12:27:20 [INFO] nba_data_build: player_core 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:24 [INFO] nba_data_build: wrote ../nba/player_core/parquet/player_core_2027.parquet (54.5KB) + player_core_2027.rds (41.9KB) + player_core_2027.csv (143.5KB), 437 rows x 36 cols; manifest n/a (not manifested)
-2026-10-25 12:27:24 [INFO] nba_data_build: player_core 2027: unchanged on espn_nba_player_core -- skipped
-2026-10-25 12:27:24 [INFO] nba_data_build: player_core 2027: done -- 437 rows in 4.1s
-2026-10-25 12:27:24 [INFO] nba_data_build: player_core 2027: season complete -- 437 rows
+2026-10-26 11:35:37 [INFO] nba_data_build: player_core 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:35:40 [INFO] nba_data_build: wrote ../nba/player_core/parquet/player_core_2027.parquet (54.8KB) + player_core_2027.rds (42.2KB) + player_core_2027.csv (144.8KB), 441 rows x 36 cols; manifest n/a (not manifested)
+2026-10-26 11:35:41 [INFO] nba_data_build: uploading player_core_2027.rds (42.2KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-10-26 11:35:43 [INFO] nba_data_build: uploaded player_core_2027.rds -> espn_nba_player_core (asset 1/3)
+2026-10-26 11:35:43 [INFO] nba_data_build: uploading player_core_2027.csv (144.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-10-26 11:35:44 [INFO] nba_data_build: uploaded player_core_2027.csv -> espn_nba_player_core (asset 2/3)
+2026-10-26 11:35:44 [INFO] nba_data_build: uploading player_core_2027.parquet (54.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_core
+2026-10-26 11:35:46 [INFO] nba_data_build: uploaded player_core_2027.parquet -> espn_nba_player_core (asset 3/3)
+2026-10-26 11:35:54 [INFO] nba_data_build: stamped espn_nba_player_core with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:35:54 [INFO] nba_data_build: player_core 2027: done -- 441 rows in 17.2s
+2026-10-26 11:35:54 [INFO] nba_data_build: player_core 2027: season complete -- 441 rows
 ::endgroup::
 ::group::nba_data_build schedules 2027
-2026-10-25 12:27:26 [INFO] nba_data_build: schedules 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:26 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_2027.parquet (106.5KB) + nba_schedule_2027.rds (113.4KB) + nba_schedule_2027.csv (2.2MB), 1206 rows x 79 cols; manifest n/a (not manifested)
-2026-10-25 12:27:26 [INFO] nba_data_build: schedules 2027: unchanged on espn_nba_schedules -- skipped
-2026-10-25 12:27:27 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (3.2MB), 43109 rows x 80 cols
-2026-10-25 12:27:27 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.3MB), 31177 rows x 80 cols
-2026-10-25 12:27:27 [INFO] nba_data_build: unchanged nba_schedule_master.parquet on espn_nba_schedules -- skipped
-2026-10-25 12:27:27 [INFO] nba_data_build: unchanged nba_schedule_master.csv on espn_nba_schedules -- skipped
-2026-10-25 12:27:27 [INFO] nba_data_build: unchanged nba_games_in_data_repo.parquet on espn_nba_schedules -- skipped
-2026-10-25 12:27:27 [INFO] nba_data_build: unchanged nba_games_in_data_repo.csv on espn_nba_schedules -- skipped
-2026-10-25 12:27:27 [INFO] nba_data_build: schedules 2027: done -- 1206 rows in 1.8s
-2026-10-25 12:27:27 [INFO] nba_data_build: schedules 2027: season complete -- 1206 rows
+2026-10-26 11:35:56 [INFO] nba_data_build: schedules 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:35:56 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_2027.parquet (108.3KB) + nba_schedule_2027.rds (116.1KB) + nba_schedule_2027.csv (2.2MB), 1206 rows x 79 cols; manifest n/a (not manifested)
+2026-10-26 11:35:57 [INFO] nba_data_build: uploading nba_schedule_2027.rds (116.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-26 11:35:59 [INFO] nba_data_build: uploaded nba_schedule_2027.rds -> espn_nba_schedules (asset 1/3)
+2026-10-26 11:35:59 [INFO] nba_data_build: uploading nba_schedule_2027.csv (2.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-26 11:36:01 [INFO] nba_data_build: uploaded nba_schedule_2027.csv -> espn_nba_schedules (asset 2/3)
+2026-10-26 11:36:01 [INFO] nba_data_build: uploading nba_schedule_2027.parquet (108.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-26 11:36:03 [INFO] nba_data_build: uploaded nba_schedule_2027.parquet -> espn_nba_schedules (asset 3/3)
+2026-10-26 11:36:11 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:36:11 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (3.2MB), 43109 rows x 80 cols
+2026-10-26 11:36:12 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.3MB), 31184 rows x 80 cols
+2026-10-26 11:36:12 [INFO] nba_data_build: uploading nba_schedule_master.parquet (3.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-26 11:36:14 [INFO] nba_data_build: uploaded nba_schedule_master.parquet -> espn_nba_schedules (asset 1/4)
+2026-10-26 11:36:14 [INFO] nba_data_build: uploading nba_schedule_master.csv (53.6MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-26 11:36:18 [INFO] nba_data_build: uploaded nba_schedule_master.csv -> espn_nba_schedules (asset 2/4)
+2026-10-26 11:36:18 [INFO] nba_data_build: uploading nba_games_in_data_repo.parquet (2.3MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-26 11:36:20 [INFO] nba_data_build: uploaded nba_games_in_data_repo.parquet -> espn_nba_schedules (asset 3/4)
+2026-10-26 11:36:20 [INFO] nba_data_build: uploading nba_games_in_data_repo.csv (34.7MB) -> sportsdataverse/sportsdataverse-data:espn_nba_schedules
+2026-10-26 11:36:23 [INFO] nba_data_build: uploaded nba_games_in_data_repo.csv -> espn_nba_schedules (asset 4/4)
+2026-10-26 11:36:31 [INFO] nba_data_build: stamped espn_nba_schedules with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:36:31 [INFO] nba_data_build: schedules 2027: done -- 1206 rows in 34.5s
+2026-10-26 11:36:31 [INFO] nba_data_build: schedules 2027: season complete -- 1206 rows
 ::endgroup::
 ::group::nba_data_build shots 2027
-2026-10-25 12:27:29 [INFO] nba_data_build: shots 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:29 [INFO] nba_data_build: wrote ../nba/shots/parquet/shots_2027.parquet (127.4KB) + shots_2027.rds (132.5KB) + shots_2027.csv (1022.2KB), 8390 rows x 20 cols; manifest nba_shots_in_data_repo.csv appended
-2026-10-25 12:27:30 [INFO] nba_data_build: shots 2027: unchanged on espn_nba_shots -- skipped
-2026-10-25 12:27:30 [INFO] nba_data_build: shots 2027: done -- 8390 rows in 0.6s
-2026-10-25 12:27:30 [INFO] nba_data_build: shots 2027: season complete -- 8390 rows
+2026-10-26 11:36:33 [INFO] nba_data_build: shots 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:36:33 [INFO] nba_data_build: wrote ../nba/shots/parquet/shots_2027.parquet (148.0KB) + shots_2027.rds (158.1KB) + shots_2027.csv (1.2MB), 9978 rows x 20 cols; manifest nba_shots_in_data_repo.csv appended
+2026-10-26 11:36:34 [INFO] nba_data_build: uploading shots_2027.rds (158.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-10-26 11:36:35 [INFO] nba_data_build: uploaded shots_2027.rds -> espn_nba_shots (asset 1/4)
+2026-10-26 11:36:35 [INFO] nba_data_build: uploading shots_2027.csv (1.2MB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-10-26 11:36:38 [INFO] nba_data_build: uploaded shots_2027.csv -> espn_nba_shots (asset 2/4)
+2026-10-26 11:36:38 [INFO] nba_data_build: uploading nba_shots_in_data_repo.csv (358B) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-10-26 11:36:39 [INFO] nba_data_build: uploaded nba_shots_in_data_repo.csv -> espn_nba_shots (asset 3/4)
+2026-10-26 11:36:39 [INFO] nba_data_build: uploading shots_2027.parquet (148.0KB) -> sportsdataverse/sportsdataverse-data:espn_nba_shots
+2026-10-26 11:36:42 [INFO] nba_data_build: uploaded shots_2027.parquet -> espn_nba_shots (asset 4/4)
+2026-10-26 11:36:49 [INFO] nba_data_build: stamped espn_nba_shots with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:36:49 [INFO] nba_data_build: shots 2027: done -- 9978 rows in 16.9s
+2026-10-26 11:36:49 [INFO] nba_data_build: shots 2027: season complete -- 9978 rows
 ::endgroup::
 ::group::nba_data_build rosters 2027
-2026-10-25 12:27:31 [INFO] nba_data_build: rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:32 [INFO] nba_data_build: wrote ../nba/rosters/parquet/rosters_2027.parquet (69.0KB) + rosters_2027.rds (54.6KB) + rosters_2027.csv (217.8KB), 518 rows x 36 cols; manifest nba_rosters_in_data_repo.csv appended
-2026-10-25 12:27:32 [INFO] nba_data_build: rosters 2027: unchanged on espn_nba_rosters -- skipped
-2026-10-25 12:27:32 [INFO] nba_data_build: rosters 2027: done -- 518 rows in 1.2s
-2026-10-25 12:27:32 [INFO] nba_data_build: rosters 2027: season complete -- 518 rows
+2026-10-26 11:36:51 [INFO] nba_data_build: rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:36:52 [INFO] nba_data_build: wrote ../nba/rosters/parquet/rosters_2027.parquet (68.9KB) + rosters_2027.rds (54.6KB) + rosters_2027.csv (217.9KB), 518 rows x 36 cols; manifest nba_rosters_in_data_repo.csv appended
+2026-10-26 11:36:52 [INFO] nba_data_build: uploading rosters_2027.rds (54.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-26 11:36:54 [INFO] nba_data_build: uploaded rosters_2027.rds -> espn_nba_rosters (asset 1/4)
+2026-10-26 11:36:54 [INFO] nba_data_build: uploading rosters_2027.csv (217.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-26 11:36:56 [INFO] nba_data_build: uploaded rosters_2027.csv -> espn_nba_rosters (asset 2/4)
+2026-10-26 11:36:56 [INFO] nba_data_build: uploading nba_rosters_in_data_repo.csv (482B) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-26 11:36:58 [INFO] nba_data_build: uploaded nba_rosters_in_data_repo.csv -> espn_nba_rosters (asset 3/4)
+2026-10-26 11:36:58 [INFO] nba_data_build: uploading rosters_2027.parquet (68.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_rosters
+2026-10-26 11:37:00 [INFO] nba_data_build: uploaded rosters_2027.parquet -> espn_nba_rosters (asset 4/4)
+2026-10-26 11:37:07 [INFO] nba_data_build: stamped espn_nba_rosters with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:37:07 [INFO] nba_data_build: rosters 2027: done -- 518 rows in 16.0s
+2026-10-26 11:37:07 [INFO] nba_data_build: rosters 2027: season complete -- 518 rows
 ::endgroup::
 ::group::nba_data_build player_season_stats 2027
-2026-10-25 12:27:34 [INFO] nba_data_build: player_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:39 [INFO] nba_data_build: wrote ../nba/player_season_stats/parquet/player_season_stats_2027.parquet (55.7KB) + player_season_stats_2027.rds (73.1KB) + player_season_stats_2027.csv (3.0MB), 15873 rows x 15 cols; manifest nba_player_season_stats_in_data_repo.csv appended
-2026-10-25 12:27:39 [INFO] nba_data_build: player_season_stats 2027: unchanged on espn_nba_player_season_stats -- skipped
-2026-10-25 12:27:39 [INFO] nba_data_build: player_season_stats 2027: done -- 15873 rows in 5.0s
-2026-10-25 12:27:39 [INFO] nba_data_build: player_season_stats 2027: season complete -- 15873 rows
+2026-10-26 11:37:09 [INFO] nba_data_build: player_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:37:13 [INFO] nba_data_build: wrote ../nba/player_season_stats/parquet/player_season_stats_2027.parquet (56.7KB) + player_season_stats_2027.rds (74.7KB) + player_season_stats_2027.csv (3.1MB), 16319 rows x 15 cols; manifest nba_player_season_stats_in_data_repo.csv appended
+2026-10-26 11:37:14 [INFO] nba_data_build: uploading player_season_stats_2027.rds (74.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-26 11:37:16 [INFO] nba_data_build: uploaded player_season_stats_2027.rds -> espn_nba_player_season_stats (asset 1/4)
+2026-10-26 11:37:16 [INFO] nba_data_build: uploading player_season_stats_2027.csv (3.1MB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-26 11:37:18 [INFO] nba_data_build: uploaded player_season_stats_2027.csv -> espn_nba_player_season_stats (asset 2/4)
+2026-10-26 11:37:18 [INFO] nba_data_build: uploading nba_player_season_stats_in_data_repo.csv (4.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-26 11:37:20 [INFO] nba_data_build: uploaded nba_player_season_stats_in_data_repo.csv -> espn_nba_player_season_stats (asset 3/4)
+2026-10-26 11:37:20 [INFO] nba_data_build: uploading player_season_stats_2027.parquet (56.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_player_season_stats
+2026-10-26 11:37:22 [INFO] nba_data_build: uploaded player_season_stats_2027.parquet -> espn_nba_player_season_stats (asset 4/4)
+2026-10-26 11:37:30 [INFO] nba_data_build: stamped espn_nba_player_season_stats with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:37:30 [INFO] nba_data_build: player_season_stats 2027: done -- 16319 rows in 20.4s
+2026-10-26 11:37:30 [INFO] nba_data_build: player_season_stats 2027: season complete -- 16319 rows
 ::endgroup::
 ::group::nba_data_build team_season_stats 2027
-2026-10-25 12:27:41 [INFO] nba_data_build: team_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:41 [INFO] nba_data_build: wrote ../nba/team_season_stats/parquet/team_season_stats_2027.parquet (15.6KB) + team_season_stats_2027.rds (11.9KB) + team_season_stats_2027.csv (284.7KB), 1380 rows x 16 cols; manifest nba_team_season_stats_in_data_repo.csv appended
-2026-10-25 12:27:42 [INFO] nba_data_build: team_season_stats 2027: unchanged on espn_nba_team_season_stats -- skipped
-2026-10-25 12:27:42 [INFO] nba_data_build: team_season_stats 2027: done -- 1380 rows in 1.0s
-2026-10-25 12:27:42 [INFO] nba_data_build: team_season_stats 2027: season complete -- 1380 rows
+2026-10-26 11:37:32 [INFO] nba_data_build: team_season_stats 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:37:32 [INFO] nba_data_build: wrote ../nba/team_season_stats/parquet/team_season_stats_2027.parquet (16.3KB) + team_season_stats_2027.rds (12.3KB) + team_season_stats_2027.csv (285.5KB), 1380 rows x 16 cols; manifest nba_team_season_stats_in_data_repo.csv appended
+2026-10-26 11:37:33 [INFO] nba_data_build: uploading team_season_stats_2027.rds (12.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-10-26 11:37:35 [INFO] nba_data_build: uploaded team_season_stats_2027.rds -> espn_nba_team_season_stats (asset 1/4)
+2026-10-26 11:37:35 [INFO] nba_data_build: uploading team_season_stats_2027.csv (285.5KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-10-26 11:37:37 [INFO] nba_data_build: uploaded team_season_stats_2027.csv -> espn_nba_team_season_stats (asset 2/4)
+2026-10-26 11:37:37 [INFO] nba_data_build: uploading nba_team_season_stats_in_data_repo.csv (3.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-10-26 11:37:39 [INFO] nba_data_build: uploaded nba_team_season_stats_in_data_repo.csv -> espn_nba_team_season_stats (asset 3/4)
+2026-10-26 11:37:39 [INFO] nba_data_build: uploading team_season_stats_2027.parquet (16.3KB) -> sportsdataverse/sportsdataverse-data:espn_nba_team_season_stats
+2026-10-26 11:37:41 [INFO] nba_data_build: uploaded team_season_stats_2027.parquet -> espn_nba_team_season_stats (asset 4/4)
+2026-10-26 11:37:49 [INFO] nba_data_build: stamped espn_nba_team_season_stats with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:37:49 [INFO] nba_data_build: team_season_stats 2027: done -- 1380 rows in 17.0s
+2026-10-26 11:37:49 [INFO] nba_data_build: team_season_stats 2027: season complete -- 1380 rows
 ::endgroup::
 ::group::nba_data_build standings 2027
-2026-10-25 12:27:44 [INFO] nba_data_build: standings 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:44 [WARNING] nba_data_build: standings 2027: season-level build produced 0 rows; nothing written
-2026-10-25 12:27:44 [INFO] nba_data_build: standings 2027: season complete -- 0 rows
+2026-10-26 11:37:51 [INFO] nba_data_build: standings 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:37:51 [WARNING] nba_data_build: standings 2027: season-level build produced 0 rows; nothing written
+2026-10-26 11:37:51 [INFO] nba_data_build: standings 2027: season complete -- 0 rows
 ::endgroup::
 ::group::nba_data_build game_rosters 2027
-2026-10-25 12:27:45 [INFO] nba_data_build: game_rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:47 [INFO] nba_data_build: wrote ../nba/game_rosters/parquet/game_rosters_2027.parquet (38.1KB) + game_rosters_2027.rds (31.8KB) + game_rosters_2027.csv (248.5KB), 995 rows x 22 cols; manifest nba_game_rosters_in_data_repo.csv appended
-2026-10-25 12:27:47 [INFO] nba_data_build: game_rosters 2027: unchanged on espn_nba_game_rosters -- skipped
-2026-10-25 12:27:47 [INFO] nba_data_build: game_rosters 2027: done -- 995 rows in 1.8s
-2026-10-25 12:27:47 [INFO] nba_data_build: game_rosters 2027: season complete -- 995 rows
+2026-10-26 11:37:53 [INFO] nba_data_build: game_rosters 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:37:54 [INFO] nba_data_build: wrote ../nba/game_rosters/parquet/game_rosters_2027.parquet (40.1KB) + game_rosters_2027.rds (34.7KB) + game_rosters_2027.csv (297.4KB), 1191 rows x 22 cols; manifest nba_game_rosters_in_data_repo.csv appended
+2026-10-26 11:37:54 [INFO] nba_data_build: uploading game_rosters_2027.rds (34.7KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-10-26 11:37:56 [INFO] nba_data_build: uploaded game_rosters_2027.rds -> espn_nba_game_rosters (asset 1/4)
+2026-10-26 11:37:56 [INFO] nba_data_build: uploading game_rosters_2027.csv (297.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-10-26 11:37:58 [INFO] nba_data_build: uploaded game_rosters_2027.csv -> espn_nba_game_rosters (asset 2/4)
+2026-10-26 11:37:58 [INFO] nba_data_build: uploading nba_game_rosters_in_data_repo.csv (2.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-10-26 11:38:00 [INFO] nba_data_build: uploaded nba_game_rosters_in_data_repo.csv -> espn_nba_game_rosters (asset 3/4)
+2026-10-26 11:38:00 [INFO] nba_data_build: uploading game_rosters_2027.parquet (40.1KB) -> sportsdataverse/sportsdataverse-data:espn_nba_game_rosters
+2026-10-26 11:38:02 [INFO] nba_data_build: uploaded game_rosters_2027.parquet -> espn_nba_game_rosters (asset 4/4)
+2026-10-26 11:38:09 [INFO] nba_data_build: stamped espn_nba_game_rosters with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:38:09 [INFO] nba_data_build: game_rosters 2027: done -- 1191 rows in 16.4s
+2026-10-26 11:38:09 [INFO] nba_data_build: game_rosters 2027: season complete -- 1191 rows
 ::endgroup::
 ::group::nba_data_build officials 2027
-2026-10-25 12:27:49 [INFO] nba_data_build: officials 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:49 [INFO] nba_data_build: wrote ../nba/officials/parquet/officials_2027.parquet (4.5KB) + officials_2027.rds (1.3KB) + officials_2027.csv (5.8KB), 108 rows x 7 cols; manifest nba_officials_in_data_repo.csv appended
-2026-10-25 12:27:50 [INFO] nba_data_build: officials 2027: unchanged on espn_nba_officials -- skipped
-2026-10-25 12:27:50 [INFO] nba_data_build: officials 2027: done -- 108 rows in 0.7s
-2026-10-25 12:27:50 [INFO] nba_data_build: officials 2027: season complete -- 108 rows
+2026-10-26 11:38:11 [INFO] nba_data_build: officials 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:38:12 [INFO] nba_data_build: wrote ../nba/officials/parquet/officials_2027.parquet (4.6KB) + officials_2027.rds (1.4KB) + officials_2027.csv (6.9KB), 129 rows x 7 cols; manifest nba_officials_in_data_repo.csv appended
+2026-10-26 11:38:12 [INFO] nba_data_build: uploading officials_2027.rds (1.4KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-10-26 11:38:14 [INFO] nba_data_build: uploaded officials_2027.rds -> espn_nba_officials (asset 1/4)
+2026-10-26 11:38:14 [INFO] nba_data_build: uploading officials_2027.csv (6.9KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-10-26 11:38:16 [INFO] nba_data_build: uploaded officials_2027.csv -> espn_nba_officials (asset 2/4)
+2026-10-26 11:38:16 [INFO] nba_data_build: uploading nba_officials_in_data_repo.csv (2.8KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-10-26 11:38:18 [INFO] nba_data_build: uploaded nba_officials_in_data_repo.csv -> espn_nba_officials (asset 3/4)
+2026-10-26 11:38:18 [INFO] nba_data_build: uploading officials_2027.parquet (4.6KB) -> sportsdataverse/sportsdataverse-data:espn_nba_officials
+2026-10-26 11:38:20 [INFO] nba_data_build: uploaded officials_2027.parquet -> espn_nba_officials (asset 4/4)
+2026-10-26 11:38:27 [INFO] nba_data_build: stamped espn_nba_officials with timestamp.txt, timestamp.json, package_function.txt, package_function.json
+2026-10-26 11:38:27 [INFO] nba_data_build: officials 2027: done -- 129 rows in 16.2s
+2026-10-26 11:38:27 [INFO] nba_data_build: officials 2027: season complete -- 129 rows
 ::endgroup::
 ::group::nba_data_build draft 2027
-2026-10-25 12:27:52 [INFO] nba_data_build: draft 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-10-25 12:27:52 [WARNING] nba_data_build: draft 2027: season-level build produced 0 rows; nothing written
-2026-10-25 12:27:52 [INFO] nba_data_build: draft 2027: season complete -- 0 rows
+2026-10-26 11:38:29 [INFO] nba_data_build: draft 2027: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-10-26 11:38:30 [WARNING] nba_data_build: draft 2027: season-level build produced 0 rows; nothing written
+2026-10-26 11:38:30 [INFO] nba_data_build: draft 2027: season complete -- 0 rows
 ::endgroup::
 season 2027 EXIT=0
 pushed: NBA Data Updated (Start: 2027 End: 2027) (attempt 1)
