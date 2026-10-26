@@ -19,7 +19,10 @@ while getopts s:e:n flag; do
 done
 [ -n "$START" ] || { echo "usage: $0 -s YYYY [-e YYYY] [-n]" >&2; exit 2; }
 END=${END:-$START}
-fail() { echo "::error ::$*"; echo "EXIT=1"; exit 1; }
+# The fill re-stamps the manifest csv on every run: never leave it (or a half-filled parquet) dirty,
+# or the next cron_crosswalks.sh refuses to build.
+restore() { [ "$DRY" = 1 ] || git checkout -q -- "$LG/crosswalk" 2>/dev/null; }
+fail() { restore; echo "::error ::$*"; echo "EXIT=1"; exit 1; }
 
 base="../$LG"
 if [ "$DRY" = 1 ]; then   # a temp copy of the crosswalks: no lock, the tree is never touched
@@ -65,7 +68,7 @@ for season in $(seq "$START" "$END"); do
   done
 done
 [ "$DRY" = 1 ] && { rm -rf "$tmp"; echo "dry run: no commit"; echo "EXIT=0"; exit 0; }
-[ ${#changed[@]} -gt 0 ] || { echo "crosswalks unchanged"; echo "EXIT=0"; exit 0; }
+[ ${#changed[@]} -gt 0 ] || { restore; echo "crosswalks unchanged"; echo "EXIT=0"; exit 0; }
 
 git add -- "${changed[@]}" "$LG"/crosswalk/*_in_data_repo.csv
 git diff --cached --quiet && { echo "crosswalks unchanged"; echo "EXIT=0"; exit 0; }
