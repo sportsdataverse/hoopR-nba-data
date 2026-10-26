@@ -261,3 +261,9 @@ Copilot, Cursor, GPT, Gemini) as co-authors on commits. Omit all
 `Co-Authored-By` trailers referencing AI tools. This applies whether the
 change was generated, refactored, or reviewed with AI assistance — the
 human author is the sole attributable contributor.
+
+## Alt-source crosswalk fill (droplet cron)
+
+`bash scripts/cron_alt_fill.sh -s YYYY [-e YYYY] [-n]` runs on the droplet, not in a workflow:
+`/mnt/sdv_repos/bin/alt_daily.sh` (12:45 ET) calls it after parsing the season's CBS / Fox / Yahoo
+box scores into `hoopR-nba-alt-data`. It fills the committed schedule + player crosswalks' null Fox / Yahoo legs (`--fill-alt`, offline), then commits + publishes only the crosswalks that changed. `-n` fills a temp copy and compares; no lock, no commit.
