@@ -425,7 +425,12 @@ def player_season_stats_builder(season: int, *, raw_root: Path, base: Path) -> p
 
     pb_path = base / "player_box" / "parquet" / f"player_box_{season}.parquet"
     if pb_path.exists():
-        lookup = build_nba_player_identity_lookup(pl.read_parquet(pb_path))
+        # The lookup keeps each athlete's LAST row; player_box is written newest
+        # game first, so sort oldest first to keep the latest team / jersey.
+        pb = pl.read_parquet(pb_path)
+        if "game_date" in pb.columns:
+            pb = pb.sort("game_date", nulls_last=False, maintain_order=True)
+        lookup = build_nba_player_identity_lookup(pb)
     else:
         log.warning(
             "player_season_stats %s: no built player_box parquet at %s -- "
@@ -676,7 +681,9 @@ def crosswalk_fill_alt(kind: str, season: int, *, base: Path, archive_root: Path
             f"{kind}_crosswalk {season}: fill would drop data {lost or 'rows/columns'}"
         )
     gained = {c: f"{before[c]}->{after[c]}" for c in before if after[c] != before[c]}
-    log.info("%s_crosswalk %s: %d rows, non-null %s", kind, season, out.height, gained or "unchanged")
+    log.info(
+        "%s_crosswalk %s: %d rows, non-null %s", kind, season, out.height, gained or "unchanged"
+    )
     return out
 
 

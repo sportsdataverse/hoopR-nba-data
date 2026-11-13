@@ -80,6 +80,11 @@ build_identity_lookup <- function(season) {
   )
   if (is.null(pb) || nrow(pb) == 0) return(list())
   pb <- as.data.frame(pb)
+  # The lookup keeps each athlete's LAST row; player_box is written newest game
+  # first, so order oldest first to keep the latest team / jersey of the season.
+  if ("game_date" %in% colnames(pb)) {
+    pb <- pb[order(as.Date(pb$game_date), na.last = FALSE), , drop = FALSE]
+  }
 
   pick <- function(df, nm) if (nm %in% colnames(df)) df[[nm]] else NA
 
