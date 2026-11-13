@@ -681,7 +681,9 @@ def crosswalk_fill_alt(kind: str, season: int, *, base: Path, archive_root: Path
             f"{kind}_crosswalk {season}: fill would drop data {lost or 'rows/columns'}"
         )
     gained = {c: f"{before[c]}->{after[c]}" for c in before if after[c] != before[c]}
-    log.info("%s_crosswalk %s: %d rows, non-null %s", kind, season, out.height, gained or "unchanged")
+    log.info(
+        "%s_crosswalk %s: %d rows, non-null %s", kind, season, out.height, gained or "unchanged"
+    )
     return out
 
 
