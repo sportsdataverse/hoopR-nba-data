@@ -262,6 +262,29 @@ Copilot, Cursor, GPT, Gemini) as co-authors on commits. Omit all
 change was generated, refactored, or reviewed with AI assistance — the
 human author is the sole attributable contributor.
 
+## Datasets
+
+<!-- BEGIN GENERATED: datasets -->
+| Script | Dataset | Release tag | Last published |
+|---|---|---|---|
+| [`python/espn_nba_01_pbp_creation.py`](python/espn_nba_01_pbp_creation.py) | [`pbp`](docs/datasets/pbp.md) | [`espn_nba_pbp`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_pbp) | 2026-11-13 |
+| [`python/espn_nba_02_team_box_creation.py`](python/espn_nba_02_team_box_creation.py) | [`team_box`](docs/datasets/team_box.md) | [`espn_nba_team_boxscores`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_team_boxscores) | 2026-11-13 |
+| [`python/espn_nba_03_player_box_creation.py`](python/espn_nba_03_player_box_creation.py) | [`player_box`](docs/datasets/player_box.md) | [`espn_nba_player_boxscores`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_boxscores) | 2026-11-13 |
+| [`python/espn_nba_04_rosters_creation.py`](python/espn_nba_04_rosters_creation.py) | [`rosters`](docs/datasets/rosters.md) | [`espn_nba_rosters`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_rosters) | 2026-11-13 |
+| [`python/espn_nba_05_player_season_stats_creation.py`](python/espn_nba_05_player_season_stats_creation.py) | [`player_season_stats`](docs/datasets/player_season_stats.md) | [`espn_nba_player_season_stats`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_season_stats) | 2026-11-13 |
+| [`python/espn_nba_06_team_season_stats_creation.py`](python/espn_nba_06_team_season_stats_creation.py) | [`team_season_stats`](docs/datasets/team_season_stats.md) | [`espn_nba_team_season_stats`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_team_season_stats) | 2026-11-13 |
+| [`python/espn_nba_07_standings_creation.py`](python/espn_nba_07_standings_creation.py) | [`standings`](docs/datasets/standings.md) | [`espn_nba_standings`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_standings) | 2026-11-13 |
+| [`python/espn_nba_08_draft_creation.py`](python/espn_nba_08_draft_creation.py) | [`draft`](docs/datasets/draft.md) | [`espn_nba_draft`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_draft) | 2026-10-11 |
+| [`python/espn_nba_09_game_rosters_creation.py`](python/espn_nba_09_game_rosters_creation.py) | [`game_rosters`](docs/datasets/game_rosters.md) | [`espn_nba_game_rosters`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_game_rosters) | 2026-11-13 |
+| [`python/espn_nba_10_officials_creation.py`](python/espn_nba_10_officials_creation.py) | [`officials`](docs/datasets/officials.md) | [`espn_nba_officials`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_officials) | 2026-11-13 |
+| [`python/espn_nba_11_team_crosswalk_creation.py`](python/espn_nba_11_team_crosswalk_creation.py) | [`team_crosswalk`](docs/datasets/team_crosswalk.md) | [`nba_crosswalk`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk) | 2026-11-12 |
+| [`python/espn_nba_12_schedule_crosswalk_creation.py`](python/espn_nba_12_schedule_crosswalk_creation.py) | [`schedule_crosswalk`](docs/datasets/schedule_crosswalk.md) | [`nba_crosswalk`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk) | 2026-11-12 |
+| [`python/espn_nba_13_player_crosswalk_creation.py`](python/espn_nba_13_player_crosswalk_creation.py) | [`player_crosswalk`](docs/datasets/player_crosswalk.md) | [`nba_crosswalk`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk) | 2026-11-12 |
+| [`python/espn_nba_14_schedules_creation.py`](python/espn_nba_14_schedules_creation.py) | [`schedules`](docs/datasets/schedules.md) | [`espn_nba_schedules`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_schedules) | 2026-11-13 |
+| [`python/espn_nba_15_shots_creation.py`](python/espn_nba_15_shots_creation.py) | [`shots`](docs/datasets/shots.md) | [`espn_nba_shots`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_shots) | 2026-11-13 |
+| [`python/espn_nba_16_player_core_creation.py`](python/espn_nba_16_player_core_creation.py) | [`player_core`](docs/datasets/player_core.md) | [`espn_nba_player_core`](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_core) | 2026-11-13 |
+<!-- END GENERATED: datasets -->
+
 ## Alt-source crosswalk fill (droplet cron)
 
 `bash scripts/cron_alt_fill.sh -s YYYY [-e YYYY] [-n]` runs on the droplet, not in a workflow:
