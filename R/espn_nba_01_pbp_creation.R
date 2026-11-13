@@ -115,10 +115,16 @@ REPAIR_PERIOD_MAX <- 10
 
 repair_one_pbp_game <- function(sub) {
   # #178: a row with an impossible period borrows its period identity and
-  # half/game seconds offsets from the nearest valid neighbour; its own
-  # clock-derived quarter seconds are kept, and the garbage end_* trio is
-  # pinned to the repaired start_* values.
+  # half/game seconds offsets from the nearest valid row in sequence order
+  # (ESPN appends the re-keyed play at the END of the feed, so its feed
+  # neighbour is "End of Game"); its own clock-derived quarter seconds are
+  # kept, and the garbage end_* trio is pinned to the repaired start_* values.
   b <- !is.na(sub$period_number) & sub$period_number > REPAIR_PERIOD_MAX
+  so <- if ("sequence_number" %in% names(sub)) {
+    order(sub$sequence_number, seq_len(nrow(sub)), na.last = TRUE)
+  } else {
+    seq_len(nrow(sub))
+  }
   if (any(b)) {
     for (cc in intersect(
       c("period_number", "period", "qtr", "period_display_value", "half", "game_half"),
@@ -126,7 +132,8 @@ repair_one_pbp_game <- function(sub) {
     )) {
       v <- sub[[cc]]
       v[b] <- NA
-      sub[[cc]] <- repair_locf(v)
+      v[so] <- repair_locf(v[so])
+      sub[[cc]] <- v
     }
     sec_cols <- c(
       "start_quarter_seconds_remaining",
@@ -137,7 +144,7 @@ repair_one_pbp_game <- function(sub) {
       for (tgt in sec_cols[2:3]) {
         off <- sub[[tgt]] - sub$start_quarter_seconds_remaining
         off[b] <- NA
-        off <- repair_locf(off)
+        off[so] <- repair_locf(off[so])
         sub[[tgt]][b] <- sub$start_quarter_seconds_remaining[b] + off[b]
       }
       for (i in seq_along(sec_cols)) {
@@ -161,7 +168,19 @@ repair_one_pbp_game <- function(sub) {
   }
   ck <- stats::ave(ck, sub$period_number, FUN = repair_locf)
   o <- order(sub$period_number, -ck, seq_len(nrow(sub)), na.last = TRUE)
+  # A "rebuilt" score is a running sum in feed order: keep each row's own
+  # points and re-accumulate them in the new order (hoopR-nba-data#23).
+  rebuilt <- "score_source" %in% names(sub) &&
+    all(sub$score_source == "rebuilt", na.rm = TRUE)
+  pts <- lapply(c(home_score = "home_score", away_score = "away_score"), function(cc) {
+    diff(c(0L, sub[[cc]]))
+  })
   sub <- sub[o, ]
+  if (rebuilt) {
+    for (cc in names(pts)) {
+      sub[[cc]][] <- cumsum(pts[[cc]][o])
+    }
+  }
   # recompute the order-dependent columns
   if ("game_play_number" %in% names(sub)) {
     sub$game_play_number <- seq_len(nrow(sub))
@@ -214,10 +233,11 @@ repair_nba_pbp <- function(df) {
       df[idx, ] <- repair_one_pbp_game(df[idx, ])
     }
   }
-  # Scores are never rewritten here: hoopR's helper_espn_nba_pbp() rebuilds them
+  # Scores are never clamped here: hoopR's helper_espn_nba_pbp() rebuilds them
   # from the scoring plays when that reproduces the official final (score_source),
   # and the retired running-max clamp rewrote the games it flags as ESPN's (it also
-  # worsened 128 games in 2024). Mirrors python/nba_data_build/repairs.py.
+  # worsened 128 games in 2024). A reordered "rebuilt" game only has its running
+  # sum re-accumulated in the new order. Mirrors python/nba_data_build/repairs.py.
 
   # #140: replace pickcenter-default spreads with real consensus closing lines
   # from the committed odds-api lookup (game_spread_available flips TRUE only

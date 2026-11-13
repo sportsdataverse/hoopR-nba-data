@@ -7,10 +7,12 @@ and are NOT rewritten -- the repair is a build step, mirrored in
 
 * **#178 -- impossible period values.** ESPN occasionally ships a play with a
   garbage period (e.g. game 400579076 carries a period-29 "25OT" row that
-  belongs in period 1). Any row with ``period_number > _PERIOD_MAX`` borrows
-  its period columns from the nearest valid neighbour in the same game and
-  has its half/game seconds-remaining re-derived from that neighbour's
-  offsets (the row's own clock-derived quarter seconds are kept).
+  belongs in period 1, appended at the END of the feed). Any row with
+  ``period_number > _PERIOD_MAX`` borrows its period columns from the nearest
+  valid row in the same game by ``sequence_number`` (not by feed position,
+  which for 400579076 is the Q4 "End of Game" row) and has its half/game
+  seconds-remaining re-derived from that row's offsets (the row's own
+  clock-derived quarter seconds are kept).
 * **#146 -- plays out of order / stale duplicate rows.** Some games (e.g.
   401616465) ship plays out of chronological order upstream, and some carry
   stale-score duplicate rows (ESPN double-recorded a stretch of the feed
@@ -23,7 +25,11 @@ and are NOT rewritten -- the repair is a build step, mirrored in
   (``score_source``), and a running-max clamp would rewrite the games it
   flags as ESPN's (it also worsened 128 games in 2024). A rebuilt game's
   score never falls, so the resequencer's trigger now fires only on
-  ``score_source == "espn"`` games and period-repaired ones.
+  ``score_source == "espn"`` games and period-repaired ones. A rebuilt
+  score is a running sum in feed order, so when a ``"rebuilt"`` game is
+  reordered each row keeps its own points and the running sum is
+  re-accumulated in the new order (hoopR-nba-data#23); ``"espn"`` scores are
+  left as ESPN shipped them.
 * **#140 -- pickcenter default spreads.** ESPN's pickcenter went empty for
   2024+ seasons so every game baked the ``(2.5, home favorite, unavailable)``
   default. Games with ``game_spread_available == False`` get the real
@@ -92,6 +98,13 @@ def _repair_impossible_periods(out: pl.DataFrame) -> tuple[pl.DataFrame, list[in
         bad_rows.height,
         games,
     )
+    # Fill from the nearest valid row in sequence order (ties keep feed order):
+    # ESPN appends a re-keyed play at the end of the feed, so its feed
+    # neighbour is the "End of Game" row, not the play it belongs next to.
+    seq_order = "sequence_number" in out.columns
+    out = out.with_row_index("_ri")
+    if seq_order:
+        out = out.sort(["game_id", "sequence_number", "_ri"], nulls_last=True)
     fixes = [
         pl.when(bad)
         .then(None)
@@ -150,8 +163,11 @@ def _repair_impossible_periods(out: pl.DataFrame) -> tuple[pl.DataFrame, list[in
                     .otherwise(pl.col(end_c))
                     .alias(end_c)
                 )
-    out = out.with_columns(repl).drop(
-        [c for c in out.columns if c.startswith("_fix_") or c.startswith("_off_")]
+    out = (
+        out.with_columns(repl)
+        .sort("_ri")
+        .drop([c for c in out.columns if c.startswith("_fix_") or c.startswith("_off_")])
+        .drop("_ri")
     )
     return out, games
 
@@ -181,7 +197,12 @@ def _resequence_disordered_games(
         len(games),
         sorted(games)[:10],
     )
-    out = out.with_row_index("_ri")
+    # Per-row points of each running score, taken in the stored (feed) order a
+    # "rebuilt" score was summed in, so it can be re-accumulated after the sort.
+    out = out.with_row_index("_ri").with_columns(
+        pl.col(c).cast(pl.Int64).diff().fill_null(pl.col(c).cast(pl.Int64)).over("game_id").alias(f"_pts_{c}")
+        for c in ("home_score", "away_score")
+    )
     affected = pl.col("game_id").is_in(sorted(games))
     aff = out.filter(affected)
     rest = out.filter(affected.not_())
@@ -231,7 +252,16 @@ def _resequence_disordered_games(
                 .otherwise(pl.col(col))
                 .alias(col)
             )
-    return out.with_columns(repl).drop("_ri")
+    if "score_source" in out.columns:
+        rebuilt = affected & (pl.col("score_source") == "rebuilt")
+        for c in ("home_score", "away_score"):
+            repl.append(
+                pl.when(rebuilt)
+                .then(pl.col(f"_pts_{c}").cum_sum().over("game_id").cast(out.schema[c]))
+                .otherwise(pl.col(c))
+                .alias(c)
+            )
+    return out.with_columns(repl).drop("_ri", "_pts_home_score", "_pts_away_score")
 
 
 def _inject_closing_spreads(out: pl.DataFrame, *, base: Path) -> pl.DataFrame:

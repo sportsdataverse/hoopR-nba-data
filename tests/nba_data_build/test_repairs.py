@@ -127,3 +127,32 @@ def test_spread_untouched_when_available_or_unmatched(tmp_path):
     assert out.filter(pl.col("game_id") == 5)["game_spread"].to_list() == [9.0]
     assert out.filter(pl.col("game_id") == 6)["game_spread"].to_list() == [2.5]
     assert out.filter(pl.col("game_id") == 6)["game_spread_available"].to_list() == [False]
+
+
+def test_period_repaired_rebuilt_game_400579076(tmp_path):
+    # hoopR-nba-data#23 on the real game: ESPN appends sequence 30 ("Joey Dorsey makes
+    # layup", Q1 9:18 putback) at the END of the feed with period 29, so the rebuilt running
+    # score puts the layup's 2 points on the last row (118-127). The fixture is the
+    # pre-repair per-game frame from hoopR-nba-raw's final.json (pbp reshaper output).
+    from pathlib import Path
+
+    g = pl.read_parquet(Path(__file__).parent / "fixtures" / "pbp_400579076_prerepair.parquet")
+    assert g["score_source"].unique().to_list() == ["rebuilt"]
+    out = repair_pbp_season(g, base=tmp_path)
+    assert out.height == g.height
+    # placed by sequence order: period 1, right after its own Q1 9:18 offensive rebound
+    rows = out.with_row_index("i")
+    lay = rows.filter(pl.col("text") == "Joey Dorsey makes layup")
+    assert lay["period_number"].to_list() == [1]
+    i = lay["i"][0]
+    assert out["sequence_number"][i - 1 : i + 2].to_list() == [30, 30, 31]
+    # seconds offsets borrowed from that rebound row, not from Q4's "End of Game"
+    for c in ("start_half_seconds_remaining", "start_game_seconds_remaining"):
+        assert out[c][i] == out[c][i - 1], c
+    # the running score is re-accumulated in the new order: monotone, layup scores 2 for
+    # the away side at that point, official final unchanged
+    for c in ("home_score", "away_score"):
+        s = out[c].to_list()
+        assert all(b >= a for a, b in zip(s, s[1:])), c
+    assert out["away_score"][i] == out["away_score"][i - 1] + 2
+    assert out.select(pl.col("home_score", "away_score").last()).row(0) == (118, 127)
