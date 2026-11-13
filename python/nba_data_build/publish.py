@@ -46,6 +46,7 @@ def _gh_release_assets(tag: str, repo: str) -> list[str]:
         capture_output=True,
         text=True,
         check=True,
+        timeout=120,  # a stalled gh must not hang the post-publish check
     )
     return proc.stdout.split()
 
@@ -98,16 +99,18 @@ def check_release_contiguous(
     problems = []
     holes = missing_interior_seasons(spec, names)
     if holes:
-        problems.append(f"interior season(s) {holes} missing ({spec.stem}_<season>.parquet)")
+        problems.append(
+            f"interior season(s) {holes} missing ({spec.stem}_<season>.parquet): backfill them, "
+            "or add them to publish.KNOWN_GAPS with the reason"
+        )
     no_rds = seasons_missing_rds(spec, names)
     if no_rds:
-        problems.append(f"season(s) {no_rds} have parquet but no .rds")
-    if problems:
-        raise SeasonGapError(
-            f"{spec.tag}: "
-            + "; ".join(problems)
-            + ". Backfill them, or add the holes to publish.KNOWN_GAPS with the reason."
+        problems.append(
+            f"season(s) {no_rds} have parquet but no .rds: republish them so the .rds exists "
+            "(KNOWN_GAPS does not excuse a missing .rds); --allow-gaps skips the check"
         )
+    if problems:
+        raise SeasonGapError(f"{spec.tag}: " + "; ".join(problems) + ".")
     log.info("%s: release seasons are contiguous and every parquet season has its .rds", spec.tag)
 
 
