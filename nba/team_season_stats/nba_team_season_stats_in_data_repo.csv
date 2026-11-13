@@ -199,3 +199,4 @@ season,row_count,generated_at_utc,source_endpoint
 1994,1242,2026-11-13 13:12:03 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/1994/<team_id>.json
 1995,1242,2026-11-13 13:13:30 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/1995/<team_id>.json
 1996,1334,2026-11-13 13:15:16 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/1996/<team_id>.json
+1997,1334,2026-11-13 13:16:47 UTC,https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main/nba/team_stats/json/1997/<team_id>.json
