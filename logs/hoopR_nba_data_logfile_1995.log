@@ -1,115 +1,115 @@
 ::group::nba_data_build pbp 1995
-2026-11-13 13:12:36 [INFO] nba_data_build: pbp 1995: per-game build starting -- 1181 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:12:48 [INFO] nba_data_build: pbp 1995: 250/1181 games collected
-2026-11-13 13:12:48 [INFO] nba_data_build: pbp 1995: 500/1181 games collected
-2026-11-13 13:12:48 [INFO] nba_data_build: pbp 1995: 750/1181 games collected
-2026-11-13 13:12:48 [INFO] nba_data_build: pbp 1995: 1000/1181 games collected
-2026-11-13 13:12:48 [WARNING] nba_data_build: pbp 1995: 0 games reshaped; nothing written
-2026-11-13 13:12:48 [INFO] nba_data_build: pbp 1995: season complete -- 0 rows
-2026-11-13 13:12:48 [INFO] nba_data_build: espn_nba_pbp: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:36:40 [INFO] nba_data_build: pbp 1995: per-game build starting -- 1181 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:36:50 [INFO] nba_data_build: pbp 1995: 250/1181 games collected
+2026-11-13 13:36:50 [INFO] nba_data_build: pbp 1995: 500/1181 games collected
+2026-11-13 13:36:50 [INFO] nba_data_build: pbp 1995: 750/1181 games collected
+2026-11-13 13:36:50 [INFO] nba_data_build: pbp 1995: 1000/1181 games collected
+2026-11-13 13:36:50 [WARNING] nba_data_build: pbp 1995: 0 games reshaped; nothing written
+2026-11-13 13:36:50 [INFO] nba_data_build: pbp 1995: season complete -- 0 rows
+2026-11-13 13:36:50 [INFO] nba_data_build: espn_nba_pbp: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build team_box 1995
-2026-11-13 13:12:50 [INFO] nba_data_build: team_box 1995: per-game build starting -- 1181 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:12:58 [INFO] nba_data_build: team_box 1995: 250/1181 games collected
-2026-11-13 13:12:58 [INFO] nba_data_build: team_box 1995: 500/1181 games collected
-2026-11-13 13:12:58 [INFO] nba_data_build: team_box 1995: 750/1181 games collected
-2026-11-13 13:12:58 [INFO] nba_data_build: team_box 1995: 1000/1181 games collected
-2026-11-13 13:12:59 [INFO] nba_data_build: wrote ../nba/team_box/parquet/team_box_1995.parquet (109.4KB) + team_box_1995.rds (131.9KB), 2358 rows x 57 cols; manifest n/a (not manifested)
-2026-11-13 13:12:59 [INFO] nba_data_build: team_box 1995: unchanged on espn_nba_team_boxscores -- skipped
-2026-11-13 13:12:59 [INFO] nba_data_build: team_box 1995: done -- 2358 rows from 1179/1181 games in 9.1s
-2026-11-13 13:12:59 [INFO] nba_data_build: team_box 1995: season complete -- 2358 rows
-2026-11-13 13:13:00 [INFO] nba_data_build: espn_nba_team_boxscores: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:36:52 [INFO] nba_data_build: team_box 1995: per-game build starting -- 1181 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:36:58 [INFO] nba_data_build: team_box 1995: 250/1181 games collected
+2026-11-13 13:36:58 [INFO] nba_data_build: team_box 1995: 500/1181 games collected
+2026-11-13 13:36:58 [INFO] nba_data_build: team_box 1995: 750/1181 games collected
+2026-11-13 13:36:58 [INFO] nba_data_build: team_box 1995: 1000/1181 games collected
+2026-11-13 13:36:59 [INFO] nba_data_build: wrote ../nba/team_box/parquet/team_box_1995.parquet (109.4KB) + team_box_1995.rds (131.9KB), 2358 rows x 57 cols; manifest n/a (not manifested)
+2026-11-13 13:36:59 [INFO] nba_data_build: team_box 1995: unchanged on espn_nba_team_boxscores -- skipped
+2026-11-13 13:36:59 [INFO] nba_data_build: team_box 1995: done -- 2358 rows from 1179/1181 games in 7.3s
+2026-11-13 13:36:59 [INFO] nba_data_build: team_box 1995: season complete -- 2358 rows
+2026-11-13 13:36:59 [INFO] nba_data_build: espn_nba_team_boxscores: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build player_box 1995
-2026-11-13 13:13:02 [INFO] nba_data_build: player_box 1995: per-game build starting -- 1181 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:06 [INFO] nba_data_build: player_box 1995: 250/1181 games collected
-2026-11-13 13:13:06 [INFO] nba_data_build: player_box 1995: 500/1181 games collected
-2026-11-13 13:13:06 [INFO] nba_data_build: player_box 1995: 750/1181 games collected
-2026-11-13 13:13:06 [INFO] nba_data_build: player_box 1995: 1000/1181 games collected
-2026-11-13 13:13:08 [INFO] nba_data_build: wrote ../nba/player_box/parquet/player_box_1995.parquet (385.4KB) + player_box_1995.rds (505.9KB), 28219 rows x 56 cols; manifest n/a (not manifested)
-2026-11-13 13:13:09 [INFO] nba_data_build: player_box 1995: unchanged on espn_nba_player_boxscores -- skipped
-2026-11-13 13:13:09 [INFO] nba_data_build: player_box 1995: done -- 28219 rows from 1179/1181 games in 7.3s
-2026-11-13 13:13:09 [INFO] nba_data_build: player_box 1995: season complete -- 28219 rows
-2026-11-13 13:13:09 [INFO] nba_data_build: espn_nba_player_boxscores: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:01 [INFO] nba_data_build: player_box 1995: per-game build starting -- 1181 games (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:05 [INFO] nba_data_build: player_box 1995: 250/1181 games collected
+2026-11-13 13:37:05 [INFO] nba_data_build: player_box 1995: 500/1181 games collected
+2026-11-13 13:37:05 [INFO] nba_data_build: player_box 1995: 750/1181 games collected
+2026-11-13 13:37:05 [INFO] nba_data_build: player_box 1995: 1000/1181 games collected
+2026-11-13 13:37:07 [INFO] nba_data_build: wrote ../nba/player_box/parquet/player_box_1995.parquet (385.4KB) + player_box_1995.rds (505.9KB), 28219 rows x 56 cols; manifest n/a (not manifested)
+2026-11-13 13:37:08 [INFO] nba_data_build: player_box 1995: unchanged on espn_nba_player_boxscores -- skipped
+2026-11-13 13:37:08 [INFO] nba_data_build: player_box 1995: done -- 28219 rows from 1179/1181 games in 6.2s
+2026-11-13 13:37:08 [INFO] nba_data_build: player_box 1995: season complete -- 28219 rows
+2026-11-13 13:37:08 [INFO] nba_data_build: espn_nba_player_boxscores: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build player_core 1995
-2026-11-13 13:13:11 [INFO] nba_data_build: player_core 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:13 [INFO] nba_data_build: wrote ../nba/player_core/parquet/player_core_1995.parquet (27.1KB) + player_core_1995.rds (14.1KB) + player_core_1995.csv (38.7KB), 142 rows x 36 cols; manifest n/a (not manifested)
-2026-11-13 13:13:13 [INFO] nba_data_build: player_core 1995: unchanged on espn_nba_player_core -- skipped
-2026-11-13 13:13:13 [INFO] nba_data_build: player_core 1995: done -- 142 rows in 2.0s
-2026-11-13 13:13:13 [INFO] nba_data_build: player_core 1995: season complete -- 142 rows
-2026-11-13 13:13:14 [INFO] nba_data_build: espn_nba_player_core: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:10 [INFO] nba_data_build: player_core 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:11 [INFO] nba_data_build: wrote ../nba/player_core/parquet/player_core_1995.parquet (49.1KB) + player_core_1995.rds (36.2KB) + player_core_1995.csv (108.0KB), 409 rows x 36 cols; manifest n/a (not manifested)
+2026-11-13 13:37:11 [INFO] nba_data_build: player_core 1995: unchanged on espn_nba_player_core -- skipped
+2026-11-13 13:37:11 [INFO] nba_data_build: player_core 1995: done -- 409 rows in 1.1s
+2026-11-13 13:37:11 [INFO] nba_data_build: player_core 1995: season complete -- 409 rows
+2026-11-13 13:37:11 [INFO] nba_data_build: espn_nba_player_core: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build schedules 1995
-2026-11-13 13:13:16 [INFO] nba_data_build: schedules 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:16 [WARNING] nba_data_build: pbp 1995: no built parquet at ../nba/pbp/parquet/play_by_play_1995.parquet -- schedule flags for it will all be False
-2026-11-13 13:13:16 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_1995.parquet (126.9KB) + nba_schedule_1995.rds (117.9KB) + nba_schedule_1995.csv (2.0MB), 1181 rows x 75 cols; manifest n/a (not manifested)
-2026-11-13 13:13:17 [INFO] nba_data_build: schedules 1995: unchanged on espn_nba_schedules -- skipped
-2026-11-13 13:13:17 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (3.3MB), 43109 rows x 80 cols
-2026-11-13 13:13:17 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.3MB), 31315 rows x 80 cols
-2026-11-13 13:13:17 [INFO] nba_data_build: unchanged nba_schedule_master.parquet on espn_nba_schedules -- skipped
-2026-11-13 13:13:17 [INFO] nba_data_build: unchanged nba_schedule_master.csv on espn_nba_schedules -- skipped
-2026-11-13 13:13:17 [INFO] nba_data_build: unchanged nba_games_in_data_repo.parquet on espn_nba_schedules -- skipped
-2026-11-13 13:13:18 [INFO] nba_data_build: unchanged nba_games_in_data_repo.csv on espn_nba_schedules -- skipped
-2026-11-13 13:13:18 [INFO] nba_data_build: schedules 1995: done -- 1181 rows in 1.7s
-2026-11-13 13:13:18 [INFO] nba_data_build: schedules 1995: season complete -- 1181 rows
-2026-11-13 13:13:18 [INFO] nba_data_build: espn_nba_schedules: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:13 [INFO] nba_data_build: schedules 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:13 [WARNING] nba_data_build: pbp 1995: no built parquet at ../nba/pbp/parquet/play_by_play_1995.parquet -- schedule flags for it will all be False
+2026-11-13 13:37:13 [INFO] nba_data_build: wrote ../nba/schedules/parquet/nba_schedule_1995.parquet (126.9KB) + nba_schedule_1995.rds (117.9KB) + nba_schedule_1995.csv (2.0MB), 1181 rows x 75 cols; manifest n/a (not manifested)
+2026-11-13 13:37:14 [INFO] nba_data_build: schedules 1995: unchanged on espn_nba_schedules -- skipped
+2026-11-13 13:37:14 [INFO] nba_data_build: wrote ../nba/schedules/nba_schedule_master.parquet (3.3MB), 43109 rows x 80 cols
+2026-11-13 13:37:15 [INFO] nba_data_build: wrote ../nba/schedules/nba_games_in_data_repo.parquet (2.3MB), 31315 rows x 80 cols
+2026-11-13 13:37:15 [INFO] nba_data_build: unchanged nba_schedule_master.parquet on espn_nba_schedules -- skipped
+2026-11-13 13:37:15 [INFO] nba_data_build: unchanged nba_schedule_master.csv on espn_nba_schedules -- skipped
+2026-11-13 13:37:15 [INFO] nba_data_build: unchanged nba_games_in_data_repo.parquet on espn_nba_schedules -- skipped
+2026-11-13 13:37:15 [INFO] nba_data_build: unchanged nba_games_in_data_repo.csv on espn_nba_schedules -- skipped
+2026-11-13 13:37:15 [INFO] nba_data_build: schedules 1995: done -- 1181 rows in 1.9s
+2026-11-13 13:37:15 [INFO] nba_data_build: schedules 1995: season complete -- 1181 rows
+2026-11-13 13:37:15 [INFO] nba_data_build: espn_nba_schedules: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build shots 1995
-2026-11-13 13:13:20 [INFO] nba_data_build: shots 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:20 [WARNING] nba_data_build: shots 1995: season-level build produced 0 rows; nothing written
-2026-11-13 13:13:20 [INFO] nba_data_build: shots 1995: season complete -- 0 rows
-2026-11-13 13:13:20 [INFO] nba_data_build: espn_nba_shots: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:17 [INFO] nba_data_build: shots 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:17 [WARNING] nba_data_build: shots 1995: season-level build produced 0 rows; nothing written
+2026-11-13 13:37:17 [INFO] nba_data_build: shots 1995: season complete -- 0 rows
+2026-11-13 13:37:17 [INFO] nba_data_build: espn_nba_shots: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build rosters 1995
-2026-11-13 13:13:22 [INFO] nba_data_build: rosters 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:23 [WARNING] nba_data_build: rosters 1995: season-level build produced 0 rows; nothing written
-2026-11-13 13:13:23 [INFO] nba_data_build: rosters 1995: season complete -- 0 rows
-2026-11-13 13:13:23 [INFO] nba_data_build: espn_nba_rosters: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:19 [INFO] nba_data_build: rosters 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:19 [WARNING] nba_data_build: rosters 1995: season-level build produced 0 rows; nothing written
+2026-11-13 13:37:19 [INFO] nba_data_build: rosters 1995: season complete -- 0 rows
+2026-11-13 13:37:20 [INFO] nba_data_build: espn_nba_rosters: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build player_season_stats 1995
-2026-11-13 13:13:25 [INFO] nba_data_build: player_season_stats 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:27 [INFO] nba_data_build: wrote ../nba/player_season_stats/parquet/player_season_stats_1995.parquet (36.2KB) + player_season_stats_1995.rds (40.4KB) + player_season_stats_1995.csv (1.1MB), 6106 rows x 15 cols; manifest nba_player_season_stats_in_data_repo.csv appended
-2026-11-13 13:13:27 [INFO] nba_data_build: player_season_stats 1995: unchanged on espn_nba_player_season_stats -- skipped
-2026-11-13 13:13:27 [INFO] nba_data_build: player_season_stats 1995: done -- 6106 rows in 2.3s
-2026-11-13 13:13:27 [INFO] nba_data_build: player_season_stats 1995: season complete -- 6106 rows
-2026-11-13 13:13:28 [INFO] nba_data_build: espn_nba_player_season_stats: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:21 [INFO] nba_data_build: player_season_stats 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:23 [INFO] nba_data_build: wrote ../nba/player_season_stats/parquet/player_season_stats_1995.parquet (36.2KB) + player_season_stats_1995.rds (40.4KB) + player_season_stats_1995.csv (1.1MB), 6106 rows x 15 cols; manifest nba_player_season_stats_in_data_repo.csv appended
+2026-11-13 13:37:23 [INFO] nba_data_build: player_season_stats 1995: unchanged on espn_nba_player_season_stats -- skipped
+2026-11-13 13:37:23 [INFO] nba_data_build: player_season_stats 1995: done -- 6106 rows in 1.9s
+2026-11-13 13:37:23 [INFO] nba_data_build: player_season_stats 1995: season complete -- 6106 rows
+2026-11-13 13:37:24 [INFO] nba_data_build: espn_nba_player_season_stats: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build team_season_stats 1995
-2026-11-13 13:13:30 [INFO] nba_data_build: team_season_stats 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:30 [INFO] nba_data_build: wrote ../nba/team_season_stats/parquet/team_season_stats_1995.parquet (18.0KB) + team_season_stats_1995.rds (13.8KB) + team_season_stats_1995.csv (260.2KB), 1242 rows x 16 cols; manifest nba_team_season_stats_in_data_repo.csv appended
-2026-11-13 13:13:31 [INFO] nba_data_build: team_season_stats 1995: unchanged on espn_nba_team_season_stats -- skipped
-2026-11-13 13:13:31 [INFO] nba_data_build: team_season_stats 1995: done -- 1242 rows in 1.0s
-2026-11-13 13:13:31 [INFO] nba_data_build: team_season_stats 1995: season complete -- 1242 rows
-2026-11-13 13:13:31 [INFO] nba_data_build: espn_nba_team_season_stats: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:25 [INFO] nba_data_build: team_season_stats 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:26 [INFO] nba_data_build: wrote ../nba/team_season_stats/parquet/team_season_stats_1995.parquet (18.0KB) + team_season_stats_1995.rds (13.8KB) + team_season_stats_1995.csv (260.2KB), 1242 rows x 16 cols; manifest nba_team_season_stats_in_data_repo.csv appended
+2026-11-13 13:37:26 [INFO] nba_data_build: team_season_stats 1995: unchanged on espn_nba_team_season_stats -- skipped
+2026-11-13 13:37:26 [INFO] nba_data_build: team_season_stats 1995: done -- 1242 rows in 0.9s
+2026-11-13 13:37:26 [INFO] nba_data_build: team_season_stats 1995: season complete -- 1242 rows
+2026-11-13 13:37:27 [INFO] nba_data_build: espn_nba_team_season_stats: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build standings 1995
-2026-11-13 13:13:33 [INFO] nba_data_build: standings 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:33 [WARNING] nba_data_build: standings 1995: season-level build produced 0 rows; nothing written
-2026-11-13 13:13:33 [INFO] nba_data_build: standings 1995: season complete -- 0 rows
-2026-11-13 13:13:34 [INFO] nba_data_build: espn_nba_standings: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:28 [INFO] nba_data_build: standings 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:28 [WARNING] nba_data_build: standings 1995: season-level build produced 0 rows; nothing written
+2026-11-13 13:37:28 [INFO] nba_data_build: standings 1995: season complete -- 0 rows
+2026-11-13 13:37:29 [INFO] nba_data_build: espn_nba_standings: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build game_rosters 1995
-2026-11-13 13:13:36 [INFO] nba_data_build: game_rosters 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:44 [INFO] nba_data_build: wrote ../nba/game_rosters/parquet/game_rosters_1995.parquet (168.6KB) + game_rosters_1995.rds (193.2KB) + game_rosters_1995.csv (4.6MB), 28219 rows x 22 cols; manifest nba_game_rosters_in_data_repo.csv appended
-2026-11-13 13:13:45 [INFO] nba_data_build: game_rosters 1995: unchanged on espn_nba_game_rosters -- skipped
-2026-11-13 13:13:45 [INFO] nba_data_build: game_rosters 1995: done -- 28219 rows in 9.1s
-2026-11-13 13:13:45 [INFO] nba_data_build: game_rosters 1995: season complete -- 28219 rows
-2026-11-13 13:13:45 [INFO] nba_data_build: espn_nba_game_rosters: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:30 [INFO] nba_data_build: game_rosters 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:37 [INFO] nba_data_build: wrote ../nba/game_rosters/parquet/game_rosters_1995.parquet (168.6KB) + game_rosters_1995.rds (193.2KB) + game_rosters_1995.csv (4.6MB), 28219 rows x 22 cols; manifest nba_game_rosters_in_data_repo.csv appended
+2026-11-13 13:37:37 [INFO] nba_data_build: game_rosters 1995: unchanged on espn_nba_game_rosters -- skipped
+2026-11-13 13:37:37 [INFO] nba_data_build: game_rosters 1995: done -- 28219 rows in 6.5s
+2026-11-13 13:37:37 [INFO] nba_data_build: game_rosters 1995: season complete -- 28219 rows
+2026-11-13 13:37:37 [INFO] nba_data_build: espn_nba_game_rosters: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build officials 1995
-2026-11-13 13:13:47 [INFO] nba_data_build: officials 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:53 [INFO] nba_data_build: wrote ../nba/officials/parquet/officials_1995.parquet (16.4KB) + officials_1995.rds (13.6KB) + officials_1995.csv (166.2KB), 3167 rows x 7 cols; manifest nba_officials_in_data_repo.csv appended
-2026-11-13 13:13:54 [INFO] nba_data_build: officials 1995: unchanged on espn_nba_officials -- skipped
-2026-11-13 13:13:54 [INFO] nba_data_build: officials 1995: done -- 3167 rows in 6.4s
-2026-11-13 13:13:54 [INFO] nba_data_build: officials 1995: season complete -- 3167 rows
-2026-11-13 13:13:54 [INFO] nba_data_build: espn_nba_officials: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:39 [INFO] nba_data_build: officials 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:44 [INFO] nba_data_build: wrote ../nba/officials/parquet/officials_1995.parquet (16.4KB) + officials_1995.rds (13.6KB) + officials_1995.csv (166.2KB), 3167 rows x 7 cols; manifest nba_officials_in_data_repo.csv appended
+2026-11-13 13:37:44 [INFO] nba_data_build: officials 1995: unchanged on espn_nba_officials -- skipped
+2026-11-13 13:37:44 [INFO] nba_data_build: officials 1995: done -- 3167 rows in 5.1s
+2026-11-13 13:37:44 [INFO] nba_data_build: officials 1995: season complete -- 3167 rows
+2026-11-13 13:37:44 [INFO] nba_data_build: espn_nba_officials: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 ::group::nba_data_build draft 1995
-2026-11-13 13:13:56 [INFO] nba_data_build: draft 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
-2026-11-13 13:13:56 [WARNING] nba_data_build: draft 1995: season-level build produced 0 rows; nothing written
-2026-11-13 13:13:56 [INFO] nba_data_build: draft 1995: season complete -- 0 rows
-2026-11-13 13:13:56 [INFO] nba_data_build: espn_nba_draft: release seasons are contiguous and every parquet season has its .rds
+2026-11-13 13:37:46 [INFO] nba_data_build: draft 1995: season-level build starting (raw=https://raw.githubusercontent.com/sportsdataverse/hoopR-nba-raw/main via http)
+2026-11-13 13:37:46 [WARNING] nba_data_build: draft 1995: season-level build produced 0 rows; nothing written
+2026-11-13 13:37:46 [INFO] nba_data_build: draft 1995: season complete -- 0 rows
+2026-11-13 13:37:47 [INFO] nba_data_build: espn_nba_draft: release seasons are contiguous and every parquet season has its .rds
 ::endgroup::
 season 1995 EXIT=0
 pushed: NBA Data Updated (Start: 1995 End: 1995) (attempt 1)
