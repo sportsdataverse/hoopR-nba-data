@@ -313,14 +313,24 @@ def shots_builder(season: int, *, raw_root: Path, base: Path) -> pl.DataFrame:
     return shots_from_pbp(pl.read_parquet(p))
 
 
-def _sidecar_builder(subdir: str, helper) -> object:
-    """Per-game sidecar loop (R scripts 09/10): completed games, tryCatch skips."""
+def _sidecar_builder(subdir: str, helper, *, fallback_subdir: str | None = None) -> object:
+    """Per-game sidecar loop (R scripts 09/10): completed games, tryCatch skips.
+
+    ``fallback_subdir`` recovers a game from a second raw location when the
+    primary sidecar is absent (as in mbb_data_build). The processed
+    ``json/final`` summary carries the same ``boxscore.players`` /
+    ``gameInfo.officials`` blocks, and it exists for 1994-2001, where the
+    ``game_rosters/json`` scrape starts in 2002. Purely additive: a game whose
+    primary sidecar exists never reaches the fallback.
+    """
 
     def _build(season: int, *, raw_root: Path, base: Path) -> pl.DataFrame:
         from nba_data_build import ingest
 
         def _one(gid: int) -> pl.DataFrame | None:
             payload = ingest.read_final(gid, raw_root=raw_root, subdir=subdir)
+            if payload is None and fallback_subdir is not None:
+                payload = ingest.read_final(gid, raw_root=raw_root, subdir=fallback_subdir)
             if payload is None:
                 return None
             try:
@@ -344,7 +354,9 @@ def _sidecar_builder(subdir: str, helper) -> object:
 def _game_rosters_builder() -> object:
     from sportsdataverse.nba import helper_nba_game_rosters
 
-    return _sidecar_builder("game_rosters/json", helper_nba_game_rosters)
+    return _sidecar_builder(
+        "game_rosters/json", helper_nba_game_rosters, fallback_subdir="json/final"
+    )
 
 
 def _officials_builder() -> object:
@@ -352,7 +364,7 @@ def _officials_builder() -> object:
     # SAME game_rosters sidecar that backs helper_nba_game_rosters.
     from sportsdataverse.nba import helper_nba_officials
 
-    return _sidecar_builder("game_rosters/json", helper_nba_officials)
+    return _sidecar_builder("game_rosters/json", helper_nba_officials, fallback_subdir="json/final")
 
 
 def _per_entity_frames(
