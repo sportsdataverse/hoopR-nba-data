@@ -128,7 +128,7 @@ logs/                                  # Per-season run logs (committed)
 | `play_by_play`   | `nba/pbp/`          | `espn_nba_pbp`                        | `hoopR::load_nba_pbp()`      |
 | `team_box`       | `nba/team_box/`     | `espn_nba_team_boxscores`             | `hoopR::load_nba_team_box()` |
 | `player_box`     | `nba/player_box/`   | `espn_nba_player_boxscores`           | `hoopR::load_nba_player_box()` |
-| `play_by_play` (shots subset) | `nba/shots/` | `espn_nba_shots`             | `hoopR::load_nba_pbp()` (filter) |
+| `play_by_play` (shots subset) | `nba/shots/` | `espn_nba_shots`             | `hoopR::load_nba_shots()`    |
 | `rosters`        | `nba/rosters/`      | `espn_nba_rosters`                    | `hoopR::load_nba_rosters()` |
 | `player_season_stats` | `nba/player_season_stats/` | `espn_nba_player_season_stats` | `hoopR::load_nba_player_stats()` |
 | `team_season_stats` | `nba/team_season_stats/` | `espn_nba_team_season_stats`    | `hoopR::load_nba_team_stats()` |
