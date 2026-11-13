@@ -31,6 +31,86 @@ _LEAGUE = "nba"
 
 DEFAULT_REPO = "sportsdataverse/sportsdataverse-data"
 
+#: Interior seasons a dataset's release is known to lack (measured on the releases 2026-11-13).
+#: ``check_release_contiguous`` fails a publish run on any other hole. When one is filled, drop it here.
+KNOWN_GAPS: dict[str, frozenset[int]] = {}
+
+
+class SeasonGapError(RuntimeError):
+    """A release is missing an interior season (or its ``.rds``) that ``KNOWN_GAPS`` does not list."""
+
+
+def _gh_release_assets(tag: str, repo: str) -> list[str]:
+    proc = subprocess.run(
+        ["gh", "release", "view", tag, "--repo", repo, "--json", "assets", "-q", ".assets[].name"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return proc.stdout.split()
+
+
+def _release_seasons(spec: DatasetSpec, asset_names: list[str], ext: str) -> set[int]:
+    prefix = f"{spec.stem}_"
+    out = set()
+    for n in asset_names:
+        if n.startswith(prefix) and n.endswith(ext) and n[len(prefix) : -len(ext)].isdigit():
+            out.add(int(n[len(prefix) : -len(ext)]))
+    return out
+
+
+def missing_interior_seasons(
+    spec: DatasetSpec, asset_names: list[str], ext: str = ".parquet"
+) -> list[int]:
+    """Seasons between a dataset's first and last ``{stem}_{season}{ext}`` with no asset.
+
+    Seasons in ``KNOWN_GAPS`` don't count.
+    """
+    seasons = _release_seasons(spec, asset_names, ext)
+    if not seasons:
+        return []
+    known = KNOWN_GAPS.get(spec.dataset, frozenset())
+    return sorted(set(range(min(seasons), max(seasons) + 1)) - seasons - known)
+
+
+def seasons_missing_rds(spec: DatasetSpec, asset_names: list[str]) -> list[int]:
+    """Seasons with a parquet asset but no ``.rds``: hoopR's loaders read only the ``.rds``."""
+    return sorted(
+        _release_seasons(spec, asset_names, ".parquet")
+        - _release_seasons(spec, asset_names, ".rds")
+    )
+
+
+def check_release_contiguous(
+    spec: DatasetSpec,
+    repo: str = DEFAULT_REPO,
+    *,
+    lister: Callable[[str, str], list[str]] | None = None,
+) -> None:
+    """Raise :class:`SeasonGapError` when the release lacks an interior season or a season's ``.rds``.
+
+    A season missing in the middle of a dataset's range ships silently: a
+    multi-season load just returns fewer seasons, and a missing ``.rds`` makes
+    hoopR's loader fail for that season. Run after a publish (the CLI does,
+    unless ``--allow-gaps``).
+    """
+    names = (lister or _gh_release_assets)(spec.tag, repo)
+    problems = []
+    holes = missing_interior_seasons(spec, names)
+    if holes:
+        problems.append(f"interior season(s) {holes} missing ({spec.stem}_<season>.parquet)")
+    no_rds = seasons_missing_rds(spec, names)
+    if no_rds:
+        problems.append(f"season(s) {no_rds} have parquet but no .rds")
+    if problems:
+        raise SeasonGapError(
+            f"{spec.tag}: "
+            + "; ".join(problems)
+            + ". Backfill them, or add the holes to publish.KNOWN_GAPS with the reason."
+        )
+    log.info("%s: release seasons are contiguous and every parquet season has its .rds", spec.tag)
+
+
 log = get_logger()
 
 
