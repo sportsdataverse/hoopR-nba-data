@@ -176,7 +176,7 @@ parse_one_category <- function(season, athlete_id, athlete_meta, category) {
 
   num_val <- suppressWarnings(as.numeric(vals))
 
-  tibble::tibble(
+  split_made_attempted(tibble::tibble(
     season = as.integer(season),
     athlete_id = as.integer(athlete_id),
     athlete_display_name = athlete_meta$display_name,
@@ -192,7 +192,59 @@ parse_one_category <- function(season, athlete_id, athlete_meta, category) {
     stat_description = pad(descriptions, n),
     display_value = vals,
     value = num_val
-  )
+  ))
+}
+
+# Port of sportsdataverse-py #1201 (`_split_made_attempted` in
+# sportsdataverse/wbb/wbb_season_producers.py), so this chain stays row-identical
+# to the Python build. ESPN ships FGM/FGA, 3PM/3PA and FTM/FTA as one
+# "made-attempted" text value with a null `value`. Each such row keeps its place
+# and is followed by a made row and an attempted row (`freeThrowsMade` 83, label
+# FTM; `freeThrowsAttempted` 111, label FTA). Per-game averages ("2.3-3.1")
+# split the same way. A row whose name or value does not split into two parts,
+# or whose parts its category already names, gets nothing added.
+split_made_attempted <- function(df) {
+  if (is.null(df) || nrow(df) == 0) return(df)
+  rx <- "^(\\d+(?:\\.\\d+)?)-(\\d+(?:\\.\\d+)?)$"
+  n_hits <- function(x, s) lengths(regmatches(x, gregexpr(s, x, fixed = TRUE)))
+  nm <- dplyr::coalesce(df$stat_name, "")
+  dv <- dplyr::coalesce(df$display_value, "")
+  parts <- list(sub("-.*$", "", nm), sub("^[^-]*-", "", nm))
+  seen <- paste(df$category, df$stat_name, sep = "\r")
+  taken <- paste(df$category, parts[[1]], sep = "\r") %in% seen |
+    paste(df$category, parts[[2]], sep = "\r") %in% seen
+  split <- n_hits(nm, "-") == 1 & grepl(rx, dv, perl = TRUE) & !taken
+  if (!any(split)) return(df)
+
+  desc <- dplyr::coalesce(df$stat_description, "")
+  one_desc <- n_hits(desc, ".-") == 1
+  desc_parts <- list(sub("\\.-.*$", "", desc), sub("^.*?\\.-", "", desc, perl = TRUE))
+  label <- df$stat_label
+  disp <- dplyr::coalesce(df$stat_display_name, "")
+  idx <- which(split)
+
+  kids <- purrr::map_dfr(1:2, function(k) {
+    counts <- sub(rx, paste0("\\", k), dv[idx], perl = TRUE)
+    dn <- gsub("Made-Attempted", c("Made", "Attempted")[k], disp[idx], fixed = TRUE)
+    df[idx, ] %>%
+      dplyr::mutate(
+        stat_label = ifelse(is.na(label[idx]) | label[idx] == "", NA_character_,
+                            paste0(label[idx], c("M", "A")[k])),
+        stat_name = parts[[k]][idx],
+        stat_display_name = ifelse(dn == "", NA_character_, dn),
+        stat_description = ifelse(one_desc[idx],
+                                  paste0(sub("\\.+$", "", desc_parts[[k]][idx]), "."),
+                                  NA_character_),
+        display_value = counts,
+        value = as.numeric(counts),
+        .row = idx, .k = k
+      )
+  })
+  df %>%
+    dplyr::mutate(.row = dplyr::row_number(), .k = 0L) %>%
+    dplyr::bind_rows(kids) %>%
+    dplyr::arrange(.row, .k) %>%
+    dplyr::select(-c(.row, .k))
 }
 
 parse_one_athlete <- function(season, athlete_id, identity_lookup, raw_base) {

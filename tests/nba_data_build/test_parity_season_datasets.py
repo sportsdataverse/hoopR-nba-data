@@ -45,8 +45,8 @@ def _split_count_names(df: pl.DataFrame) -> list[str]:
 
 
 def test_player_season_stats_parity_full_2025(built_base):
-    # ponytail: the R chain (espn_nba_05) does not emit the #1201 count rows yet;
-    # this asserts them against their text and keeps full parity on every other row.
+    # The released oracle predates the #1201 count rows (espn_nba_05 now emits them via
+    # split_made_attempted); assert them against their text, full parity on every other row.
     py = pl.read_parquet(
         built_base / "player_season_stats" / "parquet" / "player_season_stats_2025.parquet"
     )
