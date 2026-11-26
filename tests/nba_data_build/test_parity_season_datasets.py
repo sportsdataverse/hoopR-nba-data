@@ -61,21 +61,31 @@ def test_player_season_stats_parity_full_2025(built_base, tmp_path):
     parents = py.filter(pl.col("stat_name").str.count_matches("-") == 1)
     assert derived.height == 2 * parents.height
 
-    # each derived count equals its half of the parent's "made-attempted" text
+    # each derived row is its half of the parent's "made-attempted" row: name, count and
+    # text (label + "M"/"A", display name with "Made"/"Attempted"; null when empty)
     key = ["athlete_id", "team_id", "category"]
     halves = parents.with_columns(
         _name=pl.col("stat_name").str.split("-"),
         _val=pl.col("display_value").str.split("-"),
     )
-    got = derived.select(*key, sn=pl.col("stat_name"), v=pl.col("value"))
-    for i in (0, 1):
+    text = ["stat_name", "value", "display_value", "stat_label", "stat_display_name"]
+    got = derived.select(*key, *text)
+    label = pl.col("stat_label")
+    for i, (suffix, word) in enumerate((("M", "Made"), ("A", "Attempted"))):
+        half = pl.col("_val").list.get(i)
+        dn = pl.col("stat_display_name").str.replace_all("Made-Attempted", word, literal=True)
         expected = halves.select(
             *key,
-            sn=pl.col("_name").list.get(i),
-            v=pl.col("_val").list.get(i).cast(pl.Float64),
+            stat_name=pl.col("_name").list.get(i),
+            value=half.cast(pl.Float64),
+            display_value=half,
+            stat_label=pl.when(label.is_null() | (label == ""))
+            .then(None)
+            .otherwise(label + suffix),
+            stat_display_name=pl.when(dn == "").then(None).otherwise(dn),
         )
-        missing = expected.join(got, on=[*key, "sn", "v"], how="anti")
-        assert missing.is_empty(), f"derived counts disagree with text:\n{missing.head()}"
+        missing = expected.join(got, on=[*key, *text], how="anti", nulls_equal=True)
+        assert missing.is_empty(), f"derived rows disagree with their parent:\n{missing.head()}"
 
     cols = list(r.columns)
     if r.filter(is_split).is_empty():
