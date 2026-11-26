@@ -38,7 +38,7 @@ def _split_count_names(df: pl.DataFrame) -> list[str]:
     """Stat names of the numeric count rows sportsdataverse-py #1201 derives.
 
     Each ``fooMade-fooAttempted`` text row is followed by numeric ``fooMade``
-    and ``fooAttempted`` rows. The R oracle predates them.
+    and ``fooAttempted`` rows. A release published before #1201 lacks them.
     """
     names = df.get_column("stat_name").drop_nulls().unique().to_list()
     return sorted({part for n in names if n.count("-") == 1 for part in n.split("-")})
@@ -46,8 +46,8 @@ def _split_count_names(df: pl.DataFrame) -> list[str]:
 
 def test_player_season_stats_parity_full_2025(built_base, tmp_path):
     # Both pipelines emit the #1201 count rows (espn_nba_05 via split_made_attempted); a
-    # release published before #1201 lacks them. Assert them against their text, and keep
-    # full parity on every other row whether or not the release carries them yet.
+    # release published before #1201 lacks them. Assert them against their text; compare
+    # the full frame once the release carries them, and every other row until then.
     py = pl.read_parquet(
         built_base / "player_season_stats" / "parquet" / "player_season_stats_2025.parquet"
     )
@@ -55,8 +55,6 @@ def test_player_season_stats_parity_full_2025(built_base, tmp_path):
 
     split_names = _split_count_names(py)
     assert split_names, "expected the #1201 made/attempted count rows"
-    oracle = tmp_path / "oracle_without_split_counts.parquet"
-    r.filter(~pl.col("stat_name").is_in(split_names)).write_parquet(oracle)
 
     is_split = pl.col("stat_name").is_in(split_names)
     derived, base = py.filter(is_split), py.filter(~is_split)
@@ -80,4 +78,12 @@ def test_player_season_stats_parity_full_2025(built_base, tmp_path):
         assert missing.is_empty(), f"derived counts disagree with text:\n{missing.head()}"
 
     cols = list(r.columns)
-    assert_parquet_parity(base, oracle, keys=cols, sample_cols=[])
+    if r.filter(is_split).is_empty():
+        # the release predates #1201: compare every other row
+        oracle = tmp_path / "oracle_without_split_counts.parquet"
+        r.filter(~is_split).write_parquet(oracle)
+        assert_parquet_parity(base, oracle, keys=cols, sample_cols=[])
+    else:
+        # the release carries them: R's split_made_attempted() output is compared in full
+        oracle = oracle_path("player_season_stats", "player_season_stats")
+        assert_parquet_parity(py, oracle, keys=cols, sample_cols=[])
