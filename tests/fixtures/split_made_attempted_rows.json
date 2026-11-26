@@ -1,0 +1,14 @@
+[
+  {"category": "totals", "stat_label": "FG", "stat_name": "fieldGoalsMade-fieldGoalsAttempted", "stat_display_name": "Field Goals Made-Attempted", "stat_description": "The number of field goals made.-The number of field goals attempted.", "display_value": "312-688", "value": null},
+  {"category": "totals", "stat_label": "PTS", "stat_name": "points", "stat_display_name": "Points", "stat_description": "The number of points scored.", "display_value": "845", "value": 845.0},
+  {"category": "totals", "stat_label": "3PT", "stat_name": "threePointFieldGoalsMade-threePointFieldGoalsAttempted", "stat_display_name": "3-Point Field Goals Made-Attempted", "stat_description": "The number of 3-point field goals made..-The number of 3-point field goals attempted", "display_value": "0-0", "value": null},
+  {"category": "totals", "stat_label": "FT", "stat_name": "freeThrowsMade-freeThrowsAttempted", "stat_display_name": "Free Throws Made-Attempted", "stat_description": "Free throws made and attempted.", "display_value": null, "value": null},
+  {"category": "averages", "stat_label": "FG", "stat_name": "avgFieldGoalsMade-avgFieldGoalsAttempted", "stat_display_name": "Average Field Goals Made-Attempted", "stat_description": "The average number of field goals made per game.-The average number of field goals attempted per game.", "display_value": "8.2-18.1", "value": null},
+  {"category": "averages", "stat_label": "", "stat_name": "avgFreeThrowsMade-avgFreeThrowsAttempted", "stat_display_name": "", "stat_description": null, "display_value": "2.3-3.1", "value": null},
+  {"category": "averages", "stat_label": null, "stat_name": "avgThreePointFieldGoalsMade-avgThreePointFieldGoalsAttempted", "stat_display_name": null, "stat_description": "Average 3-point field goals made per game.-Attempted per game.-Extra part.", "display_value": "1.0-2.75", "value": null},
+  {"category": "averages", "stat_label": "X", "stat_name": "alpha-beta-gamma", "stat_display_name": "Alpha-Beta-Gamma", "stat_description": "A.-B.", "display_value": "1-2", "value": null},
+  {"category": "misc", "stat_label": "FTM", "stat_name": "freeThrowsMade", "stat_display_name": "Free Throws Made", "stat_description": "The number of free throws made.", "display_value": "40", "value": 40.0},
+  {"category": "misc", "stat_label": "FT", "stat_name": "freeThrowsMade-freeThrowsAttempted", "stat_display_name": "Free Throws Made-Attempted", "stat_description": "Made.-Attempted.", "display_value": "40-52", "value": null},
+  {"category": "misc", "stat_label": "OR", "stat_name": "offensiveRebounds-defensiveRebounds", "stat_display_name": "Rebounds", "stat_description": "Offensive.-Defensive.", "display_value": "12-34", "value": null},
+  {"category": "misc", "stat_label": "PCT", "stat_name": "made-attempted", "stat_display_name": "Shooting", "stat_description": "Shooting.", "display_value": "45.5%-50", "value": null}
+]

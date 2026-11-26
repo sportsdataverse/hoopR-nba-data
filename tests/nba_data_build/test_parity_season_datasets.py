@@ -1,5 +1,12 @@
 """Parity: rosters / team_season_stats / player_season_stats / standings vs
-the R-released parquet oracles, FULL 2025 season.
+the committed 2025 release parquet, FULL 2025 season.
+
+The oracle is this repo's published ``nba/`` tree, written by whichever chain last
+published it. As of 2026-11-26 every NBA 2025 file is Polars-written (the Python build,
+republished 2026-11-13), so these tests are a Python-vs-release regression check, not R
+parity. The R chain's arrow writer leaves an ``r`` key in the footer; ``_oracle_kind``
+reads it so a failure says which one it is. The R port of the #1201 split is checked
+offline in ``tests/test_split_made_attempted_r.py``.
 
 Port provenance: the script-local parsers in
 ``hoopR-nba-data/R/espn_nba_0{4,5,6,7}_*_creation.R``. ``player_season_stats``
@@ -15,6 +22,13 @@ import pytest
 
 from tests.nba_data_build._parity_helpers import assert_parquet_parity
 from tests.nba_data_build.conftest import oracle_path
+
+
+def _oracle_kind(path) -> str:
+    """What a comparison against ``path`` checks, from the writer recorded in its footer."""
+    if "r" in pl.read_parquet_metadata(path):
+        return "R parity (oracle written by the R chain)"
+    return "Python-vs-release regression (oracle is not R-written)"
 
 
 @pytest.mark.parametrize(
@@ -88,12 +102,18 @@ def test_player_season_stats_parity_full_2025(built_base, tmp_path):
         assert missing.is_empty(), f"derived rows disagree with their parent:\n{missing.head()}"
 
     cols = list(r.columns)
+    release = oracle_path("player_season_stats", "player_season_stats")
+    kind = _oracle_kind(release)
     if r.filter(is_split).is_empty():
         # the release predates #1201: compare every other row
         oracle = tmp_path / "oracle_without_split_counts.parquet"
         r.filter(~is_split).write_parquet(oracle)
-        assert_parquet_parity(base, oracle, keys=cols, sample_cols=[])
+        py, kind = base, f"{kind}, #1201 count rows stripped"
     else:
-        # the release carries them: R's split_made_attempted() output is compared in full
-        oracle = oracle_path("player_season_stats", "player_season_stats")
+        # the release carries them: the full frame, count rows included. This checks
+        # R's split_made_attempted() only when the release was written by the R chain.
+        oracle = release
+    try:
         assert_parquet_parity(py, oracle, keys=cols, sample_cols=[])
+    except AssertionError as e:
+        raise AssertionError(f"{kind}: {e}") from e
