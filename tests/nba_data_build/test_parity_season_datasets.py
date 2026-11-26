@@ -44,18 +44,19 @@ def _split_count_names(df: pl.DataFrame) -> list[str]:
     return sorted({part for n in names if n.count("-") == 1 for part in n.split("-")})
 
 
-def test_player_season_stats_parity_full_2025(built_base):
-    # The released oracle predates the #1201 count rows (espn_nba_05 now emits them via
-    # split_made_attempted); assert them against their text, full parity on every other row.
+def test_player_season_stats_parity_full_2025(built_base, tmp_path):
+    # Both pipelines emit the #1201 count rows (espn_nba_05 via split_made_attempted); a
+    # release published before #1201 lacks them. Assert them against their text, and keep
+    # full parity on every other row whether or not the release carries them yet.
     py = pl.read_parquet(
         built_base / "player_season_stats" / "parquet" / "player_season_stats_2025.parquet"
     )
-    oracle = oracle_path("player_season_stats", "player_season_stats")
-    r = pl.read_parquet(oracle)
+    r = pl.read_parquet(oracle_path("player_season_stats", "player_season_stats"))
 
     split_names = _split_count_names(py)
     assert split_names, "expected the #1201 made/attempted count rows"
-    assert r.filter(pl.col("stat_name").is_in(split_names)).is_empty()
+    oracle = tmp_path / "oracle_without_split_counts.parquet"
+    r.filter(~pl.col("stat_name").is_in(split_names)).write_parquet(oracle)
 
     is_split = pl.col("stat_name").is_in(split_names)
     derived, base = py.filter(is_split), py.filter(~is_split)
